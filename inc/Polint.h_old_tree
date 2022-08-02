@@ -1,0 +1,78 @@
+/* ***********************************************************************
+ * POLINT Subroutine has been taken from CERN Library. (E100)      *******
+ * Its a polynomial interpolation in one dimension.                *******
+ * POLINT(F[],A[],K,X,R)                                           *******
+ * F[] -> Real Onedimensional array. F[j] must be equal to the value at  *
+ * A[j] of the function to be interpolated,(j=0,1,2...,7 (here))        **
+ * A[j] -> Real Onedimensional array. A[j] are the coordinates point.   **
+ * k -> Integer. k-1 is the degree of the interpolating polynomial.     **
+ * X -> Real. Co-ordinate for the interpolating point.
+ * R -> Real. Final interpolated/extrapolated result returning.      *****
+ ************************************************************************/
+
+#ifndef Polint_h
+#define Polint_h
+
+//Min function to get the minimum
+int Min(int a, int b, int& r){
+  if(a<b) {
+    r=a;
+  } else {
+    r=b;
+  }
+  return r;
+}//min fn ended
+
+//Polint => Nonlinear interpolation routine
+double Polint(double f[],double arg[],int dof,double datapoint,double& sum){
+  
+  double cof[20];
+  int jindex,index,i,j;
+  /*if(dof<2){ //redundant condition: dof<2 => ndeg<1. If (ndeg<1) in F2int.h no interpolation at all.
+    sum = -9999;}
+    else{*/
+
+  int amm;
+  Min(dof, 20,amm);
+  int am; am = amm - 1;
+  for( i=0;i<amm;i++){cof[i]=f[i];}   //storing the functional value
+  for( i=0;i<am;i++){
+    for(j=i;j<am;j++) {            // storing indexwise values
+      jindex=am-j-1;
+      index=jindex+i+1;
+      cof[index] = (cof[index]-cof[index-1])/(arg[index]-arg[jindex]);
+    }
+  }
+  sum = cof[am];
+  for(i=0;i<am;i++) {               // calculation for the final // interpolation value
+    index = am-i-1;
+    sum = (datapoint-arg[index])*sum + cof[index];
+  }
+  
+  return sum;
+}// polint defined
+
+
+
+//Polint(fgrid,pgrid,ndeg+1,g[ip],polval)
+double bilinearInterpolation(double f[],double arg[],int ag[]) {
+  
+  double x1= arg[0];
+  double x2= arg[1];
+  double y1= arg[2];
+  double y2= arg[3];
+  double f11= f[0];
+  double f12= f[2];
+  double f21= f[1];
+  double f22= f[3];
+  double x= (double)ag[0]/1000;
+  double y= (double)ag[1]/1000;
+  //cout<< "xy"<<x <<" "<< y <<endl;
+  double term1 = f11*(x2-x)*(y2-y)/((x2-x1)*(y2-y1));  
+  double term2 = f21*(x1-x)*(y2-y)/((x1-x2)*(y2-y1));
+  double term3 = f12*(x2-x)*(y1-y)/((x2-x1)*(y1-y2));
+  double term4 = f22*(x1-x)*(y1-y)/((x1-x2)*(y1-y2));
+  
+  return term1+term2+term3+term4;
+}
+#endif

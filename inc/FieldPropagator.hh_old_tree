@@ -1,0 +1,76 @@
+#ifndef FIELDPROPAGATOR_HH
+#define FIELDPROPAGATOR_HH
+#include "DetectorParameterDef.hh"
+// #include "MultiSimAnalysis.hh"
+#include "GeneralRecoInfo.hh"
+#include "G4ThreeVector.hh"
+//#include "Ical0DetectorParameterDef.hh"
+//#include "Ical0utils.hh"
+//#include "G4FieldManager.hh"
+#include "G4SystemOfUnits.hh"
+#include <fstream>
+
+class FieldPropagator
+{
+public:
+    FieldPropagator();
+    ~FieldPropagator();
+  void ElectroMagneticField(const double Point[3], double& B1, double& B2, int ftype);
+
+public:
+ static FieldPropagator* FdPointer;
+  // Access functions
+ 
+  DetectorParameterDef *paradef;
+  // MultiSimAnalysis *pAnalysis;
+  GeneralRecoInfo *grecoi;
+  double fvalx1[16][6561] ;//[1681];
+  double fvaly1[16][6561];
+  double fvalz1[16][6561];
+
+  double array1[16][162];
+
+protected:
+  // Find the global Field Manager
+
+
+
+ int temp;
+private:
+  G4double   fval;             // Field value
+  G4int      npts;             // Number of poinst
+  G4double   xoff;             // Offset
+  G4double*  pos;              // Position
+  G4double*  slope;            // Slope
+  G4double*  intercept;        // Intercept
+  G4String   filename;         // field map file
+
+  TFile* pMagFile;
+  TTree* fieldMapTree;
+
+  double xpos;
+  double ypos;
+  double zpos;
+  double BxField;
+  double ByField;
+  double BzField;
+  int dofinput;
+  int ndata;
+  //int ndata1[2];
+  int stepSize;
+
+  double irlayZ; //nFeThickness/2;
+  double rpclayZ; //nAirGap/2;
+  double ironrpcZ; // nFeThickness + nAirGap;
+  int nLayer;
+  int nIRLayer;
+  double parino[3];
+  double gapino;
+  double parlay[3];
+  double parchm[3];
+  double parcoilspaceiron[3];
+  int nCoil;
+  G4ThreeVector coilPos[4];
+};
+
+#endif // ICALFIELDPROPAGATOR_HH

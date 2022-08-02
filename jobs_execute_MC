@@ -1,0 +1,22 @@
+#!/bin/bash                                                                     
+evnts=2
+
+datafile="/var/nfscondor/rajshah/GenSimReco/GentoDigi/fileOut/gen4_inout0_SingleStack_K"
+
+ij=1;
+#for (( ij=1;ij<=$evnts;ij++ ))                                                 
+while (($ij<=$1))
+do
+    foo1=$(printf "%04d" $ij)
+    echo -e "$datafile"_${foo1}_digi 1000 0 > ./runFiles/SingleCode_K_digi_${foo1}.log
+#    ./anal_ical MC_test_digi.log 1 0.1 0 1000 0 1 1 0 1>out.txt 2>err.txt      
+echo runFiles/SingleCode_K_digi_${foo1}.log 1 0.1 0 1000 0 1 0 0
+
+
+  ((ij++))
+#    ./anal_ical test.log 1 0.1 1 10000                                         
+   # echo 'mv recodata/test_reco.root recodata/test_reco_"${foo1}".root' | sh   
+done
+#echo 'hadd -f -j 4 -d . recodata/'$datafile'_reco.root recodata/test_reco_*.root' | sh                                                                        
+
+

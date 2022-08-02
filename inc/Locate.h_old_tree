@@ -1,0 +1,52 @@
+/*************************************************************************
+ * Locate Subroutine has been taken from CERN Library. (E106)      *******
+ * This subroutine will search for the starting value of the grid      ***
+ * position for (X,Y,Z)coordinate.                                     ***
+ * Locate(AR[],LENGTH,OBJECT,I,FL,RETURN_VALUE)                        ***
+ * AR-> Real One dimensional array. All Co-ordinates values are stored  **
+ * LENGTH -> INTEGER. Total no of the elements for X,Y,Z respectively.  **
+ * Object -> Real. Interpolated Co-ordinate.
+ * I -> Integer. Loop variable carrying information for X or Y or Z.    **
+ * FI ->Integer. Total number of X Co-ordinates.                        **
+ *************************************************************************/
+#ifndef Locate_h
+#define Locate_h
+#include<iostream>
+using namespace std;
+
+int Locate(double ar[],int length,double object,int ii,int firstlength,int& locate)
+{
+  int nbelow,nabove,middle,n;
+  double nn;
+  length = firstlength*ii + length;
+  nabove = length+1;
+  nbelow = 0;
+  middle = (nabove+nbelow)/2;
+  
+  while(((object-ar[middle])!=0.0) && ((nabove-nbelow)!=1)){//Searching for the nearest element
+    //  with respect to the Interpolated point.
+    if((nabove-nbelow)<1) break;
+    
+    if((object-ar[middle])<0.0) nabove=middle;
+    if((object-ar[middle])>0.0) nbelow=middle;
+    middle = (nabove+nbelow)/2;
+  }
+  
+  nn = (object-ar[0+ii*firstlength])*10.0 + 1.0;
+  n = int(nn);
+  n=n+ii*firstlength;
+  if((object-ar[n-1])==0.0){  // If interpolated Co-ordinate
+    // is present in the argument
+    locate=middle-1;        // list then Locate will return
+  } else {                        // the previous point. Else it will return the
+    locate=middle;          // closest point.
+  }
+  
+  if((nabove-nbelow)<1) locate = -nbelow;
+  
+  if(ii>=1) {           // this condition will retun the position for Y. The value is always less than
+    locate=locate-ii*firstlength;  //the firstlength. It simplifies the algorithm in F2int.h
+  }
+  return locate;
+}//locate fn ended
+#endif

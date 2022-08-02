@@ -1,0 +1,32 @@
+/*************************************************************************
+ * Find the indices in the argument list(Co-ordinates) and the function  *
+ * list for the current grid position.findex will search in argument     *
+ * list and will also search in the function list.                       *
+ * findex(NP,ND[],IND[],IPP,IND1,IND2)                                   *
+ * //findex2(NP,ND[],IND[],IPP,IND2)                                     *
+ * NP ->Integer. No of parameters.                                       *
+ * ND ->Integer Array. No of data points for each parameter.             *
+ * IND->Integer Array. Index list giving the current grid position.      *
+ * IPP->Integr. Loop no carrying parameter details.                      *
+ * IND1-> Return value of the Co-ordinate.                               *
+ * IND2-> Return value of the Funtion.                                   *
+ *************************************************************************/
+  
+#ifndef FindIndex_h
+#define FindIndex_h
+
+int findex(int npar,int ndat[],int ind[],int ipp, int& ind1, int& ind2)
+{
+  int i;
+  ind1=ind[ipp];
+  for(i=0;i<ipp;i++)  {
+    ind1=ind1+ndat[i]; // effective only when i=1.
+  }
+  
+  ind2=0;
+  for(i=npar-1;i>=0;i--){
+    ind2=ind2*ndat[i]+ind[i];
+  }
+  return 0;
+}
+#endif
