@@ -12,7 +12,7 @@ class InoCluster
  public:
   InoCluster(InoHit* hit);
   virtual ~InoCluster();
- 
+
   void AddHit(InoHit* hit);
   bool ContainsHit(InoHit* hit);
 
@@ -44,10 +44,10 @@ class InoCluster
   double GetZPos() {return fZPos;}
   double GetXPos() {return fXPos;}
   double GetYPos() {return fYPos;}
-  
+
   void SetClusterNum(int val) {fClusterNum = val;}
   int GetClusterNum() {return fClusterNum;}
-  double GetPulse() const { 
+  double GetPulse() const {
     if (fXPulse >0 && fYPulse >0) {
       return 0.5*(fXPulse+fYPulse);
     } else if (fXPulse >0) {
@@ -55,7 +55,7 @@ class InoCluster
     } else {
       return fYPulse;
     }
-  };  
+  };
 
   double GetXPulse() {return fXPulse;}
   double GetYPulse() {return fYPulse;}
@@ -63,6 +63,11 @@ class InoCluster
   double GetTime() const {return 0.5*(fBegTime+fEndTime);}
   double GetBegTime() const {return fBegTime;}
   double GetEndTime() const {return fEndTime;}
+  // For position correction added Jim
+  double GetBegXTime() const {return fBegXTime;}
+  double GetEndXTime() const {return fEndXTime;}
+  double GetBegYTime() const {return fBegYTime;}
+  double GetEndYTime() const {return fEndYTime;}
 
   double GetBegXPos() const {return fBegXPos;}
   double GetEndXPos() const {return fEndXPos;}
@@ -84,7 +89,7 @@ class InoCluster
   void SetShwFlag(int flag) {fShwFlag=flag;}
   void SetTrkPlnFlag(int flag) {fTrkPlnFlag=flag;}
   void SetShwPlnFlag(int flag) {fShwPlnFlag=flag;}
-  
+
   void SetNDFlag(int flag) {fNDFlag=flag;}
   int GetNDFlag() const {return fNDFlag;}
   void SetInTrack (bool tag) { InTrack=tag;}
@@ -102,8 +107,15 @@ class InoCluster
   int fBegYStrip;
   int fEndYStrip;
 
+  int kXTogether;
+  int kYTogether;
+
   double fBegTime;
   double fEndTime;
+  double fBegXTime;
+  double fEndXTime;
+  double fBegYTime;
+  double fEndYTime;
   double fBegXPos;
   double fEndXPos;
   double fBegYPos;
@@ -123,10 +135,10 @@ class InoCluster
 
   double fXPosErr; //Error in X-position (m)
   double fYPosErr; //Error in Y-position (m
-  int    fView;    // 
+  int    fView;    //
                    // 0 : only X(U)-axis hit
                    // 1 : only Y(V)-axis hit
-                   // 2 : Both X and Y-axis hit 
+                   // 2 : Both X and Y-axis hit
 
   //GMA put in public place to get hits size in InoTrackFinder.cc file for informations of visualisation2
   vector<InoHit*> HitsInCluster;
