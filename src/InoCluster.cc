@@ -7,6 +7,7 @@ InoCluster::InoCluster(InoHit* hit) :
   fBegTime(0.), fEndTime(0.),
   fBegXTime(0.), fEndXTime(0.),
   fBegYTime(0.), fEndYTime(0.),
+  kXTogether(0), kYTogether(0),
   fBegXPos(-999.), fEndXPos(999.),
   fBegYPos(-999.), fEndYPos(999.),
   fXPos(-999.), fYPos(-999.), fZPos(0.), fXPulse(0.), fYPulse(0.),

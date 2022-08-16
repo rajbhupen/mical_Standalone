@@ -19,7 +19,7 @@ InoRecoAlg::InoRecoAlg(int isInOut) {
   //  gapino = paradef->GetGapino();
   // ShiftInX = paradef->GetRPCShift(0) + paradef->GetStackShift(0);
   ShiftInX = paradef->GetINOroomPos(0)+paradef->GetStackPosInRoom(0) + paradef->GetShiftInX();
-  
+
   // ShiftInY = paradef->GetRPCShift(1) + paradef->GetStackShift(1);
   ShiftInY = paradef->GetINOroomPos(1)+paradef->GetStackPosInRoom(1) + paradef->GetShiftInY();
 
@@ -39,7 +39,7 @@ InoRecoAlg::InoRecoAlg(int isInOut) {
   numberInCH = paradef->GetnChamber();
   numberInX = paradef->GetnXStrip();
   numberInY = paradef->GetnYStrip();
-  
+
   debug_hits=true;
   // LayerThickness = paradef->GetLayerThickness()*(1/m);
 cout<<"nLayer "<<nLayer<<endl;
@@ -119,7 +119,7 @@ void InoRecoAlg::ReadEvent(int ixt) {
   const double posoffset[2][12]={0.0};
   inoStripX_pointer = new InoStripX_Manager();
   inoStripY_pointer = new InoStripY_Manager();
-  
+
   if(isData) {
     inoTDCx_pointer = new InoTDCHitx_Manager(); //valgrind RSA
     inoTDCy_pointer = new InoTDCHity_Manager();//valgrind RSA
@@ -133,13 +133,13 @@ void InoRecoAlg::ReadEvent(int ixt) {
 
     Int_t tmpdigipdgid=13;
     Float_t tmpdigienr=1;
-    Float_t tmpdigivx=1; 
-    Float_t tmpdigivy=1; 
-    Float_t tmpdigivz=1; 
-    Float_t tmpdigipx=1; 
-    Float_t tmpdigipy=1; 
-    Float_t tmpdigipz=1; 
-    Int_t tmpdiginoise=0; 
+    Float_t tmpdigivx=1;
+    Float_t tmpdigivy=1;
+    Float_t tmpdigivz=1;
+    Float_t tmpdigipx=1;
+    Float_t tmpdigipy=1;
+    Float_t tmpdigipz=1;
+    Int_t tmpdiginoise=0;
     int nInCH = 0;
     int nInMO = 0;
     int nInDT = 0;
@@ -147,7 +147,7 @@ void InoRecoAlg::ReadEvent(int ixt) {
 
     vector <int> xptsall[nLayerMx],yptsall[nLayerMx];   //number of hits after noise rejection for position fit
     vector <int> xptsalltdc[nLayerMx][nTDCpLayer],yptsalltdc[nLayerMx][nTDCpLayer]; // raw : for one hit, return strip number otherwise -10-multiplicity
-    
+
     for(int jk=0;jk<nLayer;jk++) {
       for (int kl=0; kl<nTDCpLayer; kl++) {
 	xptsalltdc[jk][kl].clear();  yptsalltdc[jk][kl].clear();
@@ -167,8 +167,8 @@ void InoRecoAlg::ReadEvent(int ixt) {
 	}
       }
        cout<<"ixt "<<ixt<<" "<< jk<<" "<<xptsall[jk].size()<<" "<<yptsall[jk].size()<<endl;
-    } // for(int jk=0;jk<nLayer;jk++) 
-    
+    } // for(int jk=0;jk<nLayer;jk++)
+
     for(int jk=0; jk<nLayer; jk++) {
       for(int kl=0; kl<nTDCpLayer; kl++) {
 	if(xptsalltdc[jk][kl].size()) {
@@ -192,7 +192,7 @@ void InoRecoAlg::ReadEvent(int ixt) {
 	}
       } // for(int kl=0; kl<nTDCpLayer; kl++) {
     } // for(int jk=0; jk<nLayer; jk++) {
-    
+
 
     for(int iz=0; iz<nLayer; iz++) {
       for (unsigned ix=0; ix<xptsall[iz].size(); ix++) {
@@ -251,7 +251,7 @@ void InoRecoAlg::ReadEvent(int ixt) {
 	ystripid +=0;
 	ystripid<<=3;
 	ystripid +=TMath::Min(3,7);
-	
+
 	InoStrip*  Ystrip = new InoStrip(); //VALGRIND
 	Ystrip->SetId(ystripid);
 	Ystrip->SetpdgId(tmpdigipdgid);
@@ -301,17 +301,17 @@ void InoRecoAlg::ReadEvent(int ixt) {
       Xstrip->SetSmrTime(pAnalysis->digitime[ij]);
       Xstrip->SetTrueTime(pAnalysis->digitruetime[ij]);
       Xstrip->SetPulse(pAnalysis->digienr[ij]);
-      
+
       G4ThreeVector tmp3v(pAnalysis->digipx[ij], pAnalysis->digipy[ij], pAnalysis->digipz[ij]);
       Xstrip->SetMomentum(tmp3v.mag());
       Xstrip->SetTheta(tmp3v.theta());
       Xstrip->SetPhi(tmp3v.phi());
-      
+
       Xstrip->SetfNoise(pAnalysis->diginoise[ij]);
       Xstrip->SetGenPosX(pAnalysis->digivx[ij]);
       Xstrip->SetGenPosY(pAnalysis->digivy[ij]);
       Xstrip->SetGenPosZ(pAnalysis->digivz[ij]);
-      
+
       if ((istrp>>31)==0) { //Most significant bit is X/Y
 	inoStripX_pointer->InoStripX_list.push_back(Xstrip);
 	// cout<<"nInX "<<nInDT<<" "<<nInLA<<" "<<nInMO<<" "<<nInCH<<" "<<nnInXX<<endl;
@@ -322,14 +322,14 @@ void InoRecoAlg::ReadEvent(int ixt) {
     }
   }
   pAnalysis->hw_trig = -1;
-  
+
   // if((pAnalysis->trigx==4) || (pAnalysis->trigy==4)) {pAnalysis->hw_trig = 1;}
-  
+
    cout<<"Digi Input Reading Complete ... Reorganising the strips."<<endl;
    cout<<"rearranging X strips"<<inoStripX_pointer->InoStripX_list.size()<<endl;
   for (unsigned ij=0; ij<inoStripX_pointer->InoStripX_list.size(); ij++) {
     unsigned istrp = inoStripX_pointer->InoStripX_list[ij]->GetId();
-    
+
     double energy = istrp%8;
     istrp >>=8;
     int nInX = istrp%128;
@@ -340,9 +340,9 @@ void InoRecoAlg::ReadEvent(int ixt) {
     int nInMO = istrp%8;
     istrp>>=3;
     int nInLA = istrp%256;
-      
+
     istrp>>=8;
-    int nInDT = istrp%4;      
+    int nInDT = istrp%4;
     istrp>>=2;
     cout<<"nInX 11  "<<nInDT<<" "<<nInLA<<" "<<nInMO<<" "<<nInCH<<" "<<nInX<<endl;
     inoStripX_pointer->InoStripX_list[ij]->SetPlaneView(istrp);
@@ -351,14 +351,14 @@ void InoRecoAlg::ReadEvent(int ixt) {
     inoStripX_pointer->InoStripX_list[ij]->SetStrip(numberInX*numberInMO*nInDT+numberInX*nInMO+nInX);
 
     cout<<"parameters: "<<parirlay[2]<<" " <<parlay[2]<<" "<<nLayer<<" "<<ShiftInZ<<endl;
-     
+
     double xpos = (1/m)*(-pargas[0] + Xstrwd*(nInX+0.5) + ShiftInX);
     //	double xpos =  (1/m)*( (nInDT-1)*(2*parino[0]+gapino) - parlay[0]  + (2*nInMO+1)*parmod[0] -pargas[0] + Xstrwd*(nInX+0.5) + ShiftInX);
-      
+
     double ypos = (1/m)*( ShiftInY + (paradef->GetnStack()>1) ? (2*nInCH-1)*parchm[1] : 0) ;
     //double zpos = (1/m)*(-parino[2] + 2*(parhcoil[2]+parcoilsupport[2]) + 2*(nInLA+1)*parirlay[2] + (2*nInLA+1)*(parlay[2]));
     double zpos = (1/m)*(-(nLayer)*(parirlay[2]+parlay[2])+(nInLA)*2*(parirlay[2] + parlay[2]) + ShiftInZ); //AAR:** changes for Central Iron Layer **
-      
+
     //if smearing //RANDOM
     inoStripX_pointer->InoStripX_list[ij]->SetXYPos(xpos);
     inoStripX_pointer->InoStripX_list[ij]->SetZPos(zpos);
@@ -377,7 +377,7 @@ void InoRecoAlg::ReadEvent(int ixt) {
     // cout<<"pAnalysis->(pPosX,pPosZ,pPosXX,pPosZZ)->Fill();"<<endl;
     if (energy >100000 || abs(ypos)>100000) cout <<"ypos "<<ypos<<" "<<energy<<endl;
   }
-  
+
    cout<<"rearranging Y strips"<<inoStripY_pointer->InoStripY_list.size()<<endl;
   for (unsigned ij=0; ij<inoStripY_pointer->InoStripY_list.size(); ij++) {
     unsigned istrp = inoStripY_pointer->InoStripY_list[ij]->GetId();
@@ -392,7 +392,7 @@ void InoRecoAlg::ReadEvent(int ixt) {
     istrp>>=3;
     int nInLA = istrp%256;
     istrp>>=8;
-    int nInDT = istrp%4;      
+    int nInDT = istrp%4;
     istrp>>=2;
           cout<<"nInX 22  "<<nInDT<<" "<<nInLA<<" "<<nInMO<<" "<<nInCH<<" "<<nInY<<endl;
     inoStripY_pointer->InoStripY_list[ij]->SetPlaneView(istrp);
@@ -407,10 +407,10 @@ void InoRecoAlg::ReadEvent(int ixt) {
     double ypos = (1/m)*(shift2y -pargas[1] + Ystrwd*(nInY+0.5) + ShiftInY);
     //	double ypos = (1/m)*(- parmod[1]  + (2*nInCH+1)*parchm[1] -pargas[1] + Ystrwd*(nInY+0.5) + ShiftInY);
     double zpos = (1/m)*(-(nLayer)*(parirlay[2]+parlay[2])+(nInLA)*2*(parirlay[2] + parlay[2]) + ShiftInZ); //AAR:** changes for Central Iron Layer **
-      
-    
 
-    
+
+
+
     // double zpos = inoStripY_pointer->InoStripY_list[ij]->GetGenPosZ()/m;
     inoStripY_pointer->InoStripY_list[ij]->SetXYPos(ypos);
     inoStripY_pointer->InoStripY_list[ij]->SetZPos(zpos);
@@ -435,15 +435,15 @@ void InoRecoAlg::ReadEvent(int ixt) {
     // cout<<"Ical0cal0SD::EndOfEvent(G4HCofThisEvent*) {....."<<endl;
     if (energy >100000 || abs(xpos)>100000) cout <<"xpos "<<xpos<<" "<<energy<<endl;
   }
-  
+
    cout<<"Strip rearrangement complete..."<<endl;
   // cout<<"hhh "<<pAnalysis->momin[0]<<" "<<cos(pAnalysis->thein[0])<<" "<<pAnalysis->phiin[0]*180/3.14<<endl;
-  
+
   for(int il=0; il<nLayer; il++) {
     grecoi->xlayer_mult[il]->Fill(layXmult[il]);
     grecoi->ylayer_mult[il]->Fill(layYmult[il]);
   }
-  
+
   cout<<"Strip Rearrangement complete."<<endl;
   cout<<"check"<<endl;
 }
@@ -455,9 +455,9 @@ void InoRecoAlg::PerformTrackReconstruction() {
     cout<<"StripBank X"<<endl;
     for(int ij=0; ij<nLayer; ij++) {
       for(unsigned jk=0; jk<StripBankX[ij].size(); jk++) {
-	cout<< "InoHits():" 
+	cout<< "InoHits():"
 	    <<std::setw(4) <<jk <<" "
-	    << " pln="   <<std::setw(4)<< StripBankX[ij][jk]->GetPlane() 
+	    << " pln="   <<std::setw(4)<< StripBankX[ij][jk]->GetPlane()
 	    << " view="   <<std::setw(4)<< StripBankX[ij][jk]->GetPlaneView()
 	    << " ID=" <<std::setw(14)<< StripBankX[ij][jk]->GetId()
 	    << " Strp=" <<std::setw(5)<<StripBankX[ij][jk]->GetStripNumLoc()
@@ -468,9 +468,9 @@ void InoRecoAlg::PerformTrackReconstruction() {
     cout<<"StripBank Y"<<endl;
     for(int ij=0; ij<nLayer; ij++) {
       for(unsigned jk=0; jk<StripBankY[ij].size(); jk++) {
-	cout<< "InoHits():" 
+	cout<< "InoHits():"
 	    <<std::setw(4) <<jk <<" "
-	    << " pln="   <<std::setw(4)<< StripBankY[ij][jk]->GetPlane() 
+	    << " pln="   <<std::setw(4)<< StripBankY[ij][jk]->GetPlane()
 	    << " view="   <<std::setw(4)<< StripBankY[ij][jk]->GetPlaneView()
 	    << " ID=" <<std::setw(14)<< StripBankY[ij][jk]->GetId()
 	    << " Strp=" <<std::setw(5)<<StripBankY[ij][jk]->GetStripNumLoc()
@@ -502,7 +502,7 @@ void InoRecoAlg::PerformTrackReconstruction() {
   pAnalysis->simplenhits = -1;
   pAnalysis->momdiff1 = -10.0;
   pAnalysis->radialdiff1 = -10.0;
-  
+
   pAnalysis->ntdc1x=0; pAnalysis->ntstrp1x=0;
   pAnalysis->ntdc2x=0; pAnalysis->ntstrp2x=0;
   pAnalysis->ntdc1y=0; pAnalysis->ntstrp1y=0;
@@ -524,13 +524,13 @@ void InoRecoAlg::PerformTrackReconstruction() {
       }
     }
   }
-  
+
   if(1) {//pAnalysis->sw_trigx>3 && pAnalysis->sw_trigy>3) {
     InoTrackFinder trackfinder;
     if(debug_hits) cout<<"Running the finder now ...."<<endl;
     trackfinder.RunTheFinder();
     if(debug_hits) cout<<"Track finding completed..."<<endl;
-    
+
     pinotrack = InoTrack_Manager::APointer;
 
       cout<<"pinotrack From inoreco: "<<pinotrack<<endl;
@@ -553,9 +553,9 @@ void InoRecoAlg::PerformTrackReconstruction() {
       }
       else if(magfield!=0 && isTrackFit==0){oldtrackfitter.RunAlg();}
 	else if(magfield!=0 && isTrackFit==1){newtrackfitter.RunAlg();}
-      
+
       cout<<"@@check.."<<endl;
-     
+
       if(debug_hits)
 	cout<<"fitted track manager "<<pfitTrack<<endl;
       if (pfitTrack) {
@@ -624,24 +624,24 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
   //   for(unsigned int kpx=0; kpx<pAnalysis->nvisht; kpx++) {
   //     pAnalysis->fitposxx[kpx] = pfittedTrack->xfitpos1[kpx];
   //     pAnalysis->fitposyy[kpx] = pfittedTrack->yfitpos1[kpx];
-  //     pAnalysis->fitposzz[kpx] = pfittedTrack->zfitpos1[kpx]; 
-  //     pAnalysis->fitlayzz[kpx] = pfittedTrack->zfitlay1[kpx]; 
-  //     pAnalysis->fitlayx2[kpx] = pfittedTrack->filteredx2[kpx]; 
-  //     pAnalysis->fitlayx3[kpx] = pfittedTrack->filteredx3[kpx]; 
-  //     pAnalysis->fitlayx4[kpx] = pfittedTrack->filteredx4[kpx]; 
+  //     pAnalysis->fitposzz[kpx] = pfittedTrack->zfitpos1[kpx];
+  //     pAnalysis->fitlayzz[kpx] = pfittedTrack->zfitlay1[kpx];
+  //     pAnalysis->fitlayx2[kpx] = pfittedTrack->filteredx2[kpx];
+  //     pAnalysis->fitlayx3[kpx] = pfittedTrack->filteredx3[kpx];
+  //     pAnalysis->fitlayx4[kpx] = pfittedTrack->filteredx4[kpx];
   //     pAnalysis->fitlaymom[kpx] = pfittedTrack->filteredmom[kpx];
   //     pAnalysis->fitlaythe[kpx] = pfittedTrack->filteredthe[kpx];
   //     pAnalysis->fitlayphi[kpx] = pfittedTrack->filteredphi[kpx];
-  //     pAnalysis->extrapolxx[kpx] = pfittedTrack->extrapolx0[kpx]; 
-  //     pAnalysis->extrapolyy[kpx] = pfittedTrack->extrapolx1[kpx]; 
-  //     pAnalysis->extrapolmom[kpx] = pfittedTrack->extrapolmom[kpx]; 
+  //     pAnalysis->extrapolxx[kpx] = pfittedTrack->extrapolx0[kpx];
+  //     pAnalysis->extrapolyy[kpx] = pfittedTrack->extrapolx1[kpx];
+  //     pAnalysis->extrapolmom[kpx] = pfittedTrack->extrapolmom[kpx];
   //   }
 
   //   pAnalysis->momdiff1 = 0.0;
   //   for(unsigned kpe=0; kpe<pfittedTrack->momvecdiff1.size(); kpe++) {
   //     pAnalysis->momdiff1 += pfittedTrack->momvecdiff1[kpe];
   //   }
-    
+
   //   pAnalysis->radialdiff1 = 0.0;
   //   for(unsigned kpe=0; kpe<pfittedTrack->radialdiff1.size(); kpe++) {
   //     pAnalysis->radialdiff1 += pfittedTrack->radialdiff1[kpe];
@@ -678,17 +678,17 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
   //     }
   //     if(fild) totlay.push_back(plnnum);
   //   }
-    
+
   // } //rsa
   ////  grecoi->nlayer_fit->Fill(totlay.size());
-  
+
   pAnalysis->trkmm[iTrackNum] = pfittedTrack->GetMomentum();
   pAnalysis->trkth[iTrackNum] = pfittedTrack->GetTheta();
   pAnalysis->trkph[iTrackNum] = pfittedTrack->GetPhi();
 
   pAnalysis->therr[iTrackNum] = pfittedTrack->GetThErr();
   pAnalysis->pherr[iTrackNum] = pfittedTrack->GetPhErr();
-  
+
   cout<<"atimeslope "<<dZdT<<endl;
   pAnalysis->atimslope[iTrackNum] =dZdT;
   pAnalysis->atiminter[iTrackNum] = ztinter;
@@ -696,7 +696,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
   // cout<<"momval "<<pAnalysis->trkmm[iTrackNum]<<" "<<pAnalysis->trkth[iTrackNum]<<" "<< pAnalysis->trkph[iTrackNum]<<endl;
   // pAnalysis->therr[iTrackNum] = pfittedTrack->GetThErr();
   // pAnalysis->pherr[iTrackNum] = pfittedTrack->GetPhErr();
-  
+
   // // pAnalysis->momvx[iTrackNum] = pfittedTrack->GetMomentumCurve();
   // // pAnalysis->thevx[iTrackNum] = acos(pfittedTrack->GetDirCosZ());
   // // pAnalysis->phivx[iTrackNum] = atan2(pfittedTrack->GetDirCosV(),
@@ -708,7 +708,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
   pAnalysis->momvx[iTrackNum] =pfittedTrack->GetExtPara(0);
   pAnalysis->thevx[iTrackNum] =pfittedTrack->GetExtPara(1);
   pAnalysis->phivx[iTrackNum] =pfittedTrack->GetExtPara(2);
-              
+
   pAnalysis->posxvx[iTrackNum] =pfittedTrack->GetExtPara(3);
   pAnalysis->posyvx[iTrackNum] =pfittedTrack->GetExtPara(4);
   pAnalysis->poszvx[iTrackNum] =pfittedTrack->GetExtPara(5);
@@ -720,7 +720,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
   pAnalysis->momrf[iTrackNum] =pfittedTrack->GetRoofPara(0);
   pAnalysis->therf[iTrackNum] =pfittedTrack->GetRoofPara(1);
   pAnalysis->phirf[iTrackNum] =pfittedTrack->GetRoofPara(2);
-              
+
   pAnalysis->posxrf[iTrackNum] =pfittedTrack->GetRoofPara(3);
   pAnalysis->posyrf[iTrackNum] =pfittedTrack->GetRoofPara(4);
   pAnalysis->poszrf[iTrackNum] =pfittedTrack->GetRoofPara(5);
@@ -733,17 +733,17 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 
 
 
-  
-  // pAnalysis->strpxvx[iTrackNum] = 
+
+  // pAnalysis->strpxvx[iTrackNum] =
   // pAnalysis->strpyvx[iTrackNum] = pfittedTrack->GetVtxV();
   cout<<"check error 1.."<<endl;
-  
+
   pAnalysis->momend[iTrackNum] = pfittedTrack->GetEndMomentumCurve();
   pAnalysis->theend[iTrackNum] = acos(pfittedTrack->GetEndDirCosZ());
   pAnalysis->phiend[iTrackNum] = atan2(pfittedTrack->GetEndDirCosV(),pfittedTrack->GetEndDirCosU());
 				       cout<<"check error 2.."<<endl;
-				       
-			      
+
+
 				       pAnalysis->tx_end[iTrackNum] = pfittedTrack->GetEndDirCosU();
 				       pAnalysis->ty_end[iTrackNum] = pfittedTrack->GetEndDirCosV();
 				       cout<<"check error 3.."<<endl;
@@ -778,7 +778,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 				       // // // cout<<"planes "<<pfittedTrack->GetVtxPlane()<<" "<<pfittedTrack->GetEndPlane()<<endl;
 				       // // int xtmp1 = (pos1x/Xstrwd);
 				       // // int ytmp1 = (pos2x/Xstrwd);
-  
+
 				       // // // cout<<"pos1x "<<pos1x<<" "<<xtmp1<<" "<<pos2x<<" "<<ytmp1<<" "<<1000*pfittedTrack->GetEndU()<<" "<<1000*pfittedTrack->GetEndV()<<" "<<ShiftInX<<" "<<ShiftInY<<" "<<pargas[0]<<" "<<pargas[1]<<endl;
 				       // // pAnalysis->strpxend[iTrackNum] = xtmp1;
 				       // // pAnalysis->strpyend[iTrackNum] = ytmp1;
@@ -793,7 +793,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 
 
 				       if(isData){//RSA
-				       
+
 				       if(iTrackNum==0) {
 					 pAnalysis->ntdc1x=0; pAnalysis->ntstrp1x=0;
 					 pAnalysis->ntdc2x=0; pAnalysis->ntstrp2x=0;
@@ -805,7 +805,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 					 pAnalysis->ntrecord2y=0;
 					 //   pAnalysis->nhits_last_m1 = pfittedTrack->GetNhitsEndPlaneM1();
 					 // pAnalysis->nhits_last = pfittedTrack->GetNhitsEndPlane();
-    
+
 					 cout<<"check error 8.."<<endl;
 					 int epln = pAnalysis->endzplane[iTrackNum];
 					 if(epln>0) {
@@ -883,7 +883,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 					   pAnalysis->ntrecord2y=yij;
 					   yij=0;
 
-      
+
 					   if(debug_hits) {cout<<"epln = "<<epln<<endl;
 					     cout<<"ss1 "<<StripBankX[epln].size()<<endl;}
 					   for(unsigned jh1=0; jh1<StripBankX[epln].size(); jh1++) {
@@ -914,7 +914,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 					     pAnalysis->StrpID2y[jh1] = tmpid1%128;
 					   }
 					   pAnalysis->ntstrp2y = StripBankY[epln-1].size();
-    
+
 					   int lpct=0;
 					   for(int kg1=0; kg1<8; kg1++) {
 					     for(unsigned jh1=0; jh1<inoTDCx_pointer->xtdctiming[epln][kg1].size(); jh1++) {
@@ -958,7 +958,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 					 }
 				       }
 				       }//isData //RSA
-  
+
 				       pAnalysis->xxerr[iTrackNum] = pfittedTrack->GetVtxUError(); //GMA14 all these 15 tesrms
 				       pAnalysis->yyerr[iTrackNum] = pfittedTrack->GetVtxVError();
 				       pAnalysis->txerr[iTrackNum] = pfittedTrack->GetVtxdUError();
@@ -970,7 +970,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 				       pAnalysis->yytyerr[iTrackNum]=pfittedTrack->GetVtxVdVError();
 				       pAnalysis->yytxerr[iTrackNum]=pfittedTrack->GetVtxVdUError();
 				       pAnalysis->txtyerr[iTrackNum]=pfittedTrack->GetVtxdUdVError();
-  
+
 				       pAnalysis->xxenderr[iTrackNum] = pfittedTrack->GetEndUError();
 				       pAnalysis->yyenderr[iTrackNum] = pfittedTrack->GetEndVError();
 				       pAnalysis->txenderr[iTrackNum] = pfittedTrack->GetEnddUError();
@@ -985,7 +985,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 				       //				       pAnalysis->tx[iTrackNum] =pfittedTrack->GetVtxdU();
 				       //				       pAnalysis->ty[iTrackNum] =pfittedTrack->GetVtxdV();
 
-  
+
 				       // pAnalysis->xxin[iTrackNum] = pfittedTrack->GetVtxXX();
 				       // pAnalysis->yyin[iTrackNum] = pfittedTrack->GetVtxYY();
 				       // pAnalysis->txin[iTrackNum] = pfittedTrack->GetVtxTX();
@@ -994,7 +994,7 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 				       // pAnalysis->ty[iTrackNum] = pfittedTrack->GetVtxdV();
 				       //  pAnalysis->nhits_finder[iTrackNum] = pfittedTrack->GetNFinderHits();
 				       //Initialise with this mainly for noise track
-	      
+
 				       // cout<<"---------------------------------------------------------------"<<endl;
 				       // cout<<"p = "<<pAnalysis->trkmm[iTrackNum]<<", momds = "<<pAnalysis->momds[iTrackNum]<<", E_mu = "<<pAnalysis->momin[0]<<endl;
 				       // cout<<"---------------------------------------------------------------"<<endl;
@@ -1002,11 +1002,11 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 				       pAnalysis->momgnvx[iTrackNum]  = pAnalysis->momgnend[iTrackNum] = 0.0;
 				       pAnalysis->thegnvx[iTrackNum] = pAnalysis->thegnend[iTrackNum] = 10.;
 				       pAnalysis->phignvx[iTrackNum] = pAnalysis->phignend[iTrackNum] = 10.;
-	    
+
 				       vector<InoCluster*> tmpclusts = pfittedTrack->ClustsInTrack; // fTrack->ClustsInTrack;
-  
+
 				       int plane = pfittedTrack->GetVtxPlane();
-	    
+
 				       // cout <<"genplane "<<plane<<endl;
 				       for (unsigned kl = 0; kl <tmpclusts.size(); kl++)	{
 					 if (tmpclusts[kl]->GetZPlane()==plane) {
@@ -1016,9 +1016,9 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 					   break;
 					 } // if (tmpclusts[kl]->GetZPlane()==plane)
 				       } //  for (unsigned kl = 0; kl <tmpclusts.size(); kl++)
-	    
+
 				       plane = pfittedTrack->GetEndPlane();
-	    
+
 				       for (unsigned kl = 0; kl <tmpclusts.size(); kl++) {
 					 if (tmpclusts[kl]->GetZPlane()==plane) {
 					   pAnalysis->momgnend[iTrackNum] = 0.001*tmpclusts[kl]->HitsInCluster[0]->GetMomentum();
@@ -1033,7 +1033,3 @@ void InoRecoAlg::SaveRecoDataToRootFiles(unsigned int iTrackNum, InoTrackCand* p
 
 
     //
-
-
-
-

@@ -1,7 +1,7 @@
 /*
 Proper indent
 Not this
-while(Increment<=7) 
+while(Increment<=7)
                    {
 	                                         NewPlane=SegEnd->GetBegZPlane()-Increment;
 						 .......
@@ -15,7 +15,7 @@ but this
 ===============================
 Use at least two char for variables and put "{..}" for any loop of condition explicitly
 Not these
-  for (int j=0; j<3; j++) int y=j+3; 
+  for (int j=0; j<3; j++) int y=j+3;
 
 But
   for (int ij=0; ij<3; ij++) {
@@ -42,7 +42,7 @@ and also theres can guess what it means
 
 For arrya also, use soem specific types, e.g., ij, jk etc (my personal bias, no common character in the same place)
 */
-				   
+
 // First comparison
 //GMAA Algotithm does not find association with a gap !
 //   X Strip gap ==3
@@ -76,14 +76,14 @@ InoTrackFinder::InoTrackFinder() :
   inoHit_pointer = new InoHit_Manager();
   inoRPC_pointer = InoRPCStrip_Manager::APointer; //new InoRPCStrip_Manager();
   TrkFinderDebug = 1000;
-  pAnalysis = MultiSimAnalysisDigi::AnPointer;        //asm 
+  pAnalysis = MultiSimAnalysisDigi::AnPointer;        //asm
   inoCluster_pointer = new InoCluster_Manager();
-  
+
   inoTrack_pointer = new InoTrack_Manager();
   MessFile = ParameterMessenger::AnPointer;//for Single strip events
   paradef = micalDetectorParameterDef::AnPointer;
   // DBmanager =  DatabaseManager::AnPointer;
-  
+
   StripXWidth = (1/m)*paradef->GetXStrwd();
   StripYWidth = (1/m)*paradef->GetYStrwd();
   DigiToTimeConv = pAnalysis->GetTimeToDigiConvVal();
@@ -100,19 +100,19 @@ InoTrackFinder::InoTrackFinder() :
   //   for(int jk=0; jk<150; jk++) {
   //     for(int kl=0; kl<8; kl++) {
   // 	for(int lm=0; lm<8; lm++) {
-  // 	  NoisyStrpX[ij][jk][kl][lm] = DBmanager->STRP[ij][jk][kl][lm][0][1]; 
-  // 	  NoisyStrpY[ij][jk][kl][lm] = DBmanager->STRP[ij][jk][kl][lm][1][1]; 
+  // 	  NoisyStrpX[ij][jk][kl][lm] = DBmanager->STRP[ij][jk][kl][lm][0][1];
+  // 	  NoisyStrpY[ij][jk][kl][lm] = DBmanager->STRP[ij][jk][kl][lm][1][1];
   // 	}
   //     }
   //   }
-  // }  
-  
+  // }
+
 }
 
 InoTrackFinder::~InoTrackFinder() {
   //GMA need to clear after evergy events;
   //  inoHit_pointer->InoHit_list.clear();
-  
+
   for (unsigned int ij=0; ij<inoCluster_pointer->InoCluster_list.size(); ij++) {
     if (inoCluster_pointer->InoCluster_list[ij]) {
       delete inoCluster_pointer->InoCluster_list[ij];
@@ -120,7 +120,7 @@ InoTrackFinder::~InoTrackFinder() {
     }
   }
   inoCluster_pointer->InoCluster_list.clear(); delete inoCluster_pointer;
-  
+
   for (unsigned int ij=0; ij<inoTrack_pointer->InoTrack_list.size(); ij++)	{
     if (inoTrack_pointer->InoTrack_list[ij]) {
       delete inoTrack_pointer->InoTrack_list[ij];
@@ -133,12 +133,12 @@ InoTrackFinder::~InoTrackFinder() {
 }
 
 void InoTrackFinder::RunTheFinder() {
-  
+
   // Configure algorithm for the relevant detector
   // For ND, initial algorithm is applied only to calorimeter,
   // spectrometer is treated separately
   // cout<< "FINDING TRACKS IN SLICE" << endl;
-  
+
   // Run the methods
   FormTheHits();// slice);
   // cout<< "FINDING TRACKS IN SLICE1" << endl;
@@ -162,7 +162,7 @@ void InoTrackFinder::RunTheFinder() {
   // cout<< "FINDING TRACKS IN SLICE9" << endl;
   FormFinalTracks(); //(slice);
   // cout<< "FINDING TRACKS IN SLICE10" << endl;
-  // JoinCurvedTrack();  
+  // JoinCurvedTrack();
   // cout<< "FINDING TRACKS IN SLICE11" << endl;
   CleanAndFilled();
   // cout<< "FINDING TRACKS IN SLICE12" << endl;
@@ -179,7 +179,7 @@ void InoTrackFinder::FormTheHits() {
   // Ical0DetectorParameterDef* paradef = Ical0DetectorParameterDef::AnPointer;
   InoStripX_Manager *pstripx = InoStripX_Manager::APointer;
   InoStripY_Manager *pstripy = InoStripY_Manager::APointer;
-  
+
   InoGeometry_Manager* geoManager = InoGeometry_Manager::APointer;
 
   //  vector <int> iXfill;
@@ -195,7 +195,7 @@ void InoTrackFinder::FormTheHits() {
   if (pstripx) {
     for (unsigned ix=0; ix<pstripx->InoStripX_list.size(); ix++) {
       InoStrip* XStrip = pstripx->InoStripX_list[ix];
-     
+
       int tmpxStrpId = XStrip->GetId();
       tmpxStrpId>>=8;
       int nInX = tmpxStrpId & 0x7F;
@@ -209,16 +209,16 @@ void InoTrackFinder::FormTheHits() {
       // pAnalysis->NoisyStripX->Fill(nInX);
       // cout<<"pAnalysis->NoisyStripX->Fill(nInX);="<<nInX<<endl;
       if (XStrip->GetPulse()<PECut) continue;
-      //GMA Use random number to use efficiency 
-      //Also use Poission distribution of avearage number of 
+      //GMA Use random number to use efficiency
+      //Also use Poission distribution of avearage number of
       // primary electron-ion pair
-      
+
       //noisy strip
-      
+
       if (pstripy) {
 	for (unsigned jy=0; jy<pstripy->InoStripY_list.size(); jy++) {
 	  InoStrip* YStrip = pstripy->InoStripY_list[jy];
-	  
+
 	  int tmpyStrpId = YStrip->GetId();
 	  tmpyStrpId>>=8;
 	  int nInY = tmpyStrpId & 0x7F;
@@ -229,18 +229,18 @@ void InoTrackFinder::FormTheHits() {
 	  //   continue;
 	  // }
 
-	  if (ix==0) { 
-	    RPCYStrip[YStrip->GetRPCmod()]++; 
+	  if (ix==0) {
+	    RPCYStrip[YStrip->GetRPCmod()]++;
 	  }
 
 	  // pAnalysis->NoisyStripY->Fill(nInY);
 	  // cout<<"pAnalysis->NoisyStripY->Fill(nInY);="<<nInY<<endl;
-      
+
 	  if (YStrip->GetPulse()<PECut) continue;
 	  if (XStrip->GetRPCmod() != YStrip->GetRPCmod()) continue;
 	  //GMA Check it
 	  if(nInLAx != nInLAy) continue;
-	  
+
 	  double tmp_toffx = grecoi->timeoffsetx[nInLAx] - 1.5;
 	  double tmp_toffy = grecoi->timeoffsety[nInLAx];
 
@@ -263,22 +263,22 @@ void InoTrackFinder::FormTheHits() {
 
 	  double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
 	  double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
-	  
+
 	   // cout<<nInLAx<<" "<<nInX<<" "<<nInY<<endl;
 	  // cout<<grecoi->timeoffsetx[nInLAx]<<" "<<grecoi->timeoffsety[nInLAx]<<" "<<grecoi->xtoffset[nInLAx][nInX]<<" "<<grecoi->ytoffset[nInLAx][nInY]<<" "<<grecoi->xt_slope_cor[nInLAx][nInX][nInY]<<" "<<grecoi->yt_slope_cor[nInLAx][nInY][nInX]<<endl;
 	  double Xtime = DigiToTimeConv*XStrip->GetSmrTime() - (nInY+0.5)*SignalSpeed - tmp_toffx; //(sigXspeed);
 	  double Ytime = DigiToTimeConv*YStrip->GetSmrTime() - (nInX+0.5)*SignalSpeed - tmp_toffy; //(sigYspeed);
-	  
+
 	  double diffTime = Xtime - Ytime;
 	  pAnalysis->hdifftime1[nInLAx]->Fill(diffTime);
 	  if (fabs(diffTime) > 5*ns) continue; //Already converted this to ns (anyhow ns=1.0)
 	  // pAnalysis->hdifftime2[nInLAx]->Fill(diffTime);
 	  // cout<<"nInLA "<<nInLAx<<" "<<nInLAy<<" ix "<<ix<<" jy "<<jy<<" SmrTime "<<DigiToTimeConv*XStrip->GetSmrTime()<<" "<<DigiToTimeConv*YStrip->GetSmrTime()<<" corrtime "<<Xtime<<" "<<Ytime<<" offset "<<tmp_toffx<<" "<<tmp_toffy<<endl;
-	  
+
 	  // Mark for editting
-	  
+
 	  InoHit* tmphit = new InoHit(XStrip, YStrip);
-	  
+
 	  tmphit->SetXpOffset(tmp_poffx);
 	  tmphit->SetYpOffset(tmp_poffy);
 	  tmphit->SetXtOffset(tmp_toffx);
@@ -295,7 +295,7 @@ void InoTrackFinder::FormTheHits() {
 	  // geoManager->icalGeometry->InitTrack(loc_pos_xxx, dirGeom);
 	  // cout<<"hit "<<loc_pos_xxx[0]<<" "<<loc_pos_xxx[1]<<" "<<loc_pos_xxx[2]<<" "<<geoManager->icalGeometry->GetCurrentVolume()->GetName()<<endl;
 	  HitBank[XStrip->GetPlane()].push_back(tmphit);
-	  
+
 	  iXFill[ix] = 1;
 	  iYFill[jy] = 1;
 	}
@@ -318,29 +318,29 @@ void InoTrackFinder::FormTheHits() {
   if (pstripx) {
     for (unsigned ix=0; ix<pstripx->InoStripX_list.size() ; ix++) {
       InoStrip* XStrip = pstripx->InoStripX_list[ix];
-      if (iXFill[ix]==1) continue;  
+      if (iXFill[ix]==1) continue;
       if (XStrip->GetPulse()<PECut2) continue;
-     
+
       InoHit* tmphit = new InoHit(XStrip);
       HitBank[XStrip->GetPlane()].push_back(tmphit);
       //      AllHitBank[XStrip->GetPlane()].push_back(tmphit);
       //    inoHit_pointer->InoHit_list.push_back(tmphit);
     }
   }
- 
+
   if (pstripy) {
     for (unsigned iy=0; iy<pstripy->InoStripY_list.size() ; iy++) {
       InoStrip* YStrip = pstripy->InoStripY_list[iy];
       if (iYFill[iy]==1) continue;
       if (YStrip->GetPulse()<PECut2) continue;
-     
+
       InoHit* tmphit = new InoHit(YStrip);
       HitBank[YStrip->GetPlane()].push_back(tmphit);
       //      AllHitBank[YStrip->GetPlane()].push_back(tmphit);
       //    inoHit_pointer->InoHit_list.push_back(tmphit);
     }
   }
- 
+
 
 
 
@@ -352,9 +352,9 @@ void InoTrackFinder::FormTheHits() {
 
 
   }
-       
+
   // cout<<"Hello... "<<endl;
-  
+
   // typedef pair<int,int> xystrp;
   // cout<<"What the hell is wrong..."<<endl;
   // for (int ij=0; ij<2*3*150*8*8; ij++) {
@@ -363,26 +363,26 @@ void InoTrackFinder::FormTheHits() {
   //     inoRPC_pointer->InoRPCStrip.push_back(abc); // pair(ij, 100*RPCXStrip[ij]+ RPCYStrip[ij]));
   //   }
   // }
-  
+
   //-------------------------------------------------------------------------------------------------------------
   int pi_event=1;
-  
+
   if(pi_event) {
     //    int vtxPlane=-1;
-    
+
     pAnalysis->inohits_old	=0;
     pAnalysis->orighits_old	=0;
     pAnalysis->x_hits_old	=0;
     pAnalysis->y_hits_old	=0;
-    
+
     int ixstripno = -1;//HitBank[i][j]->GetXStripNum();
     int iystripno = -1;//HitBank[i][j]->GetYStripNum();
-    
+
     int Inohits=0;
     int xxnhits=0;
     int yynhits=0;
     int Orighits=0;
-    
+
     vector<int> xshwstrip;
     vector<int> yshwstrip;
 
@@ -394,7 +394,7 @@ void InoTrackFinder::FormTheHits() {
 	for(unsigned int jk=0; jk<HitBank[ij].size(); ++jk) {
 	  ixstripno = HitBank[ij][jk]->GetXStripNum();
 	  iystripno = HitBank[ij][jk]->GetYStripNum();
-	  
+
 	  for (unsigned nn=0; nn< xshwstrip.size(); nn++) {
 	    if (ixstripno == xshwstrip[nn]) {ixstripno = -1; break;}
 	  }
@@ -410,12 +410,12 @@ void InoTrackFinder::FormTheHits() {
 	    }
 	  }
 	}
-	
+
 	xxnhits+=xshwstrip.size();
 	yynhits+=yshwstrip.size();
-	
+
 	Orighits=max(xxnhits,yynhits);
-	
+
 	pAnalysis->x_hits_old	+= xxnhits;
 	pAnalysis->y_hits_old	+= yynhits;
 	pAnalysis->orighits_old	+=Orighits;
@@ -425,9 +425,9 @@ void InoTrackFinder::FormTheHits() {
       yshwstrip.clear();
     }
   }
-  
+
   //--------------------------------------------------------------------------------------------------------------
-  
+
   if (pAnalysis->ihist < pAnalysis->nhistmx-1 && pAnalysis->isVisOut>=2) {
     for(int ij=0; ij<500; ++ij) { //GMA14 change this static array to vector all 500 to ..
       for(unsigned int jk=0; jk<HitBank[ij].size(); ++jk) {
@@ -437,24 +437,24 @@ void InoTrackFinder::FormTheHits() {
 	tmpgr.x = HitBank[ij][jk]->GetXPos();
 	tmpgr.y = HitBank[ij][jk]->GetYPos();
 	tmpgr.z = HitBank[ij][jk]->GetZPos()+0.01;               //asm ?+0.01
-	
+
 	tmpgr.dx = 0;
 	tmpgr.dy = 0;
 	tmpgr.dz = 0;
-	
+
 	if (pAnalysis->isVisOut==3) pAnalysis->gens_vect[1].push_back(tmpgr);
       }
     }
   }
-  
+
   //----------------------------------------------------------------------------------------------cout
   if(TrkFinderDebug==100) {
     cout <<"TrkFinder HitBank "<<endl;
     for(int ij=0; ij<500; ++ij) {
       for(unsigned int jk=0; jk<HitBank[ij].size(); ++jk) {
-	cout<< "InoHits():" 
+	cout<< "InoHits():"
 	    <<std::setw(4) <<jk <<" "
-	    << " pln="   <<std::setw(4)<< HitBank[ij][jk]->GetZPlane() 
+	    << " pln="   <<std::setw(4)<< HitBank[ij][jk]->GetZPlane()
 	    << " strpX=" <<std::setw(4)<< HitBank[ij][jk]->GetXStripNum()
 	    << " strpY=" <<std::setw(4)<< HitBank[ij][jk]->GetYStripNum()
 	    << " X_Pos=" <<std::setw(8)<< HitBank[ij][jk]->GetXPos()
@@ -468,14 +468,14 @@ void InoTrackFinder::FormTheHits() {
       }
     }
   } // if(TrkFinderDebug==1)
-  
+
   //---------------------------------------------------------------------------------------------ascii_output
   int nlayer=0;
   for(int ij=0; ij<500; ++ij) {
     if(HitBank[ij].size()>0){nlayer++;}
   }
   pAnalysis->nLayer=nlayer;
-  
+
   if (pAnalysis->isVisOut==1) {
     //  cout << " pAnalysis->H->NHits "<< pAnalysis->H->NHits<<endl;
     int ll=0;
@@ -494,7 +494,7 @@ void InoTrackFinder::FormTheHits() {
       }
     }
   }
-  // cout<<"void InoTrackFinder::FormTheHits() completed."<<endl;  
+  // cout<<"void InoTrackFinder::FormTheHits() completed."<<endl;
   //--------------------------------------------------------------------------------------------
   // return;
 }
@@ -506,7 +506,7 @@ void InoTrackFinder::FormTheClusters() {
   // of these hits. This is controlled by the IsHitAssoc method in InoCluster.
   // Pointers to the InoCluster objects are stored in plane order in a
   // clusterbank
-  
+
   bool AddingHits;
   //  int i; //GMA14
   int newClusterNum = 0;
@@ -519,31 +519,43 @@ void InoTrackFinder::FormTheClusters() {
 	  //HitBank[ij][jk]::fUID = 0 b4 including the hit in a cluster
 	  InoCluster* Clust = new InoCluster(HitBank[ij][jk]);
 	  // Make a cluster for the first hit on the plane
-	  
+
 	  ClusterBank[HitBank[ij][jk]->GetZPlane()].push_back(Clust);
 	  //ClusterBank[HitBank[ij][jk]->GetZPlane()].push_back(Clust);
-	  
+
 	  //Change UID from 0 to 1 to show that hit has been added
 	  HitBank[ij][jk]->SetUID(1);
-	  
+
 	  AddingHits=true;
 	  // Loop over other hits on plane to form clusters
 	  while(AddingHits==true) {
 	    AddingHits=false;
 	    for(unsigned int kl=0; kl<HitBank[ij].size(); ++kl) {
 	      //cout<<"Check "<<Clust->IsHitAssoc(HitBank[ij][kl])<<endl;
-	      
+
 	      //loop over the hits in that plane
 	      if(HitBank[ij][kl]->GetUID()==0 && Clust->IsHitAssoc(HitBank[ij][kl])) {
 		Clust->AddHit(HitBank[ij][kl]);
 		//Add the hit if it satisfy IsHitAssoc()conditn for the cluster
-		
+
 		HitBank[ij][kl]->SetUID(1);
 		//HitBank[ij][jk]::fUID = 1 when the hit is included as cluster
 		AddingHits=true;
 	      }
 	    }
 	  }
+
+		//After adding all the hits in cluster Jim & SP
+		//	if(Clust->)
+
+		cout<<"Jim Print-----------------------"<<ij<<"------------------------------------"<<endl;
+		cout<<"Cluster BegXPos="<<Clust->GetBegXPos()<<"\tCluster EndXPos="<<Clust->GetEndXPos()<<endl;
+		cout<<"NXStripsInClust="<<Clust->GetNXStripsInClust()<<endl;
+		cout<<"Cluster BegYPos="<<Clust->GetBegYPos()<<"\tCluster EndYPos="<<Clust->GetEndYPos()<<endl;
+		cout<<"NYStripsInClust="<<Clust->GetNYStripsInClust()<<endl;
+		cout<<"Jim Print-----------------------------------------------------------"<<endl;
+
+
 	  newClusterNum++;
 	  Clust->SetClusterNum(newClusterNum);
 	  inoCluster_pointer->InoCluster_list.push_back(Clust);//All the clusters wil be stored in InoCluster_list
@@ -555,13 +567,13 @@ void InoTrackFinder::FormTheClusters() {
   }
   // End loop over modules
   //----------------------------------------------------------------------------------------------------
-  
+
   if (pAnalysis->ihist < pAnalysis->nhistmx-1 && pAnalysis->isVisOut>=2) {
     for(int ij=0; ij<500; ++ij) {
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
 	pAnalysis->gens_list[2][pAnalysis->ihist]->Fill(ClusterBank[ij][jk]->GetXPos(),ClusterBank[ij][jk]->GetYPos(),ClusterBank[ij][jk]->GetZPos()+0.02);
 	cout<<"pAnalysis->gens_list[2][pAnalysis->ihst]->Fill();"<<endl;
-	
+
 	vectGr  tmpgr;
 	tmpgr.x = ClusterBank[ij][jk]->GetXPos();
 	tmpgr.y = ClusterBank[ij][jk]->GetYPos();
@@ -594,7 +606,7 @@ void InoTrackFinder::FormTheClusters() {
 	    << " timey="  <<std::setw(8)<< ClusterBank[ij][jk]->GetEndTime()
 	    << endl;
       }
-    }	
+    }
   } // if(TrkFinderDebug==1)
   //-------------------------------------------------------------------------------------------ascii_output
   if (pAnalysis->isVisOut==1) {
@@ -610,13 +622,13 @@ void InoTrackFinder::IDTrkAndShwClusters() {
   // Then look at all clusters on the plane and see how track-like or shower-like
   // the plane is.
   //  Detector::Detector_t Detector = vldc->GetDetector();
-  
+
   //  int k0;
   int nclust0, nclust1, nhits0, nhits1, ShwAssocNum;
-  
+
   vector<InoCluster*> TempClust0;
   vector<InoCluster*> TempClust1;
-  
+
   //Set TrkFlag to 1, when the pulse value is above threshold (right now set to low value) or fdigit is >1 i.e more thatn two strips are hit
   //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
   for(int Module=0; Module<NumModules; ++Module) {
@@ -629,17 +641,17 @@ void InoTrackFinder::IDTrkAndShwClusters() {
       }
     }
   }
-  
+
   // Identify the shower-like clusters
   for(int Module=0; Module<NumModules; ++Module) {
     for(int Plane=1; Plane<PlanesInModule+1; ++Plane) {
       int ij=Plane + Module*(PlanesInModule+1);
-      
+
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
 	InoCluster* Clust0 = ClusterBank[ij][jk];
 	nhits0=0; nhits1=0; nclust0=0; nclust1=0;
 	TempClust0.clear(); TempClust1.clear();
-	
+
 	// Look for shower associations in nearby planes
 	// Loop over nearby planes
 	for(int kl=-1; kl<2; ++kl) {
@@ -680,7 +692,7 @@ void InoTrackFinder::IDTrkAndShwClusters() {
 	    // Clust0->SetTrkFlag(3); //asm: added new
 	  }
 	}
-	
+
 	if(nclust0>4 && nhits0>5) {
 	  //GMA optimise it
 	  for(unsigned int kl=0; kl<TempClust0.size(); ++kl) {
@@ -692,15 +704,15 @@ void InoTrackFinder::IDTrkAndShwClusters() {
       }
     }
   }
-  
+
   // Identify track-like and shower-like planes
   double Charge;
-  
+
   for(int Module=0; Module<NumModules; ++Module) {
     for(int Plane=0; Plane<PlanesInModule+1; ++Plane) {
       int ij=Plane + Module*(PlanesInModule+1);
       Charge=0.;
-      
+
       // Get total charge in clusters on plane
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
 	Charge+=ClusterBank[ij][jk]->GetPulse();
@@ -725,11 +737,11 @@ void InoTrackFinder::IDTrkAndShwClusters() {
       }
     }
   }
-  
+
   //----------------------------------------------------------------------------------------------------------------------cout
   // Print out list of hits and 1D clusters
   // cout <<" InoTrackFinder:ShwTrkFlagging" <<endl;
-  
+
   pAnalysis->inoclust =0;
   for(int ij=0; ij<500; ++ij) {
     double Charge1=0;
@@ -737,7 +749,7 @@ void InoTrackFinder::IDTrkAndShwClusters() {
     for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
       Charge1+=ClusterBank[ij][jk]->GetPulse();
     }
-    
+
     if (TrkFinderDebug==1) {
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
 	cout<<"shwtrk"
@@ -778,20 +790,20 @@ void InoTrackFinder::IDTrkAndShwClusters() {
 }
 
 void InoTrackFinder::FormTriplets() {
-  
+
   //asm++++++++++++++++++++++++++++++++++++++++changed the conditions for forming triplets+++++++++++++++++++++++
   //asm[][][][][][][][][][][][][][][][][][][][]Refer to the changes in Cluster.cc file also[][][][][][][][][][][]
-  
+
   // Treating U and V views separately, we consider associations between clusters
-  // on nearby planes. We look for groups of three clusters, each on different 
-  // planes, that can be joined together in a small track segment, or triplet. 
-  
+  // on nearby planes. We look for groups of three clusters, each on different
+  // planes, that can be joined together in a small track segment, or triplet.
+
   // All possible triplets of the following form are created:
-  
-  // If we sit on plane 0, and there are no possible hits on a plane marked X, m 
-  // means a lower plane number than our origin plane, and p means a higher plane 
+
+  // If we sit on plane 0, and there are no possible hits on a plane marked X, m
+  // means a lower plane number than our origin plane, and p means a higher plane
   // number.
-   
+
   // m 0 p         The simplest triplet
   // m X 0 p       One gap
   // m 0 X p
@@ -803,96 +815,96 @@ void InoTrackFinder::FormTriplets() {
   bool AlternateTriplets;
   bool JoinFlag;
   //  int i; //GMA14
-  //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer; 
+  //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
   // Begin loop to make the triplets
   for(int Module=0; Module<NumModules; ++Module) {
     for(int Plane=1; Plane<PlanesInModule-1; ++Plane) {
       int ij=Plane + Module*(PlanesInModule+1); //GMA14
       // Loop over clusters on plane. This is our plane 0, the origin.
-      
+
       for(unsigned int k0=0; k0<ClusterBank[ij].size()&&ClusterBank[ij].size()<50; ++k0) {   //asm_310810
 	if(ClusterBank[ij][k0]->GetTrkFlag()>0) {
 	  JoinFlag=false;
-	  
+
 	  // Look for triplets of form m 0 p
 	  if((ij-1)>=0 && ClusterBank[ij-1].size()>0 && ClusterBank[ij-1].size()<50 && (ij+1)<500 && ClusterBank[ij+1].size()>0 && ClusterBank[ij+1].size()<50) {
-	    //asm_310810       
+	    //asm_310810
 	    // Look at the clusters on plane ij-1...
 	    for(unsigned int kl=0; kl<ClusterBank[ij-1].size(); ++kl) {
-	      
+
 	      // ...and the clusters on plane ij+1
 	      for(unsigned int kp=0; kp<ClusterBank[ij+1].size(); ++kp) {
-		
+
                 if(ClusterBank[ij-1][kl]->GetTrkFlag()>0 && ClusterBank[ij+1][kp]->GetTrkFlag()>0) {
 		  if(TrkFinderDebug==10) cout<<"-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-a1-"<<endl;
                   // Check the track-like association of the three clusters
                   TripAssocNum=ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+1][kp]);
 		  if(TrkFinderDebug==10) cout <<"TripAssocNum "<<ij<<" "<<k0<<" "<<kl<<" "<<kp<<" "<<TripAssocNum<<endl;
 		  // If the association is good, make the triplet
-                  if(TripAssocNum> 2) {        //asm : was 0 
+                  if(TripAssocNum> 2) {        //asm : was 0
                     InoTrackSegment* seg0 = new InoTrackSegment(ClusterBank[ij-1][kl], ClusterBank[ij][k0], ClusterBank[ij+1][kp]);
-		    
+
                     SegmentBank[ij].push_back(seg0);
                     JoinFlag=true;
-		    
+
                     // Indicate that triplet is exceptionally track-like, by setting flag to 2.
-                    if(TripAssocNum>2) 
+                    if(TripAssocNum>2)
 		      {ClusterBank[ij][k0]->SetTrkFlag(2);}  //asm  : was 1
                   }
                 }
 	      }
 	    }
 	  }
-	  
+
 	  if((ij+1)<500 && ClusterBank[ij+1].size()>0&& ClusterBank[ij+1].size()<50) {         //asm_310810
 	    //=================================================================================m X 0 p
-	    
+
 	    if( Plane>1 && (ij-2)>=0 && ClusterBank[ij-2].size()>0 &&ClusterBank[ij-2].size()<50) {
 	      // Look at the clusters on plane ij+1...
 	      for(unsigned int kp=0; kp<ClusterBank[ij+1].size()&&ClusterBank[ij+1].size()<50; ++kp) {
-		
+
 		// ...and the clusters on plane ij-2
 		for(unsigned int kl=0; kl<ClusterBank[ij-2].size(); ++kl) {
-		  
+
 		  if(ClusterBank[ij-2][kl]->GetTrkFlag()>0 && ClusterBank[ij+1][kp]->GetTrkFlag()>0) {
-		    
+
 		    // Check the track-like association of the three clusters
 		    if(TrkFinderDebug==10) cout<<"-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-a2-"<<endl;
 		    TripAssocNum=ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij+1][kp]);
-		    
+
 		    if(TrkFinderDebug==10) cout<<"ij m X 0 p "<< ij<<" "<<k0<<" "<<kl<<" "<<kp<<" "<<TripAssocNum<<endl;
-		    
+
 		    // If the association is good, check whether we can make the triplet
 		    if(TripAssocNum>2) {                          //asm: was >0
 		      AlternateTriplets=false;
-		      
+
 		      // Check to see if there is also an alternate triplet possibility with clusters on plane ij-2
 		      // i.e. Want to make sure that the X in "m X 0 p" is correct.
-		      
+
 		      if(AlternateTriplets==false && ClusterBank[ij-1].size()>0 &&  ClusterBank[ij-1].size()<50) {
                         // Look at the clusters on plane ij-1
 			for(unsigned int ktmp=0; ktmp<ClusterBank[ij-1].size(); ++ktmp) {
 			  if(AlternateTriplets==false && ClusterBank[ij-1][ktmp]->GetTrkFlag()>0
 			     && (ClusterBank[ij-1][ktmp]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij][k0])>2            //ij-2,ij-1,ij
-				 &&         ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][ktmp],ClusterBank[ij+1][kp])>2)              //ij-1,ij,ij+1 
+				 &&         ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][ktmp],ClusterBank[ij+1][kp])>2)              //ij-1,ij,ij+1
 			     ) {
 			    AlternateTriplets=true;
 			  }
 			}
                       }
-		      
+
 		      // If everything is good, make the triplet
 		      if(AlternateTriplets==false) {
 			for(int jk=-1; jk<1; ++jk) {
 			  InoTrackSegment* seg0 = new InoTrackSegment(ClusterBank[ij-2][kl],ClusterBank[ij][k0],ClusterBank[ij+1][kp]);
-			  
+
 			  SegmentBank[ij+jk].push_back(seg0);
 			  JoinFlag=true;
 			}
-			
+
 			// Indicate that triplet is exceptionally track-like, by setting flag to 2.
-			if(TripAssocNum>2) 
-			  {ClusterBank[ij][k0]->SetTrkFlag(2);}    //asm: was >1                                     
+			if(TripAssocNum>2)
+			  {ClusterBank[ij][k0]->SetTrkFlag(2);}    //asm: was >1
 		      }
                     }
 		  }
@@ -900,31 +912,31 @@ void InoTrackFinder::FormTriplets() {
 	      }
 	    }
 	    //=================================================================== m X X 0 p
-	    
+
 	    //	    cout <<"trkfindertriplet ij21 "<<endl;
 	    if( Plane>2 && (ij-3)>=0 && ClusterBank[ij-3].size()>0&& ClusterBank[ij-3].size()<50) {
-	      
+
               // Look at the clusters on plane ij+1...
 	      for(unsigned int kp=0; kp<ClusterBank[ij+1].size()&&ClusterBank[ij+1].size()<50; ++kp) {
-		
+
                 // ...and look at the clusters on plane ij-3
 		for(unsigned int kl=0; kl<ClusterBank[ij-3].size()&& ClusterBank[ij-3].size()<50 ; ++kl) {
-		  
+
                   if(ClusterBank[ij-3][kl]->GetTrkFlag()>0 && ClusterBank[ij+1][kp]->GetTrkFlag()>0) {
-		    
+
                     // Check the track-like association of the three clusters
 		    if(TrkFinderDebug==10) cout<<"-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-a4-"<<endl;
                     TripAssocNum=ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-3][kl],ClusterBank[ij+1][kp]);
-		    
+
                     // If the association is good, check whether we can make the triplet
-		    
+
 		    if(TrkFinderDebug==10) cout <<"TripAssocNum "<<ij<<" "<<k0<<" "<<kl<<" "<<kp<<" "<<TripAssocNum<<endl;
                     if(TripAssocNum>2) {
                       AlternateTriplets=false;
-                      
+
                       // Check to see if there are alternate triplet possibilities with clusters on plane ij-2 or ij-4
                       // i.e. Want to make sure that the Xs in "m X X 0 p" are correct.
-		      
+
                       // Check first X
                       if(AlternateTriplets==false && ClusterBank[ij-1].size()>0 && ClusterBank[ij-1].size()<50) {
                         // Look at any clusters on plane ij-1
@@ -937,7 +949,7 @@ void InoTrackFinder::FormTriplets() {
 			  }
                         }
                       }
-                      
+
                       // Check second X, plane ij-2
                       if(AlternateTriplets==false && ClusterBank[ij-2].size()>0&&ClusterBank[ij-2].size()<50) {
                         // Look at any clusters on plane ij-2
@@ -950,15 +962,15 @@ void InoTrackFinder::FormTriplets() {
 			  }
                         }
                       }
-                      
+
                       // Check both Xs together, planes ij-1 and ij-2
                       if(AlternateTriplets==false && ClusterBank[ij-1].size()>0 && ClusterBank[ij-1].size()<50&& ClusterBank[ij-2].size()>0 && ClusterBank[ij-2].size()<50) {
                         // Look again at any clusters on plane ij-2...
                         for(unsigned int ktmp=0; ktmp<ClusterBank[ij-2].size(); ++ktmp) {
-			  
+
                           // ...and look again any clusters on plane ij-1
                           for(unsigned int ktmp1=0; ktmp1<ClusterBank[ij-1].size(); ++ktmp1) {
-                            if(AlternateTriplets==false 
+                            if(AlternateTriplets==false
                                && ClusterBank[ij-2][ktmp]->GetTrkFlag()>0 && ClusterBank[ij-1][ktmp1]->GetTrkFlag()>0
                                &&( ClusterBank[ij-2][ktmp]->IsTrkAssoc(ClusterBank[ij-3][kl],ClusterBank[ij-1][ktmp1])>2 // ij-3,ij-2,ij-1
 				   && ClusterBank[ij-1][ktmp1]->IsTrkAssoc(ClusterBank[ij-2][ktmp],ClusterBank[ij][k0])>2   // ij-2,ij-1,ij
@@ -969,16 +981,16 @@ void InoTrackFinder::FormTriplets() {
                           }
                         }
                       }
-                      
+
                       // If everything is good, make the triplet
                       if(AlternateTriplets==false) {
-                        // Store segment on empty planes too          
+                        // Store segment on empty planes too
                         for(int jk=0; jk<1; ++jk){            //        for(int jk=-2; jk<1; ++jk) {
 			  InoTrackSegment* seg0 = new InoTrackSegment(ClusterBank[ij-3][kl],ClusterBank[ij][k0],ClusterBank[ij+1][kp]);
                           SegmentBank[ij+jk].push_back(seg0);
                           JoinFlag=true;
                         }
-			
+
                         // Indicate that triplet is exceptionally track-like, by setting flag to 2.
                         if(TripAssocNum>2) {ClusterBank[ij][k0]->SetTrkFlag(2);}
                       }
@@ -987,21 +999,21 @@ void InoTrackFinder::FormTriplets() {
 		}
 	      }
 	    }
-	  } 
+	  }
 	  // Look for triplets of form m 0 <-> p
 	  if((ij-1)>0 && ClusterBank[ij-1].size()>0&&ClusterBank[ij-1].size()<50) {
-	    
-	    //==================================================================================================m 0 X p        
-	    
-	    // Look for triplets of form m 0 X p  
+
+	    //==================================================================================================m 0 X p
+
+	    // Look for triplets of form m 0 X p
 	    if( Plane<PlanesInModule-1 && (ij+2)<500 && ClusterBank[ij+2].size()>0&&ClusterBank[ij+2].size()<50) {
-	      
+
 	      // Look at the clusters on plane ij-1...
 	      for(unsigned int kl=0; kl<ClusterBank[ij-1].size(); ++kl) {
-		
+
 		// ... and the clusters on plane ij+2
 		for(unsigned int kp=0; kp<ClusterBank[ij+2].size(); ++kp) {
-		  
+
 		  if(ClusterBank[ij-1][kl]->GetTrkFlag()>0 && ClusterBank[ij+2][kp]->GetTrkFlag()>0) {
 		    if(TrkFinderDebug==10) cout<<"-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-a3-"<<endl;
                     // Check the track-like association of the three clusters
@@ -1010,33 +1022,33 @@ void InoTrackFinder::FormTriplets() {
 		    // If the association is good, check whether we can make the triplet
 		    if(TripAssocNum>2) {
 		      AlternateTriplets=false;
-		      
+
 		      // Check to see if there is also an alternate triplet possibility with clusters on plane i+2
 		      // i.e. Want to make sure that the X in "m 0 X p" is correct.
-		      
+
 		      if(AlternateTriplets==false && ClusterBank[ij+1].size()>0) {
 			// Look at the clusters on plane ij+1
 			for(unsigned int ktmp=0; ktmp<ClusterBank[ij+1].size(); ++ktmp) {
 			  if(AlternateTriplets==false && ClusterBank[ij+1][ktmp]->GetTrkFlag()>0
-			     &&( ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+2][kp])>2 
-				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+1][ktmp])>2) 
+			     &&( ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+2][kp])>2
+				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+1][ktmp])>2)
 			     ) {
 			    AlternateTriplets=true;
 			  }
 			}
 		      }
-                      
-		      
+
+
 		      // If everything is good, make the triplet
 		      if(AlternateTriplets==false) {
 			// Store segment on empty plane too
 			for(int jk=0; jk<2; ++jk) {  // for(int jk=0; jk<2; ++jk) {  //GMA why two layers, whereas previous case one layer
 			  InoTrackSegment* seg0 = new InoTrackSegment(ClusterBank[ij-1][kl],ClusterBank[ij][k0],ClusterBank[ij+2][kp]);
-			  
+
 			  SegmentBank[ij+jk].push_back(seg0);
 			  JoinFlag=true;
                         }
-			
+
 			// Indicate that triplet is exceptionally track-like, by setting flag to 2.
 			if(TripAssocNum>2) {
 			  ClusterBank[ij][k0]->SetTrkFlag(2);
@@ -1048,62 +1060,62 @@ void InoTrackFinder::FormTriplets() {
 	      }
 	    }
 	    //==========================================================================================m 0 X X p
-	    // Look for triplets of form m 0 X X p  
+	    // Look for triplets of form m 0 X X p
 	    if(Plane<PlanesInModule-2 && (ij+3)<500 && ClusterBank[ij+3].size()>0&& ClusterBank[ij+3].size()<50) {
-	      
+
 	      // Look at the clusters on plane ij-1...
 	      for(unsigned int kl=0; kl<ClusterBank[ij-1].size() && ClusterBank[ij-1].size()<50; ++kl) {
-		
+
 		// ...and look at the clusters on plane ij+3
 		for(unsigned int kp=0; kp<ClusterBank[ij+3].size(); ++kp) {
-		  
+
 		  if(ClusterBank[ij-1][kl]->GetTrkFlag()>0 && ClusterBank[ij+3][kp]->GetTrkFlag()>0) {
 		    // Check the track-like association of the three clusters
 		    if(TrkFinderDebug==10) cout<<"-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-a5-"<<endl;
 		    TripAssocNum=ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+3][kp]);
 		    if(TrkFinderDebug==10) cout <<"TripAssocNum "<<ij<<" "<<k0<<" "<<kl<<" "<<kp<<" "<<TripAssocNum<<endl;
 		    // If the association is good, check whether we can make the triplet
-		    
+
 		    if(TripAssocNum>2) {
 		      AlternateTriplets=false;
-		      
+
 		      // Check to see if there are alternate triplet possibilities with clusters on plane ij+1 or ij+2
 		      // i.e. Want to make sure that the Xs in "m 0 X X p" are correct.
-		      
+
 		      // Check first X, plane i+1
 		      //		      cout <<"Alter "<<(int)AlternateTriplets<<" "<<ClusterBank[ij+1].size()<<endl;
 		      if(AlternateTriplets==false && ClusterBank[ij+1].size()>0 && ClusterBank[ij+1].size()<50) {
 			// Look at any clusters on plane ij+1
 			for(unsigned int ktmp=0; ktmp<ClusterBank[ij+1].size(); ++ktmp) {
 			  if(AlternateTriplets==false && ClusterBank[ij+1][ktmp]->GetTrkFlag()>0
-			     &&( ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+3][kp])>2 
-				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+1][ktmp])>2) 
+			     &&( ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+3][kp])>2
+				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+1][ktmp])>2)
 			     ) {
 			    AlternateTriplets=true;
 			  }
 			}
 		      }
-		      
+
 		      // Check second X, plane ij+2
 		      if(AlternateTriplets==false && ClusterBank[ij+2].size()>0 && ClusterBank[ij+2].size()<50) {
 			// Look at any clusters on plane ij+2
 			for(unsigned int ktmp=0; ktmp<ClusterBank[ij+2].size(); ++ktmp) {
 			  if(AlternateTriplets==false && ClusterBank[ij+2][ktmp]->GetTrkFlag()>0
-			     &&( ClusterBank[ij+2][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+3][kp])>2 
+			     &&( ClusterBank[ij+2][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+3][kp])>2
 				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+2][ktmp])>2) ) {
 			    AlternateTriplets=true;
 			  }
 			}
 		      }
-		      
+
 		      // Check both Xs together, planes ij+1 and ij+2
 		      if(AlternateTriplets==false && ClusterBank[ij+1].size()>0  && ClusterBank[ij+1].size()<50 && ClusterBank[ij+2].size()>0&& ClusterBank[ij+2].size()<50) {
 			// Look again at any clusters on plane ij+1...
 			for(unsigned int ktmp=0; ktmp<ClusterBank[ij+1].size(); ++ktmp) {
-			  
+
 			  // ...and look again at any clusters on plane i+2
 			  for(unsigned int ktmp1=0; ktmp1<ClusterBank[ij+2].size(); ++ktmp1) {
-			    if(AlternateTriplets==false 
+			    if(AlternateTriplets==false
 			       && ClusterBank[ij+1][ktmp]->GetTrkFlag()>0 &&ClusterBank[ij+2][ktmp1]->GetTrkFlag()>0
 			       &&( ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][kl],ClusterBank[ij+1][ktmp])>2
 				   &&     ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+2][ktmp1])>2
@@ -1114,13 +1126,13 @@ void InoTrackFinder::FormTriplets() {
 			  }
 			}
 		      }
-		      
+
 		      // If everything is good, make the triplet
 		      if(AlternateTriplets==false) {
 			// Store segment on empty planes too
 			for(int jk=0; jk<3; ++jk) {
                           InoTrackSegment* seg0 = new InoTrackSegment(ClusterBank[ij-1][kl],ClusterBank[ij][k0],ClusterBank[ij+3][kp]);
-                          
+
                           SegmentBank[ij+jk].push_back(seg0);
                           JoinFlag=true;
 			}
@@ -1135,15 +1147,15 @@ void InoTrackFinder::FormTriplets() {
 	      }
 	    }
 	  }
-	  
+
 	  //==================================================================================m X 0 X p
 	  // Look for triplets of form m X 0 X p
 	  if(Plane>1 && Plane<PlanesInModule-1 && (ij-2)>=0 && ClusterBank[ij-2].size()>0 &&ClusterBank[ij-2].size()<50 && (ij+2)<500 && ClusterBank[ij+2].size()>0&&ClusterBank[ij+2].size()<50) {
-	    
+
 	    // Look at clusters on planes ij-2 and ij+2
 	    for(unsigned int kl=0; kl<ClusterBank[ij-2].size(); ++kl) {
 	      for(unsigned int kp=0; kp<ClusterBank[ij+2].size(); ++kp) {
-		
+
 		if(ClusterBank[ij-2][kl]->GetTrkFlag()>0 && ClusterBank[ij+2][kp]->GetTrkFlag()>0) {
 		  // Check the track-like association of the three clusters
 		  if(TrkFinderDebug==10) cout<<"-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-a6-"<<endl;
@@ -1152,59 +1164,59 @@ void InoTrackFinder::FormTriplets() {
 		  // If the association is good, check whether we can make the triplet
 		  if(TripAssocNum>2) {
 		    AlternateTriplets=false;
-		    
+
 		    // Check to see if there are alternate triplet possibilities with clusters on plane ij-2 or ij+2
 		    // i.e. Want to make sure that the Xs in "m X 0 X p" are correct.
-		    
+
 		    // Check first X, plane ij-1
 		    if(AlternateTriplets==false && ClusterBank[ij-1].size()>0 && ClusterBank[ij-1].size()<50) {
 		      // Look at any clusters on plane ij-1
 		      for(unsigned int ktmp=0; ktmp<ClusterBank[ij-1].size(); ++ktmp) {
 			if(AlternateTriplets==false && ClusterBank[ij-1][ktmp]->GetTrkFlag()>0
-			   &&( ClusterBank[ij-1][ktmp]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij][k0])>2 
+			   &&( ClusterBank[ij-1][ktmp]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij][k0])>2
 			       &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][ktmp],ClusterBank[ij+2][kp])>2)) {
 			  AlternateTriplets=true;
 			}
 		      }
 		    }
-		    
+
 		    // Check second X, plane ij+1
 		    if(AlternateTriplets==false && ClusterBank[ij+1].size()>0 && ClusterBank[ij+1].size()<50) {
 		      // Look at any clusters on plane ij+1
 		      for(unsigned int ktmp=0; ktmp<ClusterBank[ij+1].size(); ++ktmp) {
 			if(AlternateTriplets==false  && ClusterBank[ij+1][ktmp]->GetTrkFlag()>0
-			   &&( ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+2][kp])>2 
+			   &&( ClusterBank[ij+1][ktmp]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+2][kp])>2
 			       &&    ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij+1][ktmp])>2)) {
 			  AlternateTriplets=true;
 			}
 		      }
 		    }
-                    
+
 		    // Check both Xs together, planes ij-1 and ij+1
 		    if(AlternateTriplets==false && ClusterBank[ij-1].size()>0 && ClusterBank[ij-1].size()<50 && ClusterBank[ij+1].size()>0  && ClusterBank[ij+1].size()<50) {
-		      
+
                       // Loop again at any clusters on plane ij-1
 		      for(unsigned int ktmp=0; ktmp<ClusterBank[ij-1].size(); ++ktmp) {
-			
+
 			// Look again at any clusters on plane i+1
 			for(unsigned int ktmp1=0; ktmp1<ClusterBank[ij+1].size(); ++ktmp1) {
-			  if(AlternateTriplets==false 
+			  if(AlternateTriplets==false
 			     && ClusterBank[ij-1][ktmp]->GetTrkFlag()>0 && ClusterBank[ij+1][ktmp1]->GetTrkFlag()>0
-			     &&( ClusterBank[ij-1][ktmp]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij][k0])>2 
-				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][ktmp],ClusterBank[ij+1][ktmp1])>2 
+			     &&( ClusterBank[ij-1][ktmp]->IsTrkAssoc(ClusterBank[ij-2][kl],ClusterBank[ij][k0])>2
+				 &&     ClusterBank[ij][k0]->IsTrkAssoc(ClusterBank[ij-1][ktmp],ClusterBank[ij+1][ktmp1])>2
 				 &&     ClusterBank[ij+1][ktmp1]->IsTrkAssoc(ClusterBank[ij][k0],ClusterBank[ij+2][kp])>2)) {
 			    AlternateTriplets=true;
 			  }
 			}
 		      }
 		    }
-		    
+
 		    // If everything is good, make the triplet
 		    if(AlternateTriplets==false) {
 		      // Store segment on empty planes too
 		      for(int jk=0; jk<2; ++jk) { //for(int jk=-1; jk<2; ++jk) {
 			InoTrackSegment* seg0 = new InoTrackSegment(ClusterBank[ij-2][kl],ClusterBank[ij][k0],ClusterBank[ij+2][kp]);
-                        
+
 			SegmentBank[ij+jk].push_back(seg0);
 			JoinFlag=true;
 		      }
@@ -1212,43 +1224,43 @@ void InoTrackFinder::FormTriplets() {
 		      if(TripAssocNum>2) {
 			ClusterBank[ij][k0]->SetTrkFlag(2);
 		      }
-		    }               
+		    }
 		  }
                 }
 	      }
 	    }
 	  }
-	  
+
 	  //	  cout <<"trkfindertriplet ij6 "<<endl;
 	  // Set the exceptionally track-like flag for lone hits that form part of a triplet
 	  //asmQ what it this part for?
-	  if(JoinFlag==true && 
+	  if(JoinFlag==true &&
 	     (ClusterBank[ij][k0]->GetEndXPos()==ClusterBank[ij][k0]->GetBegXPos()) &&
 	     (ClusterBank[ij][k0]->GetEndYPos()==ClusterBank[ij][k0]->GetBegYPos())) {
             ClusterBank[ij][k0]->SetTrkFlag(2);
 	  }
 	}
-	
+
       } // End loop over clusters on plane
     } // End loop over planes in module
   } // End loop over modules
-  
+
   //---------------------------------------------------------------------------------------------------cout: cluster
   /*
   // Print out list of hits and 1D clusters
-  //asmQ: is this cout required here? 
+  //asmQ: is this cout required here?
   if (TrkFinderDebug==1){
     cout << " InoTrackFinder : *** 2ND LIST OF CLUSTERS *** " << endl;
     for(int ij=0; ij<500; ++ij){
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
-	cout 
-	  << " plane="    << ClusterBank[ij][jk]->GetZPlane() 
-	  << " beX"  << ClusterBank[ij][jk]->GetBegXPos() 
-	  << " - "  << ClusterBank[ij][jk]->GetEndXPos() 
-	  << " beY"  << ClusterBank[ij][jk]->GetBegYPos() 
-	  << " - "  << ClusterBank[ij][jk]->GetEndYPos() 
+	cout
+	  << " plane="    << ClusterBank[ij][jk]->GetZPlane()
+	  << " beX"  << ClusterBank[ij][jk]->GetBegXPos()
+	  << " - "  << ClusterBank[ij][jk]->GetEndXPos()
+	  << " beY"  << ClusterBank[ij][jk]->GetBegYPos()
+	  << " - "  << ClusterBank[ij][jk]->GetEndYPos()
 	  << " trkflag="  << ClusterBank[ij][jk]->GetTrkFlag()
-	  << " shwpln="   << ClusterBank[ij][jk]->GetShwPlnFlag() 
+	  << " shwpln="   << ClusterBank[ij][jk]->GetShwPlnFlag()
 	  << " trkpln="   << ClusterBank[ij][jk]->GetTrkPlnFlag()
 	  << " shwflag="  << ClusterBank[ij][jk]->GetShwFlag() << endl;
       }
@@ -1263,11 +1275,11 @@ void InoTrackFinder::FormTriplets() {
       if(SegmentBank[ij].size() > 0) cout<<"TRIPLETS for "<<ij<<"th Plane "<<SegmentBank[ij].size() <<endl;
       for(unsigned int jk=0;jk<SegmentBank[ij].size(); ++jk) {
 	cout << " SegmentBank " << jk << ", Pln " << ij <<endl;
-	
+
 	InoCluster* clr0 = SegmentBank[ij][jk]->GetCluster(0);
 	InoCluster* clr1 = SegmentBank[ij][jk]->GetCluster(1);
 	InoCluster* clr2 = SegmentBank[ij][jk]->GetCluster(2);
-	
+
 	cout
 	  << "(" << clr0->GetZPlane() << "," << clr0->GetBegXPos() << "->" << clr0->GetEndXPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegXPos() << "->" << clr1->GetEndXPos() << ") "
@@ -1275,54 +1287,54 @@ void InoTrackFinder::FormTriplets() {
 	  << " (" << clr0->GetZPlane() << "," << clr0->GetBegYPos() << "->" << clr0->GetEndYPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegYPos() << "->" << clr1->GetEndYPos() << ") "
 	  << "(" << clr2->GetZPlane() << "," << clr2->GetBegYPos() << "->" << clr2->GetEndYPos() << ") " << endl;
-	//   cout<<endl; 
+	//   cout<<endl;
       }
     }
   }//(TrkFinderDebug)
-  
+
   //-----------------------------------------------------------------------------------------------------ascii_output
   if (pAnalysis->isVisOut==1){
-    
-    int n_clushit;               
-    int ll=pAnalysis->H->NTrips; 
+
+    int n_clushit;
+    int ll=pAnalysis->H->NTrips;
     for( int ij=0; ij<500; ++ij ) {
-      for(unsigned int jk=0;jk<SegmentBank[ij].size(); ++jk) { 
+      for(unsigned int jk=0;jk<SegmentBank[ij].size(); ++jk) {
 	n_clushit =0;
 	for (unsigned int kl=0; kl<SegmentBank[ij][jk]->ClustersInSegment.size(); ++kl){
-	  n_clushit +=  SegmentBank[ij][jk]->GetCluster(kl)->HitsInCluster.size(); 
+	  n_clushit +=  SegmentBank[ij][jk]->GetCluster(kl)->HitsInCluster.size();
 	}
-	
+
 	//           InoCluster* clr0 = SegmentBank[ij][jk]->GetCluster(k);
 /*	pAnalysis->ascii_output << std::setw(12)<< "1"
 				<< std::setw(12)<< "-3"
-				<< std::setw(12)<< ll 
+				<< std::setw(12)<< ll
 				<< std::setw(12)<< jk
 				<< std::setw(14) << n_clushit
 				<< std::setw(14)<< "-3"
 				<< std::setw(14)<< "-3"
-				<< std::setw(14)<< "-3"    
+				<< std::setw(14)<< "-3"
 				<< endl;
 */
-	int hh=0;     
+	int hh=0;
 	for (unsigned int kl=0; kl<SegmentBank[ij][jk]->ClustersInSegment.size(); ++kl) {
 	  InoCluster* clr0 = SegmentBank[ij][jk]->GetCluster(kl);
 	  /*   pAnalysis->ascii_output << std::setw(12)<< "1"
-	      <<std::setw(12) << "-3" 
+	      <<std::setw(12) << "-3"
 	      << std::setw(12)<< kl
 	      << std::setw(12)
 	      << std::setw(14)<< "-2"
 	      << std::setw(14)<< "-2"
 	      << std::setw(14)<< "-2"
-	      << endl;  */   
-          for (unsigned int lm=0;lm< clr0->HitsInCluster.size(); ++lm){ 
-/*	    pAnalysis->ascii_output << std::setw(12)<< "1" 
+	      << endl;  */
+          for (unsigned int lm=0;lm< clr0->HitsInCluster.size(); ++lm){
+/*	    pAnalysis->ascii_output << std::setw(12)<< "1"
 				    << std::setw(12)<< "-3"
 				    << std::setw(12)<< ll
 				    << std::setw(12)<< hh
-				    << std::setw(12)<< lm 
+				    << std::setw(12)<< lm
 				    << std::setw(14)<<clr0->HitsInCluster[lm]->GetZPlane()
 				    << std::setw(14)<<clr0->HitsInCluster[lm]->GetXPos()
-				    << std::setw(14)<<clr0->HitsInCluster[lm]->GetYPos() 
+				    << std::setw(14)<<clr0->HitsInCluster[lm]->GetYPos()
 				    << endl;
 */
 	    pAnalysis->H->NTrips= pAnalysis->H->NTrips +1; //Number of Triplet events
@@ -1332,8 +1344,8 @@ void InoTrackFinder::FormTriplets() {
 	    pAnalysis->Hp->ZZ=clr0->HitsInCluster[lm]->GetZPlane();
 	    pAnalysis->Hp->XX=clr0->HitsInCluster[lm]->GetXPos();
 	    pAnalysis->Hp->YY=clr0->HitsInCluster[lm]->GetYPos();
-	    
-	    
+
+
 	    hh++;
 	  }
 	}
@@ -1341,7 +1353,7 @@ void InoTrackFinder::FormTriplets() {
       }
     }
   }
-  //asm: here we display all hits in that cluster, we can move to clusters in the triplet.	  
+  //asm: here we display all hits in that cluster, we can move to clusters in the triplet.
   //--------------------------------------------------------------------------------------------
   return;
 }
@@ -1353,10 +1365,10 @@ void InoTrackFinder::FindAllAssociations() {
   // position/direction. Later we look more that one triplet away, for
   // finding strings of "preferred associations" that might indicate a
   // track.
-  
+
   //  int i = 0;
   //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
-  
+
   // Loop over the planes
   for(int Module = 0; Module < NumModules; ++Module) {
     for(int Plane = 1; Plane < PlanesInModule-1; ++Plane) {
@@ -1379,7 +1391,7 @@ void InoTrackFinder::FindAllAssociations() {
       }
     }// End loop over planes in module
   }// End loop over modules
-  
+
   //asmS:---------------------------------------------------------------------------------------------------------
   // In the above code we are not inplementing the IsAssoc function with its complete strength,
   // let us see how, Every triplet that is formed is always kept in all othe layer except the last layer, now when
@@ -1392,7 +1404,7 @@ void InoTrackFinder::FindAllAssociations() {
   // layers. After discussing with GM, it was decided that we will store the copy of the triplet in the empty layers
   // as well, but I fear if this in turm will make multiple copy of all the segments. I need to look into how this works
   //--------------------------------------------------------------------------------------------------------------
-  
+
   // Print out list of all associations
   if (TrkFinderDebug==100) {
     cout << " InoTrackFinder : *** LIST OF ALL SEG ASSOCIATIONS *** " << endl;
@@ -1412,7 +1424,7 @@ void InoTrackFinder::FindAllAssociations() {
 	InoCluster* clr0 = SegmentBank[ij][jk]->GetCluster(0);
 	InoCluster* clr1 = SegmentBank[ij][jk]->GetCluster(1);
 	InoCluster* clr2 = SegmentBank[ij][jk]->GetCluster(2);
-	
+
 	cout
 	  << "(" << clr0->GetZPlane() << "," << clr0->GetBegXPos() << "->" << clr0->GetEndXPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegXPos() << "->" << clr1->GetEndXPos() << ") "
@@ -1420,18 +1432,18 @@ void InoTrackFinder::FindAllAssociations() {
 	  << " (" << clr0->GetZPlane() << "," << clr0->GetBegYPos() << "->" << clr0->GetEndYPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegYPos() << "->" << clr1->GetEndYPos() << ") "
 	  << "(" << clr2->GetZPlane() << "," << clr2->GetBegYPos() << "->" << clr2->GetEndYPos() << ") " << endl;
-	
+
 	cout << " Beg: " <<endl;
 	for(unsigned int kl=0; kl<segment->GetNAssocSegBeg(); ++kl) {
 	  InoTrackSegment* segtmp = segment->GetAssocSegBeg(kl);
-	  
+
 	  cout << "  Assoc number=" << kl
 	       << "  begpln: " << segtmp->GetBegZPlane()
 	       << "  begxpos: " << segtmp->GetBegXPos()
 	       << "  begypos: " << segtmp->GetBegYPos()
 	       << "  endpln: " << segtmp->GetEndZPlane()
 	       << "  endxpos: " << segtmp->GetEndXPos()
-	       << "  endypos: " << segtmp->GetEndYPos() 
+	       << "  endypos: " << segtmp->GetEndYPos()
 	       << ", Entries " << segtmp->GetEntries()
 	       << endl;
 	  InoCluster* ttclr0 = segtmp->GetCluster(0);
@@ -1445,7 +1457,7 @@ void InoTrackFinder::FindAllAssociations() {
 	    << "(" << ttclr1->GetZPlane() << "," << ttclr1->GetBegYPos() << "->" << ttclr1->GetEndYPos() << ") "
 	    << "(" << ttclr2->GetZPlane() << "," << ttclr2->GetBegYPos() << "->" << ttclr2->GetEndYPos() << ") " << endl;
 	}
-	
+
 	cout << " End: "<<endl;
 	for(unsigned int kl=0; kl<segment->GetNAssocSegEnd(); ++kl) {
 	  InoTrackSegment* segtmp = segment->GetAssocSegEnd(kl);
@@ -1474,38 +1486,38 @@ void InoTrackFinder::FindAllAssociations() {
 }
 
 void InoTrackFinder::FindPreferredJoins() {
-  // Having made all possible associations between triplets above, let 
+  // Having made all possible associations between triplets above, let
   // us select those preferred associations that are most track-like
-  
+
   // For a given triplet, we know which triplets are associated with the
   // beginning and which are associated at the end. If there are associations
-  // between these beginning and end triplets too, then we are quite likely 
+  // between these beginning and end triplets too, then we are quite likely
   // to be considering track-like segments.
-  
+
   //  int i;
   //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
   vector<InoTrackSegment*> mTempSeg;
   vector<InoTrackSegment*> pTempSeg;
-  
+
   bool JoinFlag; bool mJnFlag; bool pJnFlag;
-  
+
   double GradientXTolerance=8.;
   double GradientYTolerance=8.;
-  
+
   // Loop over the planes
   for(int Module = 0; Module < NumModules; ++Module) {
     for(int Plane = 1; Plane < PlanesInModule-1; ++Plane) {
       int ij = Plane + Module*(PlanesInModule + 1); //GMA14 "ij" should be local variable
-      
+
       // SET THE TEMPORARY TRACK FLAGS (TmpTrkFlag)
       // Consider previous adjacent triplets   ( ij-1 <-> ) ij <-> ij+1
       //                                                  Seg
-      // If there are associations at both ends of triplet, set triplet's 
-      // temporary track flag to 1. 
-      
-      // If one of beginning associated triplets also starts at lower plane 
+      // If there are associations at both ends of triplet, set triplet's
+      // temporary track flag to 1.
+
+      // If one of beginning associated triplets also starts at lower plane
       // than current triplet, set the triplet's temporary track flag to 2
-      
+
       mTempSeg.clear();
       //---------------------
       // Loop over the triplets centered on plane i
@@ -1515,12 +1527,12 @@ void InoTrackFinder::FindPreferredJoins() {
 	if(Seg->GetNAssocSegEnd()>0) {
 	  //Check if any Associated triplets at end
 	  mTempSeg.push_back(Seg);                  //if yes, store it in mTempSeg
-	  
+
 	  if(Seg->GetNAssocSegBeg()>0) {
 	    //Check if any associated triplet at begin
 	    Seg->SetTmpTrkFlag(1);                //When triplet has assocition on both the ends
-	    
-	    // Loop over the associations at beginning and set TmpTrackFlag to 2. if 
+
+	    // Loop over the associations at beginning and set TmpTrackFlag to 2. if
 	    //there at least one SegBeg that starts from z plane lesser than the triplets Begplane
 	    for(unsigned int kl=0; kl<Seg->GetNAssocSegBeg(); ++kl) {
 	      if (Seg->GetTmpTrkFlag()<2 && (Seg->GetAssocSegBeg(kl)->GetBegZPlane() < Seg->GetBegZPlane())) {
@@ -1534,33 +1546,33 @@ void InoTrackFinder::FindPreferredJoins() {
       //-----------------------
       // Subsequent adjacent triplets   ij <-> ij+1 ( <-> ij+2 )
       //                                      Segp
-      // If there are associations at both ends of triplet centered on 
+      // If there are associations at both ends of triplet centered on
       // plane ij+1, set triplet's temporary track flag to 1.
-      
+
       // If one of the end associated triplets also ends at higher plane
       // than ij+1 triplet, set ij+1 triplet's temporary track flag to 2
-      
+
       pTempSeg.clear();
-      
+
       // Loop over the triplets centered on plane ij+1
       for(unsigned int jk = 0; jk < SegmentBank[ij+1].size(); ++jk) {
 	InoTrackSegment* Segp = SegmentBank[ij+1][jk];
-	
+
 	// Check to see if there are associations at beginning
 	if(Segp->GetNAssocSegBeg()>0) {
 	  //Check if any Associated triplets at end
 	  pTempSeg.push_back(Segp);        //if yes, store it in mTempSeg
-	  
+
 	  // Check to see if there are associations at end
 	  if(Segp->GetNAssocSegEnd()>0) {
 	    //Check if any associated triplet at begin
 	    // We now know that triplet has possible associations at both ends
 	    Segp->SetTmpTrkFlag(1);
-	    
+
 	    // Loop over associations at end and set temp track flags
 	    // for segments on plane ij+1
 	    for(unsigned int kl=0; kl<Segp->GetNAssocSegEnd(); ++kl) {
-	      if(Segp->GetTmpTrkFlag()<2 && (Segp->GetAssocSegEnd(kl)->GetEndZPlane() > Segp->GetEndZPlane()) ) { 
+	      if(Segp->GetTmpTrkFlag()<2 && (Segp->GetAssocSegEnd(kl)->GetEndZPlane() > Segp->GetEndZPlane()) ) {
 		//asm: if BegAssoc seg is same as the triplet it self it will not do this flagging
 		Segp->SetTmpTrkFlag(2); break;
 	      }
@@ -1573,16 +1585,16 @@ void InoTrackFinder::FindPreferredJoins() {
       // Loop the over segments on plane ij+1, which we know have possible beginning associations
       for(unsigned int jk=0; jk<pTempSeg.size(); ++jk) {
 	JoinFlag=false;
-	
+
 	// Loop over these beginning associations. If one beginning associated
 	// triplet already has temp track flag 2, set JoinFlag to true.
-	
+
 	for(unsigned int kl=0; kl<pTempSeg[jk]->GetNAssocSegBeg(); ++kl) {
 	  if(pTempSeg[jk]->GetAssocSegBeg(kl)->GetTmpTrkFlag()>1) {
 	    JoinFlag=true; break;
 	  }
 	}
-	
+
 	// If JoinFlag is true, and a beginning assoc segment has temp track flag 1 (i.e. possible
 	// beginning and end associations), set the temp track flag to 2 for this beg assoc segment
 	if(JoinFlag==true) {
@@ -1595,12 +1607,12 @@ void InoTrackFinder::FindPreferredJoins() {
 	  }
 	}
       }
-      
+
       // Look for preferred joins    ij <-> ij+1 ( <-> ij+2 )
       // Loop over segments on plane ij, which we know have possible end associations
       for(unsigned int jk=0; jk<mTempSeg.size(); ++jk) {
 	JoinFlag=false;
-	
+
 	// Loop over these end associations. If one end associated triplet already
 	// has temp track flag 2, set JoinFlag to true.
 	for(unsigned int kl=0; kl<mTempSeg[jk]->GetNAssocSegEnd(); ++kl) {
@@ -1609,8 +1621,8 @@ void InoTrackFinder::FindPreferredJoins() {
 	    break;
 	  }
 	}
-        
-	// If JoinFlag is true, and an end assoc segment has temp track flag 1 (i.e. possible 
+
+	// If JoinFlag is true, and an end assoc segment has temp track flag 1 (i.e. possible
 	// beginning and end associations), set the temp track flag to 2 for this end assoc segment
 	if(JoinFlag==true) {
 	  // Loop over end associations again and set temp track flags
@@ -1622,10 +1634,10 @@ void InoTrackFinder::FindPreferredJoins() {
 	  }
 	}
       }
-      
+
       // Now have temporary track flags set to 2 for all segments on planes i and i+1
       // which look like very promising track segments
-      
+
       // MAKE THE PREFERRED JOINS BETWEEN TRIPLETS ON PLANE i AND PLANE i+1
       if(mTempSeg.size()>0 && pTempSeg.size()>0) {
 	// Look for doubly preferred joins    ( ij-1 <-> ) ij <-> ij+1 ( <-> ij+2 )
@@ -1647,7 +1659,7 @@ void InoTrackFinder::FindPreferredJoins() {
 		  break;
 		}
 	      }
-	      
+
 	      // For each end assoc of Segp, see if it is assoc with Seg
 	      pJnFlag=false;
 	      for(unsigned int lm=0; lm<Segp->GetNAssocSegEnd(); ++lm) {
@@ -1656,7 +1668,7 @@ void InoTrackFinder::FindPreferredJoins() {
 		  pJnFlag=true; break;
 		}
 	      }
-	      
+
 	      // Make the preferred assocations
 	      if(mJnFlag==true && pJnFlag==true) {
 		//GMA need to check this criteria and optimise it // asm:will fail which the triplets zlength is not the same
@@ -1665,27 +1677,27 @@ void InoTrackFinder::FindPreferredJoins() {
 		  Segp->AddPrefSegToBeg(Seg);
 		} else {
 		  if (TrkFinderDebug==10) {
-		    cout << "Segx " << Seg->GetBegZPlane() << " " 
+		    cout << "Segx " << Seg->GetBegZPlane() << " "
 			 << Seg->GetEndZPlane() << " "
-			 << Seg->GetBegZPos() << " " 
-			 << Seg->GetEndZPos() << " " 
-			 << Seg->GetBegXPos() << " " 
+			 << Seg->GetBegZPos() << " "
+			 << Seg->GetEndZPos() << " "
+			 << Seg->GetBegXPos() << " "
 			 << Seg->GetBegYPos() << " "
-			 << Seg->GetEndXPos() << " " 
+			 << Seg->GetEndXPos() << " "
 			 << Seg->GetEndYPos() << " Segp "
-			 << Segp->GetBegZPlane() << " " 
+			 << Segp->GetBegZPlane() << " "
 			 << Segp->GetEndZPlane() << " "
-			 << Segp->GetBegZPos() << " " 
-			 << Segp->GetEndZPos() << " " 
-			 << Segp->GetBegXPos() << " " 
+			 << Segp->GetBegZPos() << " "
+			 << Segp->GetEndZPos() << " "
+			 << Segp->GetBegXPos() << " "
 			 << Segp->GetEndXPos() << " "
-			 << Segp->GetBegYPos() << " " 
-			 << Segp->GetEndYPos() << " diffseg " 
-			 << Seg->GetBegXPos() - Seg->GetEndXPos() << " " 
-			 << Seg->GetBegYPos() - Seg->GetEndYPos() << " " 
+			 << Segp->GetBegYPos() << " "
+			 << Segp->GetEndYPos() << " diffseg "
+			 << Seg->GetBegXPos() - Seg->GetEndXPos() << " "
+			 << Seg->GetBegYPos() - Seg->GetEndYPos() << " "
 			 << GradientXTolerance*StripXWidth << " diffsegp "
-			 << Segp->GetBegXPos() - Segp->GetEndXPos() << " " 
-			 << Segp->GetBegYPos() - Segp->GetEndYPos() << " " 
+			 << Segp->GetBegXPos() - Segp->GetEndXPos() << " "
+			 << Segp->GetBegYPos() - Segp->GetEndYPos() << " "
 			 << GradientYTolerance*StripYWidth << endl;
 		  }
 		  //TrkFinderDebug)
@@ -1694,9 +1706,9 @@ void InoTrackFinder::FindPreferredJoins() {
 	    }
 	  }
 	}
-	
-	// Look for singly preferred joins (1)    ( ij-1 <-> ) ij <-> ij+1 
-	
+
+	// Look for singly preferred joins (1)    ( ij-1 <-> ) ij <-> ij+1
+
 	// Loop over segments on plane ij, which we know have possible end associations
 	for(unsigned int jk=0; jk<mTempSeg.size(); ++jk) {
 	  InoTrackSegment* Seg = mTempSeg[jk];
@@ -1706,16 +1718,16 @@ void InoTrackFinder::FindPreferredJoins() {
 	    // Check to see if we will already have made the preferred association above
 	    for(unsigned int kl=0; kl<Seg->GetNAssocSegEnd(); ++kl) {
 	      InoTrackSegment* Segp = Seg->GetAssocSegEnd(kl);
-	      
+
 	      if(Segp->GetTmpTrkFlag()>1) {
 		JoinFlag=true;
 		break;
 	      }
 	    }
-	    
+
 	    // If have not made the association, can check assocations
 	    // between triplets on either side
-	    
+
 	    if(JoinFlag==false) {
 	      for(unsigned int kl=0; kl<Seg->GetNAssocSegEnd(); ++kl) {
 		InoTrackSegment* Segp = Seg->GetAssocSegEnd(kl);
@@ -1728,7 +1740,7 @@ void InoTrackFinder::FindPreferredJoins() {
 		    break;
 		  }
 		}
-		
+
 		// Make the preferred assocations
 		if(mJnFlag==true) {
 		  //GMA need to check this criteria and optimise it
@@ -1737,28 +1749,28 @@ void InoTrackFinder::FindPreferredJoins() {
 		    Segp->AddPrefSegToBeg(Seg);
 		  } else {
 		    if (TrkFinderDebug==10) {
-		      cout << "Segy " 
-			   << Seg->GetBegZPlane() << " " 
+		      cout << "Segy "
+			   << Seg->GetBegZPlane() << " "
 			   << Seg->GetEndZPlane() << " "
-			   << Seg->GetBegZPos() << " " 
-			   << Seg->GetEndZPos() << " " 
-			   << Seg->GetBegXPos() << " " 
-			   << Seg->GetBegYPos() << " " 
-			   << Seg->GetEndXPos() << " " 
-			   << Seg->GetEndYPos() << " Segp " 
-			   << Segp->GetBegZPlane() << " " 
+			   << Seg->GetBegZPos() << " "
+			   << Seg->GetEndZPos() << " "
+			   << Seg->GetBegXPos() << " "
+			   << Seg->GetBegYPos() << " "
+			   << Seg->GetEndXPos() << " "
+			   << Seg->GetEndYPos() << " Segp "
+			   << Segp->GetBegZPlane() << " "
 			   << Segp->GetEndZPlane() << " "
-			   << Segp->GetBegZPos() << " " 
-			   << Segp->GetEndZPos() << " " 
-			   << Segp->GetBegXPos() << " " 
-			   << Segp->GetBegYPos() << " " 
-			   << Segp->GetEndXPos() << " " 
+			   << Segp->GetBegZPos() << " "
+			   << Segp->GetEndZPos() << " "
+			   << Segp->GetBegXPos() << " "
+			   << Segp->GetBegYPos() << " "
+			   << Segp->GetEndXPos() << " "
 			   << Segp->GetEndYPos() << " "
-			   << Seg->GetBegXPos() - Seg->GetEndXPos() << " " 
-			   << Seg->GetBegYPos() - Seg->GetEndYPos() << " " 
+			   << Seg->GetBegXPos() - Seg->GetEndXPos() << " "
+			   << Seg->GetBegYPos() - Seg->GetEndYPos() << " "
 			   << GradientXTolerance*StripXWidth << " diffsegp "
-			   << Segp->GetBegXPos() - Segp->GetEndXPos() << " " 
-			   << Segp->GetBegYPos() - Segp->GetEndYPos() << " " 
+			   << Segp->GetBegXPos() - Segp->GetEndXPos() << " "
+			   << Segp->GetBegYPos() - Segp->GetEndYPos() << " "
 			   << GradientYTolerance*StripYWidth << endl;
 		    }
 		    //if isXterOut
@@ -1768,7 +1780,7 @@ void InoTrackFinder::FindPreferredJoins() {
 	    }
 	  }
 	}
-	
+
 	// Look for singly preferred joins (2)    ij <-> ij+1 ( <-> ij+2 )
 	// Loop the over segments on plane ij+1, which we know have possible beginning associations
 	for(unsigned int jk=0; jk<pTempSeg.size(); ++jk) {
@@ -1779,16 +1791,16 @@ void InoTrackFinder::FindPreferredJoins() {
 	    // Check to see if we will already have made the preferred association above
 	    for(unsigned int kl=0; kl<Segp->GetNAssocSegBeg(); ++kl) {
 	      InoTrackSegment* Seg = Segp->GetAssocSegBeg(kl);
-	      
+
 	      if(Seg->GetTmpTrkFlag()>1) {
 		JoinFlag=true;
 		break;
 	      }
 	    }
-	    
+
 	    // If have not made the association, can check assocations
 	    // between triplets on either side
-	    
+
 	    if(JoinFlag==false) {
 	      for(unsigned int kl=0; kl<Segp->GetNAssocSegBeg(); ++kl) {
 		InoTrackSegment* Seg = Segp->GetAssocSegBeg(kl);
@@ -1801,7 +1813,7 @@ void InoTrackFinder::FindPreferredJoins() {
 		    break;
 		  }
 		}
-		
+
 		// Make the preferred assocations
 		if(pJnFlag==true) {
 		  if((fabs((Seg->GetBegXPos()-Seg->GetEndXPos())-(Segp->GetBegXPos()-Segp->GetEndXPos()))<GradientXTolerance*StripXWidth) && (fabs((Seg->GetBegYPos()-Seg->GetEndYPos())-(Segp->GetBegYPos()-Segp->GetEndYPos()))<GradientYTolerance*StripYWidth) && Seg->GetBegZPlane()<=Segp->GetBegZPlane() && Seg->GetEndZPlane()<=Segp->GetEndZPlane() ) {
@@ -1809,28 +1821,28 @@ void InoTrackFinder::FindPreferredJoins() {
 		    Segp->AddPrefSegToBeg(Seg);
 		  } else {
 		    if (TrkFinderDebug==10) {
-		      cout << "Segz " 
-			   << Seg->GetBegZPlane() << " " 
+		      cout << "Segz "
+			   << Seg->GetBegZPlane() << " "
 			   << Seg->GetEndZPlane() << " "
-			   << Seg->GetBegZPos() << " " 
-			   << Seg->GetEndZPos() << " " 
-			   << Seg->GetBegXPos() << " " 
-			   << Seg->GetEndXPos() << " " 
-			   << Seg->GetBegYPos() << " " 
-			   << Seg->GetEndYPos() << " Segp " 
-			   << Segp->GetBegZPlane() << " " 
+			   << Seg->GetBegZPos() << " "
+			   << Seg->GetEndZPos() << " "
+			   << Seg->GetBegXPos() << " "
+			   << Seg->GetEndXPos() << " "
+			   << Seg->GetBegYPos() << " "
+			   << Seg->GetEndYPos() << " Segp "
+			   << Segp->GetBegZPlane() << " "
 			   << Segp->GetEndZPlane() << " "
-			   << Segp->GetBegZPos() << " " 
-			   << Segp->GetEndZPos() << " " 
-			   << Segp->GetBegXPos() << " " 
-			   << Segp->GetEndXPos() << " " 
-			   << Segp->GetBegYPos() << " " 
+			   << Segp->GetBegZPos() << " "
+			   << Segp->GetEndZPos() << " "
+			   << Segp->GetBegXPos() << " "
+			   << Segp->GetEndXPos() << " "
+			   << Segp->GetBegYPos() << " "
 			   << Segp->GetEndYPos() << " "
-			   << Seg->GetBegXPos() - Seg->GetEndXPos() << " " 
-			   << Seg->GetBegYPos() - Seg->GetEndYPos() << " " 
+			   << Seg->GetBegXPos() - Seg->GetEndXPos() << " "
+			   << Seg->GetBegYPos() - Seg->GetEndYPos() << " "
 			   << GradientXTolerance*StripXWidth << " diffsegp "
-			   << Segp->GetBegXPos() - Segp->GetEndXPos() << " " 
-			   << Segp->GetBegYPos() - Segp->GetEndYPos() << " " 
+			   << Segp->GetBegXPos() - Segp->GetEndXPos() << " "
+			   << Segp->GetBegYPos() - Segp->GetEndYPos() << " "
 			   << GradientYTolerance*StripYWidth << endl;
 		    }
 		    // if (TrkFinderDebug){
@@ -1840,7 +1852,7 @@ void InoTrackFinder::FindPreferredJoins() {
 	    }
 	  }
 	}
-	
+
 	// Look for other joins we have missed    ij <-> ij+1
 	// Loop over segments on plane ij, which we know have possible end associations
 	for(unsigned int jk=0; jk<mTempSeg.size(); ++jk) {
@@ -1859,10 +1871,10 @@ void InoTrackFinder::FindPreferredJoins() {
 		  break;
 		}
 	      }
-	      
+
 	      // Look at each possible beginning assoc for Segp to see if we've already
 	      // made the assocation
-	      
+
 	      pJnFlag=false;
 	      for(unsigned int lm=0; lm<Segp->GetNAssocSegBeg(); ++lm) {
 		if(Segp->GetAssocSegBeg(lm)->GetTmpTrkFlag()>1) {
@@ -1870,7 +1882,7 @@ void InoTrackFinder::FindPreferredJoins() {
 		  break;
 		}
 	      }
-	      
+
 	      // Make the preferred associations if it hasn't been done by one of the loops above
 	      if(mJnFlag==false && pJnFlag==false) {
 		if((fabs((Seg->GetBegXPos()-Seg->GetEndXPos())-(Segp->GetBegXPos()-Segp->GetEndXPos()))<GradientXTolerance*StripXWidth) && (fabs((Seg->GetBegYPos()-Seg->GetEndYPos())-(Segp->GetBegYPos()-Segp->GetEndYPos()))<GradientYTolerance*StripYWidth) && Seg->GetBegZPlane()<=Segp->GetBegZPlane() && Seg->GetEndZPlane()<=Segp->GetEndZPlane() ) {
@@ -1878,28 +1890,28 @@ void InoTrackFinder::FindPreferredJoins() {
 		  Segp->AddPrefSegToBeg(Seg);
 		} else {
 		  if (TrkFinderDebug==10) {
-		    cout << "Seg " 
-			 << Seg->GetBegZPlane() << " " 
+		    cout << "Seg "
+			 << Seg->GetBegZPlane() << " "
 			 << Seg->GetEndZPlane() << " "
-			 << Seg->GetBegZPos() << " " 
-			 << Seg->GetEndZPos() << " " 
-			 << Seg->GetBegXPos() << " " 
-			 << Seg->GetEndXPos() << " " 
-			 << Seg->GetBegYPos() << " " 
-			 << Seg->GetEndYPos() << " Segp " 
-			 << Segp->GetBegZPlane() << " " 
+			 << Seg->GetBegZPos() << " "
+			 << Seg->GetEndZPos() << " "
+			 << Seg->GetBegXPos() << " "
+			 << Seg->GetEndXPos() << " "
+			 << Seg->GetBegYPos() << " "
+			 << Seg->GetEndYPos() << " Segp "
+			 << Segp->GetBegZPlane() << " "
 			 << Segp->GetEndZPlane() << " "
-			 << Segp->GetBegZPos() << " " 
-			 << Segp->GetEndZPos() << " " 
-			 << Segp->GetBegXPos() << " " 
-			 << Segp->GetEndXPos() << " " 
+			 << Segp->GetBegZPos() << " "
+			 << Segp->GetEndZPos() << " "
+			 << Segp->GetBegXPos() << " "
+			 << Segp->GetEndXPos() << " "
 			 << Segp->GetBegYPos() << " "
 			 << Segp->GetEndYPos() << " "
-			 << Seg->GetBegXPos() - Seg->GetEndXPos() << " " 
-			 << Seg->GetBegYPos() - Seg->GetEndYPos() << " " 
+			 << Seg->GetBegXPos() - Seg->GetEndXPos() << " "
+			 << Seg->GetBegYPos() - Seg->GetEndYPos() << " "
 			 << GradientXTolerance*StripXWidth << " diffsegp "
-			 << Segp->GetBegXPos() - Segp->GetEndXPos() << " " 
-			 << Segp->GetBegYPos() - Segp->GetEndYPos() << " " 
+			 << Segp->GetBegXPos() - Segp->GetEndXPos() << " "
+			 << Segp->GetBegYPos() - Segp->GetEndYPos() << " "
 			 << GradientYTolerance*StripYWidth << endl;
 		  }
 		  // if (TrkFinderDebug){
@@ -1909,12 +1921,12 @@ void InoTrackFinder::FindPreferredJoins() {
 	  }
 	}
       }
-      
+
       // Clear flags ready to consider next planes
       for(unsigned int jk=0; jk<mTempSeg.size(); ++jk) {
 	mTempSeg[jk]->SetTmpTrkFlag(0);
       }
-      
+
       for(unsigned int jk=0; jk<pTempSeg.size(); ++jk) {
 	pTempSeg[jk]->SetTmpTrkFlag(0);
       }
@@ -1925,21 +1937,21 @@ void InoTrackFinder::FindPreferredJoins() {
   // Look for any other preferred associations we may have missed.
   // Find segments with no preferred end association and look a bit
   // further to find preferred associations.
-  
+
   //--------------------------------------------------------------------------
   int NewPlane; int Increment;
   double SegXPos, NearbySegXPos, SegYPos, NearbySegYPos;
   bool AssocsStopHere;
   bool ConsiderSegment;
-  
+
   for(int Module=0; Module<NumModules; ++Module) {
     for(int Plane=1; Plane<PlanesInModule-1; ++Plane) {
       int ij=Plane + Module*(PlanesInModule+1); //GMA14, "i", should be local variable
-      
+
       // Loop over all segments
       for(unsigned int jk=0; jk<SegmentBank[ij].size(); ++jk) {
 	InoTrackSegment* Seg0 = SegmentBank[ij][jk];
-	
+
 	// Loop over the segments with no preferred end association
 	if(Seg0->GetNPrefSegEnd()==0 && Seg0->GetNPrefSegBeg()>0) {
 	  // Look at nearby segments to see if these already continue the associations.
@@ -1948,11 +1960,11 @@ void InoTrackFinder::FindPreferredJoins() {
 	  SegYPos=0.5*(Seg0->GetBegYPos()+Seg0->GetEndYPos());
 	  for(unsigned int kl=0; kl<SegmentBank[ij].size(); ++kl) {
 	    InoTrackSegment* NearbySeg = SegmentBank[ij][kl];
-	    
+
 	    if(NearbySeg==Seg0) {continue;}
 	    NearbySegXPos=0.5*(NearbySeg->GetBegXPos()+NearbySeg->GetEndXPos());
 	    NearbySegYPos=0.5*(NearbySeg->GetBegYPos()+NearbySeg->GetEndYPos());
-	    
+
 	    if(fabs(NearbySegXPos-SegXPos)<1 && fabs(NearbySegYPos-SegYPos)<1 && NearbySeg->GetNPrefSegEnd()>0 && NearbySeg->GetNPrefSegBeg()>0) {
 	      AssocsStopHere=false;
 	      break;
@@ -1961,12 +1973,12 @@ void InoTrackFinder::FindPreferredJoins() {
 	  if(AssocsStopHere==false) {
 	    break;
 	  }
-	  
+
 	  JoinFlag=false;
-	  
+
 	  // Consider the segment, plus all the segments, SegBeg, with which
 	  // it has a preferred beginning association.
-	  
+
 	  for(int kl=-1; kl<int(Seg0->GetNPrefSegBeg()); ++kl) {
 	    // First time, consider Seg0, rather than one of its preferred beginning associations.
 	    InoTrackSegment* SegBeg = 0;
@@ -1975,7 +1987,7 @@ void InoTrackFinder::FindPreferredJoins() {
 	    } else {
 	      SegBeg = Seg0->GetPrefSegBeg(kl);
 	    }
-	    
+
 	    Increment = 2; // Original Increment=4;
 	    // Look up to 6 planes ahead within the same module.
 	    while(Increment<=7)	{
@@ -1984,15 +1996,15 @@ void InoTrackFinder::FindPreferredJoins() {
 	      if(NewPlane>=(Module+1)*(PlanesInModule+1)) {
 		break;
 	      }
-	      
+
 	      // See if SegBeg is associated with a segment on this plane, NextSeg.
 	      // If so, also see if SegBeg is associated with one of NextSeg's
 	      // preferred end associated segments.
-	      
+
 	      // If so, make the preferred associations between SegBeg and NextSeg.
 	      for(unsigned int lm=0; lm<SegmentBank[NewPlane].size(); ++lm) {
 		InoTrackSegment* NextSeg = SegmentBank[NewPlane][lm];
-		
+
 		// Check segments are not now linked in a chain of preferred associations.
 		ConsiderSegment=true;
 		for(unsigned int am=0; am<NextSeg->GetNPrefSegBeg(); ++am) {
@@ -2014,16 +2026,16 @@ void InoTrackFinder::FindPreferredJoins() {
 		      SegBeg->AddPrefSegToEnd(NextSeg);
 		      NextSeg->AddPrefSegToBeg(SegBeg);
 		      SegBeg->SetTmpTrkFlag(1); NextSeg->SetTmpTrkFlag(1);
-		      
+
 		      // cout << "Made missing Pref assoc, SegBeg "
 		      // << SegBeg->GetBegZPlane() << ", " << SegBeg->GetEndZPlane() << ", "
-		      //			   << SegBeg->GetBegXPos() << ", " << SegBeg->GetEndXPos()<< ", " 
+		      //			   << SegBeg->GetBegXPos() << ", " << SegBeg->GetEndXPos()<< ", "
 		      //			   << SegBeg->GetBegYPos() << ", " << SegBeg->GetEndYPos()
-		      //			   << " NextSeg " << NextSeg->GetBegZPlane() << ", " 
-		      //			   << NextSeg->GetEndZPlane() << ", " 
-		      //			   << NextSeg->GetBegXPos() << ", " 
-		      //			   << NextSeg->GetEndXPos() << ", " 
-		      //			   << NextSeg->GetBegYPos() << ", " 
+		      //			   << " NextSeg " << NextSeg->GetBegZPlane() << ", "
+		      //			   << NextSeg->GetEndZPlane() << ", "
+		      //			   << NextSeg->GetBegXPos() << ", "
+		      //			   << NextSeg->GetEndXPos() << ", "
+		      //			   << NextSeg->GetBegYPos() << ", "
 		      //			   << NextSeg->GetEndYPos() << endl;
 		      break;
 		    }
@@ -2043,36 +2055,36 @@ void InoTrackFinder::FindPreferredJoins() {
 	    }
 	  }
 	}
-	
+
 	// Now loop over the segments with no preferred beginning association
 	if(Seg0->GetNPrefSegBeg()==0 && Seg0->GetNPrefSegEnd()>0) {
 	  // Look at nearby segments to see if these already continue the associations.
 	  AssocsStopHere=true;
 	  SegXPos=0.5*(Seg0->GetBegXPos()+Seg0->GetEndXPos());
 	  SegYPos=0.5*(Seg0->GetBegYPos()+Seg0->GetEndYPos());
-	  
+
 	  for(unsigned int kl=0; kl<SegmentBank[ij].size(); ++kl) {
 	    InoTrackSegment* NearbySeg = SegmentBank[ij][kl];
 	    if(NearbySeg==Seg0) {continue;}
-	    
+
 	    NearbySegXPos=0.5*(NearbySeg->GetBegXPos()+NearbySeg->GetEndXPos());
 	    NearbySegYPos=0.5*(NearbySeg->GetBegYPos()+NearbySeg->GetEndYPos());
-	    
+
 	    if(fabs(NearbySegXPos-SegXPos)<1 && fabs(NearbySegYPos-SegYPos)<1 && NearbySeg->GetNPrefSegEnd()>0 && NearbySeg->GetNPrefSegBeg()>0) {
 	      AssocsStopHere=false;
 	      break;
 	    }
 	  }
-	  
+
 	  if(AssocsStopHere==false) {
 	    break;
 	  }
-	  
+
 	  JoinFlag=false;
-	  
+
 	  // Consider the segment, plus all the segments, SegEnd, with which
 	  // it has a preferred end association.
-	  
+
 	  for(int kl=-1; kl<int(Seg0->GetNPrefSegEnd()); ++kl) {
 	    // First time, consider Seg0, rather than one of its preferred end associations.
 	    InoTrackSegment* SegEnd = 0;
@@ -2082,21 +2094,21 @@ void InoTrackFinder::FindPreferredJoins() {
 	      SegEnd = Seg0->GetPrefSegEnd(kl);
 	    }
 	    Increment=2;
-	    
+
 	    // Look up to 6 planes behind within the same module
-	    
+
 	    while(Increment<=7) {
 	      NewPlane=SegEnd->GetBegZPlane()-Increment;
 	      if(NewPlane<=(Module)*(PlanesInModule+1)) {break;}
-	      
+
 	      // See if SegEnd is associated with a segment on this plane, PrevSeg.
-	      // If so, also see if SegEnd is associated with one of PrevSeg's 
+	      // If so, also see if SegEnd is associated with one of PrevSeg's
 	      // preferred beginning associated segments.
 	      // If so, make the preferred associations between SegEnd and PrevSeg.
-	      
+
 	      for(unsigned int lm=0; lm<SegmentBank[NewPlane].size(); ++lm) {
 		InoTrackSegment* PrevSeg = SegmentBank[NewPlane][lm];
-		
+
 		// Check segments are not now linked in a chain of preferred associations.
 		ConsiderSegment=true;
 		for(unsigned int am=0; am<PrevSeg->GetNPrefSegEnd(); ++am) {
@@ -2110,7 +2122,7 @@ void InoTrackFinder::FindPreferredJoins() {
 		if(ConsiderSegment==false) {
 		  continue;
 		}
-		
+
 		if( PrevSeg->IsAssoc(SegEnd) ) {
 		  for(unsigned int am=0; am<PrevSeg->GetNPrefSegBeg(); ++am) {
 		    InoTrackSegment* SegBeg = PrevSeg->GetPrefSegBeg(am);
@@ -2118,15 +2130,15 @@ void InoTrackFinder::FindPreferredJoins() {
 		      JoinFlag=true;
 		      SegEnd->AddPrefSegToBeg(PrevSeg);
 		      PrevSeg->AddPrefSegToEnd(SegEnd);
-		      
+
 		      SegEnd->SetTmpTrkFlag(1); PrevSeg->SetTmpTrkFlag(1);
 		      if (TrkFinderDebug==10) {
 			cout << "Made missing Pref assoc, SegEnd "
 			     << SegEnd->GetBegZPlane() << ", " << SegEnd->GetEndZPlane() << ", "
 			     << SegEnd->GetBegXPos() << ", " << SegEnd->GetEndXPos()<<", "
 			     << SegEnd->GetBegYPos() << ", " << SegEnd->GetEndYPos()
-			     << " PrevSeg " << PrevSeg->GetBegZPlane() << ", " 
-			     << PrevSeg->GetEndZPlane() << ", " 
+			     << " PrevSeg " << PrevSeg->GetBegZPlane() << ", "
+			     << PrevSeg->GetEndZPlane() << ", "
 			     << PrevSeg->GetBegXPos() <<", "
 			     << PrevSeg->GetEndXPos() <<", "
 			     << PrevSeg->GetBegYPos() <<", "
@@ -2155,7 +2167,7 @@ void InoTrackFinder::FindPreferredJoins() {
       }
     }
   }
-  
+
   if(TrkFinderDebug==100) {
     // Print out list of preferred associations
     cout << " InoTrackFinder : *** LIST OF PREF SEG ASSOCIATIONS *** " << endl;
@@ -2175,7 +2187,7 @@ void InoTrackFinder::FindPreferredJoins() {
 	InoCluster* clr0 = SegmentBank[ij][jk]->GetCluster(0);
 	InoCluster* clr1 = SegmentBank[ij][jk]->GetCluster(1);
 	InoCluster* clr2 = SegmentBank[ij][jk]->GetCluster(2);
-	
+
 	cout
 	  << "(" << clr0->GetZPlane() << "," << clr0->GetBegXPos() << "->" << clr0->GetEndXPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegXPos() << "->" << clr1->GetEndXPos() << ") "
@@ -2183,8 +2195,8 @@ void InoTrackFinder::FindPreferredJoins() {
 	  << " (" << clr0->GetZPlane() << "," << clr0->GetBegYPos() << "->" << clr0->GetEndYPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegYPos() << "->" << clr1->GetEndYPos() << ") "
 	  << "(" << clr2->GetZPlane() << "," << clr2->GetBegYPos() << "->" << clr2->GetEndYPos() << ") " << endl;
-	
-	
+
+
 	cout << " Beg: " << endl;
 	for(unsigned int kl=0; kl<segment->GetNPrefSegBeg(); ++kl) {
 	  InoTrackSegment* segtmp = segment->GetPrefSegBeg(kl);
@@ -2207,7 +2219,7 @@ void InoTrackFinder::FindPreferredJoins() {
 	    << "(" << ttclr1->GetZPlane() << "," << ttclr1->GetBegYPos() << "->" << ttclr1->GetEndYPos() << ") "
 	    << "(" << ttclr2->GetZPlane() << "," << ttclr2->GetBegYPos() << "->" << ttclr2->GetEndYPos() << ") " << endl;
 	}
-	
+
 	cout << " End: " << endl;
 	for(unsigned int kl=0; kl<segment->GetNPrefSegEnd(); ++kl) {
 	  InoTrackSegment* segtmp = segment->GetPrefSegEnd(kl);
@@ -2242,16 +2254,16 @@ void InoTrackFinder::FindMatchedJoins() {
   // We use the idea of seed segments to identify the last segment in a chain
   // of segments.
   //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
-  
+
   //  int i;
   bool JoinFlag;
   int factX, factY;
-  
+
   // Loop over the planes
   for(int Module = 0; Module < NumModules; ++Module) {
     for(int Plane = 1; Plane < PlanesInModule - 1; ++Plane) {
       int ij = Plane + Module * (PlanesInModule + 1); //GMA14 "i", need to bne defined as local
-      
+
       // Loop over the triplets centered on plane i
       for(unsigned int jk = 0; jk < SegmentBank[ij].size(); ++jk) {
 	//---------------------
@@ -2261,47 +2273,47 @@ void InoTrackFinder::FindMatchedJoins() {
 	  TempTrack[0].push_back(SegmentBank[ij][jk]);
 	  SegmentBank[ij][jk]->SetSeedSegment(SegmentBank[ij][jk]);
 	}
-	
+
 	//---------------------
 	// Then, consider those segments which have some preferred associations
 	if(SegmentBank[ij][jk]->GetNPrefSegBeg()>0 || SegmentBank[ij][jk]->GetNPrefSegEnd()>0) {
 	  //asm: ijs the second condition required
 	  JoinFlag=false;
-	  
+
 	  // If there is one pref assoc at beginning (always false for first segment in module)
 	  if(SegmentBank[ij][jk]->GetNPrefSegBeg()==1) {
 	    InoTrackSegment* Segm = SegmentBank[ij][jk]->GetPrefSegBeg(0);
-	    
+
 	    // Check that we are considering a simple chain of segments
 	    if(Segm->GetNPrefSegEnd()==1) {
 	      // Get the last segment in the chain of segments
 	      InoTrackSegment* SeedSeg = Segm->GetSeedSegment();
 	      SeedSeg->AddSegment(SegmentBank[ij][jk]);
 	      SegmentBank[ij][jk]->SetSeedSegment(SeedSeg);
-	      SegmentBank[ij][jk]->SetUID(-1);        		//fUID of the segment is set to -1 when it is 
-	      
+	      SegmentBank[ij][jk]->SetUID(-1);        		//fUID of the segment is set to -1 when it is
+
 	      // cout << "trkfindmatchedjoin "<< ij<<" "<<SegmentBank[ij][jk]->GetUID()<<endl;
 	      JoinFlag=true;
 	    }
 	  }
 	  //----------------------------------
 	  //Asm: not required
-	  
+
 	  if( SegmentBank[ij][jk]->GetNPrefSegBeg()==0 && SegmentBank[ij][jk]->GetNPrefSegEnd()==1) {
 	    InoTrackSegment* Segp = SegmentBank[ij][jk]->GetPrefSegEnd(0);
-	    
+
 	    // Check that we are considering a simple chain of segments
 	    if(Segp->GetNPrefSegBeg()==1&& Segp->GetNPrefSegEnd()==0) {
-	      //(asm: 080311) 
+	      //(asm: 080311)
 	      // Get the last segment in the chain of segments
-	      
+
 	      SegmentBank[ij][jk]->SetSeedSegment(SegmentBank[ij][jk]);
 	      InoTrackSegment* SeedSeg1 = SegmentBank[ij][jk]->GetSeedSegment();
-	      
+
 	      SeedSeg1->AddSegment(Segp);
 	      Segp->SetSeedSegment(SeedSeg1);
 	      Segp->SetUID(-1);                       	//fUID of the segment is set to -1 when it is
-	      
+
 	      JoinFlag=true;
 	    }
 	  }
@@ -2310,12 +2322,12 @@ void InoTrackFinder::FindMatchedJoins() {
 	  //--------------------
 	  //cout <<"trkfindmatchedjoin "<< ij<<" "<<SegmentBank[ij].size()<<endl;
 	  // Now consider those triplets which aren't just one pref assoc at beg and one at end
-	  
+
 	  if(JoinFlag==false) {
 	    ViewSegBank[0].push_back(SegmentBank[ij][jk]);
 	    TempTrack[0].push_back(SegmentBank[ij][jk]);
 	    SegmentBank[ij][jk]->SetSeedSegment(SegmentBank[ij][jk]);
-	    
+
 	    // Loop over the preferred associations at beginning
 	    for(unsigned int kl=0; kl<SegmentBank[ij][jk]->GetNPrefSegBeg(); ++kl) {
 	      InoTrackSegment* SeedSeg = SegmentBank[ij][jk]->GetPrefSegBeg(kl)->GetSeedSegment();
@@ -2325,11 +2337,11 @@ void InoTrackFinder::FindMatchedJoins() {
 	      if(SeedSeg->GetBegZPlane()<=MatchSeg->GetBegZPlane() && SeedSeg->GetEndZPlane()<=MatchSeg->GetEndZPlane()) {
 		factX=((SeedSeg->GetBegXPos()-SeedSeg->GetEndXPos())/(SeedSeg->GetEndZPlane()-SeedSeg->GetBegZPlane()))<10*StripXWidth?4:10;
 		factY=((SeedSeg->GetBegYPos()-SeedSeg->GetEndYPos())/(SeedSeg->GetEndZPlane()-SeedSeg->GetBegZPlane()))<10*StripYWidth?4:10;
-		
+
 		if( (SeedSeg->GetEntries()>3 && MatchSeg->GetEntries()>3) || (fabs( (SeedSeg->GetBegXPos()-SeedSeg->GetEndXPos())/(SeedSeg->GetEndZPlane()-SeedSeg->GetBegZPlane()) - (MatchSeg->GetBegXPos()-MatchSeg->GetEndXPos())/(MatchSeg->GetEndZPlane()-MatchSeg->GetBegZPlane()) ) < factX*StripXWidth && /*factor 10 should be replaced by no. this is function of the slope  <20 strip -4 * and for >20 strips - 10 */ fabs( (SeedSeg->GetBegYPos()-SeedSeg->GetEndYPos())/(SeedSeg->GetEndZPlane()-SeedSeg->GetBegZPlane()) - (MatchSeg->GetBegYPos()-MatchSeg->GetEndYPos())/(MatchSeg->GetEndZPlane()-MatchSeg->GetBegZPlane()) ) < factY*StripYWidth)) {
-		  
+
 		  //asm: ....................................Over.................................................................
-		  
+
 		  MatchSeg->AddMatchSegToBeg(SeedSeg);
 		  SeedSeg->AddMatchSegToEnd(MatchSeg);
 		}
@@ -2340,19 +2352,19 @@ void InoTrackFinder::FindMatchedJoins() {
       }// End loop over triplets centered on plane ij
     }// End loop over planes in module
   }// End loop over modules
-  
+
   //  cout << "---------------------------------------------------detgap------------------------------------- "<<endl;
-  
+
   int detgap=2;                                    //this is just to set this part of the code  on and off while testing
   if (detgap==1)  {
     // GMA open this for coil and boundary etc
     // Form matched associations between non-adjacent segments
     vector<InoTrackSegment*> TempSeg1;
     vector<InoTrackSegment*> TempSeg2;
-    
+
     const int npts0=4; int npts; double inv_npts=0; int Module; int Plane;
     bool CheckCoilHole=false;
-    
+
     // Loop over the planeviews U and V
     for(int view=0; view<1; ++view) {
       TempSeg1.clear(); TempSeg2.clear();
@@ -2373,7 +2385,7 @@ void InoTrackFinder::FindMatchedJoins() {
 	  // These are the tpos values required to locate the Magent coil hole
 	  //GMA  put proper value
 	  //asm: need to see if taking absolute value take care of the all possible case.
-	  
+
 	  double xx = abs(Seg1->GetEndXDir());
 	  double yy = abs(Seg1->GetEndYDir());
 	  bool rpcGap=false, MegModuleGap=false;
@@ -2426,22 +2438,22 @@ void InoTrackFinder::FindMatchedJoins() {
             //    double* xx = Seg1->GetEnd(X/Y)Dir();
             //    double xx = Seg1->GetEndXDir();
             //    double yy = Seg1->GetEndYDir();
-	    
+
             //          inv_npts=0.198*(pow((xx*xx+yy*yy),0.5)); //GMA was inv_npts=0.5*Seg1->GetEnd(X/Y)Dir();
-	    
+
 	    //------------------------------------------------------------------------------
-	    if(MegModuleGap) { 
+	    if(MegModuleGap) {
 	      inv_npts= 0.185*max(1/tan(xx),1/tan(1.55));          //0.852*xx;
 	    } else if(rpcGap && XXq>=0) {
 	      inv_npts= 0.3*max(1/tan(xx),1/tan(1.55));
 	    } else if(rpcGap && YYq>=0) {
 	      inv_npts= 0.3*max(1/tan(yy),1/tan(1.55));
 	    }
-	    
+
 	    if(inv_npts<0) {inv_npts=-inv_npts;}
 	    if(inv_npts<0.01) {inv_npts=0.01;}
 	    npts=int(1./inv_npts);
-	    
+
 	    if(MegModuleGap&& npts<6) {
 	      npts=6;
 	    } else if (rpcGap&& npts<4) {   //replaced 8 with 13
@@ -2449,10 +2461,10 @@ void InoTrackFinder::FindMatchedJoins() {
 	    }
 	    //temp  if(npts>100) {npts=100;}  //replaced 18 with 30 - possibly this should be a function of the gradient of the track?
 	  }
-	  
+
 	  // Loop over this range of possible association
 	  //int inpts= npts-5<=Seg1->GetEndZPlane()?1:npts-5;
-	  
+
 	  for(int jk=1; jk<npts+4; ++jk) {
 	    CheckCoilHole=false;
 	    Plane=Seg1->GetEndZPlane()+jk;     //asm: (2*jk)---->jk;
@@ -2463,10 +2475,10 @@ void InoTrackFinder::FindMatchedJoins() {
 		// Check association, first across coil-hole
 		//GMA need proper values
 		double xx2 = abs(Seg2->GetBegXDir());
-		
+
 		//--------------------------------------------------
 		//asm==============condition changed====== even takes angle at which to track entres the gap region into account======
-		
+
 		if(MegModuleGap&&((Seg2->GetBegXPos()>(-8.25-min(xx2,1.52)*LayerThickness)&& Seg2->GetBegXPos()<(-7.95+min(xx2,1.52)*LayerThickness)&&Seg1->GetEndXPos()>(-8.25-min(xx2,1.52)*LayerThickness)&& Seg1->GetEndXPos()<(-7.95+min(xx2,1.52)*LayerThickness))||(Seg2->GetBegXPos()>(7.95-min(xx2,1.52)*LayerThickness) && Seg2->GetBegXPos()<(8.25+min(xx2,1.52)*LayerThickness)&&Seg1->GetEndXPos()>(7.95-min(xx2,1.52)*LayerThickness) && Seg1->GetEndXPos()<(8.25+min(xx2,1.52)*LayerThickness)))) {
 		  CheckCoilHole=true;//cout<<"detcoilhole";
 		  if(MegModuleGap) pAnalysis->DGap->Fill(5);
@@ -2496,30 +2508,30 @@ void InoTrackFinder::FindMatchedJoins() {
 		//----------------------------------------------------
 		// Then main association checks
 		//GMA need proper database
-		//  cout<< "Is"; 
+		//  cout<< "Is";
 		if((Seg2->GetSeedSegment()==Seg2 &&  Seg2->GetNMatchSegBeg()==0) && (Seg2->GetBegZPlane()-Seg1->GetEndZPlane()>0 && (Seg1->GetEntries()>4 && Seg2->GetEntries()>4)) && (jk<npts0 || CheckCoilHole==true || (1+(Seg1->GetEndZPlane()-Seg1->GetBegZPlane())/2>5) ) ) {
 		  if( Seg1->IsAssoc(Seg2) ) {
 		    cout<< "Yes"<<endl;
 		    // cout<<"1rpcGap"<<rpcGap<<endl;
 		    // ND nearby preliminary track protection
 		    //GMA not used here, but may need in future
-		    
+
 		    float atanX= atan(Seg1->GetEndXDir())-atan(Seg2->GetBegXDir());
 		    float atanY= atan(Seg1->GetEndYDir())-atan(Seg2->GetBegYDir());
-		    
+
 		    //pAnalysis->ShwXw->Fill(atanX) ;
 		    //pAnalysis->ShwYw->Fill(atanY);
-		    if(CheckCoilHole){ 
+		    if(CheckCoilHole){
 		      cout<<"pAnalysis->ShwXw->Fill(atanX);\npAnalysis->ShwYw->Fill(atanY);"<<endl;
 		      pAnalysis->ShwXw->Fill(atanX);
 		      pAnalysis->ShwYw->Fill(atanY);
 		      //cout<< "atan"<<atanX<< " "<<atanY<<endl;
 		      //cout<<"rrpcGap"<<rpcGap<<endl;
 		    }
-		    
+
 		    if(MegModuleGap) pAnalysis->DGap->Fill(6);
 		    if(rpcGap)       pAnalysis->DGap->Fill(3);
-		    
+
 		    // asm" this condition may differ for both the gaps  can be set using the plot ShwXw
 		    float atandiff = 0.8;
 		    if(MegModuleGap) {
@@ -2527,7 +2539,7 @@ void InoTrackFinder::FindMatchedJoins() {
 		    } else if(rpcGap) {
 		      atandiff = 0.8;
 		    }
-		    
+
 		    if(fabs(atan(Seg1->GetEndXDir())-atan(Seg2->GetBegXDir()))<atandiff && fabs(atan(Seg1->GetEndYDir())-atan(Seg2->GetBegYDir()))<atandiff && ((Seg1->GetEntries()<11 && Seg2->GetEntries()<11 && Seg2->GetBegZPlane()-Seg1->GetEndZPlane()<50) || Seg2->GetBegZPlane()-Seg1->GetEndZPlane()<100)) {
 		      //correct the last two lines
 		      TempSeg1.push_back(Seg1);
@@ -2537,7 +2549,7 @@ void InoTrackFinder::FindMatchedJoins() {
 		      if(MegModuleGap) {pAnalysis->DGap->Fill(8);}
 		      if(rpcGap) {pAnalysis->DGap->Fill(7);}
 		    }//if( ModuleType!=2
-		    
+
 		  }  //  if( Seg1->IsAssoc(Seg2) )
 		}//
 		//  else{cout<<"NoAssoc"<<endl;}
@@ -2548,12 +2560,12 @@ void InoTrackFinder::FindMatchedJoins() {
 	}
       }// End loop over entries in ViewSegBank
       //cout <<"1=======trkfindmatchedjoin ======== "<< endl;
-      
+
       // Make the associations
       for(unsigned int ij=0; ij<TempSeg1.size(); ++ij) {
 	InoTrackSegment* Seg1 = TempSeg1[ij];
 	InoTrackSegment* Seg2 = TempSeg2[ij];
-	
+
 	if(Seg1->GetBegZPlane()<=Seg2->GetBegZPlane() && Seg1->GetEndZPlane()<=Seg2->GetEndZPlane()) {
 	  if( (Seg1->GetEntries()>3 && Seg2->GetEntries()>3) || (4.*fabs( (Seg1->GetBegXPos()-Seg1->GetEndXPos())/(Seg1->GetBegZPlane()-Seg1->GetEndZPlane()) - (Seg2->GetBegXPos()-Seg2->GetEndXPos())/(Seg2->GetBegZPlane()-Seg2->GetEndZPlane()) ) <  10*StripXWidth && 4.*fabs( (Seg1->GetBegYPos()-Seg1->GetEndYPos())/(Seg1->GetBegZPlane()-Seg1->GetEndZPlane()) - (Seg2->GetBegYPos()-Seg2->GetEndYPos())/(Seg2->GetBegZPlane()-Seg2->GetEndZPlane()) ) < 10*StripYWidth) ) {
 	    Seg2->AddMatchSegToBeg(Seg1);
@@ -2562,7 +2574,7 @@ void InoTrackFinder::FindMatchedJoins() {
 	}
       }
     }// End loop over planeviews
-    //  cout <<"2=======trkfindmatchedjoin ======== "<< endl;	
+    //  cout <<"2=======trkfindmatchedjoin ======== "<< endl;
   } //if detgap
   if (detgap==2 ) {
     //----------------------
@@ -2572,14 +2584,14 @@ void InoTrackFinder::FindMatchedJoins() {
     const int npts0=4; int npts; double inv_npts=0; int Module; int Plane;
     bool CheckCoilHole=false;
     double xxmax = 1.52;
-    double fmax =0.92; 
-    
+    double fmax =0.92;
+
     //    int a0=0,a1=0;
     int a2=0,a3=0,b4=0,b5=0,b6=0,a7=0,b8=0;
     for(int view=0; view<1; ++view) {
       TempSeg1.clear(); TempSeg2.clear();
       if(ViewSegBank[view].size()<2) continue;
-      
+
       //// please check this loop
       for(unsigned int ij=0; ij<ViewSegBank[view].size(); ++ij) {
 	// Loop over entries stored in ViewSegBank, above
@@ -2615,7 +2627,7 @@ void InoTrackFinder::FindMatchedJoins() {
 		rpcGap=true;
 	      }
 	    }
-	    
+
 	    YYfrac= (int(fabs(Seg1->GetEndYPos()*1000))%2000)/1000.;
 	    if(fabs(YYfrac-1)>fmax-fabs((int(fabs(min(yy,xxmax)*LayerThickness*1000))%2000)/1000.-1)) {
 	      YYq=int((Seg1->GetEndYPos()*1000)/2000)+8;
@@ -2631,7 +2643,7 @@ void InoTrackFinder::FindMatchedJoins() {
 	      //pAnalysis->DGap->Fill(1);a1++;
 	    }
 	    // pAnalysis->DGap->Fill(0);a0++;
-	    
+
 	    if(MegModuleGap) {
 	      inv_npts= 0.185*max(1/tan(xx),1/tan(1.55)) ;          //0.852*xx;
 	    } else if(rpcGap && XXq>=0) {
@@ -2639,24 +2651,24 @@ void InoTrackFinder::FindMatchedJoins() {
 	    } else if(rpcGap && YYq>=0) {
 	      inv_npts= 0.3*max(1/tan(yy),1/tan(1.55));
 	    }
-	    
+
 	    if(inv_npts<0) {inv_npts=-inv_npts;}
 	    if(inv_npts<0.01) {inv_npts=0.01;}
 	    npts=int(1./inv_npts);
-	    
+
 	    if(MegModuleGap&& npts<6) {
 	      npts=6;   //replaced 8 with 13
 	    } else if(rpcGap&& npts<4) {
-	      npts=4;    //replaced 8 with 13   //temp  if(npts>100) {npts=100;}  
+	      npts=4;    //replaced 8 with 13   //temp  if(npts>100) {npts=100;}
 	    }
 	  }
-	  
+
 	  // Loop over this range of possible association
 	  //int inpts= npts-5<=Seg1->GetEndZPlane()?1:npts-5;
 	  for(int jk=1; jk<npts+4; ++jk) {
 	    CheckCoilHole=false;
 	    Plane=Seg1->GetEndZPlane()+jk;     //asm: (2*jk)---->jk;
-	    
+
 	    if( JoinFlag==false && Plane>=0 &&Plane<((PlanesInModule+1)*(Module+1)) ) {
 	      for(unsigned int kl=0; kl<SegmentBank[Plane].size(); ++kl) {
 		//for(unsigned int kl=0; kl<ViewSegBank[view].size(); ++kl) {
@@ -2674,11 +2686,11 @@ void InoTrackFinder::FindMatchedJoins() {
 		} else if(rpcGap) {
 		  float  XX1frac=0,  YY1frac=0;
 		  int    XX1q=-100,  YY1q=-100;
-		  
+
 		  YY1frac=(int(fabs(Seg2->GetBegYPos()*1000))%2000)/1000.;
 		  if(fabs(Seg2->GetBegXPos())<8.00) {
 		    XX1frac=(int(fabs(Seg2->GetBegXPos()*1000))%2000)/1000.;
-		    
+
 		    if((fabs(XX1frac-1)>fmax-fabs((int(fabs(min(xx2,xxmax)*LayerThickness*1000))%2000)/1000.-1))||(fabs(YY1frac-1)>fmax-fabs((int(fabs(min(yy2,xxmax)*LayerThickness*1000))%2000)/1000.-1))) {
 		      XX1q=int((Seg2->GetBegXPos()*1000)/2000)+24;
 		      YY1q=int((Seg2->GetBegYPos()*1000)/2000)+8;
@@ -2703,13 +2715,13 @@ void InoTrackFinder::FindMatchedJoins() {
 		//cout<< " IsAssoc Test starts"<<endl;
 		//----------------------------------------------------
 		// Then main association checks  //GMA need proper database
-		
+
 		if((Seg2->GetSeedSegment()==Seg2 &&  Seg2->GetNMatchSegBeg()==0) && (Seg2->GetBegZPlane()-Seg1->GetEndZPlane()>0 && (Seg1->GetSeedSegment()->GetEntries()>3 && Seg2->GetEntries()>3)) && (jk<npts0 || CheckCoilHole==true ||(1+(Seg1->GetEndZPlane()-Seg1->GetBegZPlane())/2>5)))  {
 		  if( Seg1->IsAssoc(Seg2) ) {
 		    //cout<< "Yes"<<endl;
 		    float atanX= atan(Seg1->GetEndXDir())-atan(Seg2->GetBegXDir());
 		    float atanY= atan(Seg1->GetEndYDir())-atan(Seg2->GetBegYDir());
-		    
+
 		    pAnalysis->ShwXw->Fill(atanX);
 		    pAnalysis->ShwYw->Fill(atanY);
 		    if(CheckCoilHole) {
@@ -2733,7 +2745,7 @@ void InoTrackFinder::FindMatchedJoins() {
 		    if(fabs(atan(Seg1->GetEndXDir())-atan(Seg2->GetBegXDir()))<atandiff && fabs(atan(Seg1->GetEndYDir())-atan(Seg2->GetBegYDir()))<atandiff && (((Seg1->GetEntries()>11 || Seg2->GetEntries()>11) && Seg2->GetBegZPlane()-Seg1->GetEndZPlane()<60) || Seg2->GetBegZPlane()-Seg1->GetEndZPlane()<30 )) {
 		      TempSeg1.push_back(Seg1);
 		      TempSeg2.push_back(Seg2);
-		      JoinFlag=true;              	
+		      JoinFlag=true;
 		      //cout<<" GAP JOINED******************************** " <<endl;
 		      if(MegModuleGap) {
 			pAnalysis->DGap->Fill(8);b8++;
@@ -2755,7 +2767,7 @@ void InoTrackFinder::FindMatchedJoins() {
 	}// End loop over entries in ViewSegBank
       }
       //cout <<"1=======trkfindmatchedjoin ======== "<< endl;
-      
+
       // Make the associations
       for(unsigned int ij=0; ij<TempSeg1.size(); ++ij) {
 	InoTrackSegment* Seg1 = TempSeg1[ij];
@@ -2772,12 +2784,12 @@ void InoTrackFinder::FindMatchedJoins() {
     //cout<< " aaa "<< a0<<" "<<a1<< " "<< a2<<" " << a3<< " "<<b4<<" "<<b5<<" " <<b6<<" " <<a7<<" "<<b8<<endl;;
     // cout << " ----------------------detgap end----------------------------- " <<endl;
   }//if detgap
-  
-  //========================================================== asm:Over=============================== 
+
+  //========================================================== asm:Over===============================
   if(TrkFinderDebug==100) {
     // Print out list of segments
     cout<<"InoTrackFinder : *** LIST OF MATCHED SEG ASSOCIATIONS *** " << endl;
-    
+
     for(int View=0; View<1; ++View) {
       cout<< "InoTrackFinder :View: " << View <<" "<<ViewSegBank[View].size()<< endl;
       cout<<"----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----xxxx----"<<endl;
@@ -2794,14 +2806,14 @@ void InoTrackFinder::FindMatchedJoins() {
 	InoCluster* clr0 = segment->GetCluster(0);
 	InoCluster* clr1 = segment->GetCluster(1);
 	InoCluster* clr2 = segment->GetCluster(2);
-	
+
 	cout
 	  << "(" << clr0->GetZPlane() << "," << clr0->GetBegXPos() << "->" << clr0->GetEndXPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegXPos() << "->" << clr1->GetEndXPos() << ") "
 	  << "(" << clr2->GetZPlane() << "," << clr2->GetBegXPos() << "->" << clr2->GetEndXPos() << ") "
 	  << " (" << clr0->GetZPlane() << "," << clr0->GetBegYPos() << "->" << clr0->GetEndYPos() << ") "
 	  << "(" << clr1->GetZPlane() << "," << clr1->GetBegYPos() << "->" << clr1->GetEndYPos() << ") "
-	  << "(" << clr2->GetZPlane() << "," << clr2->GetBegYPos() << "->" << clr2->GetEndYPos() << ") " << endl;	
+	  << "(" << clr2->GetZPlane() << "," << clr2->GetBegYPos() << "->" << clr2->GetEndYPos() << ") " << endl;
 	cout<< "InoTrackFinder :    Beg: " << endl;
 	for(unsigned int jk=0; jk<segment->GetNMatchSegBeg(); ++jk) {
 	  InoTrackSegment* segtmp = segment->GetMatchSegBeg(jk);
@@ -2823,7 +2835,7 @@ void InoTrackFinder::FindMatchedJoins() {
 	    << "(" << ttclr1->GetZPlane() << "," << ttclr1->GetBegYPos() << "->" << ttclr1->GetEndYPos() << ") "
 	    << "(" << ttclr2->GetZPlane() << "," << ttclr2->GetBegYPos() << "->" << ttclr2->GetEndYPos() << ") " << endl;
 	}
-	
+
 	cout << "InoTrackFinder :  End: " << endl;
 	for(unsigned int jk=0; jk<segment->GetNMatchSegEnd(); ++jk) {
 	  InoTrackSegment* segtmp = segment->GetMatchSegEnd(jk);
@@ -2848,14 +2860,14 @@ void InoTrackFinder::FindMatchedJoins() {
       }
     }
   }// if  TrkFinderDebug
-  return; 
+  return;
 }
 
 void InoTrackFinder::FormTracks() {
   // Of the segments identified as good above, we identify the segments which
   // are good seeds for the track i.e. from which we can propagate back and forth
   // along matched segments to find a long track.
- 
+
   // Then, for the first seed segment, we try to propagate backwards and forwards,
   // marking the segments we use with different TmpTrkFlag settings.
 
@@ -2863,35 +2875,35 @@ void InoTrackFinder::FormTracks() {
   // number. We mark all the segments we use with TmpTrkFlag 1. The seed segment is
   // labelled with TmpTrkFlag 3.
 
-  // Some paths will lead further than others. We are interested in the longest paths, 
-  // and move back towards Seg0 along the longest paths, marking the segments used 
+  // Some paths will lead further than others. We are interested in the longest paths,
+  // and move back towards Seg0 along the longest paths, marking the segments used
   // with TmpTrkFlag 2.
 
-  // Having done this, we can carry out a similar procedure, but initially moving 
+  // Having done this, we can carry out a similar procedure, but initially moving
   // backwards from Seg0 to lower plane numbers, before returning to Seg0 again.
 
   // So, this arrangement of segments...
   //
   //       Seg  Seg                                  Seg
   //                  Seg                      Seg
-  //                        Seg   Seg0   Seg 
+  //                        Seg   Seg0   Seg
   //                  Seg                      Seg   Seg   Seg
-  //                                                 
+  //
   //               Seg                               Seg
   //                                                       Seg   Seg
 
   // Is labelled as follows...
   //
-  //       2     2                                    1 
-  //                   2                        1 
-  //                         2     3      2  
-  //                   1                        2     2     2 
-  //                                                 
-  //                1                                 2 
-  //                                                        2     2 
+  //       2     2                                    1
+  //                   2                        1
+  //                         2     3      2
+  //                   1                        2     2     2
+  //
+  //                1                                 2
+  //                                                        2     2
   //
 
-  // It is possible that there are multiple paths along segments with TmpTrkFlag 2, 
+  // It is possible that there are multiple paths along segments with TmpTrkFlag 2,
   // as above. The best path is selected by obtaining a score for each, based on
   // straightness and length.
 
@@ -2927,33 +2939,33 @@ void InoTrackFinder::FormTracks() {
 
   if(ViewSegBank[0].size()>0) { // && ViewSegBank[1].size()>0) {
     for(int View=0; View<1; ++View) {
-      
+
       Cont=true; ntrks=0;
-      
+
       while(Cont==true) {
         Cont=false;
         BegBank.clear(); EndBank.clear();
-	
+
         // First selection of SEED SEGMENTS - segment from which we can move
         // along matched associations to find majority of the track.
         //
         // First guesses at seed segments are stored in SeedSegments Container
         BestSeedSegments.clear(); SeedSegments.clear();
-	
+
         // Loop over the entries in ViewSegBank
         for(unsigned int ij=0; ij<ViewSegBank[View].size(); ++ij) {
 	  //	  cout <<"Trkfinderformtrk "<<ViewSegBank[0].size()<<" "<<ij<< endl;
           InoTrackSegment* Seg = ViewSegBank[View][ij];
-	  
+
           if(Seg->GetUID()>0 && Seg->GetUID()<3) {
             Counter=0;
-            
+
             // Loop over the constituent clusters and count the number that are track-like
             for(unsigned int jk=0; jk<Seg->GetEntries(); ++jk) {
               InoCluster* Clust = Seg->GetCluster(jk);
               if(Clust->GetTrkPlnFlag()>0 && Clust->GetTrkFlag()==2) {Counter++;}
             }
-            
+
             // If we've already made a track and this segment doesn't contain 3 track-like
             // clusters, don't consider it any further
             if(ntrks>0 && Counter<3) {Seg->SetUID(0);}
@@ -2964,105 +2976,105 @@ void InoTrackFinder::FormTracks() {
           if(Seg->GetUID()==1) {SeedSegments.push_back(Seg);}
 
         }
-	
-	
+
+
 	//	cout <<"Trkfinderformtrk 1x  "<<ViewSegBank[0].size()<< endl;
         // Hopefully we have segments with UID 2 (most track-like), else take those with UID 1
-        // (just track-like) and move them from SeedSegments to BestSeedSegments. 
+        // (just track-like) and move them from SeedSegments to BestSeedSegments.
         // Can then empty SeedSegments.
         if(BestSeedSegments.size()==0) {BestSeedSegments=SeedSegments;}
-        
+
         SeedSegments.clear();
-	
+
         SeedSegments=BestSeedSegments;
-	
+
         // Now, using our initial seed segments, try propagating back and forth
         // from each segment to refine our choice.
-	
+
         // Final SEED SEGMENTS are stored BestSeedSegments Container
         BestSeedSegments.clear();
 
 
         // If we have some seed segments to work with, loop over them
 	//	cout <<"Trkfinderformtrk : 2x "<<SeedSegments.size()<< endl;
-        if(SeedSegments.size()>0) { 
+        if(SeedSegments.size()>0) {
           nplane=-1;
-	  
+
           for(unsigned int ij=0; ij<SeedSegments.size(); ++ij) {
-	    
+
             // See how far we can propagate backwards to lower plane numbers
-            mTemp.clear(); BegTemp.clear(); 
-	    
+            mTemp.clear(); BegTemp.clear();
+
             // First put seed segment into BegTemp then begin while loop
-            BegTemp.push_back(SeedSegments[ij]); TempBank1.clear(); 
+            BegTemp.push_back(SeedSegments[ij]); TempBank1.clear();
 	    //	    cout <<"Trkfinderformtrk : 3x "<<BegTemp.size()<< endl;
 
             while(BegTemp.size()>0) {
               Temp.clear();
-              
+
               // Copy any segments into a temporary holder and loop over them,
               // gradually propagating back to lower plane numbers
               Temp=BegTemp; BegTemp.clear();
-            
+
               for(unsigned int jk=0; jk<Temp.size(); ++jk) {
                 tmpFlag=false;
-                
+
                 // For each segment, loop over their beginning matches
                 for(unsigned int kl=0; kl<Temp[jk]->GetNMatchSegBeg(); ++kl) {
                   InoTrackSegment* Segb = Temp[jk]->GetMatchSegBeg(kl);
 		  //		  cout <<"Trkfinderformtrk : 3x "<<BegTemp.size()<<" "<< jk<<" "<<kl<<" "<<endl;
-                  // If matched segment is track-like and has zero TmpTrkFlag, 
+                  // If matched segment is track-like and has zero TmpTrkFlag,
                   // push it back into BegTemp, so the while loop continues.
                   if(Segb->GetUID()>-1 && Segb->GetUID()<3) {
                     tmpFlag=true;
-                    
+
                     if(Segb->GetTmpTrkFlag()<1) {
                       BegTemp.push_back(Segb);
                       Segb->SetTmpTrkFlag(1); // Temporarily mark segments used
                       TempBank1.push_back(Segb);
-		      
+
                     }
                   }
                 }
-                
+
                 // Must have gone as far as we can go with this seed segment. Store segment at
                 // lowest plane.
                 if(tmpFlag==false) {mTemp.push_back(Temp[jk]);}
               }
             } // End while BegTemp.size()>0
-	    
-	    
+
+
             // Set the flags back to zero, for when we carry out actual propagation, below.
             for(unsigned int jk=0; jk<TempBank1.size(); ++jk) {TempBank1[jk]->SetTmpTrkFlag(0);}
 
             // Now see how far we can propagate forwards to higher plane numbers
             pTemp.clear(); EndTemp.clear();
-	    
+
             // Put the seed segment into EndTemp then start while loop
             EndTemp.push_back(SeedSegments[ij]); TempBank1.clear();
 	    //            cout <<"Trkfinderformtrk : 12x "<<EndTemp.size()<< endl;
 
             while(EndTemp.size()>0) {
               Temp.clear();
-              
+
               // Copy any segments into a temporary holder and loop over them,
               // gradually propagating to higher plane numbers
               Temp=EndTemp; EndTemp.clear();
-             
+
               for(unsigned int jk=0; jk<Temp.size(); ++jk) {
                 tmpFlag=false;
-                
+
                 // For each segment, loop over their end matches
                 for(unsigned int kl=0; kl<Temp[jk]->GetNMatchSegEnd(); ++kl) {
                   InoTrackSegment* Sege = Temp[jk]->GetMatchSegEnd(kl);
 		  //		  cout <<"Trkfinderformtrk : 11x "<<EndTemp.size()<<" "<<jk<<" "<<kl<<" "<<Sege->GetUID()<< endl;
 
 
-                  // If the matched segment is track-like and has zero TmpTrkFlag, 
+                  // If the matched segment is track-like and has zero TmpTrkFlag,
                   // push back into EndTemp, so the while loop continues.
                   if(Sege->GetUID()>-1 && Sege->GetUID()<3) {
                     tmpFlag=true;
-                    
+
                     if(Sege->GetTmpTrkFlag()<1) {
                       EndTemp.push_back(Sege);
                       Sege->SetTmpTrkFlag(1); // Temporarily mark segments used
@@ -3070,7 +3082,7 @@ void InoTrackFinder::FormTracks() {
                     }
                   }
                 }
-                
+
                 // Must have gone as far as we can go with this seed segment. Store segment at
                 // highest plane.
                 if(tmpFlag==false) {pTemp.push_back(Temp[jk]);}
@@ -3080,7 +3092,7 @@ void InoTrackFinder::FormTracks() {
 
             // Set the flags back to zero, for when we carry out actual propagation, below.
             for(unsigned int jk=0; jk<TempBank1.size(); ++jk) {TempBank1[jk]->SetTmpTrkFlag(0);}
-            
+
             // Find the maximum number of planes we can span by propagating the seed segment
             // back and forth.
             npts=-1;
@@ -3091,32 +3103,32 @@ void InoTrackFinder::FormTracks() {
                 }
               }
             }
-            
+
             SeedSegments[ij]->SetNPlanes(npts);
             if(npts>nplane) {nplane=npts;}
-	    
+
           } // End loop over seed segments stored above
 
 
           // Store the seed segments that lead to the biggest propagation in BestSeedSegments
           if(nplane>0) {
             for(unsigned int ij=0; ij<SeedSegments.size(); ++ij) {
-              if(SeedSegments[ij]->GetNPlanes()>nplane-3) {BestSeedSegments.push_back(SeedSegments[ij]);}       
+              if(SeedSegments[ij]->GetNPlanes()>nplane-3) {BestSeedSegments.push_back(SeedSegments[ij]);}
             }
           }
-          
+
         } // End finding final seed segments  SeedSegments.size()>0
 
         // Order contents of BestSeedSegments
         SeedSegments=BestSeedSegments; BestSeedSegments.clear();
-        
+
         for(unsigned int ij=0; ij<SeedSegments.size(); ++ij) {
           MostClusters=0;
-          InoTrackSegment* LargestSeg = 0;        
-          
+          InoTrackSegment* LargestSeg = 0;
+
           for(unsigned int jk=0; jk<SeedSegments.size(); ++jk) {
             AlreadyAdded=false;
-            
+
             for(unsigned int kl=0; kl<BestSeedSegments.size(); ++kl) {
               if(BestSeedSegments[kl]==SeedSegments[jk]) {AlreadyAdded=true;}
             }
@@ -3131,7 +3143,7 @@ void InoTrackFinder::FormTracks() {
           if(LargestSeg) {BestSeedSegments.push_back(LargestSeg);}
         }
 
-        // Now use the final seed segments to actually PROPAGATE back and forth, 
+        // Now use the final seed segments to actually PROPAGATE back and forth,
         // setting the TmpTrkFlags for the segments used in the propagation.
         TempBank2.clear();
 
@@ -3140,14 +3152,14 @@ void InoTrackFinder::FormTracks() {
           InoTrackSegment* Seg0 = BestSeedSegments[ij];
           // If we make a track, we will definitely include the seed segment, so set
           // it's TmpTrkFlag to 3.
-          Seg0->SetTmpTrkFlag(3); 
+          Seg0->SetTmpTrkFlag(3);
           TrackFlag=false;
-	  
-          TempBank1.clear(); TempBank1.push_back(Seg0); 
-	  
+
+          TempBank1.clear(); TempBank1.push_back(Seg0);
+
           // Track backwards (1)
           mTemp.clear(); BegTemp.clear();
-	  
+
           // Push the seed segment into BegTemp and begin while loop
           BegTemp.push_back(Seg0);
 
@@ -3161,16 +3173,16 @@ void InoTrackFinder::FormTracks() {
             for(unsigned int jk=0; jk<Temp.size(); ++jk) {
               tmpFlag=false;
               InoTrackSegment* Segtmp = Temp[jk];
-              
+
               // For each segment, loop over their beginning matches
               for(unsigned int kl=0; kl<Segtmp->GetNMatchSegBeg(); ++kl){
                 InoTrackSegment* Segb = Segtmp->GetMatchSegBeg(kl);
-                
-                // If the matched segment is track-like and has zero TmpTrkFlag, 
+
+                // If the matched segment is track-like and has zero TmpTrkFlag,
                 // push back into BegTemp, so the while loop continues.
                 if(Segb->GetUID()>-1 && Segb->GetUID()<3) {
                   tmpFlag=true;
-                  
+
                   if(Segb->GetTmpTrkFlag()<1) {
                     BegTemp.push_back(Segb);
                     Segb->SetTmpTrkFlag(1); // Mark the segments with TmpTrkFlag 1
@@ -3178,23 +3190,23 @@ void InoTrackFinder::FormTracks() {
                   }
                 }
               }
-	      
+
               // Must have gone as far as we can go with this seed segment. Store segment at
               // lowest plane.
               if(tmpFlag==false) {mTemp.push_back(Segtmp);}
             }
           }
-          
+
           // Note the first plane of the potential preliminary track
           nplane=999;
           for(unsigned int jk=0; jk<mTemp.size(); ++jk) {
             if(mTemp[jk]->GetBegZPlane()<nplane) {nplane=mTemp[jk]->GetBegZPlane();}
           }
-	  
-	  
+
+
           // For the longest possible paths, move back towards the seed segment,
           // setting TmpTrkFlags to 2 for the segments used.
-	  
+
           // Find the segments reached by the longest propagations
           BegTemp.clear();
           for(unsigned int jk=0; jk<mTemp.size(); ++jk) {
@@ -3204,13 +3216,13 @@ void InoTrackFinder::FormTracks() {
           // From these segments, propagate forwards and set the flags.
           while(BegTemp.size()>0) {
             Temp.clear();
-            
+
             for(unsigned int jk=0; jk<BegTemp.size(); ++jk) {
               if(BegTemp[jk]->GetTmpTrkFlag()<2) {
                 BegTemp[jk]->SetTmpTrkFlag(2); // Mark the segments with TmpTrkFlag 2
                 Temp.push_back(BegTemp[jk]);
               }
-              
+
               if(BegTemp[jk]->GetTrkFlag()<1) {
                 BegTemp[jk]->SetTrkFlag(1);    // Also mark the segments with TrkFlag 1
                 TempBank2.push_back(BegTemp[jk]);
@@ -3218,7 +3230,7 @@ void InoTrackFinder::FormTracks() {
               }
             }
             BegTemp.clear();
-            
+
             for(unsigned int jk=0; jk<Temp.size(); ++jk) {
               for(unsigned int kl=0; kl<Temp[jk]->GetNMatchSegEnd(); ++kl) {
                 if(Temp[jk]->GetMatchSegEnd(kl)->GetTmpTrkFlag()>0) {
@@ -3227,33 +3239,33 @@ void InoTrackFinder::FormTracks() {
               }
             }
           }
-          
+
           // Track forwards (1)
           pTemp.clear(); EndTemp.clear();
-          
+
           // Push seed segment into EndTemp and begin while loop
           EndTemp.push_back(Seg0);
-	  
+
           while(EndTemp.size()>0) {
             Temp.clear();
-	    
+
             // Copy any segments into a temporary holder and loop over them,
             // gradually propagating to higher plane numbers
             Temp=EndTemp; EndTemp.clear();
-	    
+
             for(unsigned int jk=0; jk<Temp.size(); ++jk) {
               tmpFlag=false;
               InoTrackSegment* Segtmp = Temp[jk];
-              
+
               // For each segment, loop over their end matches
               for(unsigned int kl=0; kl<Segtmp->GetNMatchSegEnd(); ++kl){
                 InoTrackSegment* Sege = Segtmp->GetMatchSegEnd(kl);
-                
-                // If the matched segment is track-like and has zero TmpTrkFlag, 
+
+                // If the matched segment is track-like and has zero TmpTrkFlag,
                 // push back into BegTemp, so the while loop continues.
                 if(Sege->GetUID()>-1 && Sege->GetUID()<3) {
                   tmpFlag=true;
-                  
+
                   if(Sege->GetTmpTrkFlag()<1) {
                     EndTemp.push_back(Sege);
                     Sege->SetTmpTrkFlag(1); // Mark the segments with TmpTrkFlag 1
@@ -3261,38 +3273,38 @@ void InoTrackFinder::FormTracks() {
                   }
                 }
               }
-	      
+
               // Must have gone as far as we can go with this seed segment. Store segment at
               // highest plane.
               if(tmpFlag==false) {pTemp.push_back(Segtmp);}
             }
           }
-	  
-          // Note the end plane of potential preliminary track     
+
+          // Note the end plane of potential preliminary track
           nplane=-999;
           for(unsigned int jk=0; jk<pTemp.size(); ++jk) {
             if(pTemp[jk]->GetEndZPlane()>nplane) {nplane=pTemp[jk]->GetEndZPlane();}
           }
-	  
+
           // For the longest possible paths, move back towards the seed segment,
           // setting TmpTrkFlags to 2 for the segments used.
-	  
+
           // Find the segments reached by the longest propagations
           EndTemp.clear();
           for(unsigned int jk=0; jk<pTemp.size(); ++jk) {
-            if(pTemp[jk]->GetEndZPlane()>nplane-3) {EndTemp.push_back(pTemp[jk]);} //GMA original nplane-5 
+            if(pTemp[jk]->GetEndZPlane()>nplane-3) {EndTemp.push_back(pTemp[jk]);} //GMA original nplane-5
           }
-	  
+
           // From these segments, propagate back and set the flags.
           while(EndTemp.size()>0) {
             Temp.clear();
-            
+
             for(unsigned int jk=0; jk<EndTemp.size(); ++jk) {
               if(EndTemp[jk]->GetTmpTrkFlag()<2) {
                 EndTemp[jk]->SetTmpTrkFlag(2); // Mark the segments with TmpTrkFlag 2
                 Temp.push_back(EndTemp[jk]);
               }
-              
+
               if(EndTemp[jk]->GetTrkFlag()<1) {
                 EndTemp[jk]->SetTrkFlag(1);    // Also mark the segments with TrkFlag 1
                 TempBank2.push_back(EndTemp[jk]);
@@ -3300,7 +3312,7 @@ void InoTrackFinder::FormTracks() {
               }
             }
             EndTemp.clear();
-            
+
             for(unsigned int jk=0; jk<Temp.size(); ++jk) {
               for(unsigned int kl=0; kl<Temp[jk]->GetNMatchSegBeg(); ++kl) {
                 if(Temp[jk]->GetMatchSegBeg(kl)->GetTmpTrkFlag()>0) {
@@ -3311,38 +3323,38 @@ void InoTrackFinder::FormTracks() {
           }
 
           // End setting TmpTrkFlags
-	  
+
           // From paths of segments with TmpTrkFlag==2, find the best set of
           // segments at the beginning and the best set of segments at the end
-	  
+
           // If propagation from the seed segment has given us a good potential preliminary track
 	  //          cout<<"InoTrackFinder : TrackFlag " << TrackFlag << endl;
-	  
-          if(TrackFlag==true) { 
-	    
+
+          if(TrackFlag==true) {
+
             // Track backwards (2) and find best set of beginning segments
             TempBegBank.clear(); ObjVectorCounter=0;
             vector<InoTrackSegment*> TmpBegSegBank;
-	    
+
             TmpBegSegBank.push_back(Seg0);
             TempBegBank.push_back(TmpBegSegBank);
             ObjCounter=1;
-            
-	    
+
+
             // Store the series of beginning segments that were flagged above during the propagation.
-            // Each entry in TempBegbank will be a vectors of segments (a series of beginning segments 
+            // Each entry in TempBegbank will be a vectors of segments (a series of beginning segments
             // flagged above).
-	    
+
             // TempBegBank will contain vectors of segments representing every possible path back through
             // the segments marked with TmpTrkFlag 2 (possible beginning sections for the preliminary track)
             while(ObjCounter>0 && ObjVectorCounter<fObjVectorMax) {
               ObjCounter=0;
               npts=TempBegBank.size();
-	      
+
               for(int jk=0; jk<npts; ++jk) {
                 InoTrackSegment* Segtmp = TempBegBank[jk].back();
                 mTemp.clear();
-                
+
                 for(unsigned int kl=0; kl<Segtmp->GetNMatchSegBeg(); ++kl) {
                   InoTrackSegment* Segbeg = Segtmp->GetMatchSegBeg(kl);
                   if(Segbeg->GetTmpTrkFlag()>1) {mTemp.push_back(Segbeg);};
@@ -3350,9 +3362,9 @@ void InoTrackFinder::FormTracks() {
 
                 if(mTemp.size()>0) {
                   for(unsigned int kl=1; kl<mTemp.size(); ++kl) {
-                    if(ObjVectorCounter<fObjVectorMax) { 
+                    if(ObjVectorCounter<fObjVectorMax) {
                       vector<InoTrackSegment*> NewObj = TempBegBank[jk];
-                      
+
                       NewObj.push_back(mTemp[kl]);
                       TempBegBank.push_back(NewObj);
 
@@ -3377,20 +3389,20 @@ void InoTrackFinder::FormTracks() {
               Score = Seg0->GetScore(&TempBegBank[jk],0);
               if(Score>TopScore) {TopScore=Score; id=jk;}
             }
-	    
+
             if(id!=-1) {BegBank.push_back(TempBegBank[id]);}
             TempBegBank.clear();
 
             // Track forwards (2) and find best set of end segments
             TempEndBank.clear(); ObjVectorCounter=0;
             vector<InoTrackSegment*> TmpEndSegBank;
-	    
+
             TmpEndSegBank.push_back(Seg0);
             TempEndBank.push_back(TmpEndSegBank);
             ObjCounter=1;
-            
+
             // Store the series of end segments that were flagged above during the propagation.
-            // Each entry in TempEndbank will be a vectors of segments (a series of end segments 
+            // Each entry in TempEndbank will be a vectors of segments (a series of end segments
             // flagged above).
 
             // TempBegBank will contain vectors of segments representing every possible path forward through
@@ -3398,22 +3410,22 @@ void InoTrackFinder::FormTracks() {
             while(ObjCounter>0 && ObjVectorCounter<fObjVectorMax) {
               ObjCounter=0;
               npts=TempEndBank.size();
-              
+
               for(int jk=0; jk<npts; ++jk) {
                 InoTrackSegment* Segtmp = TempEndBank[jk].back();
-		
+
                 pTemp.clear();
-                
+
                 for(unsigned int kl=0; kl<Segtmp->GetNMatchSegEnd(); ++kl) {
                   InoTrackSegment* Segend = Segtmp->GetMatchSegEnd(kl);
                   if(Segend->GetTmpTrkFlag()>1) {pTemp.push_back(Segend);};
                 }
-		
+
                 if(pTemp.size()>0) {
                   for(unsigned int kl=1; kl<pTemp.size(); ++kl) {
                     if(ObjVectorCounter<fObjVectorMax) {
                       vector<InoTrackSegment*> NewObj = TempEndBank[jk];
-                      
+
                       NewObj.push_back(pTemp[kl]);
                       TempEndBank.push_back(NewObj);
 
@@ -3432,45 +3444,45 @@ void InoTrackFinder::FormTracks() {
 
             // Find end section with best score and store it
 	    //            cout << "end score " << endl;
-	    
+
             id=-1; TopScore=-1.;
             for(unsigned int jk=0; jk<TempEndBank.size(); ++jk) {
               Score = Seg0->GetScore(0,&TempEndBank[jk]);
-              if(Score>TopScore) {TopScore=Score; id=jk;} 
+              if(Score>TopScore) {TopScore=Score; id=jk;}
             }
-	    
+
             if(id!=-1) {EndBank.push_back(TempEndBank[id]);}
             TempEndBank.clear(); // maybe clear individual vectors of segments
           }
-	  
-          
+
+
           // Clear up
           for(unsigned int jk=0; jk<TempBank1.size(); ++jk) {TempBank1[jk]->SetTmpTrkFlag(0);}
-	  
+
         } // End loop over BestSeedSegments
         for(unsigned int jk=0; jk<TempBank2.size(); ++jk) {TempBank2[jk]->SetTrkFlag(0);}
-	
-        // Using the best beginning sections and the best end sections from all 
+
+        // Using the best beginning sections and the best end sections from all
         // seed segments, find the BEST COMPLETE preliminary track
         if(BegBank.size()>0 && EndBank.size()>0) {
-	  
+
           // Calculate a score, including the seed segment and best beginning/end paths,
           // to find the 'best' complete track
 	  //          cout << "overall score " << endl;
-	  
+
           id=-1; TopScore=-1.;
           for(unsigned int ij=0; ij<BegBank.size(); ++ij) {
             Score = BegBank[ij][0]->GetScore(&BegBank[ij],&EndBank[ij]);
             if(Score>TopScore) {TopScore=Score; id=ij;}
           }
-	  
+
           // If we have found a best track, add together the segments to form
-          // a segment that is the preliminary track, giving this UID 3. Mark segments  
+          // a segment that is the preliminary track, giving this UID 3. Mark segments
           // used by setting their UID to -1.
           if(1+id>0) {
             // Get the seed segment
             InoTrackSegment* Seg0 = BegBank[id][0];
-	    
+
             // Set segment UIDs to -1 if they are part of the track, so they
             // can't be used in another track.
             for(unsigned int ij=1; ij<BegBank[id].size(); ++ij) {
@@ -3484,7 +3496,7 @@ void InoTrackFinder::FormTracks() {
               Seg0->AddSegment(Segend);
               Segend->SetUID(-1);
             }
-            
+
             // Mark long segment as a preliminary track by setting its UID to 3
             Seg0->SetUID(3);
 
@@ -3495,43 +3507,43 @@ void InoTrackFinder::FormTracks() {
 
             // Store for use in Join tracks method
 	    PossibleJoins[View].push_back(Seg0);
-	    
+
             // Can now look for more preliminary tracks
             Cont=true; ntrks++;
           }
         }
-	
+
         // Clean up
         BegBank.clear(); EndBank.clear();
-	
-        
+
+
       } // End while Cont==true loop
     } // End loop over planeviews
   } // End check to see if there is anything in ViewSegBank
-  
+
   return;
 }
 
 void InoTrackFinder::JoinTracks() {
   // cout << " *** JOIN preliminary TRACKS *** " << endl;
-  
-  //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer; 
+
+  //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
   int MxPlaneGap=15;  //GMA Maximum layer of allowed gap
   double ShortestDist; double LongestAllowedDist=3.; //GMA need optimisation   asm:LongestAllowedDist (in metres )
   double DeltaXPos, DeltaYPos, DeltaZPos, Dist;
   int DeltaPlane, Length, UID, NumAgree;
-  
+
   InoTrackSegment* Seg1ToAdd=0;
   InoTrackSegment* Seg2ToAdd=0;
   bool PossibleAssocs, Cont; //, Overlap, DiffGrad;
-  
+
   // First, make the best possible joins between the tracks
   for(int View=0; View<1; ++View) {
     if(PossibleJoins[View].size()<2) continue;
     PossibleAssocs=true;
 
     while(PossibleAssocs) {
-      PossibleAssocs=false; 
+      PossibleAssocs=false;
       ShortestDist=LongestAllowedDist; Seg1ToAdd=0; Seg2ToAdd=0;
 
       // Consider all pairs of preliminary tracks and find the single best association.
@@ -3539,53 +3551,53 @@ void InoTrackFinder::JoinTracks() {
 	//if(PossibleJoins[View][ij].GetEntries()>10) LongestAllowedDist=4. ;   //asm:080311
 	//ShortestDist=LongestAllowedDist; Seg1ToAdd=0; Seg2ToAdd=0; //asm:080311
         InoTrackSegment* Seg1 = PossibleJoins[View][ij];
-	
+
         if(Seg1->GetUID()>2) {
-	  
+
 	  //          for(unsigned int jk=0; jk<PossibleJoins[View].size(); ++jk) {
           for(unsigned int jk=ij+1; jk<PossibleJoins[View].size(); ++jk) {
-	    
+
             InoTrackSegment* Seg2 = PossibleJoins[View][jk];
-	    
-            if(Seg2->GetUID()>2 && Seg1!=Seg2) {         
-	      
+
+            if(Seg2->GetUID()>2 && Seg1!=Seg2) {
+
               // Calculate distance between segments
               DeltaXPos=fabs(Seg2->GetBegXPos()-Seg1->GetEndXPos());
 	      DeltaYPos=fabs(Seg2->GetBegYPos()-Seg1->GetEndYPos());
               DeltaZPos=fabs(Seg2->GetBegZPos()-Seg1->GetEndZPos());
-	      
+
               DeltaPlane=Seg2->GetBegZPlane()-Seg1->GetEndZPlane();
-	      
+
               Dist=pow((DeltaXPos*DeltaXPos + DeltaYPos*DeltaYPos + DeltaZPos*DeltaZPos) ,0.5);
 
 	      double seg1Xang =Seg1->GetBegXDir();
 	      double seg2Xang =Seg2->GetEndXDir();
-	      
+
 	      double seg1Yang =Seg1->GetBegYDir();
 	      double seg2Yang =Seg2->GetEndYDir();
-	      
+
 	      double Tr1EndX = 0, Tr1EndY = 0, Tr1EndZ = 0, Tr1EndTx = 0, Tr1EndTy = 0;
 	      //		Tr1EndP = 0;
 	      //	      double Tr2BegX = 0, Tr2BegY = 0, Tr2BegZ = 0, Tr2BegTx = 0, Tr2BegTy = 0, Tr2BegP = 0;
-	      
+
 	      Tr1EndX = Seg1->GetEndXPos();
 	      Tr1EndY = Seg1->GetEndYPos();
 	      Tr1EndZ = Seg1->GetEndZPos();
 	      Tr1EndTx= Seg1->GetEndXDir();
 	      Tr1EndTy= Seg1->GetEndYDir();
 	      //Tr1EndP = fTrackCand->GetEndQP();
-	      
+
 	      double the1 = acos(1./pow(1+pow(seg1Xang,2.)+pow(seg1Yang,2.),0.5));
 	      double phi1 = atan2(seg1Yang,seg1Xang);
-	      
+
 	      double the2 = acos(1./pow(1+pow(seg2Xang,2.)+pow(seg2Yang,2.),0.5));
 	      double phi2 = atan2(seg2Yang,seg2Xang);
-	      
+
 	      double cosang = sin(the1)*sin(the2)*cos(phi1-phi2)+cos(the1)*cos(the2);
-	      
-              if(DeltaPlane>=0 &&DeltaPlane <=MxPlaneGap && Dist<ShortestDist 
-		 && cosang > 0.5 ) {  // 0.9 
-		
+
+              if(DeltaPlane>=0 &&DeltaPlane <=MxPlaneGap && Dist<ShortestDist
+		 && cosang > 0.5 ) {  // 0.9
+
                 if(Seg1->IsAssoc(Seg2)) {Seg1ToAdd=Seg1; Seg2ToAdd=Seg2; ShortestDist=Dist;} //asm: see if IsAssoc takes care of all possible segment Joins
               } else if(DeltaPlane<=0 && DeltaPlane >=-MxPlaneGap && Dist<ShortestDist) {
                 if(Seg2->IsAssoc(Seg1)) {
@@ -3596,85 +3608,85 @@ void InoTrackFinder::JoinTracks() {
           }
         }
       }
-      
-      if(ShortestDist<LongestAllowedDist && Seg2ToAdd!=0 && Seg1ToAdd!=0) { 
+
+      if(ShortestDist<LongestAllowedDist && Seg2ToAdd!=0 && Seg1ToAdd!=0) {
 	if(TrkFinderDebug==3){
-	  cout << "Missing preliminary track assocation: Seg1 " 
-	       << Seg1ToAdd->GetBegZPlane() << " " << Seg1ToAdd->GetEndZPlane() 
-	       << " (" << Seg1ToAdd->GetBegXPos() << "," << Seg1ToAdd->GetEndXPos() 
-	       << " " << Seg1ToAdd->GetBegYPos() << "," << Seg1ToAdd->GetEndYPos() 
-	       << "), Seg2 " << Seg2ToAdd->GetBegZPlane() 
-	       << " " << Seg2ToAdd->GetEndZPlane() << " (" << Seg2ToAdd->GetBegXPos() 
-	       << "," << Seg2ToAdd->GetEndXPos() 
-	       << ", "<<Seg2ToAdd->GetBegYPos() 
+	  cout << "Missing preliminary track assocation: Seg1 "
+	       << Seg1ToAdd->GetBegZPlane() << " " << Seg1ToAdd->GetEndZPlane()
+	       << " (" << Seg1ToAdd->GetBegXPos() << "," << Seg1ToAdd->GetEndXPos()
+	       << " " << Seg1ToAdd->GetBegYPos() << "," << Seg1ToAdd->GetEndYPos()
+	       << "), Seg2 " << Seg2ToAdd->GetBegZPlane()
+	       << " " << Seg2ToAdd->GetEndZPlane() << " (" << Seg2ToAdd->GetBegXPos()
+	       << "," << Seg2ToAdd->GetEndXPos()
+	       << ", "<<Seg2ToAdd->GetBegYPos()
 	       << "," << Seg2ToAdd->GetEndYPos() << endl;
 	} // if(TrkFinderDebug)
-	
+
 	Seg1ToAdd->AddSegment(Seg2ToAdd); Seg2ToAdd->SetUID(-1); PossibleAssocs=true;
       }
     }
-     
+
     // Now find the longest possible preliminary track and remove 2d tracks that overlap.
-    Cont=true; 
-     
+    Cont=true;
+
     while(Cont) {
       Cont=false;
-       
+
       InoTrackSegment* BestTrk = 0;
       Length=0;
-       
+
       for(unsigned int ij=0; ij<PossibleJoins[View].size(); ++ij) {
 	InoTrackSegment* Seg = PossibleJoins[View][ij];
 	if(Seg->GetUID()>0 && Seg->GetUID()<4 && (Seg->GetEndZPlane()-Seg->GetBegZPlane())>Length) {
 	  BestTrk=Seg; Length=Seg->GetEndZPlane()-Seg->GetBegZPlane();
 	}
       }
-       
+
       if(BestTrk) {
 	BestTrk->SetUID(4);
-	 
+
 	for(unsigned int ij=0; ij<BestTrk->GetEntries(); ++ij) {
 	  InoCluster* BestTrkClust = BestTrk->GetCluster(ij);
-	   
+
 	  if(BestTrkClust->GetZPlane()==BestTrk->GetBegZPlane() || BestTrkClust->GetZPlane()==BestTrk->GetEndZPlane()) {continue;}
-	   
+
 	  for(unsigned int jk=0; jk<PossibleJoins[View].size(); ++jk) {
 	    InoTrackSegment* Seg = PossibleJoins[View][jk];
-	    NumAgree=0; 
-	     
+	    NumAgree=0;
+
 	    if(Seg->GetUID()<0 || Seg->GetUID()>3) {continue;}
-	     
+
 	    for(unsigned int kl=0; kl<Seg->GetEntries(); ++kl) {
-	      InoCluster* SegClust = Seg->GetCluster(kl);   // asm: this condition needs some modification.... 
-	      // should increment NumAgree if the clusters are just  seperated by one strips diference.  
-	       
+	      InoCluster* SegClust = Seg->GetCluster(kl);   // asm: this condition needs some modification....
+	      // should increment NumAgree if the clusters are just  seperated by one strips diference.
+
 	      if(SegClust==BestTrkClust) {NumAgree++;}
-	       
+
 	      if(NumAgree>2) {Seg->SetUID(-1); break;}
 	    }
 	  }
 	}
       }
-       
+
       // Conditions for continuing here
       for(unsigned int ij=0; ij<PossibleJoins[View].size(); ++ij) {
 	UID=PossibleJoins[View][ij]->GetUID();
-	 
+
 	if(UID>0 && UID<4) {Cont=true;}
       }
-       
+
     }
-     
-     
+
+
     // Reset UIDs
     for(unsigned int ij=0; ij<PossibleJoins[View].size(); ++ij) {
       if(PossibleJoins[View][ij]->GetUID()==4) {PossibleJoins[View][ij]->SetUID(3);}
     }
-     
+
     PossibleJoins[View].clear();
   }
-  
-  
+
+
   // Print out the list of preliminary tracks
   if(TrkFinderDebug==100) {
     for(int View=0; View<1; ++View) {
@@ -3690,12 +3702,12 @@ void InoTrackFinder::JoinTracks() {
 	       << "  begxpos: " << Seg->GetBegXPos()
 	       << "  begypos: " << Seg->GetBegYPos()
 	       << "  endpln: "  << Seg->GetEndZPlane()
-	       << "  endxpos: " << Seg->GetEndXPos() 
-	       << "  endypos: " << Seg->GetEndYPos() 
+	       << "  endxpos: " << Seg->GetEndXPos()
+	       << "  endypos: " << Seg->GetEndYPos()
 	       << "  Entries: "<< Seg->GetEntries() << endl;
 	}
       }
-    
+
       for(unsigned ij=0; ij<TempTrack[View].size(); ++ij) {
 	InoTrackSegment* Seg = TempTrack[View][ij];
 	if(Seg->GetUID()>2) {
@@ -3704,7 +3716,7 @@ void InoTrackFinder::JoinTracks() {
 	       << "  begxpos: " << Seg->GetBegXPos()
 	       << "  begypos: " << Seg->GetBegYPos()
 	       << "  endpln: "  << Seg->GetEndZPlane()
-	       << "  endxpos: " << Seg->GetEndXPos() 
+	       << "  endxpos: " << Seg->GetEndXPos()
 	       << "  endypos: " << Seg->GetEndYPos()
 	       << endl;
 	  for(unsigned int ixjx=0; ixjx<Seg->GetEntries(); ixjx++) {
@@ -3713,7 +3725,7 @@ void InoTrackFinder::JoinTracks() {
 	  }
 	} else { //GMA 24/02/08
 	  TempTrack[View].erase(TempTrack[View].begin()+ij); ij--;
-	}	
+	}
       }
     }
   }
@@ -3728,7 +3740,7 @@ void InoTrackFinder::FormFinalTracks( )
   // U and V segments stored separately. In this method we look at the consituent
   // clusters and hits in these segments, performing fits to choose the final
   // strips for the track.
-  
+
 //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
   // cout << " *** Formation of Final tracks *** -x-x-x-x-x-x-x-x-x-" << endl;
 
@@ -3746,109 +3758,109 @@ void InoTrackFinder::FormFinalTracks( )
   int begPlaneView[2], endPlaneView[2];
   int begplane1, begplane2, endplane1, endplane2, maxplane, Plane;
   double dScore, Score; int id;
-  
+
   int ShwOrTrkList[500];
   int ViewList[500];
   vector<InoHit*> HitList[500];
   //  vector<InoCluster*> ClustList[500]; //GMA14
   //  vector<InoTrack*> FinalTrackTempHolder[2];
-  
+
   for(int ij=0; ij<500; ++ij) {ShwOrTrkList[ij]=-1; ViewList[ij]=-1; ClustList[ij].clear();}
   for(int ij=0; ij<2; ++ij) {FinalTrackTempHolder[ij].clear();}
 
   // Main loop is over the pairs of track segments, stored above
   for(unsigned int ij=0; ij<TempTrack[0].size(); ++ij) {
     //    cout<< "InoTrackFinder making track " << ij << endl;
-    
+
     // Find the beginning and end planes for each of this pair of segments.
     // Order them so that we have:
     // begplane2, begplane 1, endplane 1, endplane 2.
     begplane2=-1; endplane2=-1; begplane1=-1; endplane1=-1;
-    
+
     for(View=0; View<1; ++View) {
       InoTrackSegment* seg = TempTrack[View][ij];
-      
-      if(begplane2<0 || seg->GetBegZXPlane()<begplane2) { 
-	begplane1=begplane2; begplane2=seg->GetBegZXPlane(); 
-      } else { 
-	begplane1=seg->GetBegZPlane(); 
+
+      if(begplane2<0 || seg->GetBegZXPlane()<begplane2) {
+	begplane1=begplane2; begplane2=seg->GetBegZXPlane();
+      } else {
+	begplane1=seg->GetBegZPlane();
       }
-      
-      if(endplane2<0 || seg->GetEndZXPlane()>endplane2) { 
-	endplane1=endplane2; endplane2=seg->GetEndZXPlane(); 
-      } else { 
-	endplane1=seg->GetEndZPlane(); 
+
+      if(endplane2<0 || seg->GetEndZXPlane()>endplane2) {
+	endplane1=endplane2; endplane2=seg->GetEndZXPlane();
+      } else {
+	endplane1=seg->GetEndZPlane();
       }
       //GMA for the time beig use only X plane, but need the combination of both X and Y
-      if(begplane2<0 || seg->GetBegZYPlane()<begplane2) { 
-	begplane1=begplane2; begplane2=seg->GetBegZYPlane(); 
-      } else { 
-	begplane1=seg->GetBegZPlane(); 
+      if(begplane2<0 || seg->GetBegZYPlane()<begplane2) {
+	begplane1=begplane2; begplane2=seg->GetBegZYPlane();
+      } else {
+	begplane1=seg->GetBegZPlane();
       }
-      
-      if(endplane2<0 || seg->GetEndZYPlane()>endplane2) { 
-	endplane1=endplane2; endplane2=seg->GetEndZYPlane(); 
-      } else { 
-	endplane1=seg->GetEndZPlane(); 
+
+      if(endplane2<0 || seg->GetEndZYPlane()>endplane2) {
+	endplane1=endplane2; endplane2=seg->GetEndZYPlane();
+      } else {
+	endplane1=seg->GetEndZPlane();
       }
-      
+
       begPlaneView[View]=-1; endPlaneView[View]=-1;
-      
+
     }
     //    cout << "endplane1:" << endplane1 << "  endplane2:" << endplane2 <<endl;
     maxplane=1+endplane2;
-    
- 
+
+
     // Unpack the clusters from the segments.
     // For each track, should only have one cluster on a plane.
     for(View=0; View<1; ++View) {
-      InoTrackSegment* Seg = TempTrack[View][ij];     // ij ? 
-      
+      InoTrackSegment* Seg = TempTrack[View][ij];     // ij ?
+
       for(unsigned int jk=0; jk<Seg->GetEntries(); ++jk) {
         InoCluster* Clust = Seg->GetCluster(jk);
-	
+
         Plane=Clust->GetZPlane();
         if(Plane>=begplane2 && Plane<maxplane) {ClusterList[Plane].push_back(Clust);  //}
 	  //	cout <<"final track "<< jk<<" "<< Plane<<" "<<Clust->GetEntries() <<" "<< Clust->GetBegXPos()<<" "<<Clust->GetBegYPos()<<endl;
         }
       }
     }
-    
+
     // Trim the segments. Check we haven't tracked much further
     // in one view than the other, and adjust as necessary.
-    
+
     // Maximum discrepancy allowed at each end is 3 planes. As only
     // clusters on planes greater than begplane1 are considered.
     int PrevPln, NextPln;
     bool LeavesAtEdge=false;
-    
+
     // Check hasn't just left edge of detector in one view.
     //GMA  Modify it with proper geomtry file
-    
+
     if(ModuleType==1 && (ClusterList[begplane1][0]->GetEndXPos()> 24.20 ||  // 33.9 ||
 			 ClusterList[begplane1][0]->GetBegXPos()<-24.20 || //-33.9 ||
 			 ClusterList[begplane1][0]->GetEndYPos()>  8 ||  // 33.9 || 33.9 ||
 			 ClusterList[begplane1][0]->GetBegYPos()< -8 )  //-33.9 ||-33.9)
        ) {begplane1=begplane2+1; LeavesAtEdge=true;}
-    
-    
+
+
     if(ModuleType==1 && (ClusterList[endplane1][0]->GetEndXPos()> 24.20 ||  //33.9 ||
 			 ClusterList[endplane1][0]->GetBegXPos()<-24.20 || //-33.9 ||
 			 ClusterList[endplane1][0]->GetEndYPos()>  8 ||  // 33.9 ||
 			 ClusterList[endplane1][0]->GetBegYPos()< -8 )   //-33.9  )
        ) {endplane1=endplane2-1; LeavesAtEdge=true;}
-    
+
     //    cout <<"InoTrackFinder :"<< begplane2<< "  (" << begplane1 << ") -> (" << endplane1 << ") " << endplane2 << endl;
     //    cout <<"LeavesAtEdge "<<(int)LeavesAtEdge<<endl;
-    
+
     if(!LeavesAtEdge) {
       // For the beginning
       // Jump back 2 planes before begplane1 (unless this takes us past begplane2)
-      
-      //-----------------------------------------------------------------------------------------------------    
+
+      //-----------------------------------------------------------------------------------------------------
       begplane1=begplane1-2; PrevPln=-1;
       Plane=begplane1; if(Plane<begplane2) {Plane=begplane2;}
-      
+
       // Working forwards from this plane, find the first plane that has
       // a cluster.
       while(Plane<maxplane) {
@@ -3863,34 +3875,34 @@ void InoTrackFinder::FormFinalTracks( )
       // v         o   x   *   o
       //          bp2      * == shw-like, or gap
       //
-      // In this case, begplane1 is set to begplane 2, so the lone hit at 
+      // In this case, begplane1 is set to begplane 2, so the lone hit at
       // begplane 2 is later vetoed.
       if(PrevPln>-1 && PrevPln+2<maxplane && ClusterList[PrevPln+1].size()==0) {
         if(ClusterList[PrevPln+2].size()>0) {
           InoCluster* Clust = ClusterList[PrevPln+2][0];
-	  
+
           if(Clust->GetTrkPlnFlag()>0 && Clust->GetShwPlnFlag()==0) {
             PrevPln=begplane1;
           }
         }
         begplane1=PrevPln;
       }
-      
-      //-----------------------------------------------------------------------------------------------------    
-      // Similarly, for the end 
+
+      //-----------------------------------------------------------------------------------------------------
+      // Similarly, for the end
       // Jump forward 2 planes after endplane1 (unless this takes us past endplane2)
       endplane1=endplane1+2; NextPln=-1;
-      Plane=endplane1; if(Plane>maxplane-1) {Plane=maxplane-1;} 
-      
+      Plane=endplane1; if(Plane>maxplane-1) {Plane=maxplane-1;}
+
       //      cout <<"PLane "<<Plane<<" "<<begplane2<<" "<<NextPln<<" "<<maxplane<<endl;
-      
+
       // Working backwards from this plane, find the first plane that has
       // a cluster.
       while(Plane>begplane2-1) {
         if(ClusterList[Plane].size()>0) {NextPln=Plane; break;}
         else {Plane--;}
       }
-      
+
       // Look at the next 2 planes in the same view as this cluster
       // and see if they have clusters too, as above.
       if(NextPln>-1 && NextPln-2>(begplane2-1) && ClusterList[NextPln-1].size()==0) {
@@ -3903,56 +3915,56 @@ void InoTrackFinder::FormFinalTracks( )
         endplane1=NextPln; //if plane NextPln-2 has a trach\k like cluster then endPlane1 is not ignored
       }
     }
-    
-    //-----------------------------------------------------------------------------------------------------    
-    
+
+    //-----------------------------------------------------------------------------------------------------
+
     // Count the strips and record planeviews, number of occupied planes, etc.
-    //    UStrips=0; VStrips=0; 
+    //    UStrips=0; VStrips=0;
     TrackStrips=0;
-    
+
     //  cout <<"begplane2 "<<begplane2<<" "<<maxplane<<endl;
     // Look at the region over which the track is now defined
-    for(int jk=begplane2; jk<maxplane; ++jk) {  
-      
+    for(int jk=begplane2; jk<maxplane; ++jk) {
+
       if( //  (jk>=begplane1 && jk<=endplane1) &&
 	 ClusterList[jk].size()>0 ) {
-	
+
         InoCluster* Clust = ClusterList[jk][0];
-        
+
 	//        View=Clust->GetPlaneView();
 	View = 0;      //note View is set to 0
-	ViewList[jk]=View;              
+	ViewList[jk]=View;
         ShwOrTrkList[jk]=1;                  // to keep track of clusters
-        
+
         // Record first and last planes in each view.
 	if(begPlaneView[View]<0 || jk<begPlaneView[View]) {begPlaneView[View]=jk;}
 	if(endPlaneView[View]<0 || jk>endPlaneView[View]) {endPlaneView[View]=jk;}
-        
+
 	//        if(View==0) {UStrips++;}
 	//        if(View==1) {VStrips++;}
-        
+
         if(Clust->GetTrkPlnFlag()>0) {TrackStrips++;}
       }
     }
-  // print out clusterList at this point   asm  
+  // print out clusterList at this point   asm
     //-------------------------------------------------------------------------------------
-    
+
     // If we have at least 3 strips in each view and at least 2 clusters
     // on track-like planes, proceed with the fits.
     //    if(UStrips>2 && VStrips>2 && (CambridgeAnalysis==false || TrackStrips>2) ) {
     if(TrackStrips>2 ) {
-      
+
       // FLAG PLANES which we think are track-like
       for(View=0; View<1; ++View) {
-	//	cout <<"InoTrackFinder : begplane2 "<<begplane2<<" "<<maxplane<<endl; 
+	//	cout <<"InoTrackFinder : begplane2 "<<begplane2<<" "<<maxplane<<endl;
         for(Plane=begplane2; Plane<maxplane; ++Plane) {
-	  
+
           if(ShwOrTrkList[Plane]>0) {
             InoCluster* Clust0 = ClusterList[Plane][0];
-	    
+
 	    // Always set flag to 3 for the +/- 5 plane ND track segments
-            if(Clust0->GetNDFlag()==2) {ShwOrTrkList[Plane]=3;}   // NDFlag =1 
-	    
+            if(Clust0->GetNDFlag()==2) {ShwOrTrkList[Plane]=3;}   // NDFlag =1
+
             // Find next planes, in the same view, where we have a cluster, both forwards
             // and backwards.
             ktemp=0; PrevPln=-1;
@@ -3960,34 +3972,34 @@ void InoTrackFinder::FormFinalTracks( )
               ktemp++;
 	      if(ViewList[Plane-ktemp]==View) {PrevPln=ktemp; break;}
             }
-	    
+
             ktemp=0; NextPln=-1;
             while(Plane+ktemp<maxplane-1) {
               ktemp++;
 	      if(ViewList[Plane+ktemp]==View) {NextPln=ktemp; break;}
             }
-	    
+
             // If there are planes forwards and backwards in the same view...
             if(PrevPln>0 && NextPln>0) {
               InoCluster* NextClust = ClusterList[Plane+NextPln][0];
               InoCluster* PrevClust = ClusterList[Plane-PrevPln][0];
-              
+
               // If either both clusters are within range for this view, or they are the
-              // next plane along and the current plane is a track plane.   
-	      
-	      //asm: with || (which is now replace by &&  ) this first condition will always be satisfied 
-	      //asm: also the next condition will always be satisfied         
-              if(Clust0->GetShwPlnFlag()>0)ShwOrTrkList[Plane]=2;            
+              // next plane along and the current plane is a track plane.
+
+	      //asm: with || (which is now replace by &&  ) this first condition will always be satisfied
+	      //asm: also the next condition will always be satisfied
+              if(Clust0->GetShwPlnFlag()>0)ShwOrTrkList[Plane]=2;
               if( (PrevClust->GetZPlane()>begPlaneView[View] ||
 		   (Clust0->GetZPlane()-PrevClust->GetZPlane()<3 && Clust0->GetTrkPlnFlag()>0)) &&     // asm 2 -> 3
 		  (NextClust->GetZPlane()<endPlaneView[View] ||
 		   (NextClust->GetZPlane()-Clust0->GetZPlane()<3 && Clust0->GetTrkPlnFlag()>0) )) {      //asm 2 -> 3
-		
+
                 // If the clusters have track-like association, identify plane as
                 // being track like, by setting entry in ShwOrTrkList to 3.
-                
+
                 if(Clust0->IsTrkAssoc(PrevClust,NextClust)>2&&(PrevClust->GetTrkPlnFlag()&&NextClust->GetTrkPlnFlag()&&Clust0->GetTrkPlnFlag())){                   //asm 1 ->2
-                  ShwOrTrkList[Plane]=3; 
+                  ShwOrTrkList[Plane]=3;
 		  //asm: new 2 lines
 
                   // If there is a good overlap of strip numbers between the three clusters         //asm: check this condition
@@ -3995,7 +4007,7 @@ void InoTrackFinder::FormFinalTracks( )
 		       Clust0->GetBegXPos()-PrevClust->GetEndXPos()>-1.1*StripXWidth) ||
 		      (NextClust->GetEndYPos()-Clust0->GetBegYPos()<1.1*StripYWidth &&
 		       Clust0->GetEndYPos()-PrevClust->GetBegYPos()<1.1*StripYWidth) ) {
-		    
+
                     // If forwards and backwards planes are adjacent in view,
                     // identify these planes as track-like too
 		    if((Clust0->GetZPlane()-PrevClust->GetZPlane()<2 || Clust0->GetNDFlag()==2)&&PrevClust->GetTrkPlnFlag()>0){ShwOrTrkList[Plane-PrevPln]=3;}
@@ -4004,7 +4016,7 @@ void InoTrackFinder::FormFinalTracks( )
                 } else {
 		  // Otherwise, if cluster is small, can identify its plane as track-like.
 		  // Don't set anything for forwards and backwards planes.
-		  
+
                   if(Clust0->GetEndXPos()-Clust0->GetBegXPos()<2.1*StripXWidth &&
 		     Clust0->GetEndYPos()-Clust0->GetBegYPos()<2.1*StripYWidth &&
 		     Clust0->GetTrkPlnFlag()>0) {ShwOrTrkList[Plane]=3;}
@@ -4016,7 +4028,7 @@ void InoTrackFinder::FormFinalTracks( )
       } // End loop over views
 
       //      cout<< "InoTrackFinder : *** SORT TRACK HITS *** " << endl;
-      
+
       for(Plane=begplane2;Plane<maxplane; ++Plane) {
 	if (TrkFinderDebug==3 && ViewList[Plane]>-1) {
 	  InoCluster* Clust = ClusterList[Plane][0];
@@ -4027,25 +4039,25 @@ void InoTrackFinder::FormFinalTracks( )
 	      << " " << ShwOrTrkList[Plane] << endl;
 	}
       }
-      
+
       // Perform GLOBAL LINEAR FIT
       int ShowerStart, ShowerEnd, FitStart, FitEnd, PrevTrkPln, NextTrkPln;
-      
+
       for(View=0; View<1; ++View) {
         for(Plane=begplane2; Plane<maxplane; ++Plane) {
-	  
+
           // Currently ShwOrTrkList flag==1 means the plane was part of the Final track.
           // ShwOrTrkList flag==3 means that we also flagged the plane as being track-like, above.
           //
           // Here, we look at the planes we haven't flagged as track-like, find track-like planes
           // on either side and carry out a linear fit through this 'shower-like' region.
-          // 
+          //
           // Using the fit, clusters in this shower-like region are identified, then hits.
 	  if(ViewList[Plane]==View && ShwOrTrkList[Plane]<2) {
-	    //	  if(ShwOrTrkList[Plane]<2) { 
+	    //	  if(ShwOrTrkList[Plane]<2) {
 	    //            cout<<"InoTrackFinder : *** GLOBAL FIT ***   Plane=" << Plane << endl;
 
-            // Look for next planes in the view that we have flagged as track-like, 
+            // Look for next planes in the view that we have flagged as track-like,
             // forwards and backwards.
             ktemp=0; NextTrkPln=-1;
             while(Plane+ktemp<endplane1 && Plane+ktemp<maxplane-1) {
@@ -4053,97 +4065,97 @@ void InoTrackFinder::FormFinalTracks( )
 	      if(ViewList[Plane+ktemp]==View && ShwOrTrkList[Plane+ktemp]>2) {NextTrkPln=ktemp; break;}
 	      //	      if(ShwOrTrkList[Plane+ktemp]>2) {NextTrkPln=ktemp; break;}
             }
-            
+
             ktemp=0; PrevTrkPln=-1;
             while(Plane-ktemp>begplane1 && Plane-ktemp>begplane2) {
               ktemp++;
 	      if(ViewList[Plane-ktemp]==View && ShwOrTrkList[Plane-ktemp]>2) {PrevTrkPln=ktemp; break;}
 	      //              if(ShwOrTrkList[Plane-ktemp]>2) {PrevTrkPln=ktemp; break;}
             }
-	    
-            
-            // Find the track-like planes which are just outside of the shower-like region ('ShowerStart' 
-            // and 'ShowerEnd' planes away), as well as the planes which are up to 4 planes either side 
-            // of the shower-like region ('FitStart' and 'FitEnd' planes away). These are the 
+
+
+            // Find the track-like planes which are just outside of the shower-like region ('ShowerStart'
+            // and 'ShowerEnd' planes away), as well as the planes which are up to 4 planes either side
+            // of the shower-like region ('FitStart' and 'FitEnd' planes away). These are the
             // track used in the linear fit through the shower.
             if(PrevTrkPln>0) {
 	      FitStart=-PrevTrkPln-4; ShowerStart=-PrevTrkPln;  //GMA need optimisation Orginial PrevTrkPln-7
 	    } else {
 	      FitStart=begplane1-Plane+1; ShowerStart=FitStart;
 	    }
-	    
+
             if(Plane+FitStart<begplane2) {FitStart=-Plane+begplane2;}
             if(Plane+ShowerStart<begplane2) {ShowerStart=-Plane+begplane2;}
-	    
+
             if(NextTrkPln>0) {
 	      FitEnd=1+NextTrkPln+4; ShowerEnd=1+NextTrkPln;
 	    } else {
 	      FitEnd=endplane1-Plane; ShowerEnd=FitEnd;
 	    }
-	    
+
             if(Plane+FitEnd>maxplane) {FitEnd=maxplane-Plane;}
             if(Plane+ShowerEnd>maxplane) {ShowerEnd=maxplane-Plane;}
-	    
+
             InoCluster* ClustSeed = ClusterList[Plane][0];
-	    
+
             Xm=0.; Xc=0.5*(ClustSeed->GetBegXPos()+ClustSeed->GetEndXPos());
             Xswx=0.; Xswy=0.; Xswx2=0.; Xswxy=0.; Xsw=0.;
-	    
+
             Ym=0.; Yc=0.5*(ClustSeed->GetBegYPos()+ClustSeed->GetEndYPos());
             Yswx=0.; Yswy=0.; Yswx2=0.; Yswxy=0.; Ysw=0.;
-	    
+
             // Carry out the linear fit through the shower, obtaining gradient and intercept.
             for(int kl=FitStart; kl<FitEnd; ++kl) {
 	      if(ViewList[Plane+kl]==View) {
 		InoCluster* ClustTemp = ClusterList[Plane+kl][0];
-		
+
 		for(unsigned int lm=0; lm<ClustTemp->GetHitEntries(); ++lm) {
 		  InoHit* HitTemp = ClustTemp->GetHit(lm);
-		  
+
 		  Zz=HitTemp->GetZPos();
 		  Xx=HitTemp->GetXPos();
 		  Xw=HitTemp->GetXPulse()/ClustTemp->GetXPulse();
-		  
+
 		  if(ShwOrTrkList[Plane+kl]>2) {Xw=5.*Xw;}
 		  else {Xw=0.5*Xw;}
 		  Xswx+=Xw*Zz; Xswy+=Xw*Xx; Xswx2+=Xw*Zz*Zz; Xswxy+=Xw*Zz*Xx; Xsw+=Xw;
-		  
+
 		  Yy=HitTemp->GetYPos();
 		  Yw=HitTemp->GetYPulse()/ClustTemp->GetYPulse();
-		  
+
 		  if(ShwOrTrkList[Plane+kl]>2) {Yw=5.*Yw;}
 		  else {Yw=0.5*Yw;}
 		  Yswx+=Yw*Zz; Yswy+=Yw*Yy; Yswx2+=Yw*Zz*Zz; Yswxy+=Yw*Zz*Yy; Ysw+=Yw;
 		}
               }
             }
-	    
+
             if(Xsw>0. && (Xsw*Xswx2-Xswx*Xswx)!=0.) {
               Xm=(Xsw*Xswxy-Xswx*Xswy)/(Xsw*Xswx2-Xswx*Xswx);
               Xc=(Xswy*Xswx2-Xswx*Xswxy)/(Xsw*Xswx2-Xswx*Xswx);
             }
-	    
+
             if(Ysw>0. && (Ysw*Yswx2-Yswx*Yswx)!=0.) {
               Ym=(Ysw*Yswxy-Yswx*Yswy)/(Ysw*Yswx2-Yswx*Yswx);
               Yc=(Yswy*Yswx2-Yswx*Yswxy)/(Ysw*Yswx2-Yswx*Yswx);
-            }	   
-	    
+            }
+
 	    //            cout<< " ShowerStart "<< ShowerStart+Plane <<" ShowerEnd "<<ShowerEnd+Plane-1<<endl;
             // Now loop over the planes in the shower-like region
             for(int kl=ShowerStart; kl<ShowerEnd; ++kl) {
 	      if(ViewList[Plane+kl]==View && ShwOrTrkList[Plane+kl]<2) {
-		//	      if(ShwOrTrkList[Plane+kl]<1) {	
+		//	      if(ShwOrTrkList[Plane+kl]<1) {
                 // ***First cluster in ClusterList is that from segment in Final track***
                 InoCluster* ClustTemp = ClusterList[Plane+kl][0];
-                
+
                 // Projected strip number in shower
                 ProjectedXPos = Xm*ClustTemp->GetZPos()+Xc;
 		ProjectedYPos = Ym*ClustTemp->GetZPos()+Yc;
-		
+
                 // Calculate window around projected strip number
                 if(Xm>=0.) {XPosWindow = (0.6*StripXWidth)+0.02*Xm;}
                 if(Xm<=0.) {XPosWindow = (0.6*StripXWidth)-0.02*Xm;}
-		
+
 		if(Ym>=0.) {YPosWindow = (0.6*StripYWidth)+0.02*Ym;}
                 if(Ym<=0.) {YPosWindow = (0.6*StripYWidth)-0.02*Ym;}
 
@@ -4158,15 +4170,15 @@ void InoTrackFinder::FormFinalTracks( )
 		     (ClustTemp->GetEndYPos()>ProjectedYPos-(1.6*StripYWidth) &&
 		      ClustTemp->GetBegYPos()<ProjectedYPos+(1.6*StripYWidth))) ) {
                   id=-1; dScore=0.; Score=999.9;
-		  
+
                   // Loop over hits in cluster and get a 'score' for each. Score is based
                   // on distance from projected tpos, and we want to minimise this.
-		  
-		  // Create new cluster and store it. 
+
+		  // Create new cluster and store it.
 		  // ***Last cluster in ClusterList will be that found by the fit.***
 		  //          InoCluster* ClustNew = new InoCluster(Hit);
 		  ClusterList[Plane+kl].push_back(ClustTemp);
-		  
+
 		  ShwOrTrkList[Plane+kl]=2;
                 }
               }
@@ -4174,40 +4186,40 @@ void InoTrackFinder::FormFinalTracks( )
           }
         }  // End loop over planes
       } // End loop over views
-      
+
       //      cout <<"Now, Perform LOCAL LINEAR FITS"<<endl;
-      
+
       // Now, Perform LOCAL LINEAR FITS
       for(View=0; View<1; ++View) {
         for(Plane=begplane2; Plane<maxplane; ++Plane) {
-	  
+
           // If plane has been declared track-like
 	  if(ViewList[Plane]==View && ShwOrTrkList[Plane]>1) {
 	    //	    cout <<"InoTrackFinder : *** FIT (2) ***   Plane=" << Plane << endl;
-	    
+
             // Get last cluster from ClusterList. This will have been flagged immediately as track-like,
             // or have been stored as a result of a linear fit through a shower-like region.
             // Using the cluster, calculate a projected strip number and window for use in the local fit.
             InoCluster* clr = ClusterList[Plane].back();
-	    
-            ProjectedXPos=0.5*(clr->GetBegXPos()+clr->GetEndXPos()); 
+
+            ProjectedXPos=0.5*(clr->GetBegXPos()+clr->GetEndXPos());
             XPosWindow=0.6*StripXWidth;
-	    
-	    ProjectedYPos=0.5*(clr->GetBegYPos()+clr->GetEndYPos()); 
+
+	    ProjectedYPos=0.5*(clr->GetBegYPos()+clr->GetEndYPos());
             YPosWindow=0.6*StripYWidth;
 
 	    //GMA 09/02/2009 Fill this with caution, here is just take all of them
-	    
+
 
 	    // 07/02/2009 If we want hit infor kep it, otherwise emove the following part
             // Loop over the hits in this cluster
 
 	    const unsigned int nhits = clr->GetHitEntries();
 	    //   if(nhits<2)ClustList[Plane].push_back(clr);
-	    
+
             if(nhits){
               for(unsigned int kl=0; kl<nhits; ++kl) {clr->GetHit(kl)->SetTrkFlag(1);}
-              
+
               Xswx=0.0; Xswy=0.0; Xswx2=0.0; Xswxy=0.0; Xsw=0.0;
 	      Yswx=0.0; Yswy=0.0; Yswx2=0.0; Yswxy=0.0; Ysw=0.0;
 
@@ -4216,139 +4228,139 @@ void InoTrackFinder::FormFinalTracks( )
               for(int kl=-2; kl<3; ++kl){
 		//		// ViewList[Plane+kl]==View &&
                 if( ViewList[Plane+kl]==View && (Plane+kl)>=begplane2 && (Plane+kl)<(maxplane) && ShwOrTrkList[Plane+kl]>1 ) {
-		  
-                  InoCluster* clrtmp = ClusterList[Plane+kl].back(); // Again get last entry 
+
+                  InoCluster* clrtmp = ClusterList[Plane+kl].back(); // Again get last entry
                   for(unsigned int lm=0; lm<clrtmp->GetHitEntries(); ++lm){
                     InoHit* hittmp = clrtmp->GetHit(lm);
-		    
+
 		    Zz=hittmp->GetZPos();
 		    Xx=hittmp->GetXPos();
 		    Xw=hittmp->GetXPulse()/clrtmp->GetXPulse();
-		
+
 		    Xswx+=Xw*Zz; Xswy+=Xw*Xx; Xswx2+=Xw*Zz*Zz; Xswxy+=Xw*Zz*Xx; Xsw+=Xw;
 
 		    Yy=hittmp->GetYPos();
 		    Yw=hittmp->GetYPulse()/clrtmp->GetYPulse();
-		
+
 		    Yswx+=Yw*Zz; Yswy+=Yw*Yy; Yswx2+=Yw*Zz*Zz; Yswxy+=Yw*Zz*Yy; Ysw+=Yw;
-		    
-		    //  x=hittmp->GetZPos(); 
-		    //  y=hittmp->GetTPos(); 
+
+		    //  x=hittmp->GetZPos();
+		    //  y=hittmp->GetTPos();
 		    //  w=hittmp->GetPulse()/clrtmp->GetPulse();
 		    //  swx+=w*x; swy+=w*y; swx2+=w*x*x; swxy+=w*x*y; sw+=w;
-		    
+
                   }
                 }
               }
-	      
+
               if(Xsw>1.0 && (Xsw*Xswx2-Xswx*Xswx)!=0.){
                 Xm=(Xsw*Xswxy-Xswx*Xswy)/(Xsw*Xswx2-Xswx*Xswx);
                 Xc=(Xswy*Xswx2-Xswx*Xswxy)/(Xsw*Xswx2-Xswx*Xswx);
-                ProjectedXPos=Xm*clr->GetZPos()+Xc; 
-                if(Xm>=0.0) XPosWindow = (0.6*StripXWidth)+0.02*Xm; 
-                if(Xm<=0) XPosWindow = (0.6*StripXWidth)-0.02*Xm; 
+                ProjectedXPos=Xm*clr->GetZPos()+Xc;
+                if(Xm>=0.0) XPosWindow = (0.6*StripXWidth)+0.02*Xm;
+                if(Xm<=0) XPosWindow = (0.6*StripXWidth)-0.02*Xm;
               }
-	      
+
               if(Ysw>1.0 && (Ysw*Yswx2-Yswx*Yswx)!=0.){
                 Ym=(Ysw*Yswxy-Yswx*Yswy)/(Ysw*Yswx2-Yswx*Yswx);
                 Yc=(Yswy*Yswx2-Yswx*Yswxy)/(Ysw*Yswx2-Yswx*Yswx);
-                ProjectedYPos=Ym*clr->GetZPos()+Yc; 
-                if(Ym>=0.0) YPosWindow = (0.6*StripYWidth)+0.02*Ym; 
-                if(Ym<=0) YPosWindow = (0.6*StripYWidth)-0.02*Ym; 
-              }      
+                ProjectedYPos=Ym*clr->GetZPos()+Yc;
+                if(Ym>=0.0) YPosWindow = (0.6*StripYWidth)+0.02*Ym;
+                if(Ym<=0) YPosWindow = (0.6*StripYWidth)-0.02*Ym;
+              }
             }//nhits
-            
+
             // Using the results of the fit, obtain a score for each hit. Again, this is
             // based on distance from the projected strip number. We want to pick the hit which
             // minimises this distance.
             id=-1; dScore=0.; Score=999.;
-            
+
             for(unsigned int kl=0; kl<nhits; ++kl){
-	      InoHit* hit = clr->GetHit(kl);  
+	      InoHit* hit = clr->GetHit(kl);
      	      //              dScore=hit->GetTPos()-ProjectedTPos; if(dScore<0) dScore=-dScore;
 	      double xx = hit->GetXPos()-ProjectedXPos;
      	      double yy = hit->GetYPos()-ProjectedYPos;
      	      dScore = pow((xx*xx+yy*yy),0.5);
 	      if(dScore<Score){id=kl; Score=dScore;}
             }
-            
-            // If we have found a good hit, store it and flag the plane as part of the 
+
+            // If we have found a good hit, store it and flag the plane as part of the
             // final track
-            
-            if(1+id>0){ 
-	      InoHit* hit = clr->GetHit(id); 
+
+            if(1+id>0){
+	      InoHit* hit = clr->GetHit(id);
 	      //              HitList[Plane].push_back(hit);
-	      //asmS:Oct: here identify the point closest to the predicted point and see if the clusters X and Y position is close to the 
-	      //       the selected hit, if yes set ShowOrTrkList[Plane] to 4 
-	      
+	      //asmS:Oct: here identify the point closest to the predicted point and see if the clusters X and Y position is close to the
+	      //       the selected hit, if yes set ShowOrTrkList[Plane] to 4
+
 	      //            InoCluster* ClustNew1 = new InoCluster(hit);
-	      //            ClustList[Plane].push_back(ClustNew1); 
+	      //            ClustList[Plane].push_back(ClustNew1);
               // Include any other hits which also match projection within the window
 	      //  for(unsigned int kl=0; kl<nhits; ++kl){
 	      //    InoHit* hittmp = clr->GetHit(kl);
 	      if( ( (clr->GetXPos()-hit->GetXPos()>=0 &&
 		     clr->GetXPos()-hit->GetXPos()<XPosWindow) ||
-		      (clr->GetXPos()-hit->GetXPos()<=0 && 
+		      (clr->GetXPos()-hit->GetXPos()<=0 &&
 		       clr->GetXPos()-hit->GetXPos()>-XPosWindow) ) &&
 		    ( (clr->GetYPos()-hit->GetYPos()>=0 &&
 		       clr->GetYPos()-hit->GetYPos()<YPosWindow) ||
-		      (clr->GetYPos()-hit->GetYPos()<=0 && 
+		      (clr->GetYPos()-hit->GetYPos()<=0 &&
 		       clr->GetYPos()-hit->GetYPos()>-YPosWindow) )  ) {
 		//             HitList[Plane].push_back(hittmp);
-		//             ClustNew1->AddHit(hittmp); 
+		//             ClustNew1->AddHit(hittmp);
 		ClustList[Plane].push_back(clr);
 		ShwOrTrkList[Plane]=4;
 	      }
 	      //             }
             }//if
           } // End demand that plane has been flagged as track-like
-	  
+
 	} // End loop over planes
       } // End loop over views
-      
+
       // *** FINALLY, FORM THE TRACKS ***
       // Count the number of planes flagged as being part of final track
       TrackPlanes=0;
-      
+
       for(Plane=begplane2; Plane<maxplane; ++Plane) {
 	//        cout<<"ShwOrTrkList[Plane]"<<Plane<<" "<< ClustList[Plane].size()<<" " <<ShwOrTrkList[Plane]<<" : ";
         if(ShwOrTrkList[Plane]>3) {TrackPlanes++;}           //asm:3->2
       }
-      
+
       if(TrackPlanes>2) { //GMA original if(TrackPlanes>5) {
         for(View=0; View<1; ++View) {
-	  
+
           InoTrack* Trk = new InoTrack(); //slice);
           FinalTrackTempHolder[View].push_back(Trk);
-          
+
           for(Plane=begplane2; Plane<maxplane; ++Plane) {
 	    if(ViewList[Plane]==View && ShwOrTrkList[Plane]>3) {
-	      // if(ShwOrTrkList[Plane]>2)   //asm:3->2 
+	      // if(ShwOrTrkList[Plane]>2)   //asm:3->2
 	      for(unsigned int kl=0; kl<ClustList[Plane].size(); ++kl) {
-		ClustList[Plane][kl]->SetTrkFlag(2);             
+		ClustList[Plane][kl]->SetTrkFlag(2);
                 Trk->AddCluster(ClustList[Plane][kl]); //VALGRIND
-              }	                                           
+              }
             }
           }
         }
 	if (FinalTrackTempHolder[0].size()>0) {
 	}
-	
+
         InoTrack* Trku = FinalTrackTempHolder[0].back();
-        
+
         for(unsigned int kl=0; kl<Trku->GetEntries(); ++kl) {ClustsInTracks[0].push_back(Trku->GetCluster(kl));}
       }
     } // End U/V/TrackStrips check
-    
+
     for(int jk=0; jk<500; ++jk) {
-      ShwOrTrkList[jk]=-1; 
+      ShwOrTrkList[jk]=-1;
       ViewList[jk]=-1;
       ClusterList[jk].clear();
       ClustList[jk].clear();
       HitList[jk].clear();
     }
-  } // End loop over temporary tracks   
-  
+  } // End loop over temporary tracks
+
   // Check tracks don't contain same hits as a previous track
   bool GoodTrack; bool ThreePlanes[2];
   int DuplicateStrips[2]; int Planes[2]; int ThisPlane;
@@ -4360,7 +4372,7 @@ void InoTrackFinder::FormFinalTracks( )
     unsigned int jk = 1+FinalTrackTempHolder[0].size();
     unsigned int mxentries = 0;
     for (unsigned int kl=0; kl<FinalTrackTempHolder[0].size(); ++kl) {
-      
+
       if (FinalTrackTempHolder[0][kl]->GetUsed() <0 &&
 	  FinalTrackTempHolder[0][kl]->GetEntries() > mxentries) {
 	jk = kl; mxentries = FinalTrackTempHolder[0][kl]->GetEntries();
@@ -4369,43 +4381,43 @@ void InoTrackFinder::FormFinalTracks( )
 
     if (jk >=FinalTrackTempHolder[0].size()) continue;
     InoTrack* Trku = FinalTrackTempHolder[0][jk];
-    
+
     //  GMA All three are swithed off now, but open it later on
     //  if(ModuleType==1) {LookForHitsAcrossGap(Trku); LookForHitsAcrossGap(Trkv);}
-    
-    ExtendTrack(Trku);  //GMA  //asm commented out 
-    GoodTrack=false; 
-    
+
+    ExtendTrack(Trku);  //GMA  //asm commented out
+    GoodTrack=false;
+
     if(Trku->GetEntries()>2) { // && Trkv->GetEntries()>2) {
       DuplicateStrips[0]=0; DuplicateStrips[1]=0;
-      
+
       // For u
       Planes[0]=-999; Planes[1]=-999; ThreePlanes[0]=false;
-      
+
       for(unsigned int kl=0; kl<Trku->GetEntries(); ++kl) {
 	InoCluster* TrackClust = Trku->GetCluster(kl);
-	
+
 	for(unsigned int lm=0; lm<ClustsInPrevTracks[0].size(); ++lm) {
 	  if(TrackClust->GetShwPlnFlag()==true)continue;
 	  if(TrackClust==ClustsInPrevTracks[0][lm]) {DuplicateStrips[0]++; break;}
 	}
-	
+
 	ThisPlane=TrackClust->GetZPlane();
 	if(Planes[0]<0) {Planes[0]=ThisPlane;}
 	ThreePlanes[0]=true;
 	//        else if(Planes[1]<0 && Planes[0]!=ThisPlane) {Planes[1]=ThisPlane;}
 	//        else if(Planes[0]!=ThisPlane && Planes[1]!=ThisPlane) {ThreePlanes[0]=true;}
-	
+
 	if(DuplicateStrips[0]>2) {break;}
       }
-      
-      ///GMA how many common hits are allowed ? Optimise this 
-	if(ThreePlanes[0] && DuplicateStrips[0]<3 ) {GoodTrack=true;}    
+
+      ///GMA how many common hits are allowed ? Optimise this
+	if(ThreePlanes[0] && DuplicateStrips[0]<3 ) {GoodTrack=true;}
     }
     // asm: for reordering of tracks...   //Hit to Cluster 260709 asm
-    
+
     if(GoodTrack) {
-      
+
       vector<InoCluster*>::iterator it;
       InoTrack* OrdTrk = new InoTrack();
       OrdTrk->AddCluster(Trku->GetCluster(0));
@@ -4415,21 +4427,21 @@ void InoTrackFinder::FormFinalTracks( )
 	  it=OrdTrk->end(); OrdTrk->InsertCluster(it,Trku->GetCluster(kl));
 	} else if(CZplane <=OrdTrk->GetCluster(0)->GetZPlane() ) {
 	  it=OrdTrk->begin();OrdTrk->InsertCluster(it,Trku->GetCluster(kl));
-	} else if (CZplane>OrdTrk->GetCluster(0)->GetZPlane() && 
+	} else if (CZplane>OrdTrk->GetCluster(0)->GetZPlane() &&
 		   CZplane < OrdTrk->GetCluster(OrdTrk->GetEntries()-1)->GetZPlane()) {
 	  it=OrdTrk->begin();
 	  for (int lm=0;OrdTrk->GetEntries();lm++){
 	    if(CZplane<OrdTrk->GetCluster(lm)->GetZPlane()) it++;
-	    else break; 
+	    else break;
 	  }
 	  OrdTrk->InsertCluster(it,Trku->GetCluster(kl)) ;
 	}
       }
-      
+
       FinalTrackBank[0].push_back(OrdTrk);
       //      FinalTrackBank[0].push_back(Trku);
       FinalTrackTempHolder[0][jk]->SetUsed(1);
-      
+
       for(unsigned int kl=0; kl<Trku->GetEntries(); ++kl) {
 	//	cout <<"kl = "<<kl<<" "<< Trku->GetCluster(kl)->GetZPlane()<<endl;
 	ClustsInPrevTracks[0].push_back(Trku->GetCluster(kl));
@@ -4458,10 +4470,10 @@ void InoTrackFinder::FormFinalTracks( )
   return;
 }
 //====================================================FormFinalTracks========================================================
-       
+
 void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
   //  cout<<"InoTrackFinder::JoinCurvedTrack()"<<endl;
-  
+
   CLHEP::HepMatrix MatA(4,4,0);
   CLHEP::HepMatrix MatB(4,1,0);
   CLHEP::HepMatrix MatP(4,1,0);
@@ -4476,7 +4488,7 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
     HepMatrix F(4,1,0);
     HepMatrix AI(4,4,0);
   */
-  
+
   //InoTrack* CurvTrk1;
   //InoTrack* CurvTrk2;
   //bool JoinCurv=false;
@@ -4491,28 +4503,28 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
   int strhit;
   int ierr;
 
-  double minDiff; 
-  //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;        //asm 
+  double minDiff;
+  //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;        //asm
   for(int View=0; View<1; ++View) {
     for(unsigned int ij=0; ij<FinalTrackBank[View].size(); ++ij) {
       CurvTrk = FinalTrackBank[View][ij];
-      if(CurvTrk->GetEntries()<4) break;    //asm: make it 5 
-      
+      if(CurvTrk->GetEntries()<4) break;    //asm: make it 5
+
       for (joinBeg=-1; joinBeg<2;joinBeg=joinBeg+2){
 	joinClust=true;
 	int rev=1;
-	while(joinClust){ 
+	while(joinClust){
 	  joinClust=false;
 	  for(int jk=1; jk<5;jk++){MatF(jk,1)=0.;}  //GMA14 Dimension 4 or five ?
 	  for(int jk=1; jk<5;jk++){
 	    MatA(jk,4)=0.; MatA(jk,1)=0.; MatA(jk,2)=0.; MatA(jk,3)=0.;
 	    MatB(jk,1)=0.;
 	    MatP(jk,1)=0.;
-	    MatAI(jk,4)=0.; MatAI(jk,1)=0.; MatAI(jk,2)=0.; MatAI(jk,3)=0.; 
-	  } 
-	  
-          //Here should I give less weightage when the cluster is showerlike. 
-	  //	  int kl=0;   //GMA14     
+	    MatAI(jk,4)=0.; MatAI(jk,1)=0.; MatAI(jk,2)=0.; MatAI(jk,3)=0.;
+	  }
+
+          //Here should I give less weightage when the cluster is showerlike.
+	  //	  int kl=0;   //GMA14
 	  strhit= (joinBeg>0) ? CurvTrk->GetEntries()-1:0;
 	  for (int jk=0; jk<4;jk++){
 	    int kl=1;
@@ -4520,46 +4532,46 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 	    MatA(jk+1,2)= -2*CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetYPos();
 	    MatA(jk+1,3)= -2*CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetZPos();
 	    MatA(jk+1,4)=  1. ;
-	    MatB(jk+1,1)= pow(CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetXPos(),2)+ 
-	      pow(CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetYPos(),2)+ 
+	    MatB(jk+1,1)= pow(CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetXPos(),2)+
+	      pow(CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetYPos(),2)+
 	      pow(CurvTrk->GetCluster(strhit-joinBeg*jk*kl)->GetZPos(),2);
-	    
+
 	  } // for jk
-          
+
 	  double rTrk2;
 	  for(int jk=0; jk<3;jk++){
 	    MatAI=MatA.inverse(ierr);
 	    MatP= MatAI*(MatF-MatB);
 	    rTrk2 = pow(MatP[0][0],2)+pow(MatP[1][0],2)+pow(MatP[2][0],2)-MatP[3][0];   // will this term be negative
-	    MatF= MatA*MatP+MatB; 
+	    MatF= MatA*MatP+MatB;
 	  } //it
-	  
+
           int PlaneView=0;
           int extPln=0;
-          int nClust;  
+          int nClust;
           int mxplane;
-	  
+
           do {
 	    bool ConsiderClust;
 	    int id=-1;
-	    
+
 	    //----------------------------------------------------------------------------------
-	    
+
 	    // These are the tpos values required to locate the Magent coil hole
-	    //GMA  put proper value 
+	    //GMA  put proper value
 	    double xx, yy; double XPos, YPos;
 	    bool rpcGap=false, MegModuleGap=false;
 	    double xxmax=1.52;
 	    double fmax =0.92;
-	    
+
 	    if(joinBeg>0) { xx = abs(CurvTrk->GetEndXDir());yy = abs(CurvTrk->GetEndYDir()); XPos= CurvTrk->GetEndXPos();YPos=CurvTrk->GetEndYPos();}
 	    else          { xx = abs(CurvTrk->GetBegXDir());yy = abs(CurvTrk->GetBegYDir()); XPos= CurvTrk->GetBegXPos();YPos=CurvTrk->GetBegYPos();}
-	    
+
 	    float  XXfrac =0, YYfrac=0;
 	    int    XXq=-100, YYq=-100;
 	    //ASM //Using this condition first decide if the track is passing through module gap or detector gap.
 	    //Set some flag and set the appropriate condition for both the falgs.
-            
+
 	    if((CurvTrk->GetCluster(strhit)->GetXPos()>(-8.25-min(xx,1.52)*LayerThickness) &&
 		CurvTrk->GetCluster(strhit)->GetXPos()<(-7.95+min(xx,1.52)*LayerThickness))||
 	       (CurvTrk->GetCluster(strhit)->GetXPos()>( 7.95-min(xx,1.52)*LayerThickness) &&
@@ -4567,7 +4579,7 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 	      MegModuleGap=true;
 	      //cout<<"JCMegModuleGap"<<endl;
             }else{
-	      
+
 	      if(fabs(CurvTrk->GetCluster(strhit)->GetXPos())<8.00) {
 		XXfrac= (int(fabs(CurvTrk->GetCluster(strhit)->GetXPos()*1000))%2000)/1000.;
 		if(fabs(XXfrac-1)>fmax-fabs((int(fabs(min(xx,xxmax)*LayerThickness*1000))%2000)/1000.-1)){
@@ -4589,7 +4601,7 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 		rpcGap=true;
 	      }
 	    }//else
-	    
+
 	    if(MegModuleGap){
 	      mxplane=40;minDiff=0.3;
 	    } else if(rpcGap) {
@@ -4597,12 +4609,12 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 	    } else {
 	      mxplane=3;minDiff=0.2;
 	    }
-	    //---------------------------------------------------------------------------------- 
+	    //----------------------------------------------------------------------------------
 	    if (rev==1) extPln++;
-	    if (rev==-1)extPln--; 
+	    if (rev==-1)extPln--;
 	    int CurrentPlane = (CurvTrk->GetCluster(strhit)->GetZPlane()+joinBeg*extPln>0&&CurvTrk->GetCluster(strhit)->GetZPlane()+joinBeg*extPln<140)? CurvTrk->GetCluster(strhit)->GetZPlane()+joinBeg*extPln:-1;
-	    if (CurrentPlane<0) break;     
-	    
+	    if (CurrentPlane<0) break;
+
 	    nClust=ClusterBank[CurrentPlane].size();                       //asm:8_7_09
             double ff;
             if(nClust<100){
@@ -4611,7 +4623,7 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 		int XX1q=-24; int YY1q=-24;
               // Don't add a hit that is already in another track in the slice
 		ConsiderClust=true;
-		
+
 		if(ClusterBank[CurrentPlane][jk]->GetShwPlnFlag()){ConsiderClust=false;}
 		for(unsigned int kl=0; kl<ClustsInTracks[PlaneView].size(); ++kl) {
 		  //GMA 260709  AllHitBank
@@ -4623,7 +4635,7 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 		    ConsiderClust=false;
 		  }
 		}
-		
+
 		if(MegModuleGap||rpcGap){
 		  if(XXq!=-24){
 		    if(fabs(ClusterBank[CurrentPlane][jk]->GetXPos())<8.00){
@@ -4642,33 +4654,33 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 		if(ConsiderClust==false)continue;
 		CurrentClust = ClusterBank[CurrentPlane][jk];
 		if(CurvTrk->ContainsClust(CurrentClust)==true) continue;
-		
-		
+
+
 		// Find the most likely hit to add
-		double XXo= CurrentClust->GetXPos() - MatP[0][0]; 
+		double XXo= CurrentClust->GetXPos() - MatP[0][0];
 		double YYo= CurrentClust->GetYPos() - MatP[1][0];
 		double ZZo= CurrentClust->GetZPos() - MatP[2][0];
 		ff = pow(XXo*XXo+YYo*YYo+ZZo*ZZo,0.5)- pow(rTrk2,0.5);
-		
-		// 260709 asm  
+
+		// 260709 asm
 		//pAnalysis->RC->Fill(pow(fabs(rTrk2),0.5),ff);
 		//pAnalysis->RC->Fill( extPln,ff);
-		
-		//asm:Oct09 Along with this condition also check if the cluster added is in the to the track is in the same direction as that of the track. 
-		if(abs(ff)<minDiff){ 
+
+		//asm:Oct09 Along with this condition also check if the cluster added is in the to the track is in the same direction as that of the track.
+		if(abs(ff)<minDiff){
 		  id=jk;
 		  minDiff=fabs(ff);//<minDiff?fabs(ff):minDiff;
 		  joinClust=true;
-		} 
-		//else{ cout<< abs(ff) <<" < "<< minDiff << endl; } 
+		}
+		//else{ cout<< abs(ff) <<" < "<< minDiff << endl; }
 	      } //nClust
 	    }
-	    if(joinClust){ 
+	    if(joinClust){
 	      CurrentClust=NULL;
 	      CurrentClust = ClusterBank[CurrentPlane][id];
-	      
+
               it= joinBeg<0 ? CurvTrk->begin():CurvTrk->end();
-	      
+
 	      CurvTrk->InsertCluster(it,CurrentClust);
               //CurvTrk->AddCluster(it);
               //FinalTrackBank[View].erase(FinalTrackBank[View].begin()+l);            //asm
@@ -4682,31 +4694,31 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
               }
 	      //                cout<<  ClustsInTracks[PlaneView][ClustsInTracks[PlaneView].size()-1]->GetZPlane();
 	      //  for (unsigned int jk=0;jk<CurvTrk->GetEntries();jk++){cout << "  " <<CurvTrk->GetCluster(jk)->GetZPlane();}
-	    }   
+	    }
 	    if (extPln==mxplane) {extPln=1;rev=-1;}
 	  } while(extPln<mxplane &&extPln>-1&&joinClust==false);
-	} //joinClust 
+	} //joinClust
       } //for ( joinBeg
     } //for l
   }  //for View
-  
+
   int View=0;
   if(FinalTrackBank[View].size()>1){
     unsigned int TrkMax;
-    unsigned int iid=0;                                           
-    TrkMax=FinalTrackBank[View][0]->GetEntries();  
+    unsigned int iid=0;
+    TrkMax=FinalTrackBank[View][0]->GetEntries();
     for(unsigned int ij=0; ij<FinalTrackBank[View].size(); ++ij){
       if(FinalTrackBank[View][ij]->GetEntries()>TrkMax){
 	TrkMax=FinalTrackBank[View][ij]->GetEntries();iid=ij;}
     }
     if(iid>0){
       FinalTrackBank[View].insert(FinalTrackBank[View].begin(),FinalTrackBank[View][iid]);
-      FinalTrackBank[View].erase(FinalTrackBank[View].begin()+iid+1); 
+      FinalTrackBank[View].erase(FinalTrackBank[View].begin()+iid+1);
     }
-    
-    //   for(unsigned int ij=0; ij<FinalTrackBank[View].size(); ++ij){cout<<" "<<FinalTrackBank[View][ij]->GetEntries()<< "  " ;}    
+
+    //   for(unsigned int ij=0; ij<FinalTrackBank[View].size(); ++ij){cout<<" "<<FinalTrackBank[View][ij]->GetEntries()<< "  " ;}
   }
-  
+
   if(TrkFinderDebug==100){
     cout<<"Join Curved Track -x-x-x-x-x-x-x-x-x-x-x-x-x-"<<endl;
     for(int View1x=0; View1x<1; ++View1x) {
@@ -4728,52 +4740,52 @@ void InoTrackFinder::JoinCurvedTrack() {            //asm:new function
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 void InoTrackFinder::ExtendTrack(InoTrack* Trk) {          //asm: modified
-  
+
   //  cout<<"InoTrackFinder : Attempting to extend track at beginning and end " << endl;
   //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
   int PlanesSinceAdded, CurrentPlane(0), Increment(0);
   unsigned int nClust;
-  double TrkXDir(0.), TrkYDir(0.); 
+  double TrkXDir(0.), TrkYDir(0.);
   double TrkXPos(0.), TrkYPos(0.), TrkZPos(0.),  Xextrem1, Xextrem2, Yextrem1, Yextrem2;
   double StripXCentre, StripYCentre, CurrentZPos, MinDistanceToHit[2], StripXCharge, StripYCharge;
   double PredictedXPos, PredictedYPos;
-  
+
   double XTolerance; double YTolerance; int MaxPlanes;
   int PlaneView=0; // Trk->GetPlaneView();
   bool ConsiderClust;
-  
+
   if(ModuleType==1 || ModuleType==3) {
     MaxPlanes=2; XTolerance=10.*StripXWidth; YTolerance=10.*StripYWidth;
   } else {
     MaxPlanes=40; XTolerance=4.*StripXWidth; YTolerance=4.*StripYWidth;
   }
-  
+
   // Extend beginning first, then the end.
   for(int direction=0; direction<2; ++direction) {
     PlanesSinceAdded=0;            //asm:
     if(direction==0) {CurrentPlane=Trk->GetBegZPlane()-1; Increment=-1;}
     else if(direction==1) {CurrentPlane=Trk->GetEndZPlane()+1; Increment=1;}
-    
-    while(PlanesSinceAdded<MaxPlanes && CurrentPlane>=0 && CurrentPlane<=PlanesInModule) { 
+
+    while(PlanesSinceAdded<MaxPlanes && CurrentPlane>=0 && CurrentPlane<=PlanesInModule) {
       // Don't do anything if there are no hits, or we aren't in the same view.
       nClust=ClusterBank[CurrentPlane].size();
       if(nClust>0) { // && ClusterBank[CurrentPlane][0]->GetPlaneView()==PlaneView) {
-	
+
         if(direction==0) {
-          TrkXDir=Trk->GetBegXDir(); 
-	  TrkYDir=Trk->GetBegYDir(); 
-          TrkXPos=Trk->GetBegXPos(); 
-	  TrkYPos=Trk->GetBegYPos(); 
-          TrkZPos=Trk->GetBegZPos(); 
+          TrkXDir=Trk->GetBegXDir();
+	  TrkYDir=Trk->GetBegYDir();
+          TrkXPos=Trk->GetBegXPos();
+	  TrkYPos=Trk->GetBegYPos();
+          TrkZPos=Trk->GetBegZPos();
         } else if(direction==1) {
-          TrkXDir=Trk->GetEndXDir(); 
-	  TrkYDir=Trk->GetEndYDir(); 
-          TrkXPos=Trk->GetEndXPos(); 
-	  TrkYPos=Trk->GetEndYPos(); 
-          TrkZPos=Trk->GetEndZPos(); 
+          TrkXDir=Trk->GetEndXDir();
+	  TrkYDir=Trk->GetEndYDir();
+          TrkXPos=Trk->GetEndXPos();
+	  TrkYPos=Trk->GetEndYPos();
+          TrkZPos=Trk->GetEndZPos();
         }
 	//==========================================================================================
-	//asm: defined Maxplanes and XTolerance as a function of slope.  //Maxplane can be reduced.. 
+	//asm: defined Maxplanes and XTolerance as a function of slope.  //Maxplane can be reduced..
 	if(fabs(TrkXDir)>2||fabs(TrkYDir)>2) {
 	  MaxPlanes=8;
 	  if(fabs(TrkXDir)>3) {XTolerance=20.*StripXWidth;} else {XTolerance=10.*StripXWidth;}
@@ -4781,21 +4793,21 @@ void InoTrackFinder::ExtendTrack(InoTrack* Trk) {          //asm: modified
 	} else {
 	  MaxPlanes=8; XTolerance=3.*StripXWidth; YTolerance=3.*StripYWidth;
 	}
-	
+
 	//=========================================================================================
         InoCluster* CurrentClust = 0;
         CurrentZPos = ClusterBank[CurrentPlane][0]->GetZPos();
-        MinDistanceToHit[0] = XTolerance; 
+        MinDistanceToHit[0] = XTolerance;
 	MinDistanceToHit[1] = YTolerance;
-        
+
         // Loop over the hits on the plane
         for(unsigned int ij=0; ij<nClust; ++ij) {
-	  
+
           // Don't add a hit that is already in another track in the slice
           ConsiderClust=true;
           //unsigned int  temp;
 	  CurrentClust = 0;
-	  
+
 	  if(ClusterBank[CurrentPlane][ij]->GetShwPlnFlag()){ConsiderClust=false;}
           for(unsigned int jk=0; jk<ClustsInTracks[PlaneView].size(); ++jk) {
 	    if(ClusterBank[CurrentPlane][ij]==ClustsInTracks[PlaneView][jk]) {
@@ -4803,24 +4815,24 @@ void InoTrackFinder::ExtendTrack(InoTrack* Trk) {          //asm: modified
 	    }
           }
           if(ConsiderClust==false) {PlanesSinceAdded++;continue;}
-	  
-	  //asm: redefined Xextrem1/2 and Yextrem1/2 now  taking into account the planes since the last hit was added. 
-	  
+
+	  //asm: redefined Xextrem1/2 and Yextrem1/2 now  taking into account the planes since the last hit was added.
+
           // Find the most likely hit to add
           PredictedXPos = TrkXPos + TrkXDir*(CurrentZPos-TrkZPos);
-          Xextrem1 = PredictedXPos + ((PlanesSinceAdded+1)*LayerThickness*TrkXDir)/2; //GMA 0.055     
+          Xextrem1 = PredictedXPos + ((PlanesSinceAdded+1)*LayerThickness*TrkXDir)/2; //GMA 0.055
           Xextrem2 = PredictedXPos - ((PlanesSinceAdded+1)*LayerThickness*TrkXDir)/2;
-          
+
           StripXCentre=ClusterBank[CurrentPlane][ij]->GetXPos();
           StripXCharge=ClusterBank[CurrentPlane][ij]->GetXPulse();
-	  
+
           PredictedYPos = TrkYPos + TrkYDir*(CurrentZPos-TrkZPos);
           Yextrem1 = PredictedYPos + ((PlanesSinceAdded+1)*LayerThickness*TrkYDir)/2;
           Yextrem2 = PredictedYPos - ((PlanesSinceAdded+1)*LayerThickness*TrkYDir)/2;
-          
+
 	  StripYCentre=ClusterBank[CurrentPlane][ij]->GetYPos();
 	  StripYCharge=ClusterBank[CurrentPlane][ij]->GetYPulse();
-	  
+
           if(fabs(StripXCentre-PredictedXPos)<MinDistanceToHit[0] &&
 	     fabs(StripYCentre-PredictedYPos)<MinDistanceToHit[1]) {
             MinDistanceToHit[0] = fabs(StripXCentre-PredictedXPos);
@@ -4843,14 +4855,14 @@ void InoTrackFinder::ExtendTrack(InoTrack* Trk) {          //asm: modified
           Trk->AddCluster(CurrentClust); //VALGRIND
           ClustsInTracks[PlaneView].push_back(CurrentClust);
           PlanesSinceAdded=0;
-	  //        cout<<" InoTrackFinder : Track extended " << direction << " TPos " 
-	  //	      << CurrentClust->GetXPos()<<" "<<CurrentClust->GetYPos() 
+	  //        cout<<" InoTrackFinder : Track extended " << direction << " TPos "
+	  //	      << CurrentClust->GetXPos()<<" "<<CurrentClust->GetYPos()
 	  //	      << " ZPos " << CurrentClust->GetZPos() << endl;
         }
       } else { // if(nClust>0)
 	PlanesSinceAdded++;
       }
-      
+
       CurrentPlane+=Increment;
     }  //while
   }  //for plane
@@ -4863,25 +4875,25 @@ void InoTrackFinder::ExtendTrack(InoTrack* Trk) {          //asm: modified
 
 void InoTrackFinder::FillGapsInTrack(InoTrack* Trk) {
   //a  cout<<"InoTrackFinder : Attempting to fill gaps in track " << endl;
-  
+
   // First store track hits in plane order
   vector<InoCluster*> TrackClusts[490];
   int PlaneView=0; //Trk->GetPlaneView();
-  
+
   for(unsigned int ij=0; ij<Trk->GetEntries(); ++ij) {
     InoCluster* Clust = Trk->GetCluster(ij);
     TrackClusts[Clust->GetZPlane()].push_back(Clust);
   }
-  
+
   // Find gaps
   int PrevPlaneWithClust=Trk->GetBegZPlane();
   int NextPlaneWithClust=Trk->GetEndZPlane();
 
   double PrevXPos, NextXPos, PrevYPos, NextYPos, PrevZPos, NextZPos, CurrentZPos;
-  
+
   double PredictedGradient[2], PredictedXPos, MinDistanceToClust[2], StripXCharge;
   double PredictedYPos, StripYCharge;
-  
+
   double XTolerance; double YTolerance; bool ConsiderClust;
 
   if(ModuleType==1 || ModuleType==3) {XTolerance=1.5*StripXWidth; YTolerance=1.5*StripYWidth;}
@@ -4890,18 +4902,18 @@ void InoTrackFinder::FillGapsInTrack(InoTrack* Trk) {
   for(int ij=Trk->GetBegZPlane()+1; ij<Trk->GetEndZPlane(); ij++) {
     // Don't do anything if there are no clusters, or we aren't in the same view.
     if(ClusterBank[ij].size()>0) { // (&& ClusterBank[ij][0]->GetPlaneView()==PlaneView)
-      
+
       // Find the cluster planes on either side of a gap.
       if(TrackClusts[ij].size()>0) {PrevPlaneWithClust=ij; continue;}
-      
+
       for(int jk=ij+2; jk<=Trk->GetEndZPlane(); jk++) {
         if(TrackClusts[jk].size()>0) {NextPlaneWithClust=jk; break;}
       }
-      
+
       // Now try and fill the gap. Limit to maximum gap size?
       if(PrevPlaneWithClust!=NextPlaneWithClust) {
         CurrentZPos=ClusterBank[ij][0]->GetZPos();
-	
+
         PrevZPos=TrackClusts[PrevPlaneWithClust][0]->GetZPos();
         NextZPos=TrackClusts[NextPlaneWithClust][0]->GetZPos();
 
@@ -4913,27 +4925,27 @@ void InoTrackFinder::FillGapsInTrack(InoTrack* Trk) {
 
         PredictedGradient[0]=(NextXPos-PrevXPos)/(NextZPos-PrevZPos);
 	PredictedGradient[1]=(NextYPos-PrevYPos)/(NextZPos-PrevZPos);
-	
+
         PredictedXPos=PrevXPos+((CurrentZPos-PrevZPos)*PredictedGradient[0]);
 	PredictedYPos=PrevYPos+((CurrentZPos-PrevZPos)*PredictedGradient[1]);
 
 	InoCluster* CurrentClust = 0;
 
-	MinDistanceToClust[0] = XTolerance; 
+	MinDistanceToClust[0] = XTolerance;
 	MinDistanceToClust[1] = YTolerance;
-	
+
         for(unsigned int kl=0; kl<ClusterBank[ij].size(); ++kl) {
           InoCluster* clust = ClusterBank[ij][kl];
-	  
-	  
+
+
           // Don't add a cluster that is already in another track in the slice
           ConsiderClust=true;
           for(unsigned int lm=0; lm<ClustsInTracks[PlaneView].size(); ++lm) {
             if(clust==ClustsInTracks[PlaneView][lm]) {ConsiderClust=false; break;}
           }
           if(ConsiderClust==false) {continue;}
-          
-	  
+
+
           // Find the most likely cluster to add
           StripXCharge=clust->GetXPulse();
 	  StripYCharge=clust->GetYPulse();
@@ -4942,28 +4954,28 @@ void InoTrackFinder::FillGapsInTrack(InoTrack* Trk) {
 	     fabs(PredictedYPos-clust->GetYPos())<MinDistanceToClust[1]) {
             MinDistanceToClust[0]=fabs(PredictedXPos-clust->GetXPos());
 	    MinDistanceToClust[1]=fabs(PredictedYPos-clust->GetYPos());
-            CurrentClust=clust; 
+            CurrentClust=clust;
           }
         }
-	
+
         if(CurrentClust) {
-          Trk->AddCluster(CurrentClust); 
+          Trk->AddCluster(CurrentClust);
           TrackClusts[ij].push_back(CurrentClust);
           ClustsInTracks[PlaneView].push_back(CurrentClust);
         }
       }
     }
   }
-  
+
   // Clean up
   for(int ij=0; ij<490; ++ij) {TrackClusts[ij].clear();}
-  
+
   return;
 }
 
 void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
   // Try and add missing clusters that are just across the SM gap
-  
+
   int PlanesSinceAdded, CurrentPlane(0), ClustsAdded(0);
   double CurrentZPos, TargetXPos, TargetYPos;
   double TrkBegZPos, TrkBegXPos, TrkBegYPos;
@@ -4971,107 +4983,107 @@ void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
 
   double TrkBegDir[2]={0,0};
   double TrkEndDir[2]={0,0};
-  
+
   double Tolerance[2]={0,0};
-  
+
   double MinDistanceToClust[2], DistanceToCurrentClust[2];
   double Xcentre, Xextrem1, Xextrem2;
   double Ycentre, Yextrem1, Yextrem2;
-  unsigned int nclusts; 
+  unsigned int nclusts;
 
   double z, t, w, sw, swx, swx2, swy, swyx;
   bool ConsiderClust;
-  
+
   int PlaneView= 0; // Trk->GetPlaneView();
 
   // If we want to look back into SM 1
   //GMA an arbitray optin, depending on detector configuration one need to change it
   if(Trk->GetBegZPlane()>1140 && Trk->GetBegZPlane()<=1156) {  //GMA14 fixenumber
-    
+
     if(PlaneView==0) {CurrentPlane=248;} else if(PlaneView==1) {CurrentPlane=247;}
-    
+
     PlanesSinceAdded=0;
     TrkBegZPos=Trk->GetBegZPos();
     TrkBegXPos=Trk->GetBegXPos();
     TrkBegYPos=Trk->GetBegYPos();
-    
+
     // Get beginning direction
     z=0.; t=0.; sw=0.; swx=0.; swx2=0.; swy=0.; swyx=0.;
-    
+
     // Include first few clusters in track
     for(unsigned int ij=0; ij<Trk->GetEntries(); ++ij) {
       InoCluster* clust = Trk->GetCluster(ij);
-      
+
       if(clust->GetZPlane()<Trk->GetBegZPlane()+4) {
         z=clust->GetZPos(); t=clust->GetXPos(); w=clust->GetXPulse();
-        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;  
+        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
       }
     }
     // Use result so far to define a tolerance
     if((swx*swx-sw*swx2)!=0) {
-      TrkBegDir[0] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2); 
+      TrkBegDir[0] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2);
       Tolerance[0] = 0.2 + fabs(TrkBegDir[0]);
     }
-    
+
     z=0.; t=0.; sw=0.; swx=0.; swx2=0.; swy=0.; swyx=0.;
-    
+
     // Include first few clusters in track
     for(unsigned int ij=0; ij<Trk->GetEntries(); ++ij) {
       InoCluster* clust = Trk->GetCluster(ij);
-      
+
       if(clust->GetZPlane()<Trk->GetBegZPlane()+4) {
         z=clust->GetZPos(); t=clust->GetYPos(); w=clust->GetYPulse();
-        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;  
+        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
       }
     }
     // Use result so far to define a tolerance
     if((swx*swx-sw*swx2)!=0) {
-      TrkBegDir[1] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2); 
+      TrkBegDir[1] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2);
       Tolerance[1] = 0.2 + fabs(TrkBegDir[1]);
     }
-    
+
     // Look at some of the relevant clusters across the gap
     for(int ij=CurrentPlane; ij>CurrentPlane-4; ij-=1) {
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
         InoCluster* clust = ClusterBank[ij][jk];
-	
+
         z=clust->GetZPos(); t=clust->GetXPos(); w=clust->GetXPulse();
-	
+
         // If cluster is within tolerance region, include with weight 0.5
         if(fabs(t-(TrkBegXPos+TrkBegDir[0]*(z-TrkBegZPos)))<Tolerance[0]) {
-          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;  
+          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
         }
       }
     }
     // Get results of total fit
     if((swx*swx-sw*swx2)!=0) {TrkBegDir[0] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2);}
-    
+
     // Look at some of the relevant clusters across the gap
     for(int ij=CurrentPlane; ij>CurrentPlane-4; ij-=1) {
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
         InoCluster* clust = ClusterBank[ij][jk];
-	
+
         z=clust->GetZPos(); t=clust->GetYPos(); w=clust->GetYPulse();
-	
+
         // If cluster is within tolerance region, include with weight 0.5
         if(fabs(t-(TrkBegYPos+TrkBegDir[1]*(z-TrkBegZPos)))<Tolerance[1]) {
-          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;  
+          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
         }
       }
     }
     // Get results of total fit
     if((swx*swx-sw*swx2)!=0) {TrkBegDir[1] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2);}
-    
+
     // Look to add the clusters
     while(CurrentPlane>0 && PlanesSinceAdded<5 && ClustsAdded<2) {
-      
+
       nclusts=ClusterBank[CurrentPlane].size();
-      
+
       if(nclusts>0) {
         CurrentZPos=ClusterBank[CurrentPlane][0]->GetZPos();
-	
+
         InoCluster* BestClust = 0;
-        MinDistanceToClust[0] = 3.*StripXWidth; 
+        MinDistanceToClust[0] = 3.*StripXWidth;
 	MinDistanceToClust[1] = 3.*StripYWidth;
 
         for(unsigned int jk=0; jk<nclusts; ++jk) {
@@ -5083,8 +5095,8 @@ void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
 	    }
           }
           if(ConsiderClust==false) {continue;}
-	  
-	  
+
+
           // Compare transverse positions
           TargetXPos=TrkBegXPos+TrkBegDir[0]*(CurrentZPos-TrkBegZPos);
 	  TargetYPos=TrkBegYPos+TrkBegDir[1]*(CurrentZPos-TrkBegZPos);
@@ -5092,23 +5104,23 @@ void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
           Xcentre=ClusterBank[CurrentPlane][jk]->GetXPos();
           Xextrem1=Xcentre+(LayerThickness*TrkBegDir[0]); //GMA 0.0852 Exact value from final detector geometry
           Xextrem2=Xcentre-(LayerThickness*TrkBegDir[0]);
-          
+
           Ycentre=ClusterBank[CurrentPlane][jk]->GetYPos();
           Yextrem1=Ycentre+(LayerThickness*TrkBegDir[1]); //GMA 0.0852 Exact value from final detector geometry
           Yextrem2=Ycentre-(LayerThickness*TrkBegDir[1]);
 
           DistanceToCurrentClust[0]=min(fabs(Xcentre-TargetXPos),
                                    min(fabs(Xextrem1-TargetXPos),fabs(Xextrem2-TargetXPos)));
-	  
+
 	  DistanceToCurrentClust[1]=min(fabs(Ycentre-TargetYPos),
                                    min(fabs(Yextrem1-TargetYPos),fabs(Yextrem2-TargetYPos)));
 
 
           if(DistanceToCurrentClust[0]<MinDistanceToClust[0] &&
 	     DistanceToCurrentClust[1]<MinDistanceToClust[1]) {
-            MinDistanceToClust[0]=DistanceToCurrentClust[0]; 
-	    MinDistanceToClust[1]=DistanceToCurrentClust[1]; 
-            BestClust=ClusterBank[CurrentPlane][jk]; 
+            MinDistanceToClust[0]=DistanceToCurrentClust[0];
+	    MinDistanceToClust[1]=DistanceToCurrentClust[1];
+            BestClust=ClusterBank[CurrentPlane][jk];
             PlanesSinceAdded=0;
           }
         }
@@ -5117,92 +5129,92 @@ void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
       CurrentPlane-=1;
     }
   }
-  
+
   // If we want to look forward into SM 2
   if(Trk->GetEndZPlane()>=242 && Trk->GetEndZPlane()<250) { //GMA Just an arbitray number
-    
+
     if(PlaneView==0) {CurrentPlane=251;} else if(PlaneView==1) {CurrentPlane=250;}
     PlanesSinceAdded=0;
     TrkEndZPos=Trk->GetEndZPos();
     TrkEndXPos=Trk->GetEndXPos();
-    TrkEndYPos=Trk->GetEndYPos();    
-    
+    TrkEndYPos=Trk->GetEndYPos();
+
     // Get end direction
     z=0.; t=0.; sw=0.; swx=0.; swx2=0.; swy=0.; swyx=0.;
-    
+
     // Include last few clusters in track
     for(unsigned int ij=0; ij<Trk->GetEntries(); ++ij) {
       InoCluster* clust = Trk->GetCluster(ij);
-      
+
       if(clust->GetZPlane()>Trk->GetEndZPlane()-4) {
         z=clust->GetZPos(); t=clust->GetXPos(); w=clust->GetXPulse();
-        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z; 
+        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
       }
     }
     // Use result so far to define a tolerance
     if((swx*swx-sw*swx2)!=0) {TrkEndDir[0] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2); Tolerance[0] = 0.2 + fabs(TrkEndDir[0]);}
-    
+
     // Get end direction
     z=0.; t=0.; sw=0.; swx=0.; swx2=0.; swy=0.; swyx=0.;
-    
+
     // Include last few clusts in track
     for(unsigned int ij=0; ij<Trk->GetEntries(); ++ij) {
       InoCluster* clust = Trk->GetCluster(ij);
-      
+
       if(clust->GetZPlane()>Trk->GetEndZPlane()-4) {
         z=clust->GetZPos(); t=clust->GetYPos(); w=clust->GetYPulse();
-        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z; 
+        sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
       }
     }
     // Use result so far to define a tolerance
     if((swx*swx-sw*swx2)!=0) {TrkEndDir[1] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2); Tolerance[1] = 0.2 + fabs(TrkEndDir[1]);}
-    
+
     // Look at some of the relevant clusters across the gap
     for(int ij=CurrentPlane; ij<CurrentPlane+4; ij+=1) {
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
         InoCluster* clust = ClusterBank[ij][jk];
-        
+
         z=clust->GetZPos(); t=clust->GetXPos(); w=clust->GetPulse();
-	
+
         // If clust is within tolerance region, include with weight 0.5
         if(fabs(t-(TrkEndXPos+TrkEndDir[0]*(z-TrkEndZPos)))<Tolerance[0]) {
-          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;  
+          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
         }
       }
     }
-    
+
     // Get results of total fit
     if((swx*swx-sw*swx2)!=0) {TrkEndDir[0] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2);}
-    
+
     // Look at some of the relevant clusts across the gap
     for(int ij=CurrentPlane; ij<CurrentPlane+4; ij+=1) {
       for(unsigned int jk=0; jk<ClusterBank[ij].size(); ++jk) {
         InoCluster* clust = ClusterBank[ij][jk];
-        
+
         z=clust->GetZPos(); t=clust->GetYPos(); w=clust->GetPulse();
-	
+
         // If clust is within tolerance region, include with weight 0.5
         if(fabs(t-(TrkEndYPos+TrkEndDir[1]*(z-TrkEndZPos)))<Tolerance[1]) {
-          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;  
+          sw+=w; swx+=w*z; swx2+=w*z*z; swy+=w*t; swyx+=w*t*z;
         }
       }
     }
-    
+
     // Get results of total fit
     if((swx*swx-sw*swx2)!=0) {TrkEndDir[1] = (swx*swy-sw*swyx)/(swx*swx-sw*swx2);}
-    
+
     // Look at clusters in region
     while(CurrentPlane<500 && PlanesSinceAdded<5 && ClustsAdded<2) {
-      
+
       nclusts=ClusterBank[CurrentPlane].size();
-        
+
       if(nclusts>0) {
         CurrentZPos=ClusterBank[CurrentPlane][0]->GetZPos();
 
         InoCluster* BestClust = 0;
-        MinDistanceToClust[0] = 3.*StripXWidth; 
+        MinDistanceToClust[0] = 3.*StripXWidth;
 	MinDistanceToClust[1] = 3.*StripYWidth;
-                  
+
         for(unsigned int jk=0; jk<nclusts; ++jk) {
           // Don't add a cluster that is already in another track in the slice
           ConsiderClust=true;
@@ -5212,36 +5224,36 @@ void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
 	    }
           }
           if(ConsiderClust==false) {continue;}
-	  
+
           // Compare transverse positions
           TargetXPos=TrkEndXPos+TrkEndDir[0]*(CurrentZPos-TrkEndZPos);
-	  
+
           Xcentre=ClusterBank[CurrentPlane][jk]->GetXPos();
           Xextrem1=Xcentre+(LayerThickness*TrkEndDir[0]);
           Xextrem2=Xcentre-(LayerThickness*TrkEndDir[0]);
-          
+
           DistanceToCurrentClust[0]=min(fabs(Xcentre-TargetXPos),
 					min(fabs(Xextrem1-TargetXPos),fabs(Xextrem2-TargetXPos)));
-	  
-	  
+
+
           TargetYPos=TrkEndYPos+TrkEndDir[0]*(CurrentZPos-TrkEndZPos);
-	  
+
           Ycentre=ClusterBank[CurrentPlane][jk]->GetYPos();
           Yextrem1=Ycentre+(LayerThickness*TrkEndDir[1]);
           Yextrem2=Ycentre-(LayerThickness*TrkEndDir[1]);
-          
+
           DistanceToCurrentClust[1]=min(fabs(Ycentre-TargetYPos),
 					min(fabs(Yextrem1-TargetYPos),fabs(Yextrem2-TargetYPos)));
-	  
+
           if(DistanceToCurrentClust[0]<MinDistanceToClust[0] &&
 	     DistanceToCurrentClust[1]<MinDistanceToClust[1]) {
-            MinDistanceToClust[0]=DistanceToCurrentClust[0]; 
-	    MinDistanceToClust[1]=DistanceToCurrentClust[1]; 
-            BestClust=ClusterBank[CurrentPlane][jk]; 
+            MinDistanceToClust[0]=DistanceToCurrentClust[0];
+	    MinDistanceToClust[1]=DistanceToCurrentClust[1];
+            BestClust=ClusterBank[CurrentPlane][jk];
             PlanesSinceAdded=0;
           }
         }
-        
+
         if(BestClust) {Trk->AddCluster(BestClust);}
       } else {PlanesSinceAdded+=1;}
       CurrentPlane+=1;
@@ -5251,10 +5263,10 @@ void InoTrackFinder::LookForHitsAcrossGap(InoTrack* Trk) {
 }
 
 void InoTrackFinder::ClearUp() {
-  
+
   // Reset containers and tidy memory usage
   //  unsigned int i, j;
-  
+
   for (unsigned int ij=0; ij<500; ++ij) {
     for(unsigned int jk=0; jk<HitBank[ij].size(); ++jk) {
       if(HitBank[ij][jk]) {delete HitBank[ij][jk]; HitBank[ij][jk]=0;}
@@ -5267,7 +5279,7 @@ void InoTrackFinder::ClearUp() {
     }
     ClusterList[ij].clear();
 
-    for(unsigned int jk=0; jk<SegmentBank[ij].size(); ++jk) { 
+    for(unsigned int jk=0; jk<SegmentBank[ij].size(); ++jk) {
       if(SegmentBank[ij][jk] ) { delete SegmentBank[ij][jk]; SegmentBank[ij][jk]=0;}
     }
     SegmentBank[ij].clear();
@@ -5275,9 +5287,9 @@ void InoTrackFinder::ClearUp() {
     for(unsigned int jk=0; jk<ClustList[ij].size(); ++jk) {
       if(ClustList[ij][jk]){ delete ClustList[ij][jk];ClustList[ij][jk]=0;}
     }
-    ClustList[ij].clear();   
+    ClustList[ij].clear();
   }
-  
+
   for (unsigned int ij=0; ij<2; ++ij) {
     TempTrack[ij].clear();
     PossibleJoins[ij].clear();
@@ -5287,7 +5299,7 @@ void InoTrackFinder::ClearUp() {
     for(unsigned int jk=0; jk<FinalTrackTempHolder[ij].size(); ++jk) {
       if(FinalTrackTempHolder[ij][jk]){ delete FinalTrackTempHolder[ij][jk];FinalTrackTempHolder[ij][jk]=0;}
     }
-    FinalTrackTempHolder[ij].clear(); 
+    FinalTrackTempHolder[ij].clear();
   }
 }
 
@@ -5297,7 +5309,7 @@ void InoTrackFinder::FirstComparison() {
   // the sections in the U view with those in the V view, looking for compatibity.
 
   // First all clusters are investigated to mark the segments as track-like or
-  // shower-like. Then track-like segments which have 'overlapping' partners in the 
+  // shower-like. Then track-like segments which have 'overlapping' partners in the
   // opposite view are marked by setting their UID values to 2
 
   // cout <<"InoTrackFinder : *** Comparing views (1) *** " << endl;
@@ -5315,38 +5327,38 @@ void InoTrackFinder::FirstComparison() {
     // Loop over all segments in the current view
     nsegments = ViewSegBank[View].size();
     for(unsigned int ij=0; ij<nsegments; ++ij) {
-      
+
       InoTrackSegment* Seg = ViewSegBank[View][ij];
       shwctr=0; plnctr=0;
-      
+
       // Loop over all the clusters in the current segment
       const unsigned int ncluster = Seg->GetEntries();
       for(unsigned int jk=0;jk<ncluster;++jk) {
         InoCluster* cluster = Seg->GetCluster(jk);
-        
+
         // Find how track-like or shower-like the cluster is
-        if(cluster->GetTrkFlag()>1) { 
+        if(cluster->GetTrkFlag()>1) {
           if(cluster->GetShwFlag()<1) {shwctr++;}
         }
         if(cluster->GetTrkPlnFlag()>0) {plnctr++;}
       }
-      
-      // Set the UID accordingly. This depends greatly on the initial values 
+
+      // Set the UID accordingly. This depends greatly on the initial values
       // of the shower flags used when identifying track and shower clusters.
       //      if(CambridgeAnalysis==false) {Seg->SetUID(1);}
-      
+
       Seg->SetUID(1);
-      
-// asm://     cout <<" set "<< plnctr<<" "<<shwctr <<" "<<Seg->GetEntries()<<" "<<Seg->GetUID()<<endl; 
+
+// asm://     cout <<" set "<< plnctr<<" "<<shwctr <<" "<<Seg->GetEntries()<<" "<<Seg->GetUID()<<endl;
 
       if( plnctr>1 && Seg->GetEntries()>4 ) { // Just added
-        if(shwctr>2) {Seg->SetUID(2);} 
+        if(shwctr>2) {Seg->SetUID(2);}
 
-	// cout <<" set2 "<< plnctr<<" "<<shwctr <<" "<<Seg->GetEntries()<<" "<<Seg->GetUID()<<endl; 	
+	// cout <<" set2 "<< plnctr<<" "<<shwctr <<" "<<Seg->GetEntries()<<" "<<Seg->GetUID()<<endl;
       }
     }
   }
-  
+
   return;
 }
 
@@ -5358,9 +5370,9 @@ void InoTrackFinder::Trace(const char * /* c */) const
 void InoTrackFinder::CleanAndFilled() {
 
   //MultiSimAnalysis *pAnalysis = MultiSimAnalysis::AnPointer;
-  
-  //11Nov2009 Moved from  void InoTrackFinder::FormFinalTracks( ) 
-  /* */  // Print out list of final tracks           
+
+  //11Nov2009 Moved from  void InoTrackFinder::FormFinalTracks( )
+  /* */  // Print out list of final tracks
   //  cout<< "InoTrackFinder : *** LIST OF TRACKS *** " <<FinalTrackBank[0].size()<< endl;
 
   // for(int View_new11=0; View_new11<1; ++View_new11) {                       //asm
@@ -5389,9 +5401,9 @@ void InoTrackFinder::CleanAndFilled() {
   // }
 
   for(int View=0; View<1; ++View) {                       //asm
-    for(unsigned int ij=0; ij<FinalTrackBank[View].size(); ++ij) { 
+    for(unsigned int ij=0; ij<FinalTrackBank[View].size(); ++ij) {
       InoTrack* TrkTemp = FinalTrackBank[View][ij];
-      
+
       TrkTemp->SetStraight();
       inoTrack_pointer->InoTrack_list.push_back(TrkTemp);
       /*  Reopen 11Nov2009 */
@@ -5402,9 +5414,9 @@ void InoTrackFinder::CleanAndFilled() {
           //asm: commented out while releasing the code.
 	  //if(TrkTemp->GetCluster(jk)->GetZPlane()==TrkTemp->GetCluster(jk-1)->GetZPlane())  cout<<"Double Z planes++++++++++++ "<<endl;
 	}
-	
+
 	//GMA 090809 why ??????
-	if (jk >0 && 
+	if (jk >0 &&
 	    TrkTemp->GetCluster(jk)->GetZPlane() == TrkTemp->GetCluster(jk-1)->GetZPlane()) {
 	  TrkTemp->ClustsInTrack.erase(TrkTemp->ClustsInTrack.begin()+jk);
 	  jk--;
@@ -5432,19 +5444,17 @@ void InoTrackFinder::CleanAndFilled() {
 
 	}
       } //if(TrkFinderDebug){
-      
+
     }
   }
 }
 
 double InoTrackFinder::cal_slope2(double x, double* par) {
   int nstrips = 64; // need to transfer from card file
-  if (x<nstrips/2.-0.5) { 
+  if (x<nstrips/2.-0.5) {
     return par[0] + par[1]*(x - nstrips/4. +0.5);
   } else {
     double par3 = (par[2]-par[0]-par[1]*nstrips/4.)/(nstrips/4.);
     return par[2] + par3*(x - 3*nstrips/4. +0.5);
   }
 }
-
-

@@ -1,0 +1,917 @@
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fa910/fast && /usr/bin/make -f CMakeFiles/cmTC_fa910.dir/build.make CMakeFiles/cmTC_fa910.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fa910.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_fa910.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_fa910
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa910.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_fa910.dir/CheckIncludeFile.c.o  -o cmTC_fa910 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_12b49/fast && /usr/bin/make -f CMakeFiles/cmTC_12b49.dir/build.make CMakeFiles/cmTC_12b49.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_12b49.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_12b49.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_12b49
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12b49.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_12b49.dir/src.c.o  -o cmTC_12b49 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_81224/fast && /usr/bin/make -f CMakeFiles/cmTC_81224.dir/build.make CMakeFiles/cmTC_81224.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_81224.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_81224.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_81224
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81224.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_81224.dir/CheckFunctionExists.c.o  -o cmTC_81224  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_48b19/fast && /usr/bin/make -f CMakeFiles/cmTC_48b19.dir/build.make CMakeFiles/cmTC_48b19.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48b19.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_48b19.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_48b19
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48b19.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_48b19.dir/CheckFunctionExists.c.o  -o cmTC_48b19 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5a7ad/fast && /usr/bin/make -f CMakeFiles/cmTC_5a7ad.dir/build.make CMakeFiles/cmTC_5a7ad.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5a7ad.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_5a7ad.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5a7ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a7ad.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_5a7ad.dir/CheckFunctionExists.c.o  -o cmTC_5a7ad 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1ff4b/fast && /usr/bin/make -f CMakeFiles/cmTC_1ff4b.dir/build.make CMakeFiles/cmTC_1ff4b.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1ff4b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_1ff4b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1ff4b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ff4b.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_1ff4b.dir/CheckFunctionExists.c.o  -o cmTC_1ff4b 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e176e/fast && /usr/bin/make -f CMakeFiles/cmTC_e176e.dir/build.make CMakeFiles/cmTC_e176e.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e176e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_e176e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e176e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e176e.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_e176e.dir/CheckFunctionExists.c.o  -o cmTC_e176e 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e55b0/fast && /usr/bin/make -f CMakeFiles/cmTC_e55b0.dir/build.make CMakeFiles/cmTC_e55b0.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e55b0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_e55b0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e55b0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e55b0.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_e55b0.dir/CheckFunctionExists.c.o  -o cmTC_e55b0  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a174b/fast && /usr/bin/make -f CMakeFiles/cmTC_a174b.dir/build.make CMakeFiles/cmTC_a174b.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a174b.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_a174b.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a174b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a174b.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_a174b.dir/CheckIncludeFile.c.o  -o cmTC_a174b 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5bbcc/fast && /usr/bin/make -f CMakeFiles/cmTC_5bbcc.dir/build.make CMakeFiles/cmTC_5bbcc.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5bbcc.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5bbcc.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5bbcc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bbcc.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_5bbcc.dir/src.c.o  -o cmTC_5bbcc 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_dd63b/fast && /usr/bin/make -f CMakeFiles/cmTC_dd63b.dir/build.make CMakeFiles/cmTC_dd63b.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dd63b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_dd63b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dd63b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd63b.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_dd63b.dir/CheckFunctionExists.c.o  -o cmTC_dd63b  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4b758/fast && /usr/bin/make -f CMakeFiles/cmTC_4b758.dir/build.make CMakeFiles/cmTC_4b758.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4b758.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_4b758.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4b758
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b758.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_4b758.dir/CheckFunctionExists.c.o  -o cmTC_4b758 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_66c3d/fast && /usr/bin/make -f CMakeFiles/cmTC_66c3d.dir/build.make CMakeFiles/cmTC_66c3d.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_66c3d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_66c3d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_66c3d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66c3d.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_66c3d.dir/CheckFunctionExists.c.o  -o cmTC_66c3d 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_133e4/fast && /usr/bin/make -f CMakeFiles/cmTC_133e4.dir/build.make CMakeFiles/cmTC_133e4.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_133e4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_133e4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_133e4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_133e4.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_133e4.dir/CheckFunctionExists.c.o  -o cmTC_133e4 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c70d6/fast && /usr/bin/make -f CMakeFiles/cmTC_c70d6.dir/build.make CMakeFiles/cmTC_c70d6.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c70d6.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_c70d6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c70d6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c70d6.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_c70d6.dir/CheckFunctionExists.c.o  -o cmTC_c70d6 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8188e/fast && /usr/bin/make -f CMakeFiles/cmTC_8188e.dir/build.make CMakeFiles/cmTC_8188e.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8188e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_8188e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8188e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8188e.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_8188e.dir/CheckFunctionExists.c.o  -o cmTC_8188e  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_955f1/fast && /usr/bin/make -f CMakeFiles/cmTC_955f1.dir/build.make CMakeFiles/cmTC_955f1.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_955f1.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_955f1.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_955f1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_955f1.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_955f1.dir/CheckIncludeFile.c.o  -o cmTC_955f1 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5c84d/fast && /usr/bin/make -f CMakeFiles/cmTC_5c84d.dir/build.make CMakeFiles/cmTC_5c84d.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c84d.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5c84d.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5c84d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c84d.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_5c84d.dir/src.c.o  -o cmTC_5c84d 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f58e1/fast && /usr/bin/make -f CMakeFiles/cmTC_f58e1.dir/build.make CMakeFiles/cmTC_f58e1.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f58e1.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_f58e1.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f58e1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f58e1.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_f58e1.dir/CheckFunctionExists.c.o  -o cmTC_f58e1  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_61580/fast && /usr/bin/make -f CMakeFiles/cmTC_61580.dir/build.make CMakeFiles/cmTC_61580.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61580.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_61580.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_61580
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61580.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_61580.dir/CheckFunctionExists.c.o  -o cmTC_61580 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_90a99/fast && /usr/bin/make -f CMakeFiles/cmTC_90a99.dir/build.make CMakeFiles/cmTC_90a99.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90a99.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_90a99.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_90a99
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90a99.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_90a99.dir/CheckFunctionExists.c.o  -o cmTC_90a99 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a153e/fast && /usr/bin/make -f CMakeFiles/cmTC_a153e.dir/build.make CMakeFiles/cmTC_a153e.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a153e.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_a153e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a153e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a153e.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_a153e.dir/CheckFunctionExists.c.o  -o cmTC_a153e 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3059b/fast && /usr/bin/make -f CMakeFiles/cmTC_3059b.dir/build.make CMakeFiles/cmTC_3059b.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3059b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_3059b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3059b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3059b.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_3059b.dir/CheckFunctionExists.c.o  -o cmTC_3059b 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b7a7a/fast && /usr/bin/make -f CMakeFiles/cmTC_b7a7a.dir/build.make CMakeFiles/cmTC_b7a7a.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b7a7a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_b7a7a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b7a7a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7a7a.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_b7a7a.dir/CheckFunctionExists.c.o  -o cmTC_b7a7a  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_78544/fast && /usr/bin/make -f CMakeFiles/cmTC_78544.dir/build.make CMakeFiles/cmTC_78544.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78544.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_78544.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_78544
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78544.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_78544.dir/CheckIncludeFile.c.o  -o cmTC_78544 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_094a1/fast && /usr/bin/make -f CMakeFiles/cmTC_094a1.dir/build.make CMakeFiles/cmTC_094a1.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_094a1.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_094a1.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_094a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_094a1.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_094a1.dir/src.c.o  -o cmTC_094a1 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_82cac/fast && /usr/bin/make -f CMakeFiles/cmTC_82cac.dir/build.make CMakeFiles/cmTC_82cac.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_82cac.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_82cac.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_82cac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_82cac.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_82cac.dir/CheckFunctionExists.c.o  -o cmTC_82cac  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d4eb4/fast && /usr/bin/make -f CMakeFiles/cmTC_d4eb4.dir/build.make CMakeFiles/cmTC_d4eb4.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d4eb4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_d4eb4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d4eb4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4eb4.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_d4eb4.dir/CheckFunctionExists.c.o  -o cmTC_d4eb4 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6586f/fast && /usr/bin/make -f CMakeFiles/cmTC_6586f.dir/build.make CMakeFiles/cmTC_6586f.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6586f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_6586f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6586f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6586f.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_6586f.dir/CheckFunctionExists.c.o  -o cmTC_6586f 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7325b/fast && /usr/bin/make -f CMakeFiles/cmTC_7325b.dir/build.make CMakeFiles/cmTC_7325b.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7325b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_7325b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7325b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7325b.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_7325b.dir/CheckFunctionExists.c.o  -o cmTC_7325b 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3b185/fast && /usr/bin/make -f CMakeFiles/cmTC_3b185.dir/build.make CMakeFiles/cmTC_3b185.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3b185.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_3b185.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3b185
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b185.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_3b185.dir/CheckFunctionExists.c.o  -o cmTC_3b185 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c00dd/fast && /usr/bin/make -f CMakeFiles/cmTC_c00dd.dir/build.make CMakeFiles/cmTC_c00dd.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c00dd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_c00dd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c00dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c00dd.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_c00dd.dir/CheckFunctionExists.c.o  -o cmTC_c00dd  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4d63c/fast && /usr/bin/make -f CMakeFiles/cmTC_4d63c.dir/build.make CMakeFiles/cmTC_4d63c.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4d63c.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_4d63c.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_4d63c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d63c.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_4d63c.dir/CheckIncludeFile.c.o  -o cmTC_4d63c 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4ca0f/fast && /usr/bin/make -f CMakeFiles/cmTC_4ca0f.dir/build.make CMakeFiles/cmTC_4ca0f.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ca0f.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4ca0f.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4ca0f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ca0f.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_4ca0f.dir/src.c.o  -o cmTC_4ca0f 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_afb7b/fast && /usr/bin/make -f CMakeFiles/cmTC_afb7b.dir/build.make CMakeFiles/cmTC_afb7b.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_afb7b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_afb7b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_afb7b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_afb7b.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_afb7b.dir/CheckFunctionExists.c.o  -o cmTC_afb7b  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2eaa3/fast && /usr/bin/make -f CMakeFiles/cmTC_2eaa3.dir/build.make CMakeFiles/cmTC_2eaa3.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2eaa3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_2eaa3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2eaa3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2eaa3.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_2eaa3.dir/CheckFunctionExists.c.o  -o cmTC_2eaa3 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_726c2/fast && /usr/bin/make -f CMakeFiles/cmTC_726c2.dir/build.make CMakeFiles/cmTC_726c2.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_726c2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_726c2.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_726c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_726c2.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_726c2.dir/CheckFunctionExists.c.o  -o cmTC_726c2 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ee4a3/fast && /usr/bin/make -f CMakeFiles/cmTC_ee4a3.dir/build.make CMakeFiles/cmTC_ee4a3.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ee4a3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_ee4a3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ee4a3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee4a3.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_ee4a3.dir/CheckFunctionExists.c.o  -o cmTC_ee4a3 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5bb01/fast && /usr/bin/make -f CMakeFiles/cmTC_5bb01.dir/build.make CMakeFiles/cmTC_5bb01.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5bb01.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_5bb01.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5bb01
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bb01.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_5bb01.dir/CheckFunctionExists.c.o  -o cmTC_5bb01 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5bf2d/fast && /usr/bin/make -f CMakeFiles/cmTC_5bf2d.dir/build.make CMakeFiles/cmTC_5bf2d.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5bf2d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_5bf2d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5bf2d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bf2d.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_5bf2d.dir/CheckFunctionExists.c.o  -o cmTC_5bf2d  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5fe53/fast && /usr/bin/make -f CMakeFiles/cmTC_5fe53.dir/build.make CMakeFiles/cmTC_5fe53.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5fe53.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_5fe53.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_5fe53
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fe53.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_5fe53.dir/CheckIncludeFile.c.o  -o cmTC_5fe53 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_acb4a/fast && /usr/bin/make -f CMakeFiles/cmTC_acb4a.dir/build.make CMakeFiles/cmTC_acb4a.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_acb4a.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_acb4a.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_acb4a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acb4a.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_acb4a.dir/src.c.o  -o cmTC_acb4a 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_64bbe/fast && /usr/bin/make -f CMakeFiles/cmTC_64bbe.dir/build.make CMakeFiles/cmTC_64bbe.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64bbe.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_64bbe.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_64bbe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64bbe.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_64bbe.dir/CheckFunctionExists.c.o  -o cmTC_64bbe  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_52a68/fast && /usr/bin/make -f CMakeFiles/cmTC_52a68.dir/build.make CMakeFiles/cmTC_52a68.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_52a68.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_52a68.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_52a68
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52a68.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_52a68.dir/CheckFunctionExists.c.o  -o cmTC_52a68 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_01f45/fast && /usr/bin/make -f CMakeFiles/cmTC_01f45.dir/build.make CMakeFiles/cmTC_01f45.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_01f45.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_01f45.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_01f45
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01f45.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_01f45.dir/CheckFunctionExists.c.o  -o cmTC_01f45 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b0ced/fast && /usr/bin/make -f CMakeFiles/cmTC_b0ced.dir/build.make CMakeFiles/cmTC_b0ced.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0ced.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_b0ced.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b0ced
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0ced.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_b0ced.dir/CheckFunctionExists.c.o  -o cmTC_b0ced 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3fc60/fast && /usr/bin/make -f CMakeFiles/cmTC_3fc60.dir/build.make CMakeFiles/cmTC_3fc60.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3fc60.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_3fc60.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3fc60
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fc60.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_3fc60.dir/CheckFunctionExists.c.o  -o cmTC_3fc60 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_31943/fast && /usr/bin/make -f CMakeFiles/cmTC_31943.dir/build.make CMakeFiles/cmTC_31943.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_31943.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_31943.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_31943
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31943.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_31943.dir/CheckFunctionExists.c.o  -o cmTC_31943  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_47d08/fast && /usr/bin/make -f CMakeFiles/cmTC_47d08.dir/build.make CMakeFiles/cmTC_47d08.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_47d08.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -pipe -pthread    -o CMakeFiles/cmTC_47d08.dir/CheckIncludeFile.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_47d08
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47d08.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread     CMakeFiles/cmTC_47d08.dir/CheckIncludeFile.c.o  -o cmTC_47d08 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b65a7/fast && /usr/bin/make -f CMakeFiles/cmTC_b65a7.dir/build.make CMakeFiles/cmTC_b65a7.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b65a7.dir/src.c.o
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b65a7.dir/src.c.o   -c /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b65a7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b65a7.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_b65a7.dir/src.c.o  -o cmTC_b65a7 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_04be1/fast && /usr/bin/make -f CMakeFiles/cmTC_04be1.dir/build.make CMakeFiles/cmTC_04be1.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_04be1.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_04be1.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_04be1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04be1.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTC_04be1.dir/CheckFunctionExists.c.o  -o cmTC_04be1  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a243a/fast && /usr/bin/make -f CMakeFiles/cmTC_a243a.dir/build.make CMakeFiles/cmTC_a243a.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a243a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_a243a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a243a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a243a.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTC_a243a.dir/CheckFunctionExists.c.o  -o cmTC_a243a 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1b3e8/fast && /usr/bin/make -f CMakeFiles/cmTC_1b3e8.dir/build.make CMakeFiles/cmTC_1b3e8.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1b3e8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_1b3e8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1b3e8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b3e8.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTC_1b3e8.dir/CheckFunctionExists.c.o  -o cmTC_1b3e8 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8e07a/fast && /usr/bin/make -f CMakeFiles/cmTC_8e07a.dir/build.make CMakeFiles/cmTC_8e07a.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e07a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_8e07a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8e07a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e07a.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTC_8e07a.dir/CheckFunctionExists.c.o  -o cmTC_8e07a 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a5ff5/fast && /usr/bin/make -f CMakeFiles/cmTC_a5ff5.dir/build.make CMakeFiles/cmTC_a5ff5.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a5ff5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_a5ff5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a5ff5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5ff5.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTC_a5ff5.dir/CheckFunctionExists.c.o  -o cmTC_a5ff5 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_85368/fast && /usr/bin/make -f CMakeFiles/cmTC_85368.dir/build.make CMakeFiles/cmTC_85368.dir/build
+make[1]: Entering directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_85368.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_85368.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_85368
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85368.dir/link.txt --verbose=1
+/usr/bin/cc   -pipe -pthread -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTC_85368.dir/CheckFunctionExists.c.o  -o cmTC_85368  -lICE 
+make[1]: Leaving directory '/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/bin/CMakeFiles/CMakeTmp'
+
+
+

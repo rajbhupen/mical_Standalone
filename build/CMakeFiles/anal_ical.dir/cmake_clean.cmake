@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../anal_ical"
+  "../anal_ical.pdb"
   "CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o"
   "CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o"
   "CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o"
@@ -40,8 +42,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o"
   "CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o"
   "CMakeFiles/anal_ical.dir/src/vect_manager.cc.o"
-  "../anal_ical.pdb"
-  "../anal_ical"
 )
 
 # Per-language clean rules from dependency scanning.
