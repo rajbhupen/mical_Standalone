@@ -1,5 +1,5 @@
 //12/07/09 Put position of hit in this class from the strip information
-// Where should we use mapping ? Electronic channel to geometrical channels 
+// Where should we use mapping ? Electronic channel to geometrical channels
 
 #include "InoHit.h"
 //#include "Validity/VldContext.h"
@@ -8,9 +8,9 @@
 #include <iostream>
 
 InoHit::InoHit() :
-   fXStrip(0), fYStrip(0), fUid(0), 
+   fXStrip(0), fYStrip(0), fUid(0),
    fXStripNum(-1), fXTime(-999.), fXTrueTime(-999.),
-   fYStripNum(-1), fYTime(-999.), fYTrueTime(-999.), 
+   fYStripNum(-1), fYTime(-999.), fYTrueTime(-999.),
    fXpdgId(-25), fYpdgId(-25),
     fTrackFlag(0), fShowerFlag(0), fXPulse(0.), fXPlane(-1),
    fYPulse(0.), fYPlane(-1), fXPos(-999.), fXPosErr(999.),
@@ -21,7 +21,7 @@ InoHit::InoHit() :
 {}
 
 InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
-   fXStrip(0), fYStrip(0), fUid(0), 
+   fXStrip(0), fYStrip(0), fUid(0),
    fXStripNum(-1), fXTime(-999.), fXTrueTime(-999.),
    fYStripNum(-1), fYTime(-999.), fYTrueTime(-999.),
    fXpdgId(-25), fYpdgId(-25),
@@ -35,7 +35,7 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
 
   paradef = micalDetectorParameterDef::AnPointer; //AAR:
   pAnalysis = MultiSimAnalysisDigi::AnPointer;
-  
+
   StripXWidth = paradef->GetXStrwd()/1000;
   StripYWidth = paradef->GetYStrwd()/1000;
 
@@ -50,7 +50,7 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
   if (fx->GetPlaneView()==fy->GetPlaneView()) {
     std::cout <<"Strips of parallel strips, donot fill up the variables"<<std::endl;
   } else if (fx->GetPlaneView()==0) {
-    
+
     fXStripNum = fx->GetStrip(); //duplicate, but let it be
     // fXstriploc = fx->GetStripNumLoc();
     fXstriploc = (fx->GetId()>>8)&0x7F;
@@ -60,10 +60,10 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
     fXPulse = fx->GetPulse();
     fXPlane = fx->GetPlaneView();
     fXPos = fx->GetXYPos();
-    fXPosErr = StripXWidth/sqrt(12.); // GMA Need to put through database 
+    fXPosErr = StripXWidth/sqrt(12.); // GMA Need to put through database
     fXStrip = fx;
     fZPos = fx->GetZPos();
-    fZPlane = fx->GetPlane(); 
+    fZPlane = fx->GetPlane();
     genposx = fx->GetGenPosX();
     fYStripNum = fy->GetStrip(); //duplicate, but let it be
     // fYstriploc = fy->GetStripNumLoc();
@@ -74,7 +74,7 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
     fYPulse = fy->GetPulse();
     fYPlane = fy->GetPlaneView();
     fYPos = fy->GetXYPos();
-    fYPosErr = StripYWidth/sqrt(12.); // GMA Need to put through database 
+    fYPosErr = StripYWidth/sqrt(12.); // GMA Need to put through database
     fYStrip = fy;
     genposy = fy->GetGenPosY();
   } else {
@@ -88,10 +88,10 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
     fXPulse = fy->GetPulse();
     fXPlane = fy->GetPlaneView();
     fXPos = fy->GetXYPos();
-    fXPosErr = StripXWidth/sqrt(12.); // GMA Need to put through database 
+    fXPosErr = StripXWidth/sqrt(12.); // GMA Need to put through database
     fXStrip = fy;
     fZPos = fy->GetZPos();
-    fZPlane = fy->GetPlane(); 
+    fZPlane = fy->GetPlane();
     genposx = fy->GetGenPosX();
     fYStripNum = fx->GetStrip(); //duplicate, but let it be
     fYstriploc = (fx->GetId()>>8)&0x7F;
@@ -101,7 +101,7 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
     fYPulse = fx->GetPulse();
     fYPlane = fx->GetPlaneView();
     fYPos = fx->GetXYPos();
-    fYPosErr = StripXWidth/sqrt(12.); // GMA Need to put through database 
+    fYPosErr = StripXWidth/sqrt(12.); // GMA Need to put through database
     fYStrip = fx;
     genposy = fx->GetGenPosY();
   }
@@ -112,7 +112,7 @@ InoHit::InoHit(InoStrip* fx, InoStrip* fy) :
 }
 
 InoHit::InoHit(InoStrip* fx) :
-   fXStrip(0), fYStrip(0), fUid(0), 
+   fXStrip(0), fYStrip(0), fUid(0),
    fXStripNum(-1), fXTime(-999.), fXTrueTime(-999.),
    fYStripNum(-1), fYTime(-999.), fYTrueTime(-999.),
    fXpdgId(-25), fYpdgId(-25),
@@ -144,7 +144,7 @@ SignalSpeed = pAnalysis->GetSignalSpeedVal();
     fXPosErr = 0.02/sqrt(12.); // Need to put through database   //AAR why is this 0.02 and not 0.0196
     fXStrip = fx;
     fZPos = fx->GetZPos();
-    fZPlane = fx->GetPlane(); 
+    fZPlane = fx->GetPlane();
     fMomentum = fx->GetMomentum();
     fTheta = fx->GetTheta();
     fPhi = fx->GetPhi();
@@ -159,10 +159,10 @@ SignalSpeed = pAnalysis->GetSignalSpeedVal();
     fYPulse = fx->GetPulse();
     fYPlane = fx->GetPlaneView();
     fYPos = fx->GetXYPos();
-    fYPosErr = 0.02/sqrt(12.); // Need to put through database 
+    fYPosErr = 0.02/sqrt(12.); // Need to put through database
     fYStrip = fx;
     fZPos = fx->GetZPos();
-    fZPlane = fx->GetPlane(); 
+    fZPlane = fx->GetPlane();
     fMomentum = fx->GetMomentum();
     fTheta = fx->GetTheta();
     fPhi = fx->GetPhi();
@@ -177,16 +177,16 @@ InoHit::~InoHit()
 
 
 int InoHit::IsShwAssoc(InoHit* hit) const {
-  
+
   cout<<" stripwdt:IsShwAssoc " << StripXWidth << " "<< StripYWidth<<endl;
   double win=99.9;
   if(fXStrip!=0 && fYStrip!=0) {
     if( TMath::Abs(hit->GetTime()-this->GetTime())<win ) {
-      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<3 && 
+      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<3 &&
 	  TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<4&&
 	  TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<4) {
 	return 2;
-      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 && 
+      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 &&
 		 TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<6 &&
 		 TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<6) {
 	return 1;
@@ -194,20 +194,20 @@ int InoHit::IsShwAssoc(InoHit* hit) const {
     }
   } else if (fXStrip!=0 ) {
     if( TMath::Abs(hit->GetTime()-this->GetTime())<win ) {
-      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<3 && 
+      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<3 &&
 	  TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<4) {
 	return 2;
-      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 && 
+      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 &&
 		 TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<6 ) {
 	return 1;
       }
     }
   } else if (fYStrip!=0 ) {
     if( TMath::Abs(hit->GetTime()-this->GetTime())<win ) {
-      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<3 && 
+      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<3 &&
 	  TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<4) {
 	return 2;
-      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 && 
+      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 &&
 		 TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<6) {
 	return 1;
       }
@@ -220,14 +220,14 @@ int InoHit::IsShwAssoc(InoHit* hit) const {
 int InoHit::IsDiffuseShwAssoc(InoHit* hit) const {
   cout<<" stripwdt:IsDiffShwAssoc " << StripXWidth << " "<< StripYWidth<<endl;
   double win=99.9;
-  
+
   if (fXStrip!=0 && fYStrip!=0 ) {
     if( TMath::Abs(hit->GetTime()-this->GetTime())<win ) {
-      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 && 
+      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 &&
 	  TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<11&&
 	  TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<11 ) {
 	return 2;
-      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<9 && 
+      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<9 &&
 		 TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<21 &&
 		 TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<21 ) {
 	return 1;
@@ -235,20 +235,20 @@ int InoHit::IsDiffuseShwAssoc(InoHit* hit) const {
     }
   } else if(fXStrip!=0){
     if( TMath::Abs(hit->GetTime()-this->GetTime())<win ) {
-      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 && 
+      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 &&
 	  TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<11 ) {
 	return 2;
-      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<9 && 
+      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<9 &&
 		 TMath::Abs(hit->GetXStrip()->GetStrip()-this->GetXStrip()->GetStrip())<21 ) {
 	return 1;
       }
     }
   } else if (fYStrip!=0){
     if( TMath::Abs(hit->GetTime()-this->GetTime())<win ) {
-      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 && 
+      if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<5 &&
 	  TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<11 ) {
 	return 2;
-      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<9 && 
+      } else if( TMath::Abs(hit->GetZPlane()-this->GetZPlane())<9 &&
 		 TMath::Abs(hit->GetYStrip()->GetStrip()-this->GetYStrip()->GetStrip())<21) {
 	return 1;
       }
@@ -260,12 +260,24 @@ int InoHit::IsDiffuseShwAssoc(InoHit* hit) const {
 
 double InoHit::GetXTimeCorr() const {
   // int nInY = (fYStrip->GetId()>>8)&0x7F;
-  return DigiToTimeConv*fXTime - (fYstriploc + 0.5)*SignalSpeed - fXtOffset;
+  if (fView==2) {
+    return DigiToTimeConv*fXTime - (fYstriploc + 0.5)*SignalSpeed - fXtOffset;
+  } else if (fView==1) {
+    return 0;
+  } else if (fView==0) {
+    return DigiToTimeConv*fXTime;
+  }
 }
 
 double InoHit::GetYTimeCorr() const {
   // int nInX = (fXStrip->GetId()>>8)&0x7F;
-  return DigiToTimeConv*fYTime - (fXstriploc + 0.5)*SignalSpeed - fYtOffset;
+  if (fView==2) {
+    return DigiToTimeConv*fYTime - (fXstriploc + 0.5)*SignalSpeed - fYtOffset;
+  } else if (fView==1) {
+    return return DigiToTimeConv*fYTime;;
+  } else if (fView==0) {
+    return 0;
+  }
 }
 
 int InoHit::isNoiseHit() const {
@@ -287,9 +299,9 @@ double InoHit::GetTime() const {
     double fYTimeReturn = DigiToTimeConv*fYTime - (fXstriploc + 0.5)*SignalSpeed - fYtOffset;
     return 0.5*(fXTimeReturn+fYTimeReturn);
   } else if (fView==1) {
-    return fYTime - 4.8; 
+    return fYTime - 4.8;
   } else if (fView==0) {
-    return fXTime - 4.8; 
+    return fXTime - 4.8;
   }
   return -999.;
 }
@@ -308,4 +320,3 @@ int InoHit::GetRPCmod() const {
   if (fView>0) return fYStrip->GetRPCmod();
   return 0;
 }
-

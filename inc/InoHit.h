@@ -24,7 +24,7 @@ public:
   InoStrip* GetYStrip() const {return fYStrip;};
 
 
-  double GetPulse() const { 
+  double GetPulse() const {
     if (fView==2) {
       return 0.5*(fXPulse+fYPulse);
     } else if (fView==1) {
@@ -40,11 +40,11 @@ public:
   void SetXpOffset(double q) {fXpOffset=q;};
   void SetYpOffset(double q) {fYpOffset=q;};
 
-  
-  double GetXPulse() const {return fXPulse;};  
+
+  double GetXPulse() const {return fXPulse;};
   void SetXPulse(double q) {fXPulse=q;};
 
-  double GetYPulse() const {return fYPulse;};  
+  double GetYPulse() const {return fYPulse;};
   void SetYPulse(double q) {fYPulse=q;};
 
   int GetXPlane() const     {return fXPlane;};
@@ -75,7 +75,7 @@ int GetYpdgId() const {return fYpdgId;};
 
  /* double GetXPos() const    {return genposx;}; */
  /* double GetYPos() const    {return genposy;}; */
- 
+
  double GetXPos() const {return fXPos-fXpOffset;};
  double GetYPos() const {return fYPos-fYpOffset;};
 
@@ -121,7 +121,7 @@ private:
   MultiSimAnalysisDigi *pAnalysis;
   double StripXWidth;
   double StripYWidth;
-  InoStrip* fXStrip;   //Strip for X-axis 
+  InoStrip* fXStrip;   //Strip for X-axis
   InoStrip* fYStrip;   //Strip for Y-axis
   int fUid;            //User ID for track/cluster
   //  int fPlaneView;
@@ -129,13 +129,13 @@ private:
   int fXstriploc;
   int fYstriploc;
 
-  //Hit parameters may not be exactly the strips paramters, thus 
+  //Hit parameters may not be exactly the strips paramters, thus
   //for the time being copy those, lateron modified those as equired
 
-  int fXStripNum;      //StripID for X-axis strips 
+  int fXStripNum;      //StripID for X-axis strips
   double fXTime;      // Timing of X-strip (ns)
   double fXTrueTime;      // True Timing of X-strip (ns)
-  int fYStripNum;     //StripID for Y-axis strips  
+  int fYStripNum;     //StripID for Y-axis strips
   double fYTime;     // Timing of Y-strip (ns)
   double fYTrueTime;      // True Timing of X-strip (ns)
 
@@ -163,10 +163,10 @@ private:
   double fYPosErr; //Error in Y-position (m)
   int    fZPlane;  //Z-plane
   double fZPos;    //Z-postion (m)
-  int    fView;    // 
+  int    fView;    //
                    // 0 : only X(U)-axis hit
                    // 1 : only Y(V)-axis hit
-                   // 2 : Both X and Y-axis hit 
+                   // 2 : Both X and Y-axis hit
 
   double fMomentum; //Momentum of track which is behind this hit
   double fTheta;  //Theta
