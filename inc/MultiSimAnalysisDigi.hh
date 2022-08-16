@@ -62,7 +62,7 @@ public:
   int isVisOut;
   int isXtermOut;
   int collatedIn;
-   
+
   TH1F *strpXtime;
   TH1F *strpYtime;
   TH1F *strpXtimeCorr;
@@ -137,13 +137,13 @@ public:
     HitPos *Hp;
   int EveCnt;
   int nloops;
-    TH1F  *pdedz[20];  
+    TH1F  *pdedz[20];
     TH1F  *hitDist;    //asm
     TH1F  *TrkDist;    //asm
     TH1F  *EffDist;    //asm
     TH1F  *InoTrack_listsize;   //asm
   TFile *pRootFile;
-  TFile *inputRootFile;  
+  TFile *inputRootFile;
   TFile *pVisFile;
   TFile* collatedRootFile;
 
@@ -158,18 +158,18 @@ public:
   TH1D* trk_gap;
   TH2D* trk_edge;
   TH1F* pPosX;
-  TH1F* pPosY;  
+  TH1F* pPosY;
   TH1F* pPosZ;
   TH2F* pPosXX;
-  TH2F* pPosYY;  
+  TH2F* pPosYY;
   TH2F* pPosZZ;
 
-  
+
   static const int nhistmx=1000;
   int   ihist;
   TH3F* gens_list[6][nhistmx]; // Not used
   vector<vectGr> gens_vect[6];
-  
+
   // Common input read and output store for ICALsim and miniICALsim
   static const unsigned int ngenmx=50;
   UInt_t          irun;
@@ -202,7 +202,7 @@ public:
   Float_t         simpz[nsimhtmx];   //[nsimht]
   Float_t         simlocvx[nsimhtmx];   //[nsimht]
   Float_t         simlocvy[nsimhtmx];   //[nsimht]
-    
+
   // ICALsim Root Files Input Data Read
   static const unsigned int ndigihtmx=5000;
   UInt_t          ndigiht;
@@ -286,7 +286,7 @@ public:
   Float_t simpleavgxcndn;
   Float_t simpleavgxmeas;
   Float_t simplenhits;
-  
+
   Int_t ntdc1x;
   Int_t ntstrp1x;
   Int_t tdcID1x[nthtmx];
@@ -328,7 +328,7 @@ public:
   Int_t           nhits[ntrkmx];   //[ntrkt]
   Int_t           nhits_finder[ntrkmx];   //[ntrkt]
   Float_t         chisq[ntrkmx];   //[ntrkt]
-  Float_t chisq2[ntrkmx];  
+  Float_t chisq2[ntrkmx];
   Float_t         cvalue[ntrkmx];   //[ntrkt]
   Int_t           fc_or_pc[ntrkmx];   //[ntrkt]
   Float_t         trkmm[ntrkmx];   //[ntrkt]
@@ -336,7 +336,7 @@ public:
   Float_t         trkph[ntrkmx];   //[ntrkt]
   Float_t         momvx[ntrkmx];   //[ntrkt]
   Float_t         thevx[ntrkmx];   //[ntrkt]
-  
+
   Float_t         phivx[ntrkmx];   //[ntrkt]
   Float_t         posxvx[ntrkmx];   //[ntrkt]
   Float_t         posyvx[ntrkmx];   //[ntrkt]
@@ -352,13 +352,13 @@ public:
 	G4float poszrf[ntrkmx];       //Starting Z-position
 
 
+  //Position Resolutions Jim
+  Float_t inPosX[10];
+  Float_t extPosX[10];
+  Float_t inPosY[10];
+  Float_t extPosY[10];
 
 
-
-
-
-
-  
   Float_t         momend[ntrkmx];   //[ntrkt]
   Float_t         theend[ntrkmx];   //[ntrkt]
   Float_t         phiend[ntrkmx];   //[ntrkt]
@@ -428,7 +428,7 @@ public:
   Float_t         txenderr[ntrkmx];
   Float_t         tyenderr[ntrkmx];
   Float_t         qpenderr[ntrkmx];
-  
+
   Int_t nmxhit;
 
 
@@ -455,7 +455,7 @@ public:
 
   G4float XdevLay4[ntrkmx];
   G4float YdevLay4[ntrkmx];
-  
+
   G4float XdevLay5[ntrkmx];
   G4float YdevLay5[ntrkmx];
 
@@ -479,7 +479,6 @@ public:
 
   G4float XdevLay12[ntrkmx];
   G4float YdevLay12[ntrkmx];
-  
 
 
 
@@ -487,13 +486,14 @@ public:
 
 
 
-  
-  
+
+
+
   G4float L0_StrpNo[ntrkmx];
   G4float L1_StrpNo[ntrkmx];
   G4float L2_StrpNo[ntrkmx];
   G4float L3_StrpNo[ntrkmx];
-  
+
   G4int cmv_lay[ntrkmx];
     G4int cmv_locno00[ntrkmx];
     G4int cmv_locno01[ntrkmx];
@@ -557,7 +557,7 @@ public:
   G4float cmv_hitRecoposx[ cmv_nhtmx];
   G4float cmv_hitRecoposy[ cmv_nhtmx];
   G4float cmv_hitRecoposz[ cmv_nhtmx];
-  
+
 
   //  G4int cmv_hitsiz[ cmv_nhtmx];
 
@@ -589,7 +589,7 @@ public:
 
 
 
-  
+
   //cmvd extrapol :
 
 
@@ -597,29 +597,29 @@ public:
 
   unsigned int cmv_nexphit;
 
-  
+
   unsigned int cmv_expid[cmv_nexphtmx];
-  
+
   G4float cmv_Expposx[cmv_nexphtmx];
  G4float cmv_Expposy[cmv_nexphtmx];
  G4float cmv_Expposz[cmv_nexphtmx];
 
 
-  
+
   G4float cmv_DCAposx[cmv_nexphtmx];
  G4float cmv_DCAposy[cmv_nexphtmx];
  G4float cmv_DCAposz[cmv_nexphtmx];
 
 
-  
+
   G4float distofclosapp[ntrkmx];
   G4int planeedge[ntrkmx];
   G4int clustersize00[ntrkmx];
-  
+
   G4float extrapolposx00[ntrkmx];
   G4float extrapolposy00[ntrkmx];
   G4float extrapolposz00[ntrkmx];
-  
+
   G4float extrapolposxerr00[ntrkmx];
   G4float extrapolposyerr00[ntrkmx];
   G4float extrapolposzerr00[ntrkmx];
@@ -631,11 +631,11 @@ public:
   G4float cmvhittrueposx00[ntrkmx];
   G4float cmvhittrueposy00[ntrkmx];
   G4float cmvhittrueposz00[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr00[ntrkmx];
   G4float cmvhitrecoposyerr00[ntrkmx];
   G4float cmvhitrecoposzerr00[ntrkmx];
-  
+
   G4float LeTime00[ntrkmx];
   G4float RiTime00[ntrkmx];
   G4float LePulse00[ntrkmx];
@@ -652,11 +652,11 @@ public:
 
 
   G4int clustersize01[ntrkmx];
-  
+
   G4float extrapolposx01[ntrkmx];
   G4float extrapolposy01[ntrkmx];
   G4float extrapolposz01[ntrkmx];
-  
+
   G4float extrapolposxerr01[ntrkmx];
   G4float extrapolposyerr01[ntrkmx];
   G4float extrapolposzerr01[ntrkmx];
@@ -668,7 +668,7 @@ public:
   G4float cmvhittrueposx01[ntrkmx];
   G4float cmvhittrueposy01[ntrkmx];
   G4float cmvhittrueposz01[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr01[ntrkmx];
   G4float cmvhitrecoposyerr01[ntrkmx];
   G4float cmvhitrecoposzerr01[ntrkmx];
@@ -683,7 +683,7 @@ public:
   G4float extrapolposx02[ntrkmx];
   G4float extrapolposy02[ntrkmx];
   G4float extrapolposz02[ntrkmx];
-  
+
   G4float extrapolposxerr02[ntrkmx];
   G4float extrapolposyerr02[ntrkmx];
   G4float extrapolposzerr02[ntrkmx];
@@ -695,13 +695,13 @@ public:
   G4float cmvhittrueposx02[ntrkmx];
   G4float cmvhittrueposy02[ntrkmx];
   G4float cmvhittrueposz02[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr02[ntrkmx];
   G4float cmvhitrecoposyerr02[ntrkmx];
   G4float cmvhitrecoposzerr02[ntrkmx];
 
 
-  
+
 
   G4float LeTime02[ntrkmx];
   G4float RiTime02[ntrkmx];
@@ -715,12 +715,12 @@ public:
 
 
 
-  
+
 
   G4float extrapolposx03[ntrkmx];
   G4float extrapolposy03[ntrkmx];
   G4float extrapolposz03[ntrkmx];
-  
+
   G4float extrapolposxerr03[ntrkmx];
   G4float extrapolposyerr03[ntrkmx];
   G4float extrapolposzerr03[ntrkmx];
@@ -732,7 +732,7 @@ public:
   G4float cmvhittrueposx03[ntrkmx];
   G4float cmvhittrueposy03[ntrkmx];
   G4float cmvhittrueposz03[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr03[ntrkmx];
   G4float cmvhitrecoposyerr03[ntrkmx];
   G4float cmvhitrecoposzerr03[ntrkmx];
@@ -747,11 +747,11 @@ public:
 
 
 G4int clustersize10[ntrkmx];
-  
+
   G4float extrapolposx10[ntrkmx];
   G4float extrapolposy10[ntrkmx];
   G4float extrapolposz10[ntrkmx];
-  
+
   G4float extrapolposxerr10[ntrkmx];
   G4float extrapolposyerr10[ntrkmx];
   G4float extrapolposzerr10[ntrkmx];
@@ -763,7 +763,7 @@ G4int clustersize10[ntrkmx];
   G4float cmvhittrueposx10[ntrkmx];
   G4float cmvhittrueposy10[ntrkmx];
   G4float cmvhittrueposz10[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr10[ntrkmx];
   G4float cmvhitrecoposyerr10[ntrkmx];
   G4float cmvhitrecoposzerr10[ntrkmx];
@@ -778,7 +778,7 @@ G4int clustersize10[ntrkmx];
   G4float extrapolposx11[ntrkmx];
   G4float extrapolposy11[ntrkmx];
   G4float extrapolposz11[ntrkmx];
-  
+
   G4float extrapolposxerr11[ntrkmx];
   G4float extrapolposyerr11[ntrkmx];
   G4float extrapolposzerr11[ntrkmx];
@@ -790,7 +790,7 @@ G4int clustersize10[ntrkmx];
   G4float cmvhittrueposx11[ntrkmx];
   G4float cmvhittrueposy11[ntrkmx];
   G4float cmvhittrueposz11[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr11[ntrkmx];
   G4float cmvhitrecoposyerr11[ntrkmx];
   G4float cmvhitrecoposzerr11[ntrkmx];
@@ -803,11 +803,11 @@ G4int clustersize10[ntrkmx];
 
 G4int clustersize12[ntrkmx];
 
-  
+
   G4float extrapolposx12[ntrkmx];
   G4float extrapolposy12[ntrkmx];
   G4float extrapolposz12[ntrkmx];
-  
+
   G4float extrapolposxerr12[ntrkmx];
   G4float extrapolposyerr12[ntrkmx];
   G4float extrapolposzerr12[ntrkmx];
@@ -819,7 +819,7 @@ G4int clustersize12[ntrkmx];
   G4float cmvhittrueposx12[ntrkmx];
   G4float cmvhittrueposy12[ntrkmx];
   G4float cmvhittrueposz12[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr12[ntrkmx];
   G4float cmvhitrecoposyerr12[ntrkmx];
   G4float cmvhitrecoposzerr12[ntrkmx];
@@ -832,11 +832,11 @@ G4int clustersize12[ntrkmx];
 
 
 G4int clustersize21[ntrkmx];
-  
+
   G4float extrapolposx21[ntrkmx];
   G4float extrapolposy21[ntrkmx];
   G4float extrapolposz21[ntrkmx];
-  
+
   G4float extrapolposxerr21[ntrkmx];
   G4float extrapolposyerr21[ntrkmx];
   G4float extrapolposzerr21[ntrkmx];
@@ -848,7 +848,7 @@ G4int clustersize21[ntrkmx];
   G4float cmvhittrueposx21[ntrkmx];
   G4float cmvhittrueposy21[ntrkmx];
   G4float cmvhittrueposz21[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr21[ntrkmx];
   G4float cmvhitrecoposyerr21[ntrkmx];
   G4float cmvhitrecoposzerr21[ntrkmx];
@@ -864,7 +864,7 @@ G4int clustersize20[ntrkmx];
   G4float extrapolposx20[ntrkmx];
   G4float extrapolposy20[ntrkmx];
   G4float extrapolposz20[ntrkmx];
-  
+
   G4float extrapolposxerr20[ntrkmx];
   G4float extrapolposyerr20[ntrkmx];
   G4float extrapolposzerr20[ntrkmx];
@@ -876,7 +876,7 @@ G4int clustersize20[ntrkmx];
   G4float cmvhittrueposx20[ntrkmx];
   G4float cmvhittrueposy20[ntrkmx];
   G4float cmvhittrueposz20[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr20[ntrkmx];
   G4float cmvhitrecoposyerr20[ntrkmx];
   G4float cmvhitrecoposzerr20[ntrkmx];
@@ -891,7 +891,7 @@ G4int clustersize22[ntrkmx];
   G4float extrapolposx22[ntrkmx];
   G4float extrapolposy22[ntrkmx];
   G4float extrapolposz22[ntrkmx];
-  
+
   G4float extrapolposxerr22[ntrkmx];
   G4float extrapolposyerr22[ntrkmx];
   G4float extrapolposzerr22[ntrkmx];
@@ -903,7 +903,7 @@ G4int clustersize22[ntrkmx];
   G4float cmvhittrueposx22[ntrkmx];
   G4float cmvhittrueposy22[ntrkmx];
   G4float cmvhittrueposz22[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr22[ntrkmx];
   G4float cmvhitrecoposyerr22[ntrkmx];
   G4float cmvhitrecoposzerr22[ntrkmx];
@@ -914,11 +914,11 @@ G4int clustersize22[ntrkmx];
   G4float RiPulse22[ntrkmx];
 
 G4int clustersize30[ntrkmx];
-  
+
   G4float extrapolposx30[ntrkmx];
   G4float extrapolposy30[ntrkmx];
   G4float extrapolposz30[ntrkmx];
-  
+
   G4float extrapolposxerr30[ntrkmx];
   G4float extrapolposyerr30[ntrkmx];
   G4float extrapolposzerr30[ntrkmx];
@@ -930,7 +930,7 @@ G4int clustersize30[ntrkmx];
   G4float cmvhittrueposx30[ntrkmx];
   G4float cmvhittrueposy30[ntrkmx];
   G4float cmvhittrueposz30[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr30[ntrkmx];
   G4float cmvhitrecoposyerr30[ntrkmx];
   G4float cmvhitrecoposzerr30[ntrkmx];
@@ -944,11 +944,11 @@ G4int clustersize30[ntrkmx];
 
 G4int clustersize31[ntrkmx];
 
-  
+
   G4float extrapolposx31[ntrkmx];
   G4float extrapolposy31[ntrkmx];
   G4float extrapolposz31[ntrkmx];
-  
+
   G4float extrapolposxerr31[ntrkmx];
   G4float extrapolposyerr31[ntrkmx];
   G4float extrapolposzerr31[ntrkmx];
@@ -960,7 +960,7 @@ G4int clustersize31[ntrkmx];
   G4float cmvhittrueposx31[ntrkmx];
   G4float cmvhittrueposy31[ntrkmx];
   G4float cmvhittrueposz31[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr31[ntrkmx];
   G4float cmvhitrecoposyerr31[ntrkmx];
   G4float cmvhitrecoposzerr31[ntrkmx];
@@ -973,11 +973,11 @@ G4int clustersize31[ntrkmx];
 
 G4int clustersize32[ntrkmx];
 
-  
+
   G4float extrapolposx32[ntrkmx];
   G4float extrapolposy32[ntrkmx];
   G4float extrapolposz32[ntrkmx];
-  
+
   G4float extrapolposxerr32[ntrkmx];
   G4float extrapolposyerr32[ntrkmx];
   G4float extrapolposzerr32[ntrkmx];
@@ -989,7 +989,7 @@ G4int clustersize32[ntrkmx];
   G4float cmvhittrueposx32[ntrkmx];
   G4float cmvhittrueposy32[ntrkmx];
   G4float cmvhittrueposz32[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr32[ntrkmx];
   G4float cmvhitrecoposyerr32[ntrkmx];
   G4float cmvhitrecoposzerr32[ntrkmx];
@@ -1005,11 +1005,11 @@ G4int clustersize32[ntrkmx];
   //11022022
 
   G4int clustersize40[ntrkmx];
-  
+
   G4float extrapolposx40[ntrkmx];
   G4float extrapolposy40[ntrkmx];
   G4float extrapolposz40[ntrkmx];
-  
+
   G4float extrapolposxerr40[ntrkmx];
   G4float extrapolposyerr40[ntrkmx];
   G4float extrapolposzerr40[ntrkmx];
@@ -1021,7 +1021,7 @@ G4int clustersize32[ntrkmx];
   G4float cmvhittrueposx40[ntrkmx];
   G4float cmvhittrueposy40[ntrkmx];
   G4float cmvhittrueposz40[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr40[ntrkmx];
   G4float cmvhitrecoposyerr40[ntrkmx];
   G4float cmvhitrecoposzerr40[ntrkmx];
@@ -1035,11 +1035,11 @@ G4int clustersize32[ntrkmx];
 
 G4int clustersize41[ntrkmx];
 
-  
+
   G4float extrapolposx41[ntrkmx];
   G4float extrapolposy41[ntrkmx];
   G4float extrapolposz41[ntrkmx];
-  
+
   G4float extrapolposxerr41[ntrkmx];
   G4float extrapolposyerr41[ntrkmx];
   G4float extrapolposzerr41[ntrkmx];
@@ -1051,7 +1051,7 @@ G4int clustersize41[ntrkmx];
   G4float cmvhittrueposx41[ntrkmx];
   G4float cmvhittrueposy41[ntrkmx];
   G4float cmvhittrueposz41[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr41[ntrkmx];
   G4float cmvhitrecoposyerr41[ntrkmx];
   G4float cmvhitrecoposzerr41[ntrkmx];
@@ -1064,11 +1064,11 @@ G4int clustersize41[ntrkmx];
 
 G4int clustersize42[ntrkmx];
 
-  
+
   G4float extrapolposx42[ntrkmx];
   G4float extrapolposy42[ntrkmx];
   G4float extrapolposz42[ntrkmx];
-  
+
   G4float extrapolposxerr42[ntrkmx];
   G4float extrapolposyerr42[ntrkmx];
   G4float extrapolposzerr42[ntrkmx];
@@ -1080,7 +1080,7 @@ G4int clustersize42[ntrkmx];
   G4float cmvhittrueposx42[ntrkmx];
   G4float cmvhittrueposy42[ntrkmx];
   G4float cmvhittrueposz42[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr42[ntrkmx];
   G4float cmvhitrecoposyerr42[ntrkmx];
   G4float cmvhitrecoposzerr42[ntrkmx];
@@ -1094,11 +1094,11 @@ G4int clustersize42[ntrkmx];
 
 
 G4int clustersize50[ntrkmx];
-  
+
   G4float extrapolposx50[ntrkmx];
   G4float extrapolposy50[ntrkmx];
   G4float extrapolposz50[ntrkmx];
-  
+
   G4float extrapolposxerr50[ntrkmx];
   G4float extrapolposyerr50[ntrkmx];
   G4float extrapolposzerr50[ntrkmx];
@@ -1110,7 +1110,7 @@ G4int clustersize50[ntrkmx];
   G4float cmvhittrueposx50[ntrkmx];
   G4float cmvhittrueposy50[ntrkmx];
   G4float cmvhittrueposz50[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr50[ntrkmx];
   G4float cmvhitrecoposyerr50[ntrkmx];
   G4float cmvhitrecoposzerr50[ntrkmx];
@@ -1124,11 +1124,11 @@ G4int clustersize50[ntrkmx];
 
 G4int clustersize51[ntrkmx];
 
-  
+
   G4float extrapolposx51[ntrkmx];
   G4float extrapolposy51[ntrkmx];
   G4float extrapolposz51[ntrkmx];
-  
+
   G4float extrapolposxerr51[ntrkmx];
   G4float extrapolposyerr51[ntrkmx];
   G4float extrapolposzerr51[ntrkmx];
@@ -1140,7 +1140,7 @@ G4int clustersize51[ntrkmx];
   G4float cmvhittrueposx51[ntrkmx];
   G4float cmvhittrueposy51[ntrkmx];
   G4float cmvhittrueposz51[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr51[ntrkmx];
   G4float cmvhitrecoposyerr51[ntrkmx];
   G4float cmvhitrecoposzerr51[ntrkmx];
@@ -1153,11 +1153,11 @@ G4int clustersize51[ntrkmx];
 
 G4int clustersize52[ntrkmx];
 
-  
+
   G4float extrapolposx52[ntrkmx];
   G4float extrapolposy52[ntrkmx];
   G4float extrapolposz52[ntrkmx];
-  
+
   G4float extrapolposxerr52[ntrkmx];
   G4float extrapolposyerr52[ntrkmx];
   G4float extrapolposzerr52[ntrkmx];
@@ -1169,7 +1169,7 @@ G4int clustersize52[ntrkmx];
   G4float cmvhittrueposx52[ntrkmx];
   G4float cmvhittrueposy52[ntrkmx];
   G4float cmvhittrueposz52[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr52[ntrkmx];
   G4float cmvhitrecoposyerr52[ntrkmx];
   G4float cmvhitrecoposzerr52[ntrkmx];
@@ -1183,11 +1183,11 @@ G4int clustersize52[ntrkmx];
 
 
 G4int clustersize60[ntrkmx];
-  
+
   G4float extrapolposx60[ntrkmx];
   G4float extrapolposy60[ntrkmx];
   G4float extrapolposz60[ntrkmx];
-  
+
   G4float extrapolposxerr60[ntrkmx];
   G4float extrapolposyerr60[ntrkmx];
   G4float extrapolposzerr60[ntrkmx];
@@ -1199,7 +1199,7 @@ G4int clustersize60[ntrkmx];
   G4float cmvhittrueposx60[ntrkmx];
   G4float cmvhittrueposy60[ntrkmx];
   G4float cmvhittrueposz60[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr60[ntrkmx];
   G4float cmvhitrecoposyerr60[ntrkmx];
   G4float cmvhitrecoposzerr60[ntrkmx];
@@ -1213,11 +1213,11 @@ G4int clustersize60[ntrkmx];
 
 G4int clustersize61[ntrkmx];
 
-  
+
   G4float extrapolposx61[ntrkmx];
   G4float extrapolposy61[ntrkmx];
   G4float extrapolposz61[ntrkmx];
-  
+
   G4float extrapolposxerr61[ntrkmx];
   G4float extrapolposyerr61[ntrkmx];
   G4float extrapolposzerr61[ntrkmx];
@@ -1229,7 +1229,7 @@ G4int clustersize61[ntrkmx];
   G4float cmvhittrueposx61[ntrkmx];
   G4float cmvhittrueposy61[ntrkmx];
   G4float cmvhittrueposz61[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr61[ntrkmx];
   G4float cmvhitrecoposyerr61[ntrkmx];
   G4float cmvhitrecoposzerr61[ntrkmx];
@@ -1242,11 +1242,11 @@ G4int clustersize61[ntrkmx];
 
 G4int clustersize62[ntrkmx];
 
-  
+
   G4float extrapolposx62[ntrkmx];
   G4float extrapolposy62[ntrkmx];
   G4float extrapolposz62[ntrkmx];
-  
+
   G4float extrapolposxerr62[ntrkmx];
   G4float extrapolposyerr62[ntrkmx];
   G4float extrapolposzerr62[ntrkmx];
@@ -1258,7 +1258,7 @@ G4int clustersize62[ntrkmx];
   G4float cmvhittrueposx62[ntrkmx];
   G4float cmvhittrueposy62[ntrkmx];
   G4float cmvhittrueposz62[ntrkmx];
-  
+
   G4float cmvhitrecoposxerr62[ntrkmx];
   G4float cmvhitrecoposyerr62[ntrkmx];
   G4float cmvhitrecoposzerr62[ntrkmx];
@@ -1273,13 +1273,13 @@ G4int clustersize62[ntrkmx];
 
 
   //11
-  
+
   G4float extra_diff1[ntrkmx];
   G4float extra_diff2[ntrkmx];
   G4float extra_diff3[ntrkmx];
 
 
-  
+
    G4float ellip_diff00[ntrkmx];
   G4float ellip_diff01[ntrkmx];
   G4float ellip_diff02[ntrkmx];
@@ -1299,7 +1299,7 @@ G4int clustersize62[ntrkmx];
 
 
   //cmv
-  
+
   //simulation
 	static const unsigned int cmv_nsimhtmx=1000;
   unsigned int cmv_nsimhit;
@@ -1307,14 +1307,14 @@ G4int clustersize62[ntrkmx];
   int  cmv_simpdgid[cmv_nsimhtmx];
   float cmv_simtime[cmv_nsimhtmx];
   float cmv_simenr[cmv_nsimhtmx];
-  float cmv_simposx[cmv_nsimhtmx]; 
+  float cmv_simposx[cmv_nsimhtmx];
   float cmv_simposy[cmv_nsimhtmx];
   float cmv_simposz[cmv_nsimhtmx];
-  
+
 	Float_t cmv_simpx[cmv_nsimhtmx];
 	Float_t cmv_simpy[cmv_nsimhtmx];
 	Float_t cmv_simpz[cmv_nsimhtmx];
-  
+
   float cmv_simlocx[cmv_nsimhtmx];
   float cmv_simlocy[cmv_nsimhtmx];
 	 float cmv_simlocz[cmv_nsimhtmx];
@@ -1330,15 +1330,15 @@ G4int clustersize62[ntrkmx];
 	// 7 bit for Strip
 	// 2 bit for SiPM
   unsigned int cmv_digitimpul[cmv_ndigihtmx]; // 12bit for energy and 20 bit for time
-	
-  float cmv_digiposx[cmv_ndigihtmx]; 
+
+  float cmv_digiposx[cmv_ndigihtmx];
   float cmv_digiposy[cmv_ndigihtmx];
   float cmv_digiposz[cmv_ndigihtmx];
-  
+
 	float cmv_digimom[cmv_ndigihtmx];
 	float cmv_digithe[cmv_ndigihtmx];
 	float cmv_digiphi[cmv_ndigihtmx];
-  
+
   float cmv_digilocx[cmv_ndigihtmx];
   float cmv_digilocy[cmv_ndigihtmx];
   float cmv_digilocz[cmv_ndigihtmx];
@@ -1348,7 +1348,7 @@ G4int clustersize62[ntrkmx];
 
 
 
-  
+
 private:
   micalDetectorParameterDef *paradef;
   ParameterMessenger *CardFile;
@@ -1368,8 +1368,8 @@ private:
   int nbinyMag2d;
   double magZmax;
   int nbinxMagZ;
-  
-  
+
+
   int nUp;
   int nDown;
   //  int DetectorType;

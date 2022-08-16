@@ -41,7 +41,7 @@ then see following flags to run the code:
 
 For data: ./anal_ical data_test_digi.log 2 0.1 corrections_pos_time_26122018.root 1000 0 1 0 0 
 
-For MC: ./anal_ical MC_test_digi.log 1 0.1 0 1000 0 1 0 0 
+For MC: ./anal_ical MC_test_digi.log 1 0.1 0 1000 0 1 1 0 
 
 # 2: is for data
 #last 0: is for Single stack geometry.

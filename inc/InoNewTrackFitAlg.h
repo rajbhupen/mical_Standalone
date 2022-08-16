@@ -31,10 +31,10 @@ class InoTrackCand;
 
 
 
-class InoNewTrackFitAlg 
+class InoNewTrackFitAlg
 {
  public:
-  
+
   InoNewTrackFitAlg();
   virtual ~InoNewTrackFitAlg();
 
@@ -73,31 +73,31 @@ typedef struct{
 
 
 
-  
+
   virtual void RunAlg();
   void InitialFramework();
   void RunTheFitter();
-  
+
   void StoreFilteredData(const int NewPlane);
   void StoreFilteredData_sr(const int NewPlane, double*, bool);
   void FillGapsInTrack();
-	
+
   void GetFitData(int& Plane1, int& Plane2);
    void GetFitData_new(int& Plane1, int& Plane2);
   void ShowerStrips();
   void RemoveTrkHitsInShw();
   void ShowerSwim();
-  
+
   void GoBackwards(const bool first);
   void GoForwards(const bool first);
-  
+
   void GetPropagator(double *istate, double Bx, double By, double dBxbx, double dBxdy, double dBydx, double dBydy, double dz, TGeoMaterial* material);
-  
+
   bool Swim(double* StateVector, double* Output, const int Plane, const int NewPlane, const bool GoForward, double* dS=0, double* Range=0, double* dE=0);
   bool Swim(double* StateVector, double* Output, const double zbeg, const int NewPlane, const bool GoForward, double* dS=0, double* Range=0, double* dE=0);
   bool Swim(double* StateVector, double* Output, const int Plane, const double zend, const bool GoForward, double* dS=0, double* Range=0, double* dE=0);
   bool Swim_new(double* StateVector, double* Output, const int Plane,  int& NewPlane, const bool GoForward, double* dS=0, double* Range=0, double* dE=0);
-  
+
   void TrackElementMerging(double *Tr1, double TargetZ, double *Tr2);
   void GetInitialCovarianceMatrix(const bool FirstIteration);
   bool PredictedStateCov(double* StateVector, const int Plane, int& NewPlane, const bool GoForward, double *ax__minus, int isHalf=0, double* dS=0, double* Range=0); //, double* dE=0);
@@ -105,17 +105,17 @@ typedef struct{
   void GetMultipleScattering(double* mstate,double Bx,double By, double dz, /*double axi,*/ double aT_max, double aI, TGeoMaterial* material);
   void ExtrapCovMatrix();  //Put it in C_k_intermediate
   void ExtrapCovMatrixall(); //Change C_k_minus[lm][kl] also
-  
+
   void CalcKalmanGain(double *x__minus,const int NewPlane);
   //void UpdateStateVector(const int Plane, const int NewPlane, const bool GoForward);
-  
+
   //void UpdateStateVector_new(const int Plane, const int NewPlane, double* Output, const bool GoForward);
   void KalmanFilterStateVector(double *x__minus, const int Plane, const bool GoForward, double *xk);
-  
+
   void UpdateCovMatrix(const int NewPlane);
   void MoveArrays(const int NewPlane, const bool GoForward);
   //void CheckValues(double* Input, const int NewPlane);
-  
+
   void SetTrackProperties( double* Input, double* input2, double* input3); //CandFitTrackCamHandle &cth);
   /*
     void SetPropertiesFromFinderTrack(InotTrackCand &cth);
@@ -123,17 +123,17 @@ typedef struct{
   */
   //void SetRangeAnddS(); //CandFitTrackCamHandle& cth);
   void TimingFit(); //CandFitTrackCamHandle &cth);
-  
+
   //  bool NDPlaneIsActive(int plane, float u, float v, float projErr);
   virtual void Trace(const char *c) const;
-  
+
   void ResetCovarianceMatrix();
-  
+
   void SetT( );
   void CalculateTrace(){;};
-  
+
   bool DirectionFromFinderHits(InoTrack *trk, double& FinderPathLength, double& FinderDistance);
-  bool DirectionFromFinderHitsOldFunc(InoTrack *trk, double& FinderPathLength, double& FinderDistance); 
+  bool DirectionFromFinderHitsOldFunc(InoTrack *trk, double& FinderPathLength, double& FinderDistance);
   //Abhijit's Work ADB 2015/05/06
   bool CheckFCPC(double *x_k, bool GoForward);
   int CheckFCPCUpOrDn(double *x_k, bool DirExtraPol, int MaxMinPlane, bool GoDir);
@@ -143,9 +143,9 @@ typedef struct{
   int gdmlOption;
   micalDetectorParameterDef* paradef;
   ParameterMessenger* paramess;
-  vector<ClustStruct> SlcClustData[doubleLa]; //GMA put a very large value, but need to be put from database 
+  vector<ClustStruct> SlcClustData[doubleLa]; //GMA put a very large value, but need to be put from database
   vector<ClustStruct> InitTrkClustData[doubleLa]; //Only Finder track cluster
-  
+
   vector<TrkDataStruct> TrkClustsData[doubleLa]; //TrkHitsData[doubleLa]; // TrkStripData[150];
   vector<FiltDataStruct> FilteredData[doubleLa];
     vector<FiltDataStruct> ExtraPolData[doubleLa];
@@ -154,7 +154,7 @@ typedef struct{
   double IcalY;
 
   double zexppos;
-  
+
   int checkfcorpc;
   int FCorPC; //=0;
   int FCorPCForward; // FCorPCUp; //=0;
@@ -188,44 +188,44 @@ typedef struct{
   double Q_k_minus[5][5];
   double K_k[5][2];
   double StateIter[5];
-  
+
   int H_k[2][5];
   int Identity[5][5];
-  
+
   double VtxCov[5];
   double EndCov[5];
   double prevstate[5];
   double prevpredn[5];
-  
+
   int OtLStrip;
   int MaxPlane;
   int MinPlane;
   //  unsigned nhits;
   double DeltaZ;
-  double DeltaPlane;  
-  
+  double DeltaPlane;
+
   InoTrackCand* fTrackCand;
-  
+
   bool debug_fit;
-  
+
   bool ZIncreasesWithTime;
   bool FirstIteration;
   bool PassTrack;
   bool fMT;
-  
+
   double xxin;
   double yyin;
   double txin;
   double tyin;
   double B_in;
-  
+
   double ds;
   double drange;
   double I;
   double xi;
   double T_max;
   double BetheBloch;
-  
+
   //  double L;
   //  double Lz;
   double GPL;
@@ -240,20 +240,20 @@ typedef struct{
   bool SwimThroughShower;
 
   int ShowerEntryPlane;
-  
+
   int NIter;
   int TotalNSwimFail;
 
   int NumFinderStrips;
   double MeanTrackTime;
-  
+
   double StripListTime;
 
-  InoFittedTrack_Manager* inoFittedTrack_pointer; 
+  InoFittedTrack_Manager* inoFittedTrack_pointer;
      InoTrackCand_Manager* inoTrackCand_pointer;
-  InoHit_Manager* inoHit_pointer; 
+  InoHit_Manager* inoHit_pointer;
   InoCluster_Manager *InoCluster_pointer;
-  MultiSimAnalysisDigi *pAnalysis; 
+  MultiSimAnalysisDigi *pAnalysis;
   micalFieldPropagator *pFieldMap;
   const InoTrack* fFinderTrack;
   InoTrack_Manager *ptrackCollection;
@@ -263,8 +263,8 @@ typedef struct{
   unsigned int    nLayer;
   int nHit;
 
-  TVector3 shiftvector; //Shift in position, while track bend back to the same layer  
-  
+  TVector3 shiftvector; //Shift in position, while track bend back to the same layer
+
   TGeoManager* icalGeometry;
   TGeoManager* abc;
   TGeoMaterial *localmat;
