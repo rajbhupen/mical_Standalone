@@ -7,6 +7,8 @@ InoCluster::InoCluster(InoHit* hit) :
   fBegTime(0.), fEndTime(0.),
   fBegXTime(0.), fEndXTime(0.),
   fBegYTime(0.), fEndYTime(0.),
+  fBegXTimeStrip(-1), fEndXTimeStrip(-1),
+  fBegYTimeStrip(-1), fEndYTimeStrip(-1),
   kXTogether(0), kYTogether(0),
   fBegXPos(-999.), fEndXPos(999.),
   fBegYPos(-999.), fEndYPos(999.),
@@ -79,8 +81,8 @@ void InoCluster::AddHit(InoHit* hit) {
       if(hit->GetXStrip()->GetStrip()>fEndXStrip) fEndXStrip=hit->GetXStrip()->GetStrip();
       if(hit->GetXPos()<fBegXPos) fBegXPos=hit->GetXPos();
       if(hit->GetXPos()>fEndXPos) fEndXPos=hit->GetXPos();
-      if(hit->GetXTimeCorr()<fBegXTime) fBegXTime=hit->GetXTimeCorr();
-      if(hit->GetXTimeCorr()>fEndXTime) fEndXTime=hit->GetXTimeCorr();
+      if(hit->GetXTimeCorr()<fBegXTime) {fBegXTime = hit->GetXTimeCorr();fBegXTimeStrip=hit->GetXStrip()->GetStrip();}
+      if(hit->GetXTimeCorr()>fEndXTime) {fEndXTime = hit->GetXTimeCorr();fEndXTimeStrip=hit->GetXStrip()->GetStrip();}
       if (fView ==1) fView = 2;
     }
 
@@ -89,8 +91,8 @@ void InoCluster::AddHit(InoHit* hit) {
       if(hit->GetYStrip()->GetStrip()>fEndYStrip) fEndYStrip=hit->GetYStrip()->GetStrip();
       if(hit->GetYPos()<fBegYPos) fBegYPos=hit->GetYPos();
       if(hit->GetYPos()>fEndYPos) fEndYPos=hit->GetYPos();
-      if(hit->GetYTimeCorr()<fBegYTime) fBegYTime=hit->GetYTimeCorr();
-      if(hit->GetYTimeCorr()>fEndYTime) fEndYTime=hit->GetYTimeCorr();
+      if(hit->GetYTimeCorr()<fBegYTime) {fBegYTime = hit->GetYTimeCorr();fBegYTimeStrip=hit->GetYStrip()->GetStrip();}
+      if(hit->GetYTimeCorr()>fEndYTime) {fEndYTime = hit->GetYTimeCorr();fEndYTimeStrip=hit->GetYStrip()->GetStrip();}
       if (fView ==0) fView = 2;
     }
     if(hit->GetTime()<fBegTime) fBegTime=hit->GetTime();

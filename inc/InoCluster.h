@@ -116,6 +116,12 @@ class InoCluster
   double fEndXTime;
   double fBegYTime;
   double fEndYTime;
+
+  int fBegXTimeStrip;
+  int fEndXTimeStrip;
+  int fBegYTimeStrip;
+  int fEndYTimeStrip;
+
   double fBegXPos;
   double fEndXPos;
   double fBegYPos;

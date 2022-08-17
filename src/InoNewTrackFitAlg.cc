@@ -1711,6 +1711,17 @@ void InoNewTrackFitAlg::GetFitData_new(int& Plane1, int& Plane2) {
 	//	InitTrkClustData[ij].push_back(SlcClustData[ij][jkx]);
 	//      const InoCluster* tempcls = SlcClustData[ij][jkx].csh;
 
+	//Adding the position resolutions JIM & SP 17/08/2022
+  if(LastIteration==true) {
+    pAnalysis->inPosX[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[ij][jkx].csh->GetXPos();
+  	pAnalysis->extPosX[SlcClustData[ij][jkx].csh->GetZPlane()] = x1;
+    pAnalysis->inPosY[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[ij][jkx].csh->GetYPos();
+    pAnalysis->extPosY[SlcClustData[ij][jkx].csh->GetZPlane()] = y1;
+		pAnalysis->nXStrips[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[jk][jkx].csh->GetNXStripsInClust();
+		pAnalysis->nYStrips[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[jk][jkx].csh->GetNYStripsInClust();
+  }
+
+
 	int TrackPlane= SlcClustData[ij][jkx].csh->GetZPlane();
 
 	TrkDataStruct tempdata;

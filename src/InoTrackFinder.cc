@@ -621,26 +621,37 @@ void InoTrackFinder::FormTheClusters() {
 	  }
 
 		//After adding all the hits in cluster Jim & SP
-    cout << "Cluster xpos" <<Clust->fXPos <<endl;
-    cout << "Beg-End"<<(int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0)<<endl;
-    cout<<"Nstrips-1="<<(int)(Clust->GetNXStripsInClust()-1)<<endl;
-		if((int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0) == (int)(Clust->GetNXStripsInClust()-1)) {
+  	if((int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0) == (int)(Clust->GetNXStripsInClust()-1)) {
       Clust->kXTogether = 1;
-      Clust->fXPos += 0;
+      if(Clust->GetNXStripsInClust()>1 && Clust->GetNXStripsInClust()<5){
+        if(Clust->fBegXTimeStrip<Clust->fEndXTimeStrip) {
+          Clust->fXPos += xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0]+xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fEndXTime-Clust->fBegXTime);
+        }
+        else if (Clust->fBegXTimeStrip>Clust->fEndXTimeStrip) {
+          Clust->fXPos += xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0]+xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fBegXTime-Clust->fEndXTime);
+        }
+      }
+    }
 
-      cout << "Cluster xpos" <<Clust->fXPos <<endl;
+    if((int)(abs(Clust->GetBegYPos()-Clust->GetEndYPos())*100.0/3.0) == (int)(Clust->GetNYStripsInClust()-1)) {
+      Clust->kYTogether = 1;
+      if(Clust->GetNYStripsInClust()>1 && Clust->GetNYStripsInClust()<5){
+        if(Clust->fBegYTimeStrip<Clust->fEndYTimeStrip) {
+          Clust->fYPos += ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][0]+ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][1]*(Clust->fEndYTime-Clust->fBegYTime);
+        }
+        else if (Clust->fBegYTimeStrip>Clust->fEndYTimeStrip) {
+          Clust->fYPos += ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][0]+ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][1]*(Clust->fBegYTime-Clust->fEndYTime);
+        }
+      }
     }
 
 
-
-
-
-		cout<<"Jim Print-----------------------"<<ij<<"------------------------------------"<<endl;
-		cout<<"Cluster BegXPos="<<Clust->GetBegXPos()<<"\tCluster EndXPos="<<Clust->GetEndXPos()<<endl;
-		cout<<"NXStripsInClust="<<Clust->GetNXStripsInClust()<<endl;
-		cout<<"Cluster BegYPos="<<Clust->GetBegYPos()<<"\tCluster EndYPos="<<Clust->GetEndYPos()<<endl;
-		cout<<"NYStripsInClust="<<Clust->GetNYStripsInClust()<<endl;
-		cout<<"Jim Print-----------------------------------------------------------"<<endl;
+		// cout<<"Jim Print-----------------------"<<ij<<"------------------------------------"<<endl;
+		// cout<<"Cluster BegXPos="<<Clust->GetBegXPos()<<"\tCluster EndXPos="<<Clust->GetEndXPos()<<endl;
+		// cout<<"NXStripsInClust="<<Clust->GetNXStripsInClust()<<endl;
+		// cout<<"Cluster BegYPos="<<Clust->GetBegYPos()<<"\tCluster EndYPos="<<Clust->GetEndYPos()<<endl;
+		// cout<<"NYStripsInClust="<<Clust->GetNYStripsInClust()<<endl;
+		// cout<<"Jim Print-----------------------------------------------------------"<<endl;
 
 
 	  newClusterNum++;
