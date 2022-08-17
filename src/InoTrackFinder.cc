@@ -622,9 +622,9 @@ void InoTrackFinder::FormTheClusters() {
 
 		//After adding all the hits in cluster Jim & SP
     cout << "Cluster xpos" <<Clust->fXPos <<endl;
-    cout << "Beg-End"<<abs(Clust->GetBegXPos()-Clust->GetEndXPos())<<endl;
-    cout<<"Nstrips-1="<<(Clust->GetNXStripsInClust()-1)<<endl;
-		if(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0 == (double)(Clust->GetNXStripsInClust()-1)) {
+    cout << "Beg-End"<<(int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0)<<endl;
+    cout<<"Nstrips-1="<<(int)(Clust->GetNXStripsInClust()-1)<<endl;
+		if((int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0) == (int)(Clust->GetNXStripsInClust()-1)) {
       Clust->kXTogether = 1;
       Clust->fXPos += 0;
 
