@@ -1,5 +1,5 @@
 // Reconstruction Code of DIGI output
-//argv[0]: 
+//argv[0]:
 //argv[1]:input file name containing root files
 //argv[2]:Input options: 0: SIM -> DIFI, 1 : DIGI -> RECO (MC), 2: DIGI->RECO (Data), 3: SIM-> RECO (MC) //inout3
 //argv[3]:Least Count of TDC- 0.1
@@ -34,7 +34,7 @@
 
 
 int main(int argc, char** argv) {
-  
+
   cout<<"---------------------------------------"<<endl;
   G4cout <<"argc "<<argc<<" "<<argv[0]<<" "<<argv[1]<<" "<<argv[2]<<" "<<argv[3]<<" "<<argv[4]<<" "<<argv[5]<<" "<<argv[6]<<" "<<argv[7]<<" "<<argv[8]<<" "<<argv[9]<<G4endl;
   bool runcode = true;
@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
   int InputOutput = atoi(argv[2]);
   double TimeToDigi = atof(argv[3]);
   int printModulo = atoi(argv[5]);
-  int CMVDFlag = atoi(argv[6]); 
+  int CMVDFlag = atoi(argv[6]);
   int MagFlag =  atoi(argv[7]);
   int TrackFitFlag =  atoi(argv[8]);
   int gdmlOption = atoi(argv[9]);
@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
   } else {
     collatedIn = 0;
   }
-  
+
   detectorConfig->SetInputOutput(InputOutput);
   detectorConfig->SetTimeToDigiConv(TimeToDigi);
   detectorConfig->SetCollatedIn(collatedIn);
@@ -65,33 +65,33 @@ int main(int argc, char** argv) {
   detectorConfig->SetTrackFit(TrackFitFlag);
   detectorConfig->SetgdmlOption(gdmlOption);
 
-  
+
   detectorConfig->PrintParameters();
-  
+
   cout<<"InputOutput: "<<detectorConfig->GetInputOutput();
   cout<<"TimeToDigi: "<<detectorConfig->GetTimeToDigiConv();
   cout<<"CollatedIn: "<< detectorConfig->GetCollatedIn();
   cout<<"CMVD: "<<  detectorConfig->GetCMVD();
   cout<<"Mag: "<< detectorConfig->GetMag();
   cout<<"gdmlOption: "<< detectorConfig->GetgdmlOption();
-  
+
   micalDetectorParameterDef* paradef = new micalDetectorParameterDef;
   InoGeometry_Manager* geoManager;
   GeneralRecoInfo* greco;
   micalFieldPropagator *pfield;
   MultiSimAnalysisDigi *pAnalysis;
-  
+
   char fileCorrName[300];
   if(InputOutput) {
     if(InputOutput==1 ||InputOutput==3 ) {
       greco = new GeneralRecoInfo();
     } else if(InputOutput==2) {
-      sprintf(fileCorrName,"%s",argv[4]); 
+      sprintf(fileCorrName,"%s",argv[4]);
       greco = new GeneralRecoInfo(fileCorrName);
     }
-    
-    
-    
+
+
+
     if(gdmlOption==0){
       geoManager = new InoGeometry_Manager("OneStack_NoCMVD.gdml");
     }
@@ -101,27 +101,27 @@ int main(int argc, char** argv) {
     else {
       geoManager = new InoGeometry_Manager("CMVD_mical.gdml");
     } //cmvd
-    
- 
-   
-    
+
+
+
+
   }
-  
+
   char rootfiles[200] = {};
   char ffoutname[200] = {};
-  
+
   sprintf(rootfiles, "%s",argv[1]);//q_mical_test_300k_m1.log"); //logFiles/w_test_sim1.log");//mical_sim.log");
   // cout<<"Enter filename: ";
   // cin >> rootfiles;
 
   cout << " rootfiles " << rootfiles << endl;
-  
+
   int len1 = strlen(rootfiles);
   cout<<"len1 "<<len1<<endl;
   strncpy(ffoutname,rootfiles,len1-4);
   ffoutname[len1-4] = '\0';
   cout << " ffoutname " << ffoutname << endl;
-  
+
   if(InputOutput) {// ??
     greco->OpenRootFiles(ffoutname);
     // pfield->PrintFieldMap();
@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
   ffoutname[len1-4] = '\0';
   cout << " ffoutname " << ffoutname << endl;
 
-  
+
   char outfile[300] = {};
   cout<<"outfile "<<outfile<<endl;
   if(runcode) {
@@ -141,20 +141,20 @@ int main(int argc, char** argv) {
     std::string outfileName  = tempName.substr(9,31);
 
     if(InputOutput) {
-      
+
       if(InputOutput==2) {//data Reco //inout3
 	sprintf(outfile,"./fileOut/%s_data",ffoutname);
       } else {  //inout3
 	sprintf(outfile,"./fileOut/%s_reco",ffoutname);
       }
-      
-      
+
+
     } else {
       sprintf(outfile,"./fileOut/%s_digi",ffoutname);
     }
-    
-  
-    
+
+
+
     cout<<InputOutput<<" outfile "<<outfile<<endl;
     pAnalysis->OpenOutputRootFiles(outfile);
     cout<<"OpenOutputRootFiles : complete "<<endl;
@@ -163,13 +163,13 @@ int main(int argc, char** argv) {
     if(InputOutput) {
       pfield = new  micalFieldPropagator();cout<<"pfiled:"<<pfield<<endl;   cout<<"pAnalysis "<<pAnalysis <<endl; /* pfield->PrintFieldMap();*/
     }
-    
+
     UInt_t numEntry_old = 0;
     UInt_t nfileRead = 0;
     ifstream file_db;
-    file_db.open(rootfiles);  
+    file_db.open(rootfiles);
     while(!(file_db.eof())) {
-      
+
       char indatafile[300];
       char outfilx[300];
       char infile[300];
@@ -179,9 +179,9 @@ int main(int argc, char** argv) {
       file_db >> indatafile>>nentrymx>>ini_ievt;
       if (strstr(indatafile,"#")) continue;
       // if(file_db.eof()) break;
-      
+
       if(InputOutput==1) {
-	sprintf(infile, ".%s", indatafile);
+	sprintf(infile, "%s", indatafile);
 	cout<<"infile is "<<infile<<endl;
       } else if(InputOutput==2) {
 	sprintf(infile, "%s", indatafile);
@@ -190,7 +190,7 @@ int main(int argc, char** argv) {
 	cout<<"infile is  "<<infile<<" " <<InputOutput<<endl;
 	sprintf(infile, "%s", indatafile);
       }
-      
+
       cout<<"infile is "<<indatafile<<endl;
       cout<<"outfile is "<<outfile<<endl;
       pAnalysis->OpenInputRootFiles(infile);
@@ -215,48 +215,48 @@ int main(int argc, char** argv) {
 	  cout<<"---> Processing Event # "<<ievt1<<"..."<<endl;
 	}
 	//	 cout<<"checkk2"<<endl;
-	 
+
 	if(InputOutput==0 || InputOutput==3) {//inout3
-	   
+
 	  InoDigiAlg DigiAlgINO;
-	   
+
 	  DigiAlgINO.ReadEvent(ievt1);
-	   
+
 	  pAnalysis->ievt2 = (numEntry_old*nfileRead) + ievt1;
 	  // cout<<"panal "<<pAnalysis->ievt2<<endl;
-	  DigiAlgINO.DigitiseSimData();	        
+	  DigiAlgINO.DigitiseSimData();
 	  // DigiAlgINO.NoiseGenLoop();
-	   
+
 	  DigiAlgINO.CalculateTrigger();
 	  // cout<<"panal "<<pAnalysis->ievt2<<endl;
-	  
+
 	  DigiAlgINO.SaveDigiData();
-	  
+
 	  if(CMVDFlag==1 && gdmlOption==2){
 	    CMVDigiAlg CMVDigiAlgINO;
 	    CMVDigiAlgINO.ReadEvent(ievt1);
 	    CMVDigiAlgINO.DigitiseSimData();
 	    CMVDigiAlgINO.SaveDigiData();
-	    
+
 	  }// if(CMVDFlag==1){
-	  
+
 	}
-	 
+
 	//	else if(InputOutput) {
 	if(InputOutput>0){//inout3
-	   
+
 	  InoRecoAlg RecoAlgINO(InputOutput);
 	  RecoAlgINO.ReadEvent(ievt1);
-	   
+
 	  pAnalysis->ievt2 = (numEntry_old*nfileRead) + ievt1;
-	   
+
 	  cout<<"panal "<<pAnalysis->ievt2<<endl;
-	  
+
 	  RecoAlgINO.PerformTrackReconstruction();
 
 	  cout<<"check abc "<<pAnalysis->ntrkt<<endl;
 	  //add cmvd extrapolation here
-	  if(CMVDFlag==1 && gdmlOption==2){ 
+	  if(CMVDFlag==1 && gdmlOption==2){
 	    CMVDRecoAlg RecoAlgCMVD(InputOutput);
 	    RecoAlgCMVD.ReadCMVDdata(ievt1);
 	    RecoAlgCMVD.CreateCmvHit();
@@ -265,7 +265,7 @@ int main(int argc, char** argv) {
 	    cout<<"check aborted"<<endl;
 
 	  }//CMVDFlag
-	  pAnalysis->SaveGenVisFile();	  
+	  pAnalysis->SaveGenVisFile();
 	  cout<<"!!check aborted!!"<<endl;
 	}
 
@@ -295,16 +295,14 @@ int main(int argc, char** argv) {
       delete greco; greco =0;
     }
   }
-  
+
   delete paradef; paradef=0;
   delete detectorConfig; detectorConfig=0;
-    
+
   cout<<"Bye.. Bye.."<<endl;
   cout<<endl;
   cout<<endl;
-  
-  
+
+
   return 1;
 }
-
-	

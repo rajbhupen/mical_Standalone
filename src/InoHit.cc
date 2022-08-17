@@ -274,7 +274,7 @@ double InoHit::GetYTimeCorr() const {
   if (fView==2) {
     return DigiToTimeConv*fYTime - (fXstriploc + 0.5)*SignalSpeed - fYtOffset;
   } else if (fView==1) {
-    return return DigiToTimeConv*fYTime;;
+    return DigiToTimeConv*fYTime;;
   } else if (fView==0) {
     return 0;
   }

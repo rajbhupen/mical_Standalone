@@ -1,4 +1,4 @@
-# Install script for directory: /media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone
+# Install script for directory: /media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,6 +37,11 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical")
@@ -44,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/anal_ical")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/anal_ical")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical"
-         OLD_RPATH "/home/jim/products/ROOT6/root-6.22.06/lib:/home/jim/products/GEANT4/geant4.10.07-install/lib:/usr/local/lib:/home/jim/products/CLHEP/clhep2440/lib:"
+         OLD_RPATH "/home/jim/INO/IInd_Year/Genie/Genie_3_0_6/ROOT6/root-6.20.04/lib:/home/jim/products/GEANT4/geant4.10.04.p03-install/lib:/home/jim/products/GEANT4/CLHEP/clhep2404/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical")
@@ -65,5 +70,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/jim/Research_Files/INO/Raj_Git_Codes/mical_Standalone/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
