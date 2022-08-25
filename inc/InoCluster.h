@@ -15,7 +15,7 @@ class InoCluster
 
   void AddHit(InoHit* hit);
   bool ContainsHit(InoHit* hit);
-
+  void Print();
   int IsHitAssoc(InoHit* hit) const;
   int IsShwAssoc(InoCluster* clust) const;
   int IsTrkAssoc(InoCluster* clustm, InoCluster* clustp) const;

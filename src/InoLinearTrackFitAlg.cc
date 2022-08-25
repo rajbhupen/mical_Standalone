@@ -102,43 +102,136 @@ cout<<".......Entered RPC  straight line fit.........."<<endl;
 	for (int ixx=0; ixx<nlayer; ixx++) { xext[ixx]= xexter[ixx] =xposinstr[ixx] =  100;}
 	for (int iyy=0; iyy<nlayer; iyy++) { yext[iyy]= yexter[iyy] =yposinstr[iyy] =  100;}
 
+        
+	cout<<"cluster size: "<<cluster_size<<endl;
+
+	for (unsigned int ix=0; ix<pinotrack->InoTrack_list[iji]->ClustsInTrack.size(); ix++) {
+	  InoCluster* clust = pinotrack->InoTrack_list[iji]->ClustsInTrack[ix];
+	  clust->Print();
+	  ClustsInTrackBank[iji][clust->GetZPlane()].push_back(clust);
+	  
+	}// for (unsigned int ix=0; ix<Cluster_pointer->InoStripX_list.size(); ix++) {
+
+	  for (int nlay =0; nlay<11;nlay++) {
+	    //Only one clust per layer and that cluster should have less than 5 multiplicity:
+	    cout<<"nxstrip nystrip  "<<ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust() << " "<< ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust() <<endl;
+
+	    if (ClustsInTrackBank[iji][nlay].size()==1 &&  ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()<5 && ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()<5 ){
+	      
+	      zval[nlay]=ClustsInTrackBank[iji][nlay][0]->GetZPos();
+	      Xpos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetXPos();
+	      Ypos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPos();
+	      errxsq[nlay]=ClustsInTrackBank[iji][nlay][0]->GetXPosErr() * ClustsInTrackBank[iji][nlay][0]->GetXPosErr() ;
+	      errysq[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPosErr() * ClustsInTrackBank[iji][nlay][0]->GetYPosErr() ;
+
+	    Xusedpos[nlay]=true;
+	    Yusedpos[nlay]=true;
+
+
+	    }
+	    else{
+
+	      zval[nlay]=-5000.0;
+	      Xpos[nlay]=-5000.0;
+	      Ypos[nlay]=-5000.0;
+	      errxsq[nlay]=-5000.0;
+	      errysq[nlay]=-5000.0;
+
+
+	    Xusedpos[nlay]=false;
+	    Yusedpos[nlay]=false;
+	    }  
+
+ cout<<nlay<<" "<<Xpos[nlay]<<" "<<Ypos[nlay]<<" "<<zval[nlay]<<" "<<Xusedpos[nlay]<<" "<<Yusedpos[nlay]<<" "<<errxsq[nlay]<<" "<<errysq[nlay]<<endl;
+	    
+	  }
+
+
+	  cout<<"cluster size: "<<cluster_size<<endl;
+	  // for (int jk =0; jk<cluster_size;jk++) {
+	  	
+	  //   zval[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetZPos();
+	  //   Xpos[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetXPos();
+	  //   Ypos[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetYPos();
+	  //   errxsq[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetXPosErr() * pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetXPosErr() ;
+	  //   errysq[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetYPosErr() * pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetYPosErr() ;
+
+	  //   Xusedpos[jk]=true;
+	  //   Yusedpos[jk]=true;
+	  //   cout<<jk<<" "<<Xpos[jk]<<" "<<Ypos[jk]<<" "<<zval[jk]<<" "<<Xusedpos[jk]<<" "<<Yusedpos[jk]<<" "<<errxsq[jk]<<" "<<errysq[jk]<<endl;
+        
+ 
+	      
+	  // }// for ( unsigned int jk =0; jk<nlayer;jk++) {
+
+
+
+
 	//Finding Topmost Layer hit:
 
 	double zposmx = 10000;
-
-	for (int jk =0; jk<cluster_size;jk++) {
-	  topmostlay=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetZPos();
-	  
-	  if(topmostlay<1000){
+	double topmostlay;
+	for (int jk =0; jk<11;jk++) {
+	  if (Xusedpos[jk]==false || Yusedpos[jk]==false) continue;	  
+ topmostlay=ClustsInTrackBank[iji][jk][0]->GetZPos();
+ if(topmostlay<1000){
    zposmx = topmostlay;
-	  }
+ }
 	}
-	
+
 	cout<<"TopMost layer having hit is: "<<zposmx<<endl;
 
-	
-	cout<<"cluster size: "<<cluster_size<<endl;
-	  for (int jk =0; jk<cluster_size;jk++) {
-	  
-		
-	    zval[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetZPos();
-	    Xpos[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetXPos();
-	    Ypos[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetYPos();
-	    errxsq[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetXPosErr() * pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetXPosErr() ;
-	    errysq[jk]=pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetYPosErr() * pinotrack->InoTrack_list[iji]->ClustsInTrack[jk]->GetYPosErr() ;
 
-      
-	    Xusedpos[jk]=true;
-	    Yusedpos[jk]=true;
-	    cout<<jk<<" "<<Xpos[jk]<<" "<<Ypos[jk]<<" "<<zval[jk]<<" "<<Xusedpos[jk]<<" "<<Yusedpos[jk]<<" "<<errxsq[jk]<<" "<<errysq[jk]<<endl;
-        
-	 
-	      
- 
-	      
-	  }// for ( unsigned int jk =0; jk<nlayer;jk++) {
-	    
+
+	  
    
+
+	
+	  double posresol =true;
+	  if(posresol){
+	    cout<<"...Position resolution..."<<endl;
+	    for(int jki=0;jki<cluster_size;jki++){
+	      occulyr = jki;
+	      cout<<"Fitting Excluding Layer:"<<occulyr<<endl;
+
+	      StraightLineFit xposresolfit(1, zval, Xpos,  errxsq, Xusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
+	      xposresolfit.GetParameters(nxfail, xinters, xslope);
+	      cout<<"Slope and intercept X  "<<xslope<<" "<<xinters<<endl;
+	      xposresolfit.GetError(xerrcst, xerrlin, xerrcov);
+	      cout<<"Error in slope and intercept X "<<xerrcst<<" "<<xerrlin<<endl;
+	      xposresolfit.GetChisqure(Nx, xchi2);
+	      cout<<"NDOF and chi-square X "<<Nx<<" "<<xchi2<<endl;
+	      xposresolfit.GetFitValues(xext,valz, Xdev, xexter);
+	      for(int jk = 0;jk<nlayer;jk++){
+		cout<<"get xz fit values "<<xext[jk]<<" "<<Xpos[jk]<<" "<<valz[jk]<<" "<<Xdev[jk]<<endl;
+	      }
+	      
+  StraightLineFit yposresolfit(1, zval, Ypos,  errysq, Yusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
+
+  yposresolfit.GetParameters(nyfail, yinters, yslope);
+  cout<<"Slope and intercept Y  "<<yslope<<" "<<yinters<<endl;
+  yposresolfit.GetError(yerrcst, yerrlin, yerrcov);
+  cout<<"Error in slope and intercept Y "<<yerrcst<<" "<<yerrlin<<endl;
+  yposresolfit.GetChisqure(Ny, ychi2);
+  cout<<"NDOF and chi-square Y "<<Ny<<" "<<ychi2<<endl;
+  yposresolfit.GetFitValues(yext,valz, Ydev, yexter);
+	  for(int jk = 0;jk<nlayer;jk++){
+	    cout<<"get yz fit values "<<yext[jk]<<" "<<Ypos[jk]<<" "<<valz[jk]<<" "<<Ydev[jk]<<endl;
+	  }
+
+	  pAnalysis->XPosdev_exclu[jki] = Xdev[jki]; 
+	  pAnalysis->YPosdev_exclu[jki] =  Ydev[jki];
+
+	  cout<<"pAnalysis->XPosdev_exclu[jki] "<<pAnalysis->XPosdev_exclu[jki]<<" pAnalysis->YPosdev_xclu[jki] "<<pAnalysis->YPosdev_exclu[jki]<<endl;
+	    }//  for(int jki=0;jki<nLayer;jki++){
+
+	  } // if(posresol){
+
+	  
+	  occulyr = -1;
+	  cout<<"occulyr: "<<occulyr<<endl;
+     
+     
 	    
      
 	    
@@ -325,60 +418,13 @@ cout<<".......Entered RPC  straight line fit.........."<<endl;
 	      fLinearTrackCand->SetChi2(xchi2);
 	      fLinearTrackCand->SetChi22(ychi2);
 
-	    //   fLinearTrackCand->SetXdevLay1(Xdev[0]);
-	    //   fLinearTrackCand->SetYdevLay1(Ydev[0]);
 
-	    //   //fLinearTrackCand->SetXStrip(     ( (1000*xpos)-ShiftInX+pargas[0])/Xstrwd)-0.5    );
-
-
-	    // //double shift2y = (paradef->GetnStack()>1) ? (2*nInCH-1)*parchm[1] : 0;
- 
-
-	    // // fLinearTrackCand->SetYStrip(  ((1000*ypos-ShiftInY-shift2y+pargas[1])/Ystrwd)-0.5           );
+   for (int jk =0; jk<cluster_size;jk++) {
+   
+		pAnalysis->XPosdev[jk] = Xdev[jk];
+		pAnalysis->YPosdev[jk] = Ydev[jk];
+	      }
 	      
-	    //   fLinearTrackCand->SetXdevLay2(Xdev[1]);
-	    //   fLinearTrackCand->SetYdevLay2(Ydev[1]);
-
-	    //   fLinearTrackCand->SetXdevLay3(Xdev[2]);
-	    //   fLinearTrackCand->SetYdevLay3(Ydev[2]);
-
-
-	    //   fLinearTrackCand->SetXdevLay4(Xdev[3]);
-	    //   fLinearTrackCand->SetYdevLay4(Ydev[3]);
-
-
-
-	    //   fLinearTrackCand->SetXdevLay5(Xdev[4]);
-	    //   fLinearTrackCand->SetYdevLay5(Ydev[4]);
-
-
-
-	    //   fLinearTrackCand->SetXdevLay6(Xdev[5]);
-	    //   fLinearTrackCand->SetYdevLay6(Ydev[5]);
-
-	    //   fLinearTrackCand->SetXdevLay7(Xdev[6]);
-	    //   fLinearTrackCand->SetYdevLay7(Ydev[6]);
-
-
-
-	    //   fLinearTrackCand->SetXdevLay8(Xdev[7]);
-	    //   fLinearTrackCand->SetYdevLay8(Ydev[7]);
-
-	      
-	    //   fLinearTrackCand->SetXdevLay9(Xdev[8]);
-	    //   fLinearTrackCand->SetYdevLay9(Ydev[8]);
-
-
-	    //   fLinearTrackCand->SetXdevLay10(Xdev[9]);
-	    //   fLinearTrackCand->SetYdevLay10(Ydev[9]);
-
-
-	    //   fLinearTrackCand->SetXdevLay11(Xdev[10]);
-	    //   fLinearTrackCand->SetYdevLay11(Ydev[10]);
-
-	    //   fLinearTrackCand->SetXdevLay12(Xdev[11]);
-	    //   fLinearTrackCand->SetYdevLay12(Ydev[11]);
-
 	      
  	    }//    if (Nx>=nmnhits/*-ntcor*/ && xchi2/(Nx-2)<mxchisq && nxfail==0) {
 	      

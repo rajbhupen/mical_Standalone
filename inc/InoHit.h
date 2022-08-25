@@ -20,6 +20,7 @@ public:
   InoHit(InoHit* hit);
   ~InoHit();
 
+  void Print();
   InoStrip* GetXStrip() const {return fXStrip;};
   InoStrip* GetYStrip() const {return fYStrip;};
 

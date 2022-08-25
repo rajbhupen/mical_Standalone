@@ -373,6 +373,13 @@ void MultiSimAnalysisDigi::OpenOutputRootFiles(char* outfile) {
 
 
 
+    //added for straightline fit:raj
+    pEventTree->Branch("XPosdev_exclu",XPosdev_exclu,"XPosdev_exclu[nLayer]/F");
+    pEventTree->Branch("YPosdev_exclu",YPosdev_exclu,"YPosdev_exclu[nLayer]/F");
+
+    pEventTree->Branch("XPosdev",XPosdev,"XPosdev[10]/F");
+    pEventTree->Branch("YPosdev",YPosdev,"YPosdev[10]/F");
+
 
 
     pEventTree->Branch("momend",momend,"momend[ntrkt]/F");

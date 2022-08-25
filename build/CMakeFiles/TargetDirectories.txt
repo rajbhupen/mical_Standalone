@@ -1,8 +1,8 @@
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/anal_ical.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/inotarget.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/edit_cache.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/rebuild_cache.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/list_install_components.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/install.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/install/local.dir
-/media/jim/Enthusiasm_Files/Git_Raj/mical_Standalone/build/CMakeFiles/install/strip.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/install/strip.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/install/local.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/inotarget.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/anal_ical.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/install.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/edit_cache.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/rebuild_cache.dir
+/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/list_install_components.dir

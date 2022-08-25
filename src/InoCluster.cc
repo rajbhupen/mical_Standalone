@@ -521,3 +521,19 @@ bool InoCluster::isIdentical(InoCluster* icls) {
   } else { return false ;}
   return true;
 }
+
+void InoCluster::Print() {
+  cout<<"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"<<endl;
+  cout<<"Cluster Info :::"<<endl;
+  cout<<"Plane of Cluster = "<<fZPlane<<" RPCmod "<<fRPCmod<<endl;
+  cout<<"fView = "<<fView<<" Cluster Size "<<HitsInCluster.size()<<endl;
+  cout<<"Begin X Strip = "<<fBegXStrip<<" End X Strip = "<<fEndXStrip<<endl;
+  cout<<"Begin Y Strip = "<<fBegYStrip<<" End Y Strip = "<<fEndYStrip<<endl;
+  cout<<"Begin Time = "<<fBegTime<<" End Time = "<<fEndTime<<endl;
+  cout<<"Begin X Pos = ("<<fBegXPos<<","<<fBegYPos<<")"<<endl;
+  cout<<"End X Pos = ("<<fEndXPos<<","<<fEndYPos<<")"<<endl;
+  for(unsigned int ij=0; ij<HitsInCluster.size(); ij++) {
+    HitsInCluster[ij]->Print();
+  }
+  cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+}

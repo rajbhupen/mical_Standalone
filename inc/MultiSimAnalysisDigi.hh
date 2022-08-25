@@ -351,6 +351,17 @@ public:
 	G4float posyrf[ntrkmx];       //Starting Y-position
 	G4float poszrf[ntrkmx];       //Starting Z-position
 
+    static const unsigned int nlayermx=10;
+  //for posresolution SL
+  G4float XPosdev_exclu[nlayermx];
+  G4float YPosdev_exclu[nlayermx];
+  
+
+  G4float XPosdev[nlayermx];
+  G4float YPosdev[nlayermx];
+
+
+  
   //Position Resolutions JIM
   Float_t inPosX[10];
   Float_t extPosX[10];

@@ -1717,8 +1717,8 @@ void InoNewTrackFitAlg::GetFitData_new(int& Plane1, int& Plane2) {
   	pAnalysis->extPosX[SlcClustData[ij][jkx].csh->GetZPlane()] = x1;
     pAnalysis->inPosY[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[ij][jkx].csh->GetYPos();
     pAnalysis->extPosY[SlcClustData[ij][jkx].csh->GetZPlane()] = y1;
-		pAnalysis->nXStrips[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[jk][jkx].csh->GetNXStripsInClust();
-		pAnalysis->nYStrips[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[jk][jkx].csh->GetNYStripsInClust();
+		pAnalysis->nXStrips[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[ij][jkx].csh->GetNXStripsInClust();
+		pAnalysis->nYStrips[SlcClustData[ij][jkx].csh->GetZPlane()] = SlcClustData[ij][jkx].csh->GetNYStripsInClust();
   }
 
 

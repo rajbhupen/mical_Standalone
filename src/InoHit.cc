@@ -320,3 +320,21 @@ int InoHit::GetRPCmod() const {
   if (fView>0) return fYStrip->GetRPCmod();
   return 0;
 }
+
+
+void InoHit::Print() {
+  cout<<"----------------------------------------------------------------------"<<endl;
+  cout<<"Hit combination "<<endl;
+  cout<< "InoHits():" 
+      // <<std::setw(4) <<jk <<" "
+      << " pln="   <<std::setw(4)<<  GetZPlane() 
+      << " strpX=" <<std::setw(4)<<  GetXStripNum()
+      << " strpY=" <<std::setw(4)<<  GetYStripNum()
+      << " X_Pos=" <<std::setw(8)<<  GetXPos()
+      << " Y_Pos=" <<std::setw(8)<<  GetYPos()
+      << " Z_Pos=" <<std::setw(8)<<  GetZPos()
+      // << " chg="   <<std::setw(8)<<  GetPulse()
+      << " time="  <<std::setw(8)<<  GetTime()
+      << endl;
+  cout<<"......................................................................"<<endl;
+}

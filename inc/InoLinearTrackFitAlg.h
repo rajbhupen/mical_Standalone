@@ -14,6 +14,8 @@ using std::vector;
 #include <string>
 #include <cstdlib>
 #include "InoCluster.h"
+
+
 //const unsigned int doubleLa=12;//500
 //const unsigned int shiftLa=250;
 const int  layfirst =0; 
@@ -90,7 +92,8 @@ class InoLinearTrackFitAlg
 
   double xexterr;
   double yexterr;
-	
+
+  vector<InoCluster*> ClustsInTrackBank[5][10];
 
 };
 
