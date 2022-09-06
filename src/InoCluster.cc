@@ -42,11 +42,14 @@ InoCluster::~InoCluster()
 
 
 void InoCluster::AddHit(InoHit* hit) {
+  cout<<"--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--"<<endl;
   if(HitsInCluster.size()==0) {
+    cout<<"Jim First Hit"<<endl;
     HitsInCluster.push_back(hit);
     fZPlane=hit->GetZPlane();
     fRPCmod = hit->GetRPCmod();
     if (hit->GetXPosErr()<100) {
+      cout<<"Jim Contains Xhit"<<endl;
       fBegXStrip=hit->GetXStrip()->GetStrip();
       fEndXStrip=hit->GetXStrip()->GetStrip();
       fBegXPos=hit->GetXPos();
@@ -55,6 +58,7 @@ void InoCluster::AddHit(InoHit* hit) {
       fEndXTime=hit->GetXTimeCorr();
     }
     if (hit->GetYPosErr()<100) {
+      cout<<"Jim Contains Yhit"<<endl;
       fBegYStrip=hit->GetYStrip()->GetStrip();
       fEndYStrip=hit->GetYStrip()->GetStrip();
       fBegYPos=hit->GetYPos();
@@ -73,9 +77,10 @@ void InoCluster::AddHit(InoHit* hit) {
     fYPosErr = hit->GetYPosErr();
     //    fPlaneView=hit->GetPlaneView();            //asmQ what is fView for why is it set to 2
   } else {
-    if(this->ContainsHit(hit)==true) {return;}
+    cout<<"Jim Contains next hit"<<endl;
+    if(this->ContainsHit(hit)==true) {cout<<"Jim Contains Hit"<<endl;return;}
     HitsInCluster.push_back(hit);
-
+    cout<<"Jim Pushed hit"<<endl;
     if (hit->GetXPosErr()<100) {
       if(hit->GetXStrip()->GetStrip()<fBegXStrip) fBegXStrip=hit->GetXStrip()->GetStrip();
       if(hit->GetXStrip()->GetStrip()>fEndXStrip) fEndXStrip=hit->GetXStrip()->GetStrip();

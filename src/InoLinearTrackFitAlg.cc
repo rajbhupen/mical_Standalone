@@ -206,7 +206,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      occulyr = jki;
 	      cout<<"Fitting Excluding Layer:"<<occulyr<<endl;
 
-	      //Position Alignment correction                                                                                            
+	      //Position Alignment correction
 	      double inpar1[3];
 	      double inpar2[3];
 	      double inpar3[3];
@@ -235,7 +235,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      yposresolfit.GetChisqure(Ny, ychi2);
 	      yposresolfit.GetFitValues(yext,valz, Ydev, yexter);
 
-	      
+
 	      double tmp_poffyx = StripXWidth*cal_slope2(yext[jki]/StripYWidth, inpar4) ;
 	      double tmp_poffxy = StripYWidth*cal_slope2(xext[jki]/StripXWidth, inpar3) ;
 
@@ -500,7 +500,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 
 
 double InoLinearTrackFitAlg::cal_slope2(double x, double* par) {
-  int nstrips = 64; // need to transfer from card file                                                                                                                  
+  int nstrips = 64; // need to transfer from card file
   if (x<nstrips/2.-0.5) {
     return par[0] + par[1]*(x - nstrips/4. +0.5);
   } else {
