@@ -66,6 +66,8 @@ public:
   double align_ystr_xdev[200][3];
   double align_xstr_xdev[200][3];
   double align_ystr_ydev[200][3];
+  double xposerrsq[4][12];
+  double yposerrsq[4][12];
   double timeoffsetx[200];
   double timeoffsety[200];
   double xtoffset[200][128];

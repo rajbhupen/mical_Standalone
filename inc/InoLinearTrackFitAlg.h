@@ -14,13 +14,14 @@ using std::vector;
 #include <string>
 #include <cstdlib>
 #include "InoCluster.h"
+#include "GeneralRecoInfo.hh"
 
 
 //const unsigned int doubleLa=12;//500
 //const unsigned int shiftLa=250;
 const int  layfirst =0; 
 const int  laylast =9; 
-const int nlayer=11;
+const int nlayer=10;
 const float xyPosDev=3*0.03/sqrt(12); // seven sigma 2.0; //maximum deviation of points from fit line (2 strp units) 2 *3cm = 0.06
 
 
@@ -36,6 +37,8 @@ class InoLinearTrackFitAlg
   virtual void RunAlg();
   void Initialise();
   void RunTheFitter();
+  GeneralRecoInfo* grecoi;
+  double cal_slope2(double x, double* par);
   
 
  private:
@@ -58,7 +61,8 @@ class InoLinearTrackFitAlg
   
   bool ZIncreasesWithTime;
 
-
+  double StripXWidth;
+  double StripYWidth;
 
   // InoFittedTrack_Manager* inoFittedTrack_pointer; 
   InoTrackCand_Manager* inoTrackCand_pointer;
@@ -66,6 +70,7 @@ class InoLinearTrackFitAlg
   InoCluster_Manager *InoCluster_pointer;
   MultiSimAnalysisDigi *pAnalysis; 
   InoTrack_Manager *pinotrack;
+  micalDetectorParameterDef* paradef;
 
 
   double CorrTimeError;

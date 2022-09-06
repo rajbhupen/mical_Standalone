@@ -138,19 +138,19 @@ int main(int argc, char** argv) {
     pAnalysis->SetTimeToDigiConvVal(TimeToDigi);//detectorConfig->GetTimeToDigiConv());
 
     std::string tempName(ffoutname);
-    std::string outfileName  = tempName.substr(9,31);
+    std::string outfileName  = tempName.substr(9);
 
     if(InputOutput) {
 
       if(InputOutput==2) {//data Reco //inout3
-	sprintf(outfile,"./fileOut/%s_data",ffoutname);
+	sprintf(outfile,"./fileOut/%s_data",outfileName.c_str());
       } else {  //inout3
-	sprintf(outfile,"./fileOut/%s_reco",ffoutname);
+	sprintf(outfile,"./fileOut/%s_reco",outfileName.c_str());
       }
 
 
     } else {
-      sprintf(outfile,"./fileOut/%s_digi",ffoutname);
+      sprintf(outfile,"./fileOut/%s_digi",outfileName.c_str());
     }
 
 
@@ -239,7 +239,7 @@ int main(int argc, char** argv) {
 	    CMVDigiAlgINO.SaveDigiData();
 
 	  }// if(CMVDFlag==1){
-
+	  
 	}
 
 	//	else if(InputOutput) {

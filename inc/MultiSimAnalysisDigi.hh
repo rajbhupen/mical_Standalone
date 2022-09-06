@@ -369,6 +369,13 @@ public:
   Float_t extPosY[10];
   Int_t nXStrips[10];
   Int_t nYStrips[10];
+  Float_t XchisqOccu[10];
+  Float_t YchisqOccu[10];
+  Int_t XndfOccu[10];
+  Int_t YndfOccu[10];
+  Int_t nxFailOccu[10];
+  Int_t nyFailOccu[10];
+  
 
   Float_t         momend[ntrkmx];   //[ntrkt]
   Float_t         theend[ntrkmx];   //[ntrkt]

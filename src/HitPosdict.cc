@@ -1,6 +1,7 @@
 // Do NOT change. Changes will be lost next time file is generated
 
 #define R__DICTIONARY_FILENAME dOdOdIsrcdIHitPosdict
+#define R__NO_DEPRECATION
 
 /*******************************************************************/
 #include <stddef.h>
@@ -33,7 +34,7 @@
 
 #include "TDataMember.h"
 
-// Since CINT ignores the std namespace, we need to do so in this file.
+// The generated code does not explicitly qualifies STL entities
 namespace std {} using namespace std;
 
 // Header files passed as explicit arguments
@@ -193,8 +194,8 @@ namespace {
 0
     };
     static const char* includePaths[] = {
-"/home/raj/products/root-6.14.00/include",
-"/media/raj/New Volume/mical_cmvd/simulations/code/Code_to_Jim_Pethu/Standalone_Code/SingleCode/inc/",
+"/products/genie/v3_0_6_sl7/ROOT6/root-6.20.04/include/",
+"/home/jim/mICAL_Data_Sim/mical_Standalone/inc/",
 0
     };
     static const char* fwdDeclCode = R"DICTFWDDCLS(
@@ -208,24 +209,22 @@ class __attribute__((annotate(R"ATTRDUMP(A track segment)ATTRDUMP"))) __attribut
     static const char* payloadCode = R"DICTPAYLOAD(
 #line 1 "HitPosdict dictionary payload"
 
-#ifndef G__VECTOR_HAS_CLASS_ITERATOR
-  #define G__VECTOR_HAS_CLASS_ITERATOR 1
-#endif
 
 #define _BACKWARD_BACKWARD_WARNING_H
+// Inline headers
 #include "HitPos.h"
 
 #undef  _BACKWARD_BACKWARD_WARNING_H
 )DICTPAYLOAD";
-    static const char* classesHeaders[]={
+    static const char* classesHeaders[] = {
 "HitPos", payloadCode, "@",
-nullptr};
-
+nullptr
+};
     static bool isInitialized = false;
     if (!isInitialized) {
       TROOT::RegisterModule("HitPosdict",
         headers, includePaths, payloadCode, fwdDeclCode,
-        TriggerDictionaryInitialization_HitPosdict_Impl, {}, classesHeaders, /*has no C++ module*/false);
+        TriggerDictionaryInitialization_HitPosdict_Impl, {}, classesHeaders, /*hasCxxModule*/false);
       isInitialized = true;
     }
   }

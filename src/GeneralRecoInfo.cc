@@ -70,7 +70,13 @@ GeneralRecoInfo::GeneralRecoInfo(char* fileInName) {
   h_timeoffsetx = (TH1D*)InCorrFile->Get("h_timeoffsetx");
   h_timeoffsety = (TH1D*)InCorrFile->Get("h_timeoffsety");
 
+
+
   for(int ij=0; ij<nLayer; ij++) {
+    for(int jk=0; jk<4; jk++) {
+      xposerrsq[jk][ij]=h_xposerrsq->GetBinContent(jk+1,ij+1);
+      yposerrsq[jk][ij]=h_yposerrsq->GetBinContent(jk+1,ij+1);
+    }
     for(int jk=0; jk<3; jk++) {
       align_xstr_ydev[ij][jk] = h_align_xstr_ydev->GetBinContent(ij+1,jk+1);
       align_ystr_xdev[ij][jk] = h_align_ystr_xdev->GetBinContent(ij+1,jk+1);

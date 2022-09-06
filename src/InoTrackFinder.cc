@@ -261,8 +261,8 @@ void InoTrackFinder::FormTheHits() {
 	    inpar4[prx] = grecoi->align_ystr_xdev[nInLAx][prx];
 	  }
 
-	  double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
-	  double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
+	  //	  double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
+	  //	  double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
 
 	   // cout<<nInLAx<<" "<<nInX<<" "<<nInY<<endl;
 	  // cout<<grecoi->timeoffsetx[nInLAx]<<" "<<grecoi->timeoffsety[nInLAx]<<" "<<grecoi->xtoffset[nInLAx][nInX]<<" "<<grecoi->ytoffset[nInLAx][nInY]<<" "<<grecoi->xt_slope_cor[nInLAx][nInX][nInY]<<" "<<grecoi->yt_slope_cor[nInLAx][nInY][nInX]<<endl;
@@ -279,8 +279,8 @@ void InoTrackFinder::FormTheHits() {
 
 	  InoHit* tmphit = new InoHit(XStrip, YStrip);
 
-	  tmphit->SetXpOffset(tmp_poffx);
-	  tmphit->SetYpOffset(tmp_poffy);
+	  tmphit->SetXpOffset(0.);
+	  tmphit->SetYpOffset(0.);
 	  tmphit->SetXtOffset(tmp_toffx);
 	  tmphit->SetYtOffset(tmp_toffy);
 
@@ -620,15 +620,24 @@ void InoTrackFinder::FormTheClusters() {
 	    }
 	  }
 
-		//After adding all the hits in cluster Jim & SP
+
+	  
+	//After adding all the hits in cluster Jim & SP
   	if((int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0) == (int)(Clust->GetNXStripsInClust()-1)) {
       Clust->kXTogether = 1;
       if(Clust->GetNXStripsInClust()>1 && Clust->GetNXStripsInClust()<5){
-        if(Clust->fBegXTimeStrip<Clust->fEndXTimeStrip) {
-          Clust->fXPos += xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0]+xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fEndXTime-Clust->fBegXTime);
+	double lrange;
+	if(Clust->GetNXStripsInClust()==2){lrange = 5.;}
+	if(Clust->GetNXStripsInClust()==3){lrange = 2.5;}
+	if(Clust->GetNXStripsInClust()==4){lrange = 1.5;}
+        if(Clust->fBegXTimeStrip<Clust->fEndXTimeStrip && abs(Clust->fEndXTime-Clust->fBegXTime)<lrange) {
+         double devX = xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0] + xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fEndXTime-Clust->fBegXTime);
+	 Clust->fXPos += devX*0.03;
         }
-        else if (Clust->fBegXTimeStrip>Clust->fEndXTimeStrip) {
-          Clust->fXPos += xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0]+xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fBegXTime-Clust->fEndXTime);
+        else if (Clust->fBegXTimeStrip>Clust->fEndXTimeStrip && abs(Clust->fEndXTime-Clust->fBegXTime)<lrange) {
+          
+	  double devX = xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0] + xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fBegXTime-Clust->fEndXTime);
+	  Clust->fXPos += devX*0.03;
         }
       }
     }
@@ -636,15 +645,21 @@ void InoTrackFinder::FormTheClusters() {
     if((int)(abs(Clust->GetBegYPos()-Clust->GetEndYPos())*100.0/3.0) == (int)(Clust->GetNYStripsInClust()-1)) {
       Clust->kYTogether = 1;
       if(Clust->GetNYStripsInClust()>1 && Clust->GetNYStripsInClust()<5){
-        if(Clust->fBegYTimeStrip<Clust->fEndYTimeStrip) {
-          Clust->fYPos += ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][0]+ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][1]*(Clust->fEndYTime-Clust->fBegYTime);
+	double lrange;
+	if(Clust->GetNYStripsInClust()==2){lrange = 5.;}
+	if(Clust->GetNYStripsInClust()==3){lrange = 2.5;}
+	if(Clust->GetNYStripsInClust()==4){lrange = 1.5;}
+        if(Clust->fBegYTimeStrip<Clust->fEndYTimeStrip && abs(Clust->fEndYTime-Clust->fBegYTime)<lrange) {
+          double devY = ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][0] + ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][1]*(Clust->fEndYTime-Clust->fBegYTime);
+	  Clust->fYPos += devY*0.03;
         }
-        else if (Clust->fBegYTimeStrip>Clust->fEndYTimeStrip) {
-          Clust->fYPos += ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][0]+ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][1]*(Clust->fBegYTime-Clust->fEndYTime);
+        else if (Clust->fBegYTimeStrip>Clust->fEndYTimeStrip && abs(Clust->fEndYTime-Clust->fBegYTime)<lrange) {
+          double devY = ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][0] + ypos_ytime_corr[Clust->GetNYStripsInClust()-2][ij][1]*(Clust->fBegYTime-Clust->fEndYTime);
+	  Clust->fYPos += devY*0.03;
         }
       }
     }
-
+	  
 
 		// cout<<"Jim Print-----------------------"<<ij<<"------------------------------------"<<endl;
 		// cout<<"Cluster BegXPos="<<Clust->GetBegXPos()<<"\tCluster EndXPos="<<Clust->GetEndXPos()<<endl;

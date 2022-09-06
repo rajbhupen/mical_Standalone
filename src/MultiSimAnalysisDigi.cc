@@ -143,7 +143,7 @@ void MultiSimAnalysisDigi::OpenInputRootFiles(char* infile) {
 
   if(isInOut==0 ||isInOut==3 ) { ////inout3
     //Input is sim file from MC for sim to reco(3) or sim to digi(0)
-    sprintf(inRootFile,"%s.root",infile);
+    sprintf(inRootFile,"%s",infile);
     inputRootFile = new TFile(inRootFile, "read");
     cout<< "Data is read from simulation output rootfile : "<< inRootFile <<endl;
 
@@ -191,7 +191,7 @@ void MultiSimAnalysisDigi::OpenInputRootFiles(char* infile) {
  inputEventTree->SetBranchAddress("cmv_simlocz", cmv_simlocz);
     }// if(CardFile->GetCMVD()==1){
   } else if(isInOut==1) {
-    sprintf(inRootFile,"%s.root",infile);
+    sprintf(inRootFile,"%s",infile);
     inputRootFile = new TFile(inRootFile, "read");
     cout<< "Data is read from digitization output file : "<< inRootFile  <<endl;
 
@@ -443,12 +443,18 @@ void MultiSimAnalysisDigi::OpenOutputRootFiles(char* outfile) {
     pEventTree->Branch("ftime_last",&ftime_last,"ftime_last/F");
 
     //Extrapolated and measured state vector informations JIM
-    pEventTree->Branch("inPosX",inPosX,"inPosX[10]/F");
-    pEventTree->Branch("inPosY",inPosY,"inPosY[10]/F");
-    pEventTree->Branch("extPosX",extPosX,"extPosX[10]/F");
-    pEventTree->Branch("extPosY",extPosY,"extPosY[10]/F");
-    pEventTree->Branch("nXStrips",nXStrips,"nXStrips[10]/I");
-    pEventTree->Branch("nYStrips",nYStrips,"nYStrips[10]/I");
+    pEventTree->Branch("inPosX", inPosX, "inPosX[10]/F");
+    pEventTree->Branch("inPosY", inPosY, "inPosY[10]/F");
+    pEventTree->Branch("extPosX", extPosX, "extPosX[10]/F");
+    pEventTree->Branch("extPosY", extPosY, "extPosY[10]/F");
+    pEventTree->Branch("nXStrips", nXStrips, "nXStrips[10]/I");
+    pEventTree->Branch("nYStrips", nYStrips, "nYStrips[10]/I");
+    pEventTree->Branch("XchisqOccu", XchisqOccu, "XchisqOccu[10]/F");
+    pEventTree->Branch("YchisqOccu", YchisqOccu, "YchisqOccu[10]/F");
+    pEventTree->Branch("XndfOccu", XndfOccu, "XndfOccu[10]/I");
+    pEventTree->Branch("YndfOccu", YndfOccu, "YndfOccu[10]/I");
+    pEventTree->Branch("nxFailOccu", nxFailOccu, "nxFailOccu[10]/I");
+    pEventTree->Branch("nyFailOccu", nyFailOccu, "nyFailOccu[10]/I");
 
     //cmvd
 
