@@ -107,7 +107,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 	  InoCluster* clust = pinotrack->InoTrack_list[iji]->ClustsInTrack[ix];
 	  clust->Print();
 	  ClustsInTrackBank[iji][clust->GetZPlane()].push_back(clust);
-
+    cout<<"Filling Cluster"<< "\tZplane="<<clust->GetZPlane()<<endl;
 	}// for (unsigned int ix=0; ix<Cluster_pointer->InoStripX_list.size(); ix++) {
 
   float errxco[12]={0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675};
@@ -116,6 +116,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 	  for (int nlay =0; nlay<10;nlay++) {
 	    //Only one clust per layer and that cluster should have less than 5 multiplicity:
      if(ClustsInTrackBank[iji][nlay].size()>=1) {
+      cout<<"ClustsInTrackBank Size -----"<<ClustsInTrackBank[iji][nlay].size()<<endl;
 	    cout<<"nxstrip nystrip  "<< ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust() << " "<< ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust() <<endl;
 
 	    if (ClustsInTrackBank[iji][nlay].size()==1 &&  ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()<5 && ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()<5 ){
@@ -283,8 +284,11 @@ void InoLinearTrackFitAlg::RunAlg() {
 		pAnalysis->YndfOccu[jki] = Ny;
 		pAnalysis->nxFailOccu[jki] = nxfail;
 		pAnalysis->nyFailOccu[jki] = nyfail;
-	      }
+        }
 
+        if((pAnalysis->inPosY[9] - pAnalysis->extPosY[9] > 1) && pAnalysis->nYStrips[9]==2) {
+          cout<<"Check the event jim anna eldo"<<endl;
+        }
 	      cout<<"pAnalysis->XPosdev_exclu[jki] "<<pAnalysis->XPosdev_exclu[jki]<<" pAnalysis->YPosdev_xclu[jki] "<<pAnalysis->YPosdev_exclu[jki]<<endl;
 
 
