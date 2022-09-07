@@ -61,6 +61,7 @@ void InoLinearTrackFitAlg::RunAlg() {
   cout<<"inotrack list size"<<pinotrack->InoTrack_list.size()<<endl;
 
   for (unsigned int iji=0; iji<pinotrack->InoTrack_list.size(); iji++) {
+    if(iji<pAnalysis->ntrkmx ){
     double zcor;
     int cluster_size=pinotrack->InoTrack_list[iji]->ClustsInTrack.size();
 
@@ -180,19 +181,19 @@ void InoLinearTrackFitAlg::RunAlg() {
 
 	//Finding Topmost Layer hit:
 
-	double zposmx = 10000;
-	double topmostlay;
-	for (int jk =0; jk<10;jk++) {
-	  if (Xusedpos[jk]==false || Yusedpos[jk]==false) continue;
-    if(ClustsInTrackBank[iji][jk].size()>=1) {
-      topmostlay=ClustsInTrackBank[iji][jk][0]->GetZPos();
-    }
- if(topmostlay<1000){
-   zposmx = topmostlay;
- }
-	}
-
-	cout<<"TopMost layer having hit is: "<<zposmx<<endl;
+	  double zposmx = 10000;
+	  double topmostlay;
+	  for (int jk =0; jk<10;jk++) {
+	    if (Xusedpos[jk]==false || Yusedpos[jk]==false) continue;
+	    if(ClustsInTrackBank[iji][jk].size()>=1) {
+	      topmostlay=ClustsInTrackBank[iji][jk][0]->GetZPos();
+	    }
+	    if(topmostlay<1000){
+	      zposmx = topmostlay;
+	    }
+	  }
+	  
+	  cout<<"TopMost layer having hit is: "<<zposmx<<endl;
 
 
 
@@ -495,11 +496,11 @@ void InoLinearTrackFitAlg::RunAlg() {
 	    fLinearTrackCand=0;
 	    cout<<"Pointer is Null "<<fLinearTrackCand <<endl;
 	  }
-
-	}//for (unsigned iji=0; iji<pinotrack->InoTrack_list.size() ; iji++) {
-
-
-	//
+    }//   if(iji<pAnalysis->ntrkmx ){
+  }//for (unsigned iji=0; iji<pinotrack->InoTrack_list.size() ; iji++) {
+  
+  
+  //
 }
 
 
