@@ -4,7 +4,7 @@
 //for time fit include usetime etc during the calcualtion of xtime etc.
 // tmpxent & tmpyent : use the same criteria in main code, instead of carried it out from this class or use dev for this;
 
-const int nlayerx=11;
+const int nlayerx=10;
 //const int nstripmx=32;
 class StraightLineFit {
  public :

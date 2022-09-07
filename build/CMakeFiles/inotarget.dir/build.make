@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone
+CMAKE_SOURCE_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build
+CMAKE_BINARY_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build
 
 # Utility rule file for inotarget.
 
@@ -71,6 +71,6 @@ CMakeFiles/inotarget.dir/clean:
 .PHONY : CMakeFiles/inotarget.dir/clean
 
 CMakeFiles/inotarget.dir/depend:
-	cd /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/inotarget.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles/inotarget.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/inotarget.dir/depend
 

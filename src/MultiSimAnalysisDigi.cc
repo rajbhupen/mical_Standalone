@@ -195,7 +195,7 @@ void MultiSimAnalysisDigi::OpenInputRootFiles(char* infile) {
     inputRootFile = new TFile(inRootFile, "read");
     cout<< "Data is read from digitization output file : "<< inRootFile  <<endl;
 
-    inputEventTree = (TTree*)inputRootFile->Get("T2"); //T2
+    inputEventTree = (TTree*)inputRootFile->Get("T1"); //T2
     inputEventTree->SetBranchAddress("irun",&irun);
     inputEventTree->SetBranchAddress("ievt",&ievt);
     inputEventTree->SetBranchAddress("ngent",&ngent);

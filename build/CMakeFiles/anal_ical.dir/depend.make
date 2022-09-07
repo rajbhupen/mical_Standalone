@@ -1643,6 +1643,7 @@ CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/CmvCluster.h
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/CmvHit.h
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/CmvLayExtra.h
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/CmvStrip.h
+CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/GeneralRecoInfo.hh
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/HitPos.h
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/Hits.h
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../inc/InoCal0Hit.hh

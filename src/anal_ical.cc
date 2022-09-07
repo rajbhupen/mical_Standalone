@@ -83,12 +83,11 @@ int main(int argc, char** argv) {
 
   char fileCorrName[300];
   if(InputOutput) {
-    if(InputOutput==1 ||InputOutput==3 ) {
-      greco = new GeneralRecoInfo();
-    } else if(InputOutput==2) {
+    
       sprintf(fileCorrName,"%s",argv[4]);
-      greco = new GeneralRecoInfo(fileCorrName);
-    }
+      cout<<"fileCorrName "<<fileCorrName<<endl;
+      greco = new GeneralRecoInfo(fileCorrName,InputOutput);
+
 
 
 

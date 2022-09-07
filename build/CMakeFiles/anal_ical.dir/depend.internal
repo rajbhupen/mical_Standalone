@@ -25,7 +25,7 @@ CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDRecoAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDRecoAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -215,7 +215,7 @@ CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDigiAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDigiAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Random/RandGauss.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Random/RandGauss.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Random/Random.h
@@ -363,7 +363,7 @@ CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o
  ../inc/RPCEve.h
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvCluster.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvCluster.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -481,7 +481,7 @@ CMakeFiles/anal_ical.dir/src/CmvHit.cc.o
  ../inc/RPCEve.h
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvHit.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvHit.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -597,7 +597,7 @@ CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvLayExtra.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvLayExtra.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -711,7 +711,7 @@ CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvStrip.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvStrip.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -821,7 +821,7 @@ CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o
  ../inc/GeneralRecoInfo.hh
  ../inc/ParameterMessenger.hh
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/GeneralRecoInfo.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/GeneralRecoInfo.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -920,7 +920,7 @@ CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/HitPos.cc.o
  ../inc/HitPos.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPos.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPos.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/Fit/FitExecutionPolicy.h
  /home/raj/products/root-6.14.00/include/Foption.h
@@ -977,7 +977,7 @@ CMakeFiles/anal_ical.dir/src/HitPos.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o
  ../inc/HitPos.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPosdict.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPosdict.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/ESTLType.h
  /home/raj/products/root-6.14.00/include/Fit/FitExecutionPolicy.h
@@ -1055,7 +1055,7 @@ CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o
 CMakeFiles/anal_ical.dir/src/Hits.cc.o
  ../inc/HitPos.h
  ../inc/Hits.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hits.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hits.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/Fit/FitExecutionPolicy.h
  /home/raj/products/root-6.14.00/include/Foption.h
@@ -1113,7 +1113,7 @@ CMakeFiles/anal_ical.dir/src/Hits.cc.o
 CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o
  ../inc/HitPos.h
  ../inc/Hits.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hitsdict.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hitsdict.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/ESTLType.h
  /home/raj/products/root-6.14.00/include/Fit/FitExecutionPolicy.h
@@ -1190,7 +1190,7 @@ CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o
  ../inc/InoCal0Hit.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal0Hit.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal0Hit.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/defs.h
@@ -1206,7 +1206,7 @@ CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/tls.hh
 CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o
  ../inc/InoCal1Hit.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal1Hit.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal1Hit.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/defs.h
@@ -1230,7 +1230,7 @@ CMakeFiles/anal_ical.dir/src/InoCluster.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCluster.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCluster.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -1359,7 +1359,7 @@ CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoDigiAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoDigiAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Random/RandGauss.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Random/RandGauss.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Random/Random.h
@@ -1500,7 +1500,7 @@ CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o
  ../inc/InoFittedTrack.h
  ../inc/InoTrack.h
  ../inc/InoTrackCand.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoFittedTrack.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoFittedTrack.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/RConfigure.h
  /home/raj/products/root-6.14.00/include/ROOT/RConfig.h
@@ -1533,7 +1533,7 @@ CMakeFiles/anal_ical.dir/src/InoHit.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoHit.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoHit.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -1644,6 +1644,7 @@ CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o
  ../inc/CmvHit.h
  ../inc/CmvLayExtra.h
  ../inc/CmvStrip.h
+ ../inc/GeneralRecoInfo.hh
  ../inc/HitPos.h
  ../inc/Hits.h
  ../inc/InoCal0Hit.hh
@@ -1662,7 +1663,7 @@ CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o
  ../inc/StraightLineFit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoLinearTrackFitAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoLinearTrackFitAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -1821,7 +1822,7 @@ CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoMuRange.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoMuRange.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -1973,7 +1974,7 @@ CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewFitAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewFitAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -2152,7 +2153,7 @@ CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewTrackFitAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewTrackFitAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -2321,7 +2322,7 @@ CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoOldTrackFitAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoOldTrackFitAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/Matrix.h
@@ -2501,7 +2502,7 @@ CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoRecoAlg.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoRecoAlg.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/Matrix.h
@@ -2690,7 +2691,7 @@ CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoShowerCand.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoShowerCand.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -2798,14 +2799,14 @@ CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/InoStrip.cc.o
  ../inc/InoStrip.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoStrip.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoStrip.cc
 CMakeFiles/anal_ical.dir/src/InoTrack.cc.o
  ../inc/InoCluster.h
  ../inc/InoTrack.h
  ../inc/InoTrackSegment.h
  ../inc/ParameterMessenger.hh
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrack.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrack.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -2858,7 +2859,7 @@ CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackCand.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackCand.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -3018,7 +3019,7 @@ CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackFinder.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackFinder.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/DiagMatrix.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/DiagMatrix.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.h
@@ -3170,7 +3171,7 @@ CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackSegment.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackSegment.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -3278,7 +3279,7 @@ CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/InoVertex.cc.o
  ../inc/InoVertex.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoVertex.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoVertex.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/ESTLType.h
  /home/raj/products/root-6.14.00/include/RConfigure.h
@@ -3333,7 +3334,7 @@ CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/RPCEve.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/MultiSimAnalysisDigi.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/MultiSimAnalysisDigi.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -3441,7 +3442,7 @@ CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o
  ../inc/ParameterMessenger.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/ParameterMessenger.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/ParameterMessenger.cc
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4String.hh
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4String.icc
@@ -3452,7 +3453,7 @@ CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/tls.hh
 CMakeFiles/anal_ical.dir/src/RPCEve.cc.o
  ../inc/RPCEve.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/RPCEve.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/RPCEve.cc
  /home/raj/products/root-6.14.00/include/Buttons.h
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/ESTLType.h
@@ -3561,7 +3562,7 @@ CMakeFiles/anal_ical.dir/src/SipmHit.cc.o
  ../inc/RPCEve.h
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SipmHit.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SipmHit.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/Geant4/geant4.10.04.p02-install/include/Geant4/G4ExceptionSeverity.hh
@@ -3671,10 +3672,10 @@ CMakeFiles/anal_ical.dir/src/SipmHit.cc.o
  /home/raj/products/root-6.14.00/include/strlcpy.h
 CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o
  ../inc/StraightLineFit.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/StraightLineFit.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/StraightLineFit.cc
 CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o
  ../inc/SwimParticle.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimParticle.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimParticle.cc
  /home/raj/products/root-6.14.00/include/DllImport.h
  /home/raj/products/root-6.14.00/include/ESTLType.h
  /home/raj/products/root-6.14.00/include/RConfigure.h
@@ -3746,7 +3747,7 @@ CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimSwimmer.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimSwimmer.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -3921,7 +3922,7 @@ CMakeFiles/anal_ical.dir/src/anal_ical.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/anal_ical.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/anal_ical.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/GenMatrix.icc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Matrix/Matrix.h
@@ -4102,7 +4103,7 @@ CMakeFiles/anal_ical.dir/src/anal_ical.cc.o
 CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o
  ../inc/ParameterMessenger.hh
  ../inc/micalDetectorParameterDef.hh
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalDetectorParameterDef.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalDetectorParameterDef.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/PhysicalConstants.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
@@ -4157,7 +4158,7 @@ CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o
  ../inc/micalDetectorParameterDef.hh
  ../inc/micalFieldPropagator.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalFieldPropagator.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalFieldPropagator.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h
@@ -4304,7 +4305,7 @@ CMakeFiles/anal_ical.dir/src/vect_manager.cc.o
  ../inc/SipmHit.h
  ../inc/micalDetectorParameterDef.hh
  ../inc/vect_manager.h
- /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/vect_manager.cc
+ /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/vect_manager.cc
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/SystemOfUnits.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Units/defs.h
  /home/raj/products/CLHEP/clhep-install/lib/CLHEP-2.4.0.4/../../include/CLHEP/Vector/ThreeVector.h

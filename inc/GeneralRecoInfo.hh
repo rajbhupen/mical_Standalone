@@ -20,7 +20,7 @@ using namespace std;
 class GeneralRecoInfo {
 public:
   GeneralRecoInfo();
-  GeneralRecoInfo(char* fileInName);
+  GeneralRecoInfo(char* fileInName, int dataMC);
   ~GeneralRecoInfo();
   void OpenRootFiles(char* outf);
   void CloseRootFiles();

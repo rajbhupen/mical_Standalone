@@ -61,6 +61,7 @@ void InoLinearTrackFitAlg::RunAlg() {
   cout<<"inotrack list size"<<pinotrack->InoTrack_list.size()<<endl;
 
   for (unsigned int iji=0; iji<pinotrack->InoTrack_list.size(); iji++) {
+    cout<<"ntrkmx: "<<pAnalysis->ntrkmx<<endl;
     if(iji<pAnalysis->ntrkmx ){
     double zcor;
     int cluster_size=pinotrack->InoTrack_list[iji]->ClustsInTrack.size();
@@ -127,20 +128,24 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      Ypos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPos();
 	      if(ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()>0) {
 		errxsq[nlay] = grecoi->xposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()-1][nlay]*0.03*0.03;
+		
 	      } else {
 		errxsq[nlay]=errxco[nlay]*errxco[nlay]*0.03*0.03;
+		
 	      }
 	      if(ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()>0) {
 		errysq[nlay] = grecoi->yposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()-1][nlay]*0.03*0.03;
+	        
 	      } else {
 		errysq[nlay]=erryco[nlay]*erryco[nlay]*0.03*0.03;
+	    
 	      }
 	      //errxsq[nlay]=ClustsInTrackBank[iji][nlay][0]->GetXPosErr() * ClustsInTrackBank[iji][nlay][0]->GetXPosErr() ;
 	      //errysq[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPosErr() * ClustsInTrackBank[iji][nlay][0]->GetYPosErr() ;
 
 	    Xusedpos[nlay]=true;
 	    Yusedpos[nlay]=true;
-
+	   
 	    }
 	    else{
 
@@ -222,6 +227,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      double tmp_poffxx = StripXWidth*cal_slope2(Xpos[jki]/StripXWidth, inpar1) ;
 	      double tmp_poffyy = StripYWidth*cal_slope2(Ypos[jki]/StripYWidth, inpar2) ;
 
+	      cout<<"tmp_poffxx "<<tmp_poffxx<<" tmp_poffyy "<<tmp_poffyy<<endl;
 	      Xpos[jki] -= tmp_poffxx;
 	      Ypos[jki] -= tmp_poffyy;
 

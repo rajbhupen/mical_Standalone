@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone
+CMAKE_SOURCE_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build
+CMAKE_BINARY_DIR = /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/anal_ical.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/anal_ical.dir/flags.make
 
 CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o: ../src/CMVDRecoAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDRecoAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDRecoAlg.cc
 
 CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDRecoAlg.cc > CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDRecoAlg.cc > CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDRecoAlg.cc -o CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDRecoAlg.cc -o CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/anal_ical.dir/src/CMVDRecoAlg.cc.o.provides.build: CMakeFiles/anal_ic
 
 CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o: ../src/CMVDigiAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDigiAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDigiAlg.cc
 
 CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDigiAlg.cc > CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDigiAlg.cc > CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CMVDigiAlg.cc -o CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CMVDigiAlg.cc -o CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/anal_ical.dir/src/CMVDigiAlg.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o: ../src/CmvCluster.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvCluster.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvCluster.cc
 
 CMakeFiles/anal_ical.dir/src/CmvCluster.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/CmvCluster.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvCluster.cc > CMakeFiles/anal_ical.dir/src/CmvCluster.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvCluster.cc > CMakeFiles/anal_ical.dir/src/CmvCluster.cc.i
 
 CMakeFiles/anal_ical.dir/src/CmvCluster.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/CmvCluster.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvCluster.cc -o CMakeFiles/anal_ical.dir/src/CmvCluster.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvCluster.cc -o CMakeFiles/anal_ical.dir/src/CmvCluster.cc.s
 
 CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/anal_ical.dir/src/CmvCluster.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/CmvHit.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/CmvHit.cc.o: ../src/CmvHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvHit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvHit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvHit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvHit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvHit.cc
 
 CMakeFiles/anal_ical.dir/src/CmvHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/CmvHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvHit.cc > CMakeFiles/anal_ical.dir/src/CmvHit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvHit.cc > CMakeFiles/anal_ical.dir/src/CmvHit.cc.i
 
 CMakeFiles/anal_ical.dir/src/CmvHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/CmvHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvHit.cc -o CMakeFiles/anal_ical.dir/src/CmvHit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvHit.cc -o CMakeFiles/anal_ical.dir/src/CmvHit.cc.s
 
 CMakeFiles/anal_ical.dir/src/CmvHit.cc.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/anal_ical.dir/src/CmvHit.cc.o.provides.build: CMakeFiles/anal_ical.di
 
 CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o: ../src/CmvLayExtra.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvLayExtra.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvLayExtra.cc
 
 CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvLayExtra.cc > CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvLayExtra.cc > CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.i
 
 CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvLayExtra.cc -o CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvLayExtra.cc -o CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.s
 
 CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/anal_ical.dir/src/CmvLayExtra.cc.o.provides.build: CMakeFiles/anal_ic
 
 CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o: ../src/CmvStrip.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvStrip.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvStrip.cc
 
 CMakeFiles/anal_ical.dir/src/CmvStrip.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/CmvStrip.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvStrip.cc > CMakeFiles/anal_ical.dir/src/CmvStrip.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvStrip.cc > CMakeFiles/anal_ical.dir/src/CmvStrip.cc.i
 
 CMakeFiles/anal_ical.dir/src/CmvStrip.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/CmvStrip.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/CmvStrip.cc -o CMakeFiles/anal_ical.dir/src/CmvStrip.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/CmvStrip.cc -o CMakeFiles/anal_ical.dir/src/CmvStrip.cc.s
 
 CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/anal_ical.dir/src/CmvStrip.cc.o.provides.build: CMakeFiles/anal_ical.
 
 CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o: ../src/GeneralRecoInfo.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/GeneralRecoInfo.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/GeneralRecoInfo.cc
 
 CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/GeneralRecoInfo.cc > CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/GeneralRecoInfo.cc > CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.i
 
 CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/GeneralRecoInfo.cc -o CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/GeneralRecoInfo.cc -o CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.s
 
 CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/anal_ical.dir/src/GeneralRecoInfo.cc.o.provides.build: CMakeFiles/ana
 
 CMakeFiles/anal_ical.dir/src/HitPos.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/HitPos.cc.o: ../src/HitPos.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/anal_ical.dir/src/HitPos.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/HitPos.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPos.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/anal_ical.dir/src/HitPos.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/HitPos.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPos.cc
 
 CMakeFiles/anal_ical.dir/src/HitPos.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/HitPos.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPos.cc > CMakeFiles/anal_ical.dir/src/HitPos.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPos.cc > CMakeFiles/anal_ical.dir/src/HitPos.cc.i
 
 CMakeFiles/anal_ical.dir/src/HitPos.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/HitPos.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPos.cc -o CMakeFiles/anal_ical.dir/src/HitPos.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPos.cc -o CMakeFiles/anal_ical.dir/src/HitPos.cc.s
 
 CMakeFiles/anal_ical.dir/src/HitPos.cc.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/anal_ical.dir/src/HitPos.cc.o.provides.build: CMakeFiles/anal_ical.di
 
 CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o: ../src/HitPosdict.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPosdict.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPosdict.cc
 
 CMakeFiles/anal_ical.dir/src/HitPosdict.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/HitPosdict.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPosdict.cc > CMakeFiles/anal_ical.dir/src/HitPosdict.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPosdict.cc > CMakeFiles/anal_ical.dir/src/HitPosdict.cc.i
 
 CMakeFiles/anal_ical.dir/src/HitPosdict.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/HitPosdict.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/HitPosdict.cc -o CMakeFiles/anal_ical.dir/src/HitPosdict.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/HitPosdict.cc -o CMakeFiles/anal_ical.dir/src/HitPosdict.cc.s
 
 CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/anal_ical.dir/src/HitPosdict.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/Hits.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/Hits.cc.o: ../src/Hits.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/anal_ical.dir/src/Hits.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/Hits.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hits.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/anal_ical.dir/src/Hits.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/Hits.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hits.cc
 
 CMakeFiles/anal_ical.dir/src/Hits.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/Hits.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hits.cc > CMakeFiles/anal_ical.dir/src/Hits.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hits.cc > CMakeFiles/anal_ical.dir/src/Hits.cc.i
 
 CMakeFiles/anal_ical.dir/src/Hits.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/Hits.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hits.cc -o CMakeFiles/anal_ical.dir/src/Hits.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hits.cc -o CMakeFiles/anal_ical.dir/src/Hits.cc.s
 
 CMakeFiles/anal_ical.dir/src/Hits.cc.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/anal_ical.dir/src/Hits.cc.o.provides.build: CMakeFiles/anal_ical.dir/
 
 CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o: ../src/Hitsdict.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hitsdict.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hitsdict.cc
 
 CMakeFiles/anal_ical.dir/src/Hitsdict.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/Hitsdict.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hitsdict.cc > CMakeFiles/anal_ical.dir/src/Hitsdict.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hitsdict.cc > CMakeFiles/anal_ical.dir/src/Hitsdict.cc.i
 
 CMakeFiles/anal_ical.dir/src/Hitsdict.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/Hitsdict.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/Hitsdict.cc -o CMakeFiles/anal_ical.dir/src/Hitsdict.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/Hitsdict.cc -o CMakeFiles/anal_ical.dir/src/Hitsdict.cc.s
 
 CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/anal_ical.dir/src/Hitsdict.cc.o.provides.build: CMakeFiles/anal_ical.
 
 CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o: ../src/InoCal0Hit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal0Hit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal0Hit.cc
 
 CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal0Hit.cc > CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal0Hit.cc > CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal0Hit.cc -o CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal0Hit.cc -o CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/anal_ical.dir/src/InoCal0Hit.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o: ../src/InoCal1Hit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal1Hit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal1Hit.cc
 
 CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal1Hit.cc > CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal1Hit.cc > CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCal1Hit.cc -o CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCal1Hit.cc -o CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/anal_ical.dir/src/InoCal1Hit.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/InoCluster.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoCluster.cc.o: ../src/InoCluster.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/anal_ical.dir/src/InoCluster.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoCluster.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCluster.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/anal_ical.dir/src/InoCluster.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoCluster.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCluster.cc
 
 CMakeFiles/anal_ical.dir/src/InoCluster.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoCluster.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCluster.cc > CMakeFiles/anal_ical.dir/src/InoCluster.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCluster.cc > CMakeFiles/anal_ical.dir/src/InoCluster.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoCluster.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoCluster.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoCluster.cc -o CMakeFiles/anal_ical.dir/src/InoCluster.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoCluster.cc -o CMakeFiles/anal_ical.dir/src/InoCluster.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoCluster.cc.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/anal_ical.dir/src/InoCluster.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o: ../src/InoDigiAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoDigiAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoDigiAlg.cc
 
 CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoDigiAlg.cc > CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoDigiAlg.cc > CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoDigiAlg.cc -o CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoDigiAlg.cc -o CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o.requires:
 
@@ -419,16 +419,16 @@ CMakeFiles/anal_ical.dir/src/InoDigiAlg.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o: ../src/InoFittedTrack.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoFittedTrack.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoFittedTrack.cc
 
 CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoFittedTrack.cc > CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoFittedTrack.cc > CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoFittedTrack.cc -o CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoFittedTrack.cc -o CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o.requires:
 
@@ -443,16 +443,16 @@ CMakeFiles/anal_ical.dir/src/InoFittedTrack.cc.o.provides.build: CMakeFiles/anal
 
 CMakeFiles/anal_ical.dir/src/InoHit.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoHit.cc.o: ../src/InoHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/anal_ical.dir/src/InoHit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoHit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/anal_ical.dir/src/InoHit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoHit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoHit.cc
 
 CMakeFiles/anal_ical.dir/src/InoHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoHit.cc > CMakeFiles/anal_ical.dir/src/InoHit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoHit.cc > CMakeFiles/anal_ical.dir/src/InoHit.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoHit.cc -o CMakeFiles/anal_ical.dir/src/InoHit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoHit.cc -o CMakeFiles/anal_ical.dir/src/InoHit.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoHit.cc.o.requires:
 
@@ -467,16 +467,16 @@ CMakeFiles/anal_ical.dir/src/InoHit.cc.o.provides.build: CMakeFiles/anal_ical.di
 
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o: ../src/InoLinearTrackFitAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoLinearTrackFitAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoLinearTrackFitAlg.cc
 
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoLinearTrackFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoLinearTrackFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoLinearTrackFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoLinearTrackFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o.requires:
 
@@ -491,16 +491,16 @@ CMakeFiles/anal_ical.dir/src/InoLinearTrackFitAlg.cc.o.provides.build: CMakeFile
 
 CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o: ../src/InoMuRange.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoMuRange.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoMuRange.cc
 
 CMakeFiles/anal_ical.dir/src/InoMuRange.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoMuRange.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoMuRange.cc > CMakeFiles/anal_ical.dir/src/InoMuRange.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoMuRange.cc > CMakeFiles/anal_ical.dir/src/InoMuRange.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoMuRange.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoMuRange.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoMuRange.cc -o CMakeFiles/anal_ical.dir/src/InoMuRange.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoMuRange.cc -o CMakeFiles/anal_ical.dir/src/InoMuRange.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o.requires:
 
@@ -515,16 +515,16 @@ CMakeFiles/anal_ical.dir/src/InoMuRange.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o: ../src/InoNewFitAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewFitAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewFitAlg.cc
 
 CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o.requires:
 
@@ -539,16 +539,16 @@ CMakeFiles/anal_ical.dir/src/InoNewFitAlg.cc.o.provides.build: CMakeFiles/anal_i
 
 CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o: ../src/InoNewTrackFitAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewTrackFitAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewTrackFitAlg.cc
 
 CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewTrackFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewTrackFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoNewTrackFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoNewTrackFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o.requires:
 
@@ -563,16 +563,16 @@ CMakeFiles/anal_ical.dir/src/InoNewTrackFitAlg.cc.o.provides.build: CMakeFiles/a
 
 CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o: ../src/InoOldTrackFitAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoOldTrackFitAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoOldTrackFitAlg.cc
 
 CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoOldTrackFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoOldTrackFitAlg.cc > CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoOldTrackFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoOldTrackFitAlg.cc -o CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o.requires:
 
@@ -587,16 +587,16 @@ CMakeFiles/anal_ical.dir/src/InoOldTrackFitAlg.cc.o.provides.build: CMakeFiles/a
 
 CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o: ../src/InoRecoAlg.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoRecoAlg.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoRecoAlg.cc
 
 CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoRecoAlg.cc > CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoRecoAlg.cc > CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoRecoAlg.cc -o CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoRecoAlg.cc -o CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o.requires:
 
@@ -611,16 +611,16 @@ CMakeFiles/anal_ical.dir/src/InoRecoAlg.cc.o.provides.build: CMakeFiles/anal_ica
 
 CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o: ../src/InoShowerCand.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoShowerCand.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoShowerCand.cc
 
 CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoShowerCand.cc > CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoShowerCand.cc > CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoShowerCand.cc -o CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoShowerCand.cc -o CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o.requires:
 
@@ -635,16 +635,16 @@ CMakeFiles/anal_ical.dir/src/InoShowerCand.cc.o.provides.build: CMakeFiles/anal_
 
 CMakeFiles/anal_ical.dir/src/InoStrip.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoStrip.cc.o: ../src/InoStrip.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/anal_ical.dir/src/InoStrip.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoStrip.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoStrip.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/anal_ical.dir/src/InoStrip.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoStrip.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoStrip.cc
 
 CMakeFiles/anal_ical.dir/src/InoStrip.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoStrip.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoStrip.cc > CMakeFiles/anal_ical.dir/src/InoStrip.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoStrip.cc > CMakeFiles/anal_ical.dir/src/InoStrip.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoStrip.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoStrip.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoStrip.cc -o CMakeFiles/anal_ical.dir/src/InoStrip.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoStrip.cc -o CMakeFiles/anal_ical.dir/src/InoStrip.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoStrip.cc.o.requires:
 
@@ -659,16 +659,16 @@ CMakeFiles/anal_ical.dir/src/InoStrip.cc.o.provides.build: CMakeFiles/anal_ical.
 
 CMakeFiles/anal_ical.dir/src/InoTrack.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoTrack.cc.o: ../src/InoTrack.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrack.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrack.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrack.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrack.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrack.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrack.cc
 
 CMakeFiles/anal_ical.dir/src/InoTrack.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoTrack.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrack.cc > CMakeFiles/anal_ical.dir/src/InoTrack.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrack.cc > CMakeFiles/anal_ical.dir/src/InoTrack.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoTrack.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoTrack.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrack.cc -o CMakeFiles/anal_ical.dir/src/InoTrack.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrack.cc -o CMakeFiles/anal_ical.dir/src/InoTrack.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoTrack.cc.o.requires:
 
@@ -683,16 +683,16 @@ CMakeFiles/anal_ical.dir/src/InoTrack.cc.o.provides.build: CMakeFiles/anal_ical.
 
 CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o: ../src/InoTrackCand.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackCand.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackCand.cc
 
 CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackCand.cc > CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackCand.cc > CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackCand.cc -o CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackCand.cc -o CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o.requires:
 
@@ -707,16 +707,16 @@ CMakeFiles/anal_ical.dir/src/InoTrackCand.cc.o.provides.build: CMakeFiles/anal_i
 
 CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o: ../src/InoTrackFinder.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackFinder.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackFinder.cc
 
 CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackFinder.cc > CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackFinder.cc > CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackFinder.cc -o CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackFinder.cc -o CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o.requires:
 
@@ -731,16 +731,16 @@ CMakeFiles/anal_ical.dir/src/InoTrackFinder.cc.o.provides.build: CMakeFiles/anal
 
 CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o: ../src/InoTrackSegment.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackSegment.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackSegment.cc
 
 CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackSegment.cc > CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackSegment.cc > CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoTrackSegment.cc -o CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoTrackSegment.cc -o CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o.requires:
 
@@ -755,16 +755,16 @@ CMakeFiles/anal_ical.dir/src/InoTrackSegment.cc.o.provides.build: CMakeFiles/ana
 
 CMakeFiles/anal_ical.dir/src/InoVertex.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/InoVertex.cc.o: ../src/InoVertex.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/anal_ical.dir/src/InoVertex.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoVertex.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoVertex.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/anal_ical.dir/src/InoVertex.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/InoVertex.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoVertex.cc
 
 CMakeFiles/anal_ical.dir/src/InoVertex.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/InoVertex.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoVertex.cc > CMakeFiles/anal_ical.dir/src/InoVertex.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoVertex.cc > CMakeFiles/anal_ical.dir/src/InoVertex.cc.i
 
 CMakeFiles/anal_ical.dir/src/InoVertex.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/InoVertex.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/InoVertex.cc -o CMakeFiles/anal_ical.dir/src/InoVertex.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/InoVertex.cc -o CMakeFiles/anal_ical.dir/src/InoVertex.cc.s
 
 CMakeFiles/anal_ical.dir/src/InoVertex.cc.o.requires:
 
@@ -779,16 +779,16 @@ CMakeFiles/anal_ical.dir/src/InoVertex.cc.o.provides.build: CMakeFiles/anal_ical
 
 CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o: ../src/MultiSimAnalysisDigi.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/MultiSimAnalysisDigi.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/MultiSimAnalysisDigi.cc
 
 CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/MultiSimAnalysisDigi.cc > CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/MultiSimAnalysisDigi.cc > CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.i
 
 CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/MultiSimAnalysisDigi.cc -o CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/MultiSimAnalysisDigi.cc -o CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.s
 
 CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o.requires:
 
@@ -803,16 +803,16 @@ CMakeFiles/anal_ical.dir/src/MultiSimAnalysisDigi.cc.o.provides.build: CMakeFile
 
 CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o: ../src/ParameterMessenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/ParameterMessenger.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/ParameterMessenger.cc
 
 CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/ParameterMessenger.cc > CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/ParameterMessenger.cc > CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.i
 
 CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/ParameterMessenger.cc -o CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/ParameterMessenger.cc -o CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.s
 
 CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o.requires:
 
@@ -827,16 +827,16 @@ CMakeFiles/anal_ical.dir/src/ParameterMessenger.cc.o.provides.build: CMakeFiles/
 
 CMakeFiles/anal_ical.dir/src/RPCEve.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/RPCEve.cc.o: ../src/RPCEve.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/anal_ical.dir/src/RPCEve.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/RPCEve.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/RPCEve.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/anal_ical.dir/src/RPCEve.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/RPCEve.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/RPCEve.cc
 
 CMakeFiles/anal_ical.dir/src/RPCEve.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/RPCEve.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/RPCEve.cc > CMakeFiles/anal_ical.dir/src/RPCEve.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/RPCEve.cc > CMakeFiles/anal_ical.dir/src/RPCEve.cc.i
 
 CMakeFiles/anal_ical.dir/src/RPCEve.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/RPCEve.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/RPCEve.cc -o CMakeFiles/anal_ical.dir/src/RPCEve.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/RPCEve.cc -o CMakeFiles/anal_ical.dir/src/RPCEve.cc.s
 
 CMakeFiles/anal_ical.dir/src/RPCEve.cc.o.requires:
 
@@ -851,16 +851,16 @@ CMakeFiles/anal_ical.dir/src/RPCEve.cc.o.provides.build: CMakeFiles/anal_ical.di
 
 CMakeFiles/anal_ical.dir/src/SipmHit.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/SipmHit.cc.o: ../src/SipmHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/anal_ical.dir/src/SipmHit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/SipmHit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SipmHit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/anal_ical.dir/src/SipmHit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/SipmHit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SipmHit.cc
 
 CMakeFiles/anal_ical.dir/src/SipmHit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/SipmHit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SipmHit.cc > CMakeFiles/anal_ical.dir/src/SipmHit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SipmHit.cc > CMakeFiles/anal_ical.dir/src/SipmHit.cc.i
 
 CMakeFiles/anal_ical.dir/src/SipmHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/SipmHit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SipmHit.cc -o CMakeFiles/anal_ical.dir/src/SipmHit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SipmHit.cc -o CMakeFiles/anal_ical.dir/src/SipmHit.cc.s
 
 CMakeFiles/anal_ical.dir/src/SipmHit.cc.o.requires:
 
@@ -875,16 +875,16 @@ CMakeFiles/anal_ical.dir/src/SipmHit.cc.o.provides.build: CMakeFiles/anal_ical.d
 
 CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o: ../src/StraightLineFit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/StraightLineFit.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/StraightLineFit.cc
 
 CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/StraightLineFit.cc > CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/StraightLineFit.cc > CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.i
 
 CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/StraightLineFit.cc -o CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/StraightLineFit.cc -o CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.s
 
 CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o.requires:
 
@@ -899,16 +899,16 @@ CMakeFiles/anal_ical.dir/src/StraightLineFit.cc.o.provides.build: CMakeFiles/ana
 
 CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o: ../src/SwimParticle.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimParticle.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimParticle.cc
 
 CMakeFiles/anal_ical.dir/src/SwimParticle.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/SwimParticle.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimParticle.cc > CMakeFiles/anal_ical.dir/src/SwimParticle.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimParticle.cc > CMakeFiles/anal_ical.dir/src/SwimParticle.cc.i
 
 CMakeFiles/anal_ical.dir/src/SwimParticle.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/SwimParticle.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimParticle.cc -o CMakeFiles/anal_ical.dir/src/SwimParticle.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimParticle.cc -o CMakeFiles/anal_ical.dir/src/SwimParticle.cc.s
 
 CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o.requires:
 
@@ -923,16 +923,16 @@ CMakeFiles/anal_ical.dir/src/SwimParticle.cc.o.provides.build: CMakeFiles/anal_i
 
 CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o: ../src/SwimSwimmer.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimSwimmer.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimSwimmer.cc
 
 CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimSwimmer.cc > CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimSwimmer.cc > CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.i
 
 CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/SwimSwimmer.cc -o CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/SwimSwimmer.cc -o CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.s
 
 CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o.requires:
 
@@ -947,16 +947,16 @@ CMakeFiles/anal_ical.dir/src/SwimSwimmer.cc.o.provides.build: CMakeFiles/anal_ic
 
 CMakeFiles/anal_ical.dir/src/anal_ical.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/anal_ical.cc.o: ../src/anal_ical.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/anal_ical.dir/src/anal_ical.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/anal_ical.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/anal_ical.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/anal_ical.dir/src/anal_ical.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/anal_ical.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/anal_ical.cc
 
 CMakeFiles/anal_ical.dir/src/anal_ical.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/anal_ical.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/anal_ical.cc > CMakeFiles/anal_ical.dir/src/anal_ical.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/anal_ical.cc > CMakeFiles/anal_ical.dir/src/anal_ical.cc.i
 
 CMakeFiles/anal_ical.dir/src/anal_ical.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/anal_ical.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/anal_ical.cc -o CMakeFiles/anal_ical.dir/src/anal_ical.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/anal_ical.cc -o CMakeFiles/anal_ical.dir/src/anal_ical.cc.s
 
 CMakeFiles/anal_ical.dir/src/anal_ical.cc.o.requires:
 
@@ -971,16 +971,16 @@ CMakeFiles/anal_ical.dir/src/anal_ical.cc.o.provides.build: CMakeFiles/anal_ical
 
 CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o: ../src/micalDetectorParameterDef.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalDetectorParameterDef.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalDetectorParameterDef.cc
 
 CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalDetectorParameterDef.cc > CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalDetectorParameterDef.cc > CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.i
 
 CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalDetectorParameterDef.cc -o CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalDetectorParameterDef.cc -o CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.s
 
 CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o.requires:
 
@@ -995,16 +995,16 @@ CMakeFiles/anal_ical.dir/src/micalDetectorParameterDef.cc.o.provides.build: CMak
 
 CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o: ../src/micalFieldPropagator.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalFieldPropagator.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalFieldPropagator.cc
 
 CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalFieldPropagator.cc > CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalFieldPropagator.cc > CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.i
 
 CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/micalFieldPropagator.cc -o CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/micalFieldPropagator.cc -o CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.s
 
 CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o.requires:
 
@@ -1019,16 +1019,16 @@ CMakeFiles/anal_ical.dir/src/micalFieldPropagator.cc.o.provides.build: CMakeFile
 
 CMakeFiles/anal_ical.dir/src/vect_manager.cc.o: CMakeFiles/anal_ical.dir/flags.make
 CMakeFiles/anal_ical.dir/src/vect_manager.cc.o: ../src/vect_manager.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/anal_ical.dir/src/vect_manager.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/vect_manager.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/vect_manager.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/anal_ical.dir/src/vect_manager.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/anal_ical.dir/src/vect_manager.cc.o -c /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/vect_manager.cc
 
 CMakeFiles/anal_ical.dir/src/vect_manager.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/anal_ical.dir/src/vect_manager.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/vect_manager.cc > CMakeFiles/anal_ical.dir/src/vect_manager.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/vect_manager.cc > CMakeFiles/anal_ical.dir/src/vect_manager.cc.i
 
 CMakeFiles/anal_ical.dir/src/vect_manager.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/anal_ical.dir/src/vect_manager.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/src/vect_manager.cc -o CMakeFiles/anal_ical.dir/src/vect_manager.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/src/vect_manager.cc -o CMakeFiles/anal_ical.dir/src/vect_manager.cc.s
 
 CMakeFiles/anal_ical.dir/src/vect_manager.cc.o.requires:
 
@@ -1193,7 +1193,7 @@ anal_ical_EXTERNAL_OBJECTS =
 ../anal_ical: /home/raj/products/Geant4/geant4.10.04.p02-install/lib/libG4global.so
 ../anal_ical: /home/raj/products/CLHEP/clhep-install/lib/libCLHEP-2.4.0.4.so
 ../anal_ical: CMakeFiles/anal_ical.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Linking CXX executable ../anal_ical"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Linking CXX executable ../anal_ical"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/anal_ical.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1250,6 +1250,6 @@ CMakeFiles/anal_ical.dir/clean:
 .PHONY : CMakeFiles/anal_ical.dir/clean
 
 CMakeFiles/anal_ical.dir/depend:
-	cd /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/CMakeFiles/anal_ical.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/CMakeFiles/anal_ical.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/anal_ical.dir/depend
 

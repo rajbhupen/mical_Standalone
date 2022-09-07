@@ -3,7 +3,7 @@
 GeneralRecoInfo* GeneralRecoInfo::GnPointer;
 GeneralRecoInfo::GeneralRecoInfo() {
 
-  //  cout<<"GeneralRecoInfo::GeneralRecoInfo() {"<<endl;
+ cout<<"GeneralRecoInfo::GeneralRecoInfo() {"<<endl;
   GnPointer = this;
   paradef = micalDetectorParameterDef::AnPointer;
   //  DetectorType = paradef->GetDetectorType();
@@ -37,7 +37,7 @@ GeneralRecoInfo::GeneralRecoInfo() {
 
 }
 
-GeneralRecoInfo::GeneralRecoInfo(char* fileInName) {
+GeneralRecoInfo::GeneralRecoInfo(char* fileInName,int dataMC) {
   GnPointer = this;
   paradef = micalDetectorParameterDef::AnPointer;
   //  DetectorType = paradef->GetDetectorType();
@@ -51,7 +51,7 @@ GeneralRecoInfo::GeneralRecoInfo(char* fileInName) {
   nYStrip = paradef->GetnYStrip();
 
   InCorrFile = new TFile(fileInName,"read");
-  
+  if(dataMC==2){ // for data we need everything:
   h_align_xstr_ydev = (TH2D*)InCorrFile->Get("h_align_xstr_ydev");
   h_align_ystr_xdev = (TH2D*)InCorrFile->Get("h_align_ystr_xdev");
   h_align_xstr_xdev = (TH2D*)InCorrFile->Get("h_align_xstr_xdev");
@@ -95,6 +95,21 @@ GeneralRecoInfo::GeneralRecoInfo(char* fileInName) {
     }
   }
 
+
+  }else{ // for MC we need only multiplicity dependent errors:
+  h_xposerrsq = (TH2D*)InCorrFile->Get("h_xposerrsq");
+  h_yposerrsq = (TH2D*)InCorrFile->Get("h_yposerrsq");
+
+  
+  for(int ij=0; ij<nLayer; ij++) {
+    for(int jk=0; jk<4; jk++) {
+      xposerrsq[jk][ij]=h_xposerrsq->GetBinContent(jk+1,ij+1);
+      yposerrsq[jk][ij]=h_yposerrsq->GetBinContent(jk+1,ij+1);
+    }
+  }
+
+  }
+  
 }
 
 GeneralRecoInfo::~GeneralRecoInfo() {

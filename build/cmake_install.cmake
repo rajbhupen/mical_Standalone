@@ -1,4 +1,4 @@
-# Install script for directory: /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone
+# Install script for directory: /home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/anal_ical")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/anal_ical")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/anal_ical")
     file(RPATH_CHANGE
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/Single_Code_position-multiplicity/mical_Standalone/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/raj/Desktop/INO_GTP/Phd/PhD_work/gobinda_sir/SingleCode_082022/github/SingleCode_github_modifiedLinearFitAlg_07092022/mical_Standalone/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
