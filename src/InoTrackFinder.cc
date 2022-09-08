@@ -621,9 +621,9 @@ void InoTrackFinder::FormTheClusters() {
 	  }
 
 
-	  
+/*
 	//After adding all the hits in cluster Jim & SP
-  	if((int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0) == (int)(Clust->GetNXStripsInClust()-1)) {
+  	//if((int)(abs(Clust->GetBegXPos()-Clust->GetEndXPos())*100.0/3.0) == (int)(Clust->GetNXStripsInClust()-1)) {
       Clust->kXTogether = 1;
       if(Clust->GetNXStripsInClust()>1 && Clust->GetNXStripsInClust()<5){
 	double lrange;
@@ -635,14 +635,14 @@ void InoTrackFinder::FormTheClusters() {
 	 Clust->fXPos += devX*0.03;
         }
         else if (Clust->fBegXTimeStrip>Clust->fEndXTimeStrip && abs(Clust->fEndXTime-Clust->fBegXTime)<lrange) {
-          
+
 	  double devX = xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][0] + xpos_xtime_corr[Clust->GetNXStripsInClust()-2][ij][1]*(Clust->fBegXTime-Clust->fEndXTime);
 	  Clust->fXPos += devX*0.03;
         }
       }
-    }
+    //}
 
-    if((int)(abs(Clust->GetBegYPos()-Clust->GetEndYPos())*100.0/3.0) == (int)(Clust->GetNYStripsInClust()-1)) {
+    //if((int)(abs(Clust->GetBegYPos()-Clust->GetEndYPos())*100.0/3.0) == (int)(Clust->GetNYStripsInClust()-1)) {
       Clust->kYTogether = 1;
       if(Clust->GetNYStripsInClust()>1 && Clust->GetNYStripsInClust()<5){
 	double lrange;
@@ -658,8 +658,8 @@ void InoTrackFinder::FormTheClusters() {
 	  Clust->fYPos += devY*0.03;
         }
       }
-    }
-	  
+    //}
+*/  
 
 		// cout<<"Jim Print-----------------------"<<ij<<"------------------------------------"<<endl;
 		// cout<<"Cluster BegXPos="<<Clust->GetBegXPos()<<"\tCluster EndXPos="<<Clust->GetEndXPos()<<endl;

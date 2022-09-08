@@ -4,7 +4,7 @@
 //for time fit include usetime etc during the calcualtion of xtime etc.
 // tmpxent & tmpyent : use the same criteria in main code, instead of carried it out from this class or use dev for this;
 
-const int nlayerx=11;
+const int nlayerx=10;
 //const int nstripmx=32;
 class StraightLineFit {
  public :
@@ -30,12 +30,12 @@ class StraightLineFit {
   double yexp[nlayerx]; //Expected Y value after fit in each layer
   double ydev[nlayerx]; //Deviation from measurement
   double yexperr[nlayerx]; //Error on expected postion (from fit)
-  
+
   float allowedDev;  //Allowed deviation to be included in fit
   double chiSquare;   // chi^2
   int nused;         // Total number of layer used in fit
   bool isFailed;     //Fit is failed or not
-  int isPosition;   // Postion fit or time fit 
+  int isPosition;   // Postion fit or time fit
                     // 1 : position
                     // 0 : time fit and constraining slope to 1/c for correction
                     // -1 : No constraining

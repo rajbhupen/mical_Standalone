@@ -21,6 +21,7 @@ InoLinearTrackFitAlg::InoLinearTrackFitAlg() {
 InoLinearTrackFitAlg::~InoLinearTrackFitAlg() {
   cout<<"InoLinearTrackFitAlg::~InoLinearTrackFitAlg() {"<<endl;
 
+
   //   for (unsigned int ij=0; ij< inoTrackCand_pointer->InoTrackCand_list.size(); ij++) {
   //   if (inoTrackCand_pointer->InoTrackCand_list[ij]) {
   //     delete inoTrackCand_pointer->InoTrackCand_list[ij];
@@ -125,12 +126,14 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      Xpos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetXPos();
 	      Ypos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPos();
 	      if(ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()>0) {
-		errxsq[nlay] = grecoi->xposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()-1][nlay]*0.03*0.03;
+		        //errxsq[nlay] = grecoi->xposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()-1][nlay]*0.03*0.03;
+            errxsq[nlay]=errxco[nlay]*errxco[nlay]*0.03*0.03;
 	      } else {
 		errxsq[nlay]=errxco[nlay]*errxco[nlay]*0.03*0.03;
 	      }
 	      if(ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()>0) {
-		errysq[nlay] = grecoi->yposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()-1][nlay]*0.03*0.03;
+		        //errysq[nlay] = grecoi->yposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()-1][nlay]*0.03*0.03;
+            errysq[nlay]=erryco[nlay]*erryco[nlay]*0.03*0.03;
 	      } else {
 		errysq[nlay]=erryco[nlay]*erryco[nlay]*0.03*0.03;
 	      }
@@ -221,8 +224,8 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      double tmp_poffxx = StripXWidth*cal_slope2(Xpos[jki]/StripXWidth, inpar1) ;
 	      double tmp_poffyy = StripYWidth*cal_slope2(Ypos[jki]/StripYWidth, inpar2) ;
 
-	      Xpos[jki] -= tmp_poffxx;
-	      Ypos[jki] -= tmp_poffyy;
+	       //Xpos[jki] -= tmp_poffxx;
+	       //Ypos[jki] -= tmp_poffyy;
 
 	      StraightLineFit xposresolfit(1, zval, Xpos,  errxsq, Xusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
 	      xposresolfit.GetParameters(nxfail, xinters, xslope);
@@ -240,9 +243,9 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      double tmp_poffyx = StripXWidth*cal_slope2(yext[jki]/StripYWidth, inpar4) ;
 	      double tmp_poffxy = StripYWidth*cal_slope2(xext[jki]/StripXWidth, inpar3) ;
 
-	      if(nxfail==0) {Xpos[jki] -= tmp_poffyx;}
-	      if(nyfail==0) {Ypos[jki] -= tmp_poffxy;}
-
+	      //if(nxfail==0) {Xpos[jki] -= tmp_poffyx;}
+	      //if(nyfail==0) {Ypos[jki] -= tmp_poffxy;}
+/*
 	      xposresolfit = StraightLineFit(1, zval, Xpos,  errxsq, Xusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
 	      xposresolfit.GetParameters(nxfail, xinters, xslope);
 	      cout<<"Slope and intercept X  "<<xslope<<" "<<xinters<<endl;
@@ -266,7 +269,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      for(int jk = 0;jk<nlayer;jk++){
 		cout<<"get yz fit values "<<yext[jk]<<" "<<Ypos[jk]<<" "<<valz[jk]<<" "<<Ydev[jk]<<endl;
 	      }
-
+*/
 
 
 	      if(ClustsInTrackBank[iji][jki].size()>=1) {
