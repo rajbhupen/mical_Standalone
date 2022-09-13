@@ -299,9 +299,9 @@ double InoHit::GetTime() const {
     double fYTimeReturn = DigiToTimeConv*fYTime - (fXstriploc + 0.5)*SignalSpeed - fYtOffset;
     return 0.5*(fXTimeReturn+fYTimeReturn);
   } else if (fView==1) {
-    return fYTime - 4.8;
+    return DigiToTimeConv*fYTime - 4.8;
   } else if (fView==0) {
-    return fXTime - 4.8;
+    return DigiToTimeConv*fXTime - 4.8;
   }
   return -999.;
 }

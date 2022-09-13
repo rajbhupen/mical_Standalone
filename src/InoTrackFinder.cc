@@ -261,8 +261,8 @@ void InoTrackFinder::FormTheHits() {
 	    inpar4[prx] = grecoi->align_ystr_xdev[nInLAx][prx];
 	  }
 
-	  //	  double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
-	  //	  double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
+	  double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
+	  double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
 
 	   // cout<<nInLAx<<" "<<nInX<<" "<<nInY<<endl;
 	  // cout<<grecoi->timeoffsetx[nInLAx]<<" "<<grecoi->timeoffsety[nInLAx]<<" "<<grecoi->xtoffset[nInLAx][nInX]<<" "<<grecoi->ytoffset[nInLAx][nInY]<<" "<<grecoi->xt_slope_cor[nInLAx][nInX][nInY]<<" "<<grecoi->yt_slope_cor[nInLAx][nInY][nInX]<<endl;
@@ -276,11 +276,11 @@ void InoTrackFinder::FormTheHits() {
 	  // cout<<"nInLA "<<nInLAx<<" "<<nInLAy<<" ix "<<ix<<" jy "<<jy<<" SmrTime "<<DigiToTimeConv*XStrip->GetSmrTime()<<" "<<DigiToTimeConv*YStrip->GetSmrTime()<<" corrtime "<<Xtime<<" "<<Ytime<<" offset "<<tmp_toffx<<" "<<tmp_toffy<<endl;
 
 	  // Mark for editting
-
+	  cout<<"Both XY Hits"<<endl;
 	  InoHit* tmphit = new InoHit(XStrip, YStrip);
 
-	  tmphit->SetXpOffset(0.);
-	  tmphit->SetYpOffset(0.);
+	  tmphit->SetXpOffset(tmp_poffx);
+	  tmphit->SetYpOffset(tmp_poffy);
 	  tmphit->SetXtOffset(tmp_toffx);
 	  tmphit->SetYtOffset(tmp_toffy);
 
@@ -311,17 +311,63 @@ void InoTrackFinder::FormTheHits() {
       //         inoHit_pointer->InoHit_list.push_back(tmphit);
       // }
 
-  //0:SwimSwimmer
-  if(MessFile->GetTrackFit()==0){
+  //0:SwimSwimmer and also for straightline
+  if( (MessFile->GetTrackFit()==0 && MessFile->GetMag()==1 ) || MessFile->GetMag()==0 ){
 
-
+    cout<<"Considering Single side hits"<<endl;
   if (pstripx) {
     for (unsigned ix=0; ix<pstripx->InoStripX_list.size() ; ix++) {
       InoStrip* XStrip = pstripx->InoStripX_list[ix];
+
+
+      int tmpxStrpId = XStrip->GetId();
+      tmpxStrpId>>=8;
+      int nInX = tmpxStrpId & 0x7F;
+      tmpxStrpId>>=13;
+      int nInLAx = tmpxStrpId & 0xFF;
+
+      int nInY = 32; //Y-side cosider center of detector
+      int nInLAy = nInLAx;
+
+      
       if (iXFill[ix]==1) continue;
       if (XStrip->GetPulse()<PECut2) continue;
 
+      cout<<"Only X Hits"<<endl;
+      double tmp_toffx = grecoi->timeoffsetx[nInLAx] - 1.5;
+      double tmp_toffy = grecoi->timeoffsety[nInLAx];
+
+      tmp_toffx += grecoi->xtoffset[nInLAx][nInX];
+      tmp_toffy += grecoi->ytoffset[nInLAx][nInY];
+
+      tmp_toffx += grecoi->xt_slope_cor[nInLAx][nInX][nInY];
+      tmp_toffy += grecoi->yt_slope_cor[nInLAx][nInY][nInX];
+      
+      double inpar1[3];
+      double inpar2[3];
+      double inpar3[3];
+      double inpar4[3];
+      for(int prx=0; prx<3; prx++) {
+	inpar1[prx] = grecoi->align_xstr_xdev[nInLAx][prx];
+	inpar2[prx] = grecoi->align_ystr_ydev[nInLAx][prx];
+	inpar3[prx] = grecoi->align_xstr_ydev[nInLAx][prx];
+	inpar4[prx] = grecoi->align_ystr_xdev[nInLAx][prx];
+      }
+      
+      double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
+      double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
+      
+      
+      
       InoHit* tmphit = new InoHit(XStrip);
+	  
+      tmphit->SetXpOffset(tmp_poffx);
+      tmphit->SetYpOffset(tmp_poffy);
+      tmphit->SetXtOffset(tmp_toffx);
+      tmphit->SetYtOffset(tmp_toffy);
+      
+      
+      
       HitBank[XStrip->GetPlane()].push_back(tmphit);
       //      AllHitBank[XStrip->GetPlane()].push_back(tmphit);
       //    inoHit_pointer->InoHit_list.push_back(tmphit);
@@ -331,10 +377,54 @@ void InoTrackFinder::FormTheHits() {
   if (pstripy) {
     for (unsigned iy=0; iy<pstripy->InoStripY_list.size() ; iy++) {
       InoStrip* YStrip = pstripy->InoStripY_list[iy];
+
+
+      int tmpyStrpId = YStrip->GetId();
+      tmpyStrpId>>=8;
+      int nInY = tmpyStrpId & 0x7F;
+      tmpyStrpId>>=13;
+      int nInLAy = tmpyStrpId & 0xFF;
+
+      int nInX = 32; //Y-side cosider center of detector
+      int nInLAx = nInLAy;
+
+      
       if (iYFill[iy]==1) continue;
       if (YStrip->GetPulse()<PECut2) continue;
+   cout<<"Only Y Hits"<<endl;
+      double tmp_toffx = grecoi->timeoffsetx[nInLAx] - 1.5;
+      double tmp_toffy = grecoi->timeoffsety[nInLAx];
 
+      tmp_toffx += grecoi->xtoffset[nInLAx][nInX];
+      tmp_toffy += grecoi->ytoffset[nInLAx][nInY];
+
+      tmp_toffx += grecoi->xt_slope_cor[nInLAx][nInX][nInY];
+      tmp_toffy += grecoi->yt_slope_cor[nInLAx][nInY][nInX];
+      
+      double inpar1[3];
+      double inpar2[3];
+      double inpar3[3];
+      double inpar4[3];
+      for(int prx=0; prx<3; prx++) {
+	inpar1[prx] = grecoi->align_xstr_xdev[nInLAx][prx];
+	inpar2[prx] = grecoi->align_ystr_ydev[nInLAx][prx];
+	inpar3[prx] = grecoi->align_xstr_ydev[nInLAx][prx];
+	inpar4[prx] = grecoi->align_ystr_xdev[nInLAx][prx];
+      }
+      
+      double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
+      double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
+      
+      
+      
       InoHit* tmphit = new InoHit(YStrip);
+	  
+      tmphit->SetXpOffset(tmp_poffx);
+      tmphit->SetYpOffset(tmp_poffy);
+      tmphit->SetXtOffset(tmp_toffx);
+      tmphit->SetYtOffset(tmp_toffy);
+      
+      
       HitBank[YStrip->GetPlane()].push_back(tmphit);
       //      AllHitBank[YStrip->GetPlane()].push_back(tmphit);
       //    inoHit_pointer->InoHit_list.push_back(tmphit);
@@ -594,7 +684,7 @@ void InoTrackFinder::FormTheClusters() {
 	  //HitBank[ij][jk]::fUID = 0 b4 including the hit in a cluster
 	  InoCluster* Clust = new InoCluster(HitBank[ij][jk]);
 	  // Make a cluster for the first hit on the plane
-
+	  Clust->Print();
 	  ClusterBank[HitBank[ij][jk]->GetZPlane()].push_back(Clust);
 	  //ClusterBank[HitBank[ij][jk]->GetZPlane()].push_back(Clust);
 
