@@ -312,7 +312,10 @@ void InoTrackFinder::FormTheHits() {
       // }
 
   //0:SwimSwimmer and also for straightline
-  if( (MessFile->GetTrackFit()==0 && MessFile->GetMag()==1 ) || MessFile->GetMag()==0 ){
+
+  bool consider_singlehits = false;
+  if(consider_singlehits){
+    if( (MessFile->GetTrackFit()==0 && MessFile->GetMag()==1 ) || MessFile->GetMag()==0 ){ //for SL and SwimSwimmer use single hit events also
 
     cout<<"Considering Single side hits"<<endl;
   if (pstripx) {
@@ -326,8 +329,8 @@ void InoTrackFinder::FormTheHits() {
       tmpxStrpId>>=13;
       int nInLAx = tmpxStrpId & 0xFF;
 
-      int nInY = 32; //Y-side cosider center of detector
-      int nInLAy = nInLAx;
+      // int nInY = 32; //Y-side cosider center of detector
+      // int nInLAy = nInLAx;
 
       
       if (iXFill[ix]==1) continue;
@@ -337,11 +340,11 @@ void InoTrackFinder::FormTheHits() {
       double tmp_toffx = grecoi->timeoffsetx[nInLAx] - 1.5;
       double tmp_toffy = grecoi->timeoffsety[nInLAx];
 
-      tmp_toffx += grecoi->xtoffset[nInLAx][nInX];
-      tmp_toffy += grecoi->ytoffset[nInLAx][nInY];
+       tmp_toffx += grecoi->xtoffset[nInLAx][nInX];
+      // tmp_toffy += grecoi->ytoffset[nInLAx][nInY];
 
-      tmp_toffx += grecoi->xt_slope_cor[nInLAx][nInX][nInY];
-      tmp_toffy += grecoi->yt_slope_cor[nInLAx][nInY][nInX];
+      // tmp_toffx += grecoi->xt_slope_cor[nInLAx][nInX][nInY];
+      // tmp_toffy += grecoi->yt_slope_cor[nInLAx][nInY][nInX];
       
       double inpar1[3];
       double inpar2[3];
@@ -354,9 +357,10 @@ void InoTrackFinder::FormTheHits() {
 	inpar4[prx] = grecoi->align_ystr_xdev[nInLAx][prx];
       }
       
-      double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
-      double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
-      
+      double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1));
+      //  double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
+      double tmp_poffy = -1000;
+        
       
       
       InoHit* tmphit = new InoHit(XStrip);
@@ -385,35 +389,35 @@ void InoTrackFinder::FormTheHits() {
       tmpyStrpId>>=13;
       int nInLAy = tmpyStrpId & 0xFF;
 
-      int nInX = 32; //Y-side cosider center of detector
-      int nInLAx = nInLAy;
+      // int nInX = 32; //Y-side cosider center of detector
+      // int nInLAx = nInLAy;
 
       
       if (iYFill[iy]==1) continue;
       if (YStrip->GetPulse()<PECut2) continue;
-   cout<<"Only Y Hits"<<endl;
-      double tmp_toffx = grecoi->timeoffsetx[nInLAx] - 1.5;
-      double tmp_toffy = grecoi->timeoffsety[nInLAx];
+      cout<<"Only Y Hits"<<endl;
+      double tmp_toffx = grecoi->timeoffsetx[nInLAy] - 1.5;
+      double tmp_toffy = grecoi->timeoffsety[nInLAy];
 
-      tmp_toffx += grecoi->xtoffset[nInLAx][nInX];
-      tmp_toffy += grecoi->ytoffset[nInLAx][nInY];
+      //      tmp_toffx += grecoi->xtoffset[nInLAx][nInX];
+      tmp_toffy += grecoi->ytoffset[nInLAy][nInY];
 
-      tmp_toffx += grecoi->xt_slope_cor[nInLAx][nInX][nInY];
-      tmp_toffy += grecoi->yt_slope_cor[nInLAx][nInY][nInX];
+      //      tmp_toffx += grecoi->xt_slope_cor[nInLAx][nInX][nInY];
+      //      tmp_toffy += grecoi->yt_slope_cor[nInLAx][nInY][nInX];
       
       double inpar1[3];
       double inpar2[3];
       double inpar3[3];
       double inpar4[3];
       for(int prx=0; prx<3; prx++) {
-	inpar1[prx] = grecoi->align_xstr_xdev[nInLAx][prx];
-	inpar2[prx] = grecoi->align_ystr_ydev[nInLAx][prx];
-	inpar3[prx] = grecoi->align_xstr_ydev[nInLAx][prx];
-	inpar4[prx] = grecoi->align_ystr_xdev[nInLAx][prx];
+	inpar1[prx] = grecoi->align_xstr_xdev[nInLAy][prx];
+	inpar2[prx] = grecoi->align_ystr_ydev[nInLAy][prx];
+	inpar3[prx] = grecoi->align_xstr_ydev[nInLAy][prx];
+	inpar4[prx] = grecoi->align_ystr_xdev[nInLAy][prx];
       }
       
-      double tmp_poffx = StripXWidth*(cal_slope2(nInX+0.5,inpar1) + cal_slope2(nInY+0.5,inpar4));
-      double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2) + cal_slope2(nInX+0.5,inpar3));
+      double tmp_poffx = -1000;
+      double tmp_poffy = StripYWidth*(cal_slope2(nInY+0.5,inpar2));
       
       
       
@@ -596,7 +600,7 @@ void InoTrackFinder::FormTheClusters() {
   // of these hits. This is controlled by the IsHitAssoc method in InoCluster.
   // Pointers to the InoCluster objects are stored in plane order in a
   // clusterbank
-
+  bool jim_pos_corr = false;
   double xpos_xtime_corr[3][10][2] = {
     {
       {0.00202779 , -0.0812821},
@@ -710,6 +714,7 @@ void InoTrackFinder::FormTheClusters() {
 	    }
 	  }
 
+    if(jim_pos_corr){
 
 	  
 	//After adding all the hits in cluster Jim & SP
@@ -761,6 +766,11 @@ void InoTrackFinder::FormTheClusters() {
 
 	  newClusterNum++;
 	  Clust->SetClusterNum(newClusterNum);
+
+
+
+
+    } //jim_pos_corr
 	  inoCluster_pointer->InoCluster_list.push_back(Clust);//All the clusters wil be stored in InoCluster_list
 	}
       }
@@ -817,8 +827,47 @@ void InoTrackFinder::FormTheClusters() {
   //------------------------------------------------------------------------------------------
   // cout<<"void InoTrackFinder::FormTheClusters() completed"<<endl;
   // return;
-}
 
+  //Add multiplicity dependent errors                                           
+
+  float errxco[12]={0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675};
+  float erryco[12]={0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675,0.288675};
+
+                                      
+
+  for(int Module=0; Module<NumModules; ++Module) {
+    for(int Plane=0; Plane<PlanesInModule+1; ++Plane) {
+      int jk=Plane + Module*(PlanesInModule+1);
+      
+      for(int ij=0;ij<ClusterBank[jk].size();ij++){
+	
+	InoCluster* Clust = ClusterBank[jk][ij];
+	
+	if(Clust->GetNXStripsInClust()>0){
+	  Clust->SetXPosErr(0.03*sqrt(grecoi->xposerrsq[Clust->GetNXStripsInClust()-1][jk]));
+	} else{
+	  Clust->SetXPosErr(errxco[jk]*0.03);
+	}
+    
+	if(Clust->GetNYStripsInClust()>0){
+	  Clust->SetYPosErr(0.03*sqrt(grecoi->yposerrsq[Clust->GetNYStripsInClust()-1][jk]));
+	}else{
+	  Clust->SetYPosErr(erryco[jk]*0.03);
+	}
+	
+    
+	
+      }//  for(int ij=0;ij<ClusterBank[jk].size();ij++){                            
+      
+    }
+  }
+  
+  
+  
+  
+  
+}
+ 
 void InoTrackFinder::IDTrkAndShwClusters() {
   // Look at the 1D clusters formed and use simple techniques to get an idea
   // of how track-like or shower-like each cluster is.

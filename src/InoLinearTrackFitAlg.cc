@@ -127,15 +127,15 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      Xpos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetXPos();
 	      Ypos[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPos();
 	      if(ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()>0) {
-		errxsq[nlay] = grecoi->xposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()-1][nlay]*0.03*0.03;
-		
+		//	errxsq[nlay] = grecoi->xposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNXStripsInClust()-1][nlay]*0.03*0.03;
+		errxsq[nlay]=ClustsInTrackBank[iji][nlay][0]->GetXPosErr() * ClustsInTrackBank[iji][nlay][0]->GetXPosErr() ;
 	      } else {
 		errxsq[nlay]=errxco[nlay]*errxco[nlay]*0.03*0.03;
 		
 	      }
 	      if(ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()>0) {
-		errysq[nlay] = grecoi->yposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()-1][nlay]*0.03*0.03;
-	        
+		//errysq[nlay] = grecoi->yposerrsq[ClustsInTrackBank[iji][nlay][0]->GetNYStripsInClust()-1][nlay]*0.03*0.03;
+	        errysq[nlay]=ClustsInTrackBank[iji][nlay][0]->GetYPosErr() * ClustsInTrackBank[iji][nlay][0]->GetYPosErr() ;
 	      } else {
 		errysq[nlay]=erryco[nlay]*erryco[nlay]*0.03*0.03;
 	    
@@ -213,44 +213,44 @@ void InoLinearTrackFitAlg::RunAlg() {
 	      occulyr = jki;
 	      cout<<"Fitting Excluding Layer:"<<occulyr<<endl;
 
-	      //Position Alignment correction
-	      double inpar1[3];
-	      double inpar2[3];
-	      double inpar3[3];
-	      double inpar4[3];
-	      for(int prx=0; prx<3; prx++) {
-		inpar1[prx] = grecoi->align_xstr_xdev[jki][prx];
-		inpar2[prx] = grecoi->align_ystr_ydev[jki][prx];
-		inpar3[prx] = grecoi->align_xstr_ydev[jki][prx];
-		inpar4[prx] = grecoi->align_ystr_xdev[jki][prx];
-	      }
-	      double tmp_poffxx = StripXWidth*cal_slope2(Xpos[jki]/StripXWidth, inpar1) ;
-	      double tmp_poffyy = StripYWidth*cal_slope2(Ypos[jki]/StripYWidth, inpar2) ;
+	      // //Position Alignment correction
+	      // double inpar1[3];
+	      // double inpar2[3];
+	      // double inpar3[3];
+	      // double inpar4[3];
+	      // for(int prx=0; prx<3; prx++) {
+	      // 	inpar1[prx] = grecoi->align_xstr_xdev[jki][prx];
+	      // 	inpar2[prx] = grecoi->align_ystr_ydev[jki][prx];
+	      // 	inpar3[prx] = grecoi->align_xstr_ydev[jki][prx];
+	      // 	inpar4[prx] = grecoi->align_ystr_xdev[jki][prx];
+	      // }
+	      // double tmp_poffxx = StripXWidth*cal_slope2(Xpos[jki]/StripXWidth, inpar1) ;
+	      // double tmp_poffyy = StripYWidth*cal_slope2(Ypos[jki]/StripYWidth, inpar2) ;
 
-	      cout<<"tmp_poffxx "<<tmp_poffxx<<" tmp_poffyy "<<tmp_poffyy<<endl;
-	      Xpos[jki] -= tmp_poffxx;
-	      Ypos[jki] -= tmp_poffyy;
+	      // cout<<"tmp_poffxx "<<tmp_poffxx<<" tmp_poffyy "<<tmp_poffyy<<endl;
+	      // Xpos[jki] -= tmp_poffxx;
+	      // Ypos[jki] -= tmp_poffyy;
+
+	      // StraightLineFit xposresolfit(1, zval, Xpos,  errxsq, Xusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
+	      // xposresolfit.GetParameters(nxfail, xinters, xslope);
+	      // xposresolfit.GetError(xerrcst, xerrlin, xerrcov);
+	      // xposresolfit.GetChisqure(Nx, xchi2);
+	      // xposresolfit.GetFitValues(xext,valz, Xdev, xexter);
+
+	      // StraightLineFit yposresolfit(1, zval, Ypos,  errysq, Yusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
+	      // yposresolfit.GetParameters(nyfail, yinters, yslope);
+	      // yposresolfit.GetError(yerrcst, yerrlin, yerrcov);
+	      // yposresolfit.GetChisqure(Ny, ychi2);
+	      // yposresolfit.GetFitValues(yext,valz, Ydev, yexter);
+
+
+	      // double tmp_poffyx = StripXWidth*cal_slope2(yext[jki]/StripYWidth, inpar4) ;
+	      // double tmp_poffxy = StripYWidth*cal_slope2(xext[jki]/StripXWidth, inpar3) ;
+
+	      // if(nxfail==0) {Xpos[jki] -= tmp_poffyx;}
+	      // if(nyfail==0) {Ypos[jki] -= tmp_poffxy;}
 
 	      StraightLineFit xposresolfit(1, zval, Xpos,  errxsq, Xusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
-	      xposresolfit.GetParameters(nxfail, xinters, xslope);
-	      xposresolfit.GetError(xerrcst, xerrlin, xerrcov);
-	      xposresolfit.GetChisqure(Nx, xchi2);
-	      xposresolfit.GetFitValues(xext,valz, Xdev, xexter);
-
-	      StraightLineFit yposresolfit(1, zval, Ypos,  errysq, Yusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
-	      yposresolfit.GetParameters(nyfail, yinters, yslope);
-	      yposresolfit.GetError(yerrcst, yerrlin, yerrcov);
-	      yposresolfit.GetChisqure(Ny, ychi2);
-	      yposresolfit.GetFitValues(yext,valz, Ydev, yexter);
-
-
-	      double tmp_poffyx = StripXWidth*cal_slope2(yext[jki]/StripYWidth, inpar4) ;
-	      double tmp_poffxy = StripYWidth*cal_slope2(xext[jki]/StripXWidth, inpar3) ;
-
-	      if(nxfail==0) {Xpos[jki] -= tmp_poffyx;}
-	      if(nyfail==0) {Ypos[jki] -= tmp_poffxy;}
-
-	      xposresolfit = StraightLineFit(1, zval, Xpos,  errxsq, Xusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
 	      xposresolfit.GetParameters(nxfail, xinters, xslope);
 	      cout<<"Slope and intercept X  "<<xslope<<" "<<xinters<<endl;
 	      xposresolfit.GetError(xerrcst, xerrlin, xerrcov);
@@ -262,7 +262,7 @@ void InoLinearTrackFitAlg::RunAlg() {
 		cout<<"get xz fit values "<<xext[jk]<<" "<<Xpos[jk]<<" "<<valz[jk]<<" "<<Xdev[jk]<<endl;
 	      }
 
-	      yposresolfit = StraightLineFit(1, zval, Ypos,  errysq, Yusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
+	      StraightLineFit yposresolfit(1, zval, Ypos,  errysq, Yusedpos, occulyr, occulyr, layfirst, laylast, xyPosDev);
 	      yposresolfit.GetParameters(nyfail, yinters, yslope);
 	      cout<<"Slope and intercept Y  "<<yslope<<" "<<yinters<<endl;
 	      yposresolfit.GetError(yerrcst, yerrlin, yerrcov);
@@ -287,8 +287,8 @@ void InoLinearTrackFitAlg::RunAlg() {
 		pAnalysis->nYStrips[jki] = ClustsInTrackBank[iji][jki][0]->GetNYStripsInClust();
 		pAnalysis->XchisqOccu[jki] = xchi2;
 		pAnalysis->YchisqOccu[jki] = ychi2;
-		pAnalysis->XndfOccu[jki] = Nx;
-		pAnalysis->YndfOccu[jki] = Ny;
+		pAnalysis->XndfOccu[jki] = Nx-2;
+		pAnalysis->YndfOccu[jki] = Ny-2;
 		pAnalysis->nxFailOccu[jki] = nxfail;
 		pAnalysis->nyFailOccu[jki] = nyfail;
         }
