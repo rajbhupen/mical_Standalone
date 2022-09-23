@@ -3,3 +3,5 @@ err.txt
 gen4_inout1_SingleStack_collated_corr_posres_10p5_reco.root
 out.txt
 fileOut/
+*~
+*.o
